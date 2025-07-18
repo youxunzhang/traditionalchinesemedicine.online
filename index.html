@@ -24,14 +24,20 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-leaf"></i>
-                <span>神农百草</span>
+                <span data-zh="神农百草" data-en="Shennong Herbs">神农百草</span>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#herbs" class="nav-link">本草图鉴</a>
+                    <a href="#herbs" class="nav-link" data-zh="本草图鉴" data-en="Herb Catalog">本草图鉴</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#about" class="nav-link">关于我们</a>
+                    <a href="#about" class="nav-link" data-zh="关于我们" data-en="About Us">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <button id="languageToggle" class="language-toggle">
+                        <span class="lang-text" data-zh="EN" data-en="中文">EN</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
                 </li>
             </ul>
             <div class="hamburger">
@@ -42,25 +48,23 @@
         </div>
     </nav>
 
-
-
     <!-- 本草图鉴区域 -->
     <section id="herbs" class="herbs-section">
         <div class="container">
-            <h1 class="section-title">神农百草图鉴</h1>
-            <p class="section-subtitle">探索传统中医药的智慧，体验每一味本草的独特价值</p>
+            <h1 class="section-title" data-zh="神农百草图鉴" data-en="Shennong Herbs Catalog">神农百草图鉴</h1>
+            <p class="section-subtitle" data-zh="探索传统中医药的智慧，体验每一味本草的独特价值" data-en="Explore the wisdom of traditional Chinese medicine and experience the unique value of each herb">探索传统中医药的智慧，体验每一味本草的独特价值</p>
             
             <!-- 搜索和筛选 -->
             <div class="search-filter">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" id="searchInput" placeholder="搜索本草名称...">
+                    <input type="text" id="searchInput" data-zh-placeholder="搜索本草名称..." data-en-placeholder="Search herb names...">
                 </div>
                 <div class="filter-buttons">
-                    <button class="filter-btn active" data-category="all">全部</button>
-                    <button class="filter-btn" data-category="上品">上品</button>
-                    <button class="filter-btn" data-category="中品">中品</button>
-                    <button class="filter-btn" data-category="下品">下品</button>
+                    <button class="filter-btn active" data-category="all" data-zh="全部" data-en="All">全部</button>
+                    <button class="filter-btn" data-category="上品" data-zh="上品" data-en="Superior">上品</button>
+                    <button class="filter-btn" data-category="中品" data-zh="中品" data-en="Medium">中品</button>
+                    <button class="filter-btn" data-category="下品" data-zh="下品" data-en="Inferior">下品</button>
                 </div>
             </div>
 
@@ -76,29 +80,27 @@
         </div>
     </section>
 
-
-
     <!-- 关于我们区域 -->
     <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-title">关于我们</h2>
+            <h2 class="section-title" data-zh="关于我们" data-en="About Us">关于我们</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>神农百草网站致力于传播传统中医药文化，让更多人了解本草的价值和功效。我们通过现代化的网页技术和游戏化的交互方式，让学习中医药知识变得有趣而简单。</p>
-                    <p>每一味本草都有其独特的药用价值，我们希望帮助用户深入了解这些珍贵的自然资源。</p>
+                    <p data-zh="神农百草网站致力于传播传统中医药文化，让更多人了解本草的价值和功效。我们通过现代化的网页技术和游戏化的交互方式，让学习中医药知识变得有趣而简单。" data-en="Shennong Herbs website is dedicated to promoting traditional Chinese medicine culture, helping more people understand the value and efficacy of herbs. Through modern web technology and gamified interactions, we make learning Chinese medicine knowledge fun and simple.">神农百草网站致力于传播传统中医药文化，让更多人了解本草的价值和功效。我们通过现代化的网页技术和游戏化的交互方式，让学习中医药知识变得有趣而简单。</p>
+                    <p data-zh="每一味本草都有其独特的药用价值，我们希望帮助用户深入了解这些珍贵的自然资源。" data-en="Each herb has its unique medicinal value, and we hope to help users gain a deep understanding of these precious natural resources.">每一味本草都有其独特的药用价值，我们希望帮助用户深入了解这些珍贵的自然资源。</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-item">
-                        <div class="stat-number">80</div>
-                        <div class="stat-label">本草品种</div>
+                        <div class="stat-number">220</div>
+                        <div class="stat-label" data-zh="本草品种" data-en="Herb Varieties">本草品种</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">3</div>
-                        <div class="stat-label">品级分类</div>
+                        <div class="stat-label" data-zh="品级分类" data-en="Grade Categories">品级分类</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number">1000+</div>
-                        <div class="stat-label">用户访问</div>
+                        <div class="stat-label" data-zh="用户访问" data-en="User Visits">用户访问</div>
                     </div>
                 </div>
             </div>
@@ -110,24 +112,24 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>神农百草</h3>
-                    <p>探索传统中医药的智慧</p>
+                    <h3 data-zh="神农百草" data-en="Shennong Herbs">神农百草</h3>
+                    <p data-zh="探索传统中医药的智慧" data-en="Explore the wisdom of traditional Chinese medicine">探索传统中医药的智慧</p>
                 </div>
                 <div class="footer-section">
-                    <h4>快速链接</h4>
+                    <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
                     <ul>
-                        <li><a href="#herbs">本草图鉴</a></li>
-                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#herbs" data-zh="本草图鉴" data-en="Herb Catalog">本草图鉴</a></li>
+                        <li><a href="#about" data-zh="关于我们" data-en="About Us">关于我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>联系我们</h4>
+                    <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
                     <p><i class="fas fa-envelope"></i> contact@shennong.com</p>
                     <p><i class="fas fa-phone"></i> 400-123-4567</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 神农百草. 保留所有权利.</p>
+                <p data-zh="© 2024 神农百草. 保留所有权利." data-en="© 2024 Shennong Herbs. All rights reserved.">&copy; 2024 神农百草. 保留所有权利.</p>
             </div>
         </div>
     </footer>
@@ -141,8 +143,6 @@
             </div>
         </div>
     </div>
-
-
 
     <script src="script.js"></script>
 </body>

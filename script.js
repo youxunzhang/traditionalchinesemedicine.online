@@ -1,3 +1,54 @@
+// 全局变量
+let currentPage = 1;
+let herbsPerPage = 18;
+let filteredHerbs = [];
+let collectedHerbs = [];
+let currentFilter = 'all';
+
+// 语言管理
+let currentLanguage = 'zh'; // 默认中文
+
+// 语言切换函数
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
+    updateLanguageUI();
+    updatePageContent();
+    updateHerbsData();
+    renderHerbsGrid();
+}
+
+// 更新语言UI
+function updateLanguageUI() {
+    const langText = document.querySelector('.lang-text');
+    const htmlLang = document.documentElement;
+    
+    if (currentLanguage === 'en') {
+        langText.textContent = '中文';
+        htmlLang.lang = 'en';
+    } else {
+        langText.textContent = 'EN';
+        htmlLang.lang = 'zh-CN';
+    }
+}
+
+// 更新页面内容
+function updatePageContent() {
+    const elements = document.querySelectorAll('[data-zh][data-en]');
+    elements.forEach(element => {
+        const text = currentLanguage === 'zh' ? element.getAttribute('data-zh') : element.getAttribute('data-en');
+        element.textContent = text;
+    });
+    
+    // 更新搜索框占位符
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        const placeholder = currentLanguage === 'zh' ? 
+            searchInput.getAttribute('data-zh-placeholder') : 
+            searchInput.getAttribute('data-en-placeholder');
+        searchInput.placeholder = placeholder;
+    }
+}
+
 // 本草数据 - 参考《神农本草经》三品分类
 const herbsData = [
     // 上品 - 君药，无毒，久服轻身延年
@@ -2359,15 +2410,535 @@ const herbsData = [
         rarity: "常见",
         grade: "中品",
         natureMeridian: "辛，热；归脾、胃、肾、心、肺经"
+    },
+
+    // 继续补充更多经典本草
+    {
+        id: 181,
+        name: "肉桂",
+        category: "中品",
+        description: "补火助阳，散寒止痛，温通经脉，引火归元。",
+        value: "补火助阳要药，散寒良药",
+        icon: "🌿",
+        effects: ["补火", "助阳", "散寒"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、甘，大热；归肾、脾、心、肝经"
+    },
+    {
+        id: 182,
+        name: "吴茱萸",
+        category: "中品",
+        description: "散寒止痛，降逆止呕，助阳止泻。",
+        value: "散寒止痛要药，降逆良药",
+        icon: "🌿",
+        effects: ["散寒", "止痛", "降逆"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，热；归肝、脾、胃、肾经"
+    },
+    {
+        id: 183,
+        name: "小茴香",
+        category: "中品",
+        description: "散寒止痛，理气和胃。",
+        value: "散寒止痛要药，理气良药",
+        icon: "🌿",
+        effects: ["散寒", "止痛", "理气"],
+        price: "便宜",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归肝、肾、脾、胃经"
+    },
+    {
+        id: 184,
+        name: "丁香",
+        category: "中品",
+        description: "温中降逆，补肾助阳。",
+        value: "温中降逆要药，补肾良药",
+        icon: "🌸",
+        effects: ["温中", "降逆", "补肾"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归脾、胃、肺、肾经"
+    },
+    {
+        id: 185,
+        name: "高良姜",
+        category: "中品",
+        description: "温胃止呕，散寒止痛。",
+        value: "温胃止呕要药，散寒良药",
+        icon: "🌿",
+        effects: ["温胃", "止呕", "散寒"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，热；归脾、胃经"
+    },
+    {
+        id: 186,
+        name: "花椒",
+        category: "中品",
+        description: "温中止痛，杀虫止痒。",
+        value: "温中止痛要药，杀虫良药",
+        icon: "🌿",
+        effects: ["温中", "止痛", "杀虫"],
+        price: "便宜",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归脾、胃、肾经"
+    },
+    {
+        id: 187,
+        name: "胡椒",
+        category: "中品",
+        description: "温中散寒，下气消痰。",
+        value: "温中散寒要药，下气良药",
+        icon: "🌿",
+        effects: ["温中", "散寒", "下气"],
+        price: "便宜",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，热；归胃、大肠经"
+    },
+    {
+        id: 188,
+        name: "荜茇",
+        category: "中品",
+        description: "温中散寒，下气止痛。",
+        value: "温中散寒要药，下气良药",
+        icon: "🌿",
+        effects: ["温中", "散寒", "下气"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，热；归胃、大肠经"
+    },
+    {
+        id: 189,
+        name: "荜澄茄",
+        category: "中品",
+        description: "温中散寒，行气止痛。",
+        value: "温中散寒要药，行气良药",
+        icon: "🌿",
+        effects: ["温中", "散寒", "行气"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归脾、胃、肾、膀胱经"
+    },
+    {
+        id: 190,
+        name: "草果",
+        category: "中品",
+        description: "燥湿温中，除痰截疟。",
+        value: "燥湿温中要药，除痰良药",
+        icon: "🌿",
+        effects: ["燥湿", "温中", "除痰"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归脾、胃经"
+    },
+    {
+        id: 191,
+        name: "草豆蔻",
+        category: "中品",
+        description: "燥湿行气，温中止呕。",
+        value: "燥湿行气要药，温中良药",
+        icon: "🌿",
+        effects: ["燥湿", "行气", "温中"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归脾、胃经"
+    },
+    {
+        id: 192,
+        name: "红豆蔻",
+        category: "中品",
+        description: "燥湿散寒，醒脾消食。",
+        value: "燥湿散寒要药，醒脾良药",
+        icon: "🌿",
+        effects: ["燥湿", "散寒", "醒脾"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归脾、肺经"
+    },
+    {
+        id: 193,
+        name: "肉豆蔻",
+        category: "中品",
+        description: "温中行气，涩肠止泻。",
+        value: "温中行气要药，涩肠良药",
+        icon: "🌿",
+        effects: ["温中", "行气", "涩肠"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归脾、胃、大肠经"
+    },
+    {
+        id: 194,
+        name: "益智仁",
+        category: "上品",
+        description: "温脾开胃摄唾，暖肾固精缩尿。",
+        value: "温脾要药，固精良药",
+        icon: "🌿",
+        effects: ["温脾", "开胃", "固精"],
+        price: "中等",
+        rarity: "常见",
+        grade: "上品",
+        natureMeridian: "辛，温；归脾、肾经"
+    },
+    {
+        id: 195,
+        name: "补骨脂",
+        category: "上品",
+        description: "补肾助阳，固精缩尿，温脾止泻，纳气平喘。",
+        value: "补肾助阳要药，固精良药",
+        icon: "🌿",
+        effects: ["补肾", "助阳", "固精"],
+        price: "中等",
+        rarity: "常见",
+        grade: "上品",
+        natureMeridian: "辛、苦，温；归肾、脾经"
+    },
+    {
+        id: 196,
+        name: "骨碎补",
+        category: "中品",
+        description: "补肾强骨，续伤止痛。",
+        value: "补肾强骨要药，续伤良药",
+        icon: "🌿",
+        effects: ["补肾", "强骨", "续伤"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦，温；归肝、肾经"
+    },
+    {
+        id: 197,
+        name: "续断",
+        category: "中品",
+        description: "补肝肾，强筋骨，续折伤，止崩漏，安胎。",
+        value: "补肝肾要药，强筋骨良药",
+        icon: "🌿",
+        effects: ["补肝肾", "强筋骨", "续折伤"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦、辛，微温；归肝、肾经"
+    },
+    {
+        id: 198,
+        name: "杜仲",
+        category: "上品",
+        description: "补肝肾，强筋骨，安胎。",
+        value: "补肝肾要药，强筋骨良药",
+        icon: "🌿",
+        effects: ["补肝肾", "强筋骨", "安胎"],
+        price: "中等",
+        rarity: "常见",
+        grade: "上品",
+        natureMeridian: "甘，温；归肝、肾经"
+    },
+    {
+        id: 199,
+        name: "桑寄生",
+        category: "上品",
+        description: "祛风湿，补肝肾，强筋骨，安胎。",
+        value: "祛风湿要药，补肝肾良药",
+        icon: "🌿",
+        effects: ["祛风湿", "补肝肾", "强筋骨"],
+        price: "中等",
+        rarity: "常见",
+        grade: "上品",
+        natureMeridian: "苦、甘，平；归肝、肾经"
+    },
+    {
+        id: 200,
+        name: "狗脊",
+        category: "中品",
+        description: "祛风湿，补肝肾，强腰膝。",
+        value: "祛风湿要药，补肝肾良药",
+        icon: "🌿",
+        effects: ["祛风湿", "补肝肾", "强腰膝"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦、甘，温；归肝、肾经"
+    },
+
+    // 继续补充祛风湿、活血化瘀类本草
+    {
+        id: 201,
+        name: "独活",
+        category: "中品",
+        description: "祛风湿，止痛，解表。",
+        value: "祛风湿要药，止痛良药",
+        icon: "🌿",
+        effects: ["祛风湿", "止痛", "解表"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，微温；归肾、膀胱经"
+    },
+    {
+        id: 202,
+        name: "羌活",
+        category: "中品",
+        description: "解表散寒，祛风胜湿，止痛。",
+        value: "解表散寒要药，祛风良药",
+        icon: "🌿",
+        effects: ["解表", "散寒", "祛风"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，温；归膀胱、肾经"
+    },
+    {
+        id: 203,
+        name: "威灵仙",
+        category: "中品",
+        description: "祛风湿，通经络，消骨鲠。",
+        value: "祛风湿要药，通经络良药",
+        icon: "🌿",
+        effects: ["祛风湿", "通经络", "消骨鲠"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、咸，温；归膀胱经"
+    },
+    {
+        id: 204,
+        name: "秦艽",
+        category: "中品",
+        description: "祛风湿，清湿热，退虚热。",
+        value: "祛风湿要药，清湿热良药",
+        icon: "🌿",
+        effects: ["祛风湿", "清湿热", "退虚热"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，平；归胃、肝、胆经"
+    },
+    {
+        id: 205,
+        name: "防己",
+        category: "中品",
+        description: "祛风湿，止痛，利水消肿。",
+        value: "祛风湿要药，止痛良药",
+        icon: "🌿",
+        effects: ["祛风湿", "止痛", "利水"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦，寒；归膀胱、肺经"
+    },
+    {
+        id: 206,
+        name: "木瓜",
+        category: "中品",
+        description: "舒筋活络，和胃化湿。",
+        value: "舒筋活络要药，和胃良药",
+        icon: "🥭",
+        effects: ["舒筋", "活络", "和胃"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "酸，温；归肝、脾经"
+    },
+    {
+        id: 207,
+        name: "五加皮",
+        category: "中品",
+        description: "祛风湿，补肝肾，强筋骨。",
+        value: "祛风湿要药，补肝肾良药",
+        icon: "🌿",
+        effects: ["祛风湿", "补肝肾", "强筋骨"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，温；归肝、肾经"
+    },
+    {
+        id: 208,
+        name: "桑枝",
+        category: "中品",
+        description: "祛风湿，利关节。",
+        value: "祛风湿要药，利关节良药",
+        icon: "🌿",
+        effects: ["祛风湿", "利关节"],
+        price: "便宜",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "微苦，平；归肝经"
+    },
+    {
+        id: 209,
+        name: "海桐皮",
+        category: "中品",
+        description: "祛风湿，通经络，杀虫。",
+        value: "祛风湿要药，通经络良药",
+        icon: "🌿",
+        effects: ["祛风湿", "通经络", "杀虫"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦、辛，平；归肝经"
+    },
+    {
+        id: 210,
+        name: "络石藤",
+        category: "中品",
+        description: "祛风通络，凉血消肿。",
+        value: "祛风通络要药，凉血良药",
+        icon: "🌿",
+        effects: ["祛风", "通络", "凉血"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦，微寒；归心、肝、肾经"
+    },
+    {
+        id: 211,
+        name: "雷公藤",
+        category: "下品",
+        description: "祛风除湿，活血通络，消肿止痛，杀虫解毒。",
+        value: "祛风除湿要药，活血良药",
+        icon: "🌿",
+        effects: ["祛风", "除湿", "活血"],
+        price: "中等",
+        rarity: "稀有",
+        grade: "下品",
+        natureMeridian: "苦、辛，寒，有大毒；归肝、肾经"
+    },
+    {
+        id: 212,
+        name: "青风藤",
+        category: "中品",
+        description: "祛风湿，通经络，利小便。",
+        value: "祛风湿要药，通经络良药",
+        icon: "🌿",
+        effects: ["祛风湿", "通经络", "利小便"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦、辛，平；归肝、脾经"
+    },
+    {
+        id: 213,
+        name: "丁公藤",
+        category: "中品",
+        description: "祛风除湿，消肿止痛。",
+        value: "祛风除湿要药，消肿良药",
+        icon: "🌿",
+        effects: ["祛风", "除湿", "消肿"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温，有小毒；归肝、脾、胃经"
+    },
+    {
+        id: 214,
+        name: "昆明山海棠",
+        category: "中品",
+        description: "祛风湿，活血止痛。",
+        value: "祛风湿要药，活血良药",
+        icon: "🌿",
+        effects: ["祛风湿", "活血", "止痛"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦、辛，微温；归肝、脾经"
+    },
+    {
+        id: 215,
+        name: "雪上一枝蒿",
+        category: "下品",
+        description: "祛风湿，活血止痛。",
+        value: "祛风湿要药，活血良药",
+        icon: "🌿",
+        effects: ["祛风湿", "活血", "止痛"],
+        price: "中等",
+        rarity: "稀有",
+        grade: "下品",
+        natureMeridian: "苦、辛，温，有大毒；归肝经"
+    },
+    {
+        id: 216,
+        name: "祖师麻",
+        category: "中品",
+        description: "祛风湿，活血止痛。",
+        value: "祛风湿要药，活血良药",
+        icon: "🌿",
+        effects: ["祛风湿", "活血", "止痛"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，温；归肝经"
+    },
+    {
+        id: 217,
+        name: "两面针",
+        category: "中品",
+        description: "祛风活络，消肿止痛。",
+        value: "祛风活络要药，消肿良药",
+        icon: "🌿",
+        effects: ["祛风", "活络", "消肿"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，平；归肝、胃经"
+    },
+    {
+        id: 218,
+        name: "徐长卿",
+        category: "中品",
+        description: "祛风，化湿，止痛，止痒。",
+        value: "祛风要药，化湿良药",
+        icon: "🌿",
+        effects: ["祛风", "化湿", "止痛"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛，温；归肝、胃经"
+    },
+    {
+        id: 219,
+        name: "老鹳草",
+        category: "中品",
+        description: "祛风湿，通经络，止泻痢。",
+        value: "祛风湿要药，通经络良药",
+        icon: "🌿",
+        effects: ["祛风湿", "通经络", "止泻"],
+        price: "便宜",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "辛、苦，平；归肝、肾、脾经"
+    },
+    {
+        id: 220,
+        name: "路路通",
+        category: "中品",
+        description: "祛风活络，利水通经。",
+        value: "祛风活络要药，利水良药",
+        icon: "🌿",
+        effects: ["祛风", "活络", "利水"],
+        price: "中等",
+        rarity: "常见",
+        grade: "中品",
+        natureMeridian: "苦，平；归肝、肾经"
     }
 ];
 
-// 全局变量
-let currentFilter = 'all';
-let filteredHerbs = [...herbsData];
-let collectedHerbs = JSON.parse(localStorage.getItem('collectedHerbs')) || [];
-let currentPage = 1;
-let herbsPerPage = 18; // 每页显示18个本草（3行×6列）
+// 初始化收藏数据
+collectedHerbs = JSON.parse(localStorage.getItem('collectedHerbs')) || [];
 
 // 根据屏幕大小调整每页显示数量
 function updateHerbsPerPage() {
@@ -2385,6 +2956,8 @@ function updateHerbsPerPage() {
 
 // DOM 加载完成后初始化
 document.addEventListener('DOMContentLoaded', function() {
+    initializeLanguageToggle();
+    updateHerbsData();
     updateHerbsPerPage();
     initializeNavigation();
     initializeHerbsGrid();
@@ -2464,8 +3037,13 @@ function createHerbCard(herb) {
 
     const isCollected = collectedHerbs.includes(herb.id);
     
-    const gradeColor = herb.grade === '上品' ? '#4CAF50' : herb.grade === '中品' ? '#FF9800' : '#F44336';
-    const gradeText = herb.grade === '上品' ? '君药' : herb.grade === '中品' ? '臣药' : '佐使药';
+    const gradeColor = herb.grade === '上品' || herb.grade === 'Superior' ? '#4CAF50' : 
+                      herb.grade === '中品' || herb.grade === 'Medium' ? '#FF9800' : '#F44336';
+    const gradeText = herb.grade === '上品' || herb.grade === 'Superior' ? 
+                     (currentLanguage === 'zh' ? '君药' : 'Monarch') :
+                     herb.grade === '中品' || herb.grade === 'Medium' ? 
+                     (currentLanguage === 'zh' ? '臣药' : 'Minister') : 
+                     (currentLanguage === 'zh' ? '佐使药' : 'Assistant');
     
     card.innerHTML = `
         <div class="herb-icon-large">${herb.icon}</div>
@@ -2476,8 +3054,8 @@ function createHerbCard(herb) {
         </div>
         <p class="herb-description">${herb.description}</p>
         <div class="herb-value">
-            <strong>价值：</strong>${herb.value}
-            ${isCollected ? '<br><small style="color: #4CAF50;">✓ 已收藏</small>' : ''}
+            <strong>${currentLanguage === 'zh' ? '价值：' : 'Value: '}</strong>${herb.value}
+            ${isCollected ? `<br><small style="color: #4CAF50;">✓ ${currentLanguage === 'zh' ? '已收藏' : 'Collected'}</small>` : ''}
         </div>
     `;
 
@@ -2508,7 +3086,8 @@ function initializeSearchAndFilter() {
 
 // 筛选本草
 function filterHerbs(searchTerm, category) {
-    filteredHerbs = herbsData.filter(herb => {
+    const currentData = currentLanguage === 'en' ? herbsDataEn : herbsData;
+    filteredHerbs = currentData.filter(herb => {
         const matchesSearch = herb.name.toLowerCase().includes(searchTerm) ||
                             herb.description.toLowerCase().includes(searchTerm) ||
                             herb.value.toLowerCase().includes(searchTerm);
@@ -2532,8 +3111,9 @@ function renderPagination(totalPages) {
     
     // 上一页按钮
     if (currentPage > 1) {
+        const prevText = currentLanguage === 'zh' ? '上一页' : 'Previous';
         paginationHTML += `<button class="page-btn" onclick="changePage(${currentPage - 1})">
-            <i class="fas fa-chevron-left"></i> 上一页
+            <i class="fas fa-chevron-left"></i> ${prevText}
         </button>`;
     }
     
@@ -2565,16 +3145,20 @@ function renderPagination(totalPages) {
     
     // 下一页按钮
     if (currentPage < totalPages) {
+        const nextText = currentLanguage === 'zh' ? '下一页' : 'Next';
         paginationHTML += `<button class="page-btn" onclick="changePage(${currentPage + 1})">
-            下一页 <i class="fas fa-chevron-right"></i>
+            ${nextText} <i class="fas fa-chevron-right"></i>
         </button>`;
     }
     
     paginationHTML += '</div>';
     
     // 添加页码信息
+    const pageInfoText = currentLanguage === 'zh' ? 
+        `第 ${currentPage} 页，共 ${totalPages} 页 (${filteredHerbs.length} 种本草)` :
+        `Page ${currentPage} of ${totalPages} (${filteredHerbs.length} herbs)`;
     paginationHTML += `<div class="page-info">
-        第 ${currentPage} 页，共 ${totalPages} 页 (${filteredHerbs.length} 种本草)
+        ${pageInfoText}
     </div>`;
     
     paginationContainer.innerHTML = paginationHTML;
@@ -2616,8 +3200,13 @@ function showHerbModal(herb) {
     const modalContent = document.getElementById('modalContent');
     const isCollected = collectedHerbs.includes(herb.id);
 
-    const gradeColor = herb.grade === '上品' ? '#4CAF50' : herb.grade === '中品' ? '#FF9800' : '#F44336';
-    const gradeText = herb.grade === '上品' ? '君药' : herb.grade === '中品' ? '臣药' : '佐使药';
+    const gradeColor = herb.grade === '上品' || herb.grade === 'Superior' ? '#4CAF50' : 
+                      herb.grade === '中品' || herb.grade === 'Medium' ? '#FF9800' : '#F44336';
+    const gradeText = herb.grade === '上品' || herb.grade === 'Superior' ? 
+                     (currentLanguage === 'zh' ? '君药' : 'Monarch Herb') :
+                     herb.grade === '中品' || herb.grade === 'Medium' ? 
+                     (currentLanguage === 'zh' ? '臣药' : 'Minister Herb') : 
+                     (currentLanguage === 'zh' ? '佐使药' : 'Assistant Herb');
     
     modalContent.innerHTML = `
         <div style="text-align: center; margin-bottom: 2rem;">
@@ -2634,27 +3223,27 @@ function showHerbModal(herb) {
         </div>
         
         <div style="margin-bottom: 2rem;">
-            <h3 style="color: #2d5a27; margin-bottom: 1rem;">功效描述</h3>
+            <h3 style="color: #2d5a27; margin-bottom: 1rem;">${currentLanguage === 'zh' ? '功效描述' : 'Efficacy Description'}</h3>
             <p style="line-height: 1.8; color: #555;">${herb.description}</p>
         </div>
         
         <div style="margin-bottom: 2rem;">
-            <h3 style="color: #2d5a27; margin-bottom: 1rem;">价值评估</h3>
+            <h3 style="color: #2d5a27; margin-bottom: 1rem;">${currentLanguage === 'zh' ? '价值评估' : 'Value Assessment'}</h3>
             <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px;">
                 <p style="font-size: 1.1rem; color: #2d5a27; font-weight: 600;">${herb.value}</p>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
                     <div>
-                        <strong>价格等级：</strong>${herb.price}
+                        <strong>${currentLanguage === 'zh' ? '价格等级：' : 'Price Level: '}</strong>${herb.price}
                     </div>
                     <div>
-                        <strong>稀有程度：</strong>${herb.rarity}
+                        <strong>${currentLanguage === 'zh' ? '稀有程度：' : 'Rarity: '}</strong>${herb.rarity}
                     </div>
                 </div>
             </div>
         </div>
         
         <div style="margin-bottom: 2rem;">
-            <h3 style="color: #2d5a27; margin-bottom: 1rem;">主要功效</h3>
+            <h3 style="color: #2d5a27; margin-bottom: 1rem;">${currentLanguage === 'zh' ? '主要功效' : 'Main Effects'}</h3>
             <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                 ${herb.effects.map(effect => 
                     `<span style="background: #4CAF50; color: white; padding: 4px 12px; border-radius: 15px; font-size: 0.9rem;">
@@ -2668,7 +3257,7 @@ function showHerbModal(herb) {
             <button class="btn ${isCollected ? 'btn-secondary' : 'btn-primary'}" 
                     onclick="toggleCollection(${herb.id})">
                 <i class="fas ${isCollected ? 'fa-heart' : 'fa-heart'}"></i>
-                ${isCollected ? '取消收藏' : '收藏本草'}
+                ${isCollected ? (currentLanguage === 'zh' ? '取消收藏' : 'Remove from Collection') : (currentLanguage === 'zh' ? '收藏本草' : 'Add to Collection')}
             </button>
         </div>
     `;
@@ -2685,7 +3274,8 @@ function toggleCollection(herbId) {
         collectedHerbs.push(herbId);
     }
     localStorage.setItem('collectedHerbs', JSON.stringify(collectedHerbs));
-    showHerbModal(herbsData.find(h => h.id === herbId));
+    const currentData = currentLanguage === 'en' ? herbsDataEn : herbsData;
+    showHerbModal(currentData.find(h => h.id === herbId));
     renderHerbsGrid();
 }
 
@@ -2703,6 +3293,680 @@ function scrollToSection(sectionId) {
 
 
 
+
+// 英文本草数据
+const herbsDataEn = [
+    // Superior Grade - Monarch herbs, non-toxic, long-term use for health and longevity
+    {
+        id: 1,
+        name: "Ginseng",
+        category: "Superior",
+        description: "Greatly tonifies primordial qi, restores pulse and prevents collapse, tonifies spleen and lungs, generates fluids and nourishes blood, calms spirit and benefits intelligence. Long-term use lightens body and extends life.",
+        value: "King of Qi tonification, King of herbs, extremely valuable",
+        icon: "🌿",
+        effects: ["Tonify Qi", "Calm Spirit", "Generate Fluids", "Extend Life"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Superior",
+        natureMeridian: "Sweet, slightly bitter, neutral; enters Spleen and Lung meridians"
+    },
+    {
+        id: 2,
+        name: "Astragalus",
+        category: "Superior",
+        description: "Tonifies qi and raises yang, benefits defensive qi and secures exterior, promotes urination and reduces swelling, generates fluids and nourishes blood, moves qi and invigorates blood.",
+        value: "Essential qi tonification herb, enhances immunity, extends life",
+        icon: "🌱",
+        effects: ["Tonify Qi", "Secure Exterior", "Promote Urination", "Extend Life"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Superior",
+        natureMeridian: "Sweet, slightly warm; enters Lung and Spleen meridians"
+    },
+    {
+        id: 3,
+        name: "Lingzhi",
+        category: "Superior",
+        description: "Tonifies qi and calms spirit, benefits heart qi, tonifies liver qi, benefits lung qi, benefits kidney qi, benefits spleen qi. Long-term use lightens body and prevents aging.",
+        value: "King of immortal herbs, extends life, prevents aging",
+        icon: "🍄",
+        effects: ["Tonify Qi", "Calm Spirit", "Benefit Five Organs", "Extend Life"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Superior",
+        natureMeridian: "Sweet, neutral; enters Heart, Lung, and Kidney meridians"
+    },
+    {
+        id: 4,
+        name: "Polygonum Multiflorum",
+        category: "Superior",
+        description: "Tonifies liver and kidneys, benefits essence and blood, blackens hair, strengthens sinews and bones. Long-term use extends life and prevents aging.",
+        value: "Sacred hair-blackening herb, extends life, prevents aging",
+        icon: "🌿",
+        effects: ["Tonify Liver/Kidney", "Benefit Essence/Blood", "Blacken Hair", "Extend Life"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Superior",
+        natureMeridian: "Bitter, sweet, slightly warm; enters Liver and Kidney meridians"
+    },
+    {
+        id: 5,
+        name: "Goji Berry",
+        category: "Superior",
+        description: "Nourishes liver and kidneys, benefits essence and brightens eyes. Long-term use lightens body and prevents aging.",
+        value: "Excellent eye-brightening herb, health supplement, extends life",
+        icon: "🍒",
+        effects: ["Nourish Liver/Kidney", "Brighten Eyes", "Health Maintenance", "Extend Life"],
+        price: "Cheap",
+        rarity: "Common",
+        grade: "Superior",
+        natureMeridian: "Sweet, neutral; enters Liver and Kidney meridians"
+    },
+    {
+        id: 6,
+        name: "Poria",
+        category: "Superior",
+        description: "Promotes urination and drains dampness, strengthens spleen and calms heart. Long-term use pacifies soul and nourishes spirit, prevents hunger and extends life.",
+        value: "Essential dampness-draining herb, calms spirit and benefits intelligence, extends life",
+        icon: "🍄",
+        effects: ["Promote Urination", "Strengthen Spleen", "Calm Spirit", "Extend Life"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Superior",
+        natureMeridian: "Sweet, bland, neutral; enters Heart, Spleen, and Kidney meridians"
+    },
+    {
+        id: 7,
+        name: "Licorice",
+        category: "Superior",
+        description: "Tonifies spleen and benefits qi, clears heat and resolves toxicity, transforms phlegm and stops cough, relieves urgency and stops pain, harmonizes all herbs.",
+        value: "National Elder, harmonizes all herbs, extends life",
+        icon: "🌿",
+        effects: ["Tonify Spleen", "Benefit Qi", "Harmonize", "Extend Life"],
+        price: "Cheap",
+        rarity: "Common",
+        grade: "Superior",
+        natureMeridian: "Sweet, neutral; enters Heart, Lung, Spleen, and Stomach meridians"
+    },
+    {
+        id: 8,
+        name: "Jujube",
+        category: "Superior",
+        description: "Tonifies middle burner and benefits qi, nourishes blood and calms spirit. Long-term use lightens body and extends life.",
+        value: "Essential blood-nourishing herb, calms spirit and benefits intelligence, extends life",
+        icon: "🍎",
+        effects: ["Tonify Middle", "Benefit Qi", "Nourish Blood", "Extend Life"],
+        price: "Cheap",
+        rarity: "Common",
+        grade: "Superior",
+        natureMeridian: "Sweet, warm; enters Spleen and Stomach meridians"
+    },
+    {
+        id: 9,
+        name: "Chinese Yam",
+        category: "Superior",
+        description: "Tonifies spleen and nourishes stomach, generates fluids and benefits lungs, tonifies kidneys and astringes essence. Long-term use sharpens hearing and vision, lightens body and extends life.",
+        value: "Essential spleen-tonifying herb, benefits intelligence and brightens eyes, extends life",
+        icon: "🍠",
+        effects: ["Tonify Spleen", "Nourish Stomach", "Benefit Intelligence", "Extend Life"],
+        price: "Cheap",
+        rarity: "Common",
+        grade: "Superior",
+        natureMeridian: "Sweet, neutral; enters Spleen, Lung, and Kidney meridians"
+    },
+    {
+        id: 10,
+        name: "Dendrobium",
+        category: "Superior",
+        description: "Benefits stomach and generates fluids, nourishes yin and clears heat. Long-term use thickens intestines and stomach, lightens body and extends life.",
+        value: "Essential yin-nourishing herb, benefits stomach and generates fluids, extends life",
+        icon: "🌿",
+        effects: ["Benefit Stomach", "Generate Fluids", "Nourish Yin", "Extend Life"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Superior",
+        natureMeridian: "Sweet, slightly cold; enters Stomach and Kidney meridians"
+    },
+    {
+        id: 11,
+        name: "Chinese Angelica",
+        category: "Medium",
+        description: "Nourishes blood and invigorates blood, regulates menstruation and stops pain, moistens dryness and lubricates intestines.",
+        value: "Sacred blood-nourishing herb, gynecological remedy, treasure of blood",
+        icon: "🌸",
+        effects: ["Nourish Blood", "Regulate Menstruation", "Invigorate Blood"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, acrid, warm; enters Liver, Heart, and Spleen meridians"
+    },
+    {
+        id: 12,
+        name: "White Peony",
+        category: "Medium",
+        description: "Nourishes blood and regulates menstruation, astringes yin and stops sweating, softens liver and stops pain, pacifies liver yang.",
+        value: "Essential blood-nourishing herb, regulates menstruation and stops pain, softens liver",
+        icon: "🌸",
+        effects: ["Nourish Blood", "Regulate Menstruation", "Soften Liver"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, sour, slightly cold; enters Liver and Spleen meridians"
+    },
+    {
+        id: 13,
+        name: "Prepared Rehmannia",
+        category: "Medium",
+        description: "Nourishes blood and nourishes yin, benefits essence and fills marrow.",
+        value: "Essential blood-nourishing herb, sacred yin-nourishing product, benefits essence",
+        icon: "🌿",
+        effects: ["Nourish Blood", "Nourish Yin", "Benefit Essence"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, slightly warm; enters Liver and Kidney meridians"
+    },
+    {
+        id: 14,
+        name: "Salvia",
+        category: "Medium",
+        description: "Invigorates blood and dispels stasis, unblocks menstruation and stops pain, clears heart and eliminates vexation, cools blood and disperses abscess.",
+        value: "Excellent blood-invigorating herb, cardiovascular remedy",
+        icon: "🌹",
+        effects: ["Invigorate Blood", "Dispel Stasis", "Unblock Menstruation"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, slightly cold; enters Heart and Liver meridians"
+    },
+    {
+        id: 15,
+        name: "Ligusticum",
+        category: "Medium",
+        description: "Invigorates blood and moves qi, dispels wind and stops pain.",
+        value: "Qi within blood herb, headache remedy",
+        icon: "🌿",
+        effects: ["Invigorate Blood", "Move Qi", "Dispel Wind"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, warm; enters Liver, Gallbladder, and Pericardium meridians"
+    },
+    {
+        id: 16,
+        name: "Safflower",
+        category: "Medium",
+        description: "Invigorates blood and dispels stasis, unblocks menstruation and stops pain.",
+        value: "Blood-invigorating herb, gynecological remedy",
+        icon: "🌺",
+        effects: ["Invigorate Blood", "Dispel Stasis", "Unblock Menstruation"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, warm; enters Heart and Liver meridians"
+    },
+    {
+        id: 17,
+        name: "Peach Seed",
+        category: "Medium",
+        description: "Invigorates blood and dispels stasis, moistens intestines and unblocks bowels.",
+        value: "Blood-invigorating herb, intestinal lubricant",
+        icon: "🍑",
+        effects: ["Invigorate Blood", "Dispel Stasis", "Moisten Intestines"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, sweet, neutral; enters Heart, Liver, and Large Intestine meridians"
+    },
+    {
+        id: 18,
+        name: "Honeysuckle",
+        category: "Medium",
+        description: "Clears heat and resolves toxicity, dispels wind and heat.",
+        value: "Heat-clearing and detoxifying herb, wind-heat remedy",
+        icon: "🌸",
+        effects: ["Clear Heat", "Resolve Toxicity", "Dispel Wind"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, cold; enters Lung, Heart, and Stomach meridians"
+    },
+    {
+        id: 19,
+        name: "Isatis Root",
+        category: "Medium",
+        description: "Clears heat and resolves toxicity, cools blood and benefits throat.",
+        value: "Heat-clearing and detoxifying herb, throat remedy",
+        icon: "🌿",
+        effects: ["Clear Heat", "Resolve Toxicity", "Cool Blood"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, cold; enters Heart and Stomach meridians"
+    },
+    {
+        id: 20,
+        name: "Forsythia",
+        category: "Medium",
+        description: "Clears heat and resolves toxicity, dispels wind and heat, disperses abscess and resolves swelling.",
+        value: "Heat-clearing and detoxifying herb, abscess-dispersing remedy",
+        icon: "🌼",
+        effects: ["Clear Heat", "Resolve Toxicity", "Disperse Abscess"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, slightly cold; enters Lung, Heart, and Small Intestine meridians"
+    },
+    {
+        id: 21,
+        name: "Dandelion",
+        category: "Medium",
+        description: "Clears heat and resolves toxicity, promotes urination and disperses abscess.",
+        value: "Heat-clearing and detoxifying herb, abscess-dispersing remedy",
+        icon: "🌼",
+        effects: ["Clear Heat", "Resolve Toxicity", "Promote Urination"],
+        price: "Cheap",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, sweet, cold; enters Liver and Stomach meridians"
+    },
+    {
+        id: 22,
+        name: "Ledebouriella",
+        category: "Medium",
+        description: "Dispels wind and resolves exterior, dispels dampness and stops pain.",
+        value: "Wind-dispelling herb, exterior-resolving remedy",
+        icon: "🌿",
+        effects: ["Dispel Wind", "Resolve Exterior", "Dispel Dampness"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, sweet, slightly warm; enters Bladder, Liver, and Spleen meridians"
+    },
+    {
+        id: 23,
+        name: "Gastrodia",
+        category: "Medium",
+        description: "Extinguishes wind and stops convulsions, pacifies liver and subdues yang.",
+        value: "Wind-extinguishing herb, convulsion-stopping remedy",
+        icon: "🌿",
+        effects: ["Extinguish Wind", "Stop Convulsions", "Pacify Liver"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Medium",
+        natureMeridian: "Sweet, neutral; enters Liver meridian"
+    },
+    {
+        id: 24,
+        name: "Uncaria",
+        category: "Medium",
+        description: "Extinguishes wind and stops convulsions, clears heat and pacifies liver.",
+        value: "Wind-extinguishing herb, liver-pacifying remedy",
+        icon: "🌿",
+        effects: ["Extinguish Wind", "Stop Convulsions", "Clear Heat"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, slightly cold; enters Liver and Pericardium meridians"
+    },
+    {
+        id: 25,
+        name: "Pinellia",
+        category: "Medium",
+        description: "Dries dampness and transforms phlegm, descends qi and stops vomiting, disperses masses and resolves swelling.",
+        value: "Phlegm-transforming herb, qi-descending remedy",
+        icon: "🌿",
+        effects: ["Dry Dampness", "Transform Phlegm", "Descend Qi"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, warm, toxic; enters Spleen, Stomach, and Lung meridians"
+    },
+    {
+        id: 26,
+        name: "Tangerine Peel",
+        category: "Medium",
+        description: "Regulates qi and transforms phlegm, dries dampness and harmonizes middle burner.",
+        value: "Qi-regulating herb, phlegm-transforming remedy",
+        icon: "🍊",
+        effects: ["Regulate Qi", "Transform Phlegm", "Dry Dampness"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, bitter, warm; enters Spleen and Lung meridians"
+    },
+    {
+        id: 27,
+        name: "Immature Bitter Orange",
+        category: "Medium",
+        description: "Breaks qi and disperses masses, transforms phlegm and resolves swelling.",
+        value: "Qi-breaking herb, mass-dispersing remedy",
+        icon: "🍊",
+        effects: ["Break Qi", "Disperse Masses", "Transform Phlegm"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, bitter, slightly cold; enters Spleen and Stomach meridians"
+    },
+    {
+        id: 28,
+        name: "Magnolia Bark",
+        category: "Medium",
+        description: "Dries dampness and transforms phlegm, descends qi and resolves fullness.",
+        value: "Dampness-drying herb, qi-descending remedy",
+        icon: "🌿",
+        effects: ["Dry Dampness", "Transform Phlegm", "Descend Qi"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, acrid, warm; enters Spleen, Stomach, and Lung meridians"
+    },
+    {
+        id: 29,
+        name: "Amomum",
+        category: "Medium",
+        description: "Transforms dampness and opens stomach, warms spleen and stops diarrhea, regulates qi and calms fetus.",
+        value: "Dampness-transforming herb, stomach-opening remedy",
+        icon: "🌿",
+        effects: ["Transform Dampness", "Open Stomach", "Warm Spleen"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, warm; enters Spleen and Stomach meridians"
+    },
+    {
+        id: 30,
+        name: "White Cardamom",
+        category: "Medium",
+        description: "Transforms dampness and opens stomach, warms spleen and stops vomiting, regulates qi and calms fetus.",
+        value: "Dampness-transforming herb, stomach-opening remedy",
+        icon: "🌿",
+        effects: ["Transform Dampness", "Open Stomach", "Warm Spleen"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Acrid, warm; enters Spleen and Stomach meridians"
+    },
+    {
+        id: 31,
+        name: "Red Peony",
+        category: "Medium",
+        description: "Clears heat and cools blood, dispels stasis and stops pain.",
+        value: "Heat-clearing herb, blood-cooling remedy",
+        icon: "🌸",
+        effects: ["Clear Heat", "Cool Blood", "Dispel Stasis"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, slightly cold; enters Liver and Spleen meridians"
+    },
+    {
+        id: 32,
+        name: "Fresh Rehmannia",
+        category: "Medium",
+        description: "Clears heat and cools blood, nourishes yin and generates fluids.",
+        value: "Heat-clearing herb, yin-nourishing remedy",
+        icon: "🌿",
+        effects: ["Clear Heat", "Cool Blood", "Nourish Yin"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, bitter, cold; enters Heart, Liver, and Kidney meridians"
+    },
+    {
+        id: 33,
+        name: "Scrophularia",
+        category: "Medium",
+        description: "Clears heat and cools blood, nourishes yin and resolves toxicity.",
+        value: "Heat-clearing herb, yin-nourishing remedy",
+        icon: "🌿",
+        effects: ["Clear Heat", "Cool Blood", "Nourish Yin"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, bitter, cold; enters Lung, Stomach, and Kidney meridians"
+    },
+    {
+        id: 34,
+        name: "Tree Peony Bark",
+        category: "Medium",
+        description: "Clears heat and cools blood, dispels stasis and regulates menstruation.",
+        value: "Heat-clearing herb, blood-cooling remedy",
+        icon: "🌸",
+        effects: ["Clear Heat", "Cool Blood", "Dispel Stasis"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Bitter, acrid, slightly cold; enters Heart, Liver, and Kidney meridians"
+    },
+    {
+        id: 35,
+        name: "Lithospermum",
+        category: "Medium",
+        description: "Clears heat and cools blood, resolves toxicity and promotes eruption.",
+        value: "Heat-clearing herb, blood-cooling remedy",
+        icon: "🌿",
+        effects: ["Clear Heat", "Cool Blood", "Resolve Toxicity"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, cold; enters Heart and Liver meridians"
+    },
+    {
+        id: 36,
+        name: "Water Buffalo Horn",
+        category: "Medium",
+        description: "Clears heat and cools blood, resolves toxicity and calms spirit.",
+        value: "Heat-clearing herb, blood-cooling remedy",
+        icon: "🦄",
+        effects: ["Clear Heat", "Cool Blood", "Resolve Toxicity"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Medium",
+        natureMeridian: "Bitter, cold; enters Heart and Liver meridians"
+    },
+    {
+        id: 37,
+        name: "Bezoar",
+        category: "Medium",
+        description: "Clears heat and resolves toxicity, calms spirit and opens orifices.",
+        value: "Heat-clearing herb, spirit-calming remedy",
+        icon: "💎",
+        effects: ["Clear Heat", "Resolve Toxicity", "Calm Spirit"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Medium",
+        natureMeridian: "Bitter, cold; enters Heart and Liver meridians"
+    },
+    {
+        id: 38,
+        name: "Pearl",
+        category: "Medium",
+        description: "Calms spirit and brightens eyes, clears heat and resolves toxicity.",
+        value: "Spirit-calming herb, eye-brightening remedy",
+        icon: "💎",
+        effects: ["Calm Spirit", "Brighten Eyes", "Clear Heat"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Medium",
+        natureMeridian: "Sweet, salty, cold; enters Heart and Liver meridians"
+    },
+    {
+        id: 39,
+        name: "Dragon Bone",
+        category: "Medium",
+        description: "Calms spirit and pacifies liver, astringes and stops sweating.",
+        value: "Spirit-calming herb, liver-pacifying remedy",
+        icon: "🦴",
+        effects: ["Calm Spirit", "Pacify Liver", "Astringe"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Sweet, astringent, neutral; enters Heart, Liver, and Kidney meridians"
+    },
+    {
+        id: 40,
+        name: "Oyster Shell",
+        category: "Medium",
+        description: "Calms spirit and pacifies liver, astringes and stops sweating.",
+        value: "Spirit-calming herb, liver-pacifying remedy",
+        icon: "🦪",
+        effects: ["Calm Spirit", "Pacify Liver", "Astringe"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Medium",
+        natureMeridian: "Salty, astringent, cold; enters Liver and Kidney meridians"
+    },
+    {
+        id: 41,
+        name: "Rhubarb",
+        category: "Inferior",
+        description: "Purges heat and resolves toxicity, invigorates blood and dispels stasis, promotes defecation and unblocks bowels.",
+        value: "Heat-purging herb, blood-invigorating remedy",
+        icon: "🌿",
+        effects: ["Purge Heat", "Resolve Toxicity", "Invigorate Blood"],
+        price: "Medium",
+        rarity: "Common",
+        grade: "Inferior",
+        natureMeridian: "Bitter, cold; enters Spleen, Stomach, Large Intestine, Liver, and Pericardium meridians"
+    },
+    {
+        id: 42,
+        name: "Mirabilite",
+        category: "Inferior",
+        description: "Purges heat and softens hardness, moistens dryness and unblocks bowels.",
+        value: "Heat-purging herb, hardness-softening remedy",
+        icon: "💎",
+        effects: ["Purge Heat", "Soften Hardness", "Moisten Dryness"],
+        price: "Cheap",
+        rarity: "Common",
+        grade: "Inferior",
+        natureMeridian: "Salty, bitter, cold; enters Stomach and Large Intestine meridians"
+    },
+    {
+        id: 43,
+        name: "Kansui",
+        category: "Inferior",
+        description: "Purges water and disperses swelling, resolves toxicity and disperses abscess.",
+        value: "Water-purging herb, swelling-dispersing remedy",
+        icon: "🌿",
+        effects: ["Purge Water", "Disperse Swelling", "Resolve Toxicity"],
+        price: "Medium",
+        rarity: "Rare",
+        grade: "Inferior",
+        natureMeridian: "Bitter, cold, toxic; enters Lung, Kidney, and Large Intestine meridians"
+    },
+    {
+        id: 44,
+        name: "Croton",
+        category: "Inferior",
+        description: "Purges cold and accumulates, resolves toxicity and kills parasites.",
+        value: "Cold-purging herb, accumulation-resolving remedy",
+        icon: "🌿",
+        effects: ["Purge Cold", "Resolve Accumulation", "Kill Parasites"],
+        price: "Medium",
+        rarity: "Rare",
+        grade: "Inferior",
+        natureMeridian: "Acrid, hot, toxic; enters Stomach and Large Intestine meridians"
+    },
+    {
+        id: 45,
+        name: "Morning Glory",
+        category: "Inferior",
+        description: "Purges water and disperses swelling, kills parasites and resolves accumulation.",
+        value: "Water-purging herb, swelling-dispersing remedy",
+        icon: "🌸",
+        effects: ["Purge Water", "Disperse Swelling", "Kill Parasites"],
+        price: "Cheap",
+        rarity: "Common",
+        grade: "Inferior",
+        natureMeridian: "Bitter, cold, toxic; enters Lung, Kidney, and Large Intestine meridians"
+    },
+    {
+        id: 46,
+        name: "Genkwa",
+        category: "Inferior",
+        description: "Purges water and disperses swelling, resolves toxicity and kills parasites.",
+        value: "Water-purging herb, swelling-dispersing remedy",
+        icon: "🌸",
+        effects: ["Purge Water", "Disperse Swelling", "Resolve Toxicity"],
+        price: "Medium",
+        rarity: "Rare",
+        grade: "Inferior",
+        natureMeridian: "Acrid, bitter, warm, toxic; enters Lung, Kidney, and Large Intestine meridians"
+    },
+    {
+        id: 47,
+        name: "Knoxia",
+        category: "Inferior",
+        description: "Purges water and disperses swelling, resolves toxicity and disperses abscess.",
+        value: "Water-purging herb, swelling-dispersing remedy",
+        icon: "🌿",
+        effects: ["Purge Water", "Disperse Swelling", "Resolve Toxicity"],
+        price: "Medium",
+        rarity: "Rare",
+        grade: "Inferior",
+        natureMeridian: "Bitter, cold, toxic; enters Lung, Kidney, and Large Intestine meridians"
+    },
+    {
+        id: 48,
+        name: "Phytolacca",
+        category: "Inferior",
+        description: "Purges water and disperses swelling, resolves toxicity and disperses abscess.",
+        value: "Water-purging herb, swelling-dispersing remedy",
+        icon: "🌿",
+        effects: ["Purge Water", "Disperse Swelling", "Resolve Toxicity"],
+        price: "Medium",
+        rarity: "Rare",
+        grade: "Inferior",
+        natureMeridian: "Bitter, cold, toxic; enters Lung, Kidney, and Large Intestine meridians"
+    },
+    {
+        id: 49,
+        name: "Aconite",
+        category: "Inferior",
+        description: "Returns yang and rescues collapse, dispels wind and cold, warms channels and stops pain.",
+        value: "Yang-returning herb, collapse-rescuing remedy",
+        icon: "🌿",
+        effects: ["Return Yang", "Rescue Collapse", "Dispel Wind"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Inferior",
+        natureMeridian: "Acrid, sweet, hot, toxic; enters Heart, Kidney, and Spleen meridians"
+    },
+    {
+        id: 50,
+        name: "Arsenic",
+        category: "Inferior",
+        description: "Resolves toxicity and kills parasites, transforms phlegm and stops asthma.",
+        value: "Toxicity-resolving herb, parasite-killing remedy",
+        icon: "💎",
+        effects: ["Resolve Toxicity", "Kill Parasites", "Transform Phlegm"],
+        price: "Expensive",
+        rarity: "Rare",
+        grade: "Inferior",
+        natureMeridian: "Acrid, hot, toxic; enters Lung and Large Intestine meridians"
+    }
+];
+
+// 更新本草数据函数
+function updateHerbsData() {
+    if (currentLanguage === 'en') {
+        // 使用英文数据
+        filteredHerbs = [...herbsDataEn];
+    } else {
+        // 使用中文数据
+        filteredHerbs = [...herbsData];
+    }
+}
+
+// 初始化语言切换按钮
+function initializeLanguageToggle() {
+    const languageToggle = document.getElementById('languageToggle');
+    if (languageToggle) {
+        languageToggle.addEventListener('click', toggleLanguage);
+    }
+}
 
 // 页面滚动效果
 window.addEventListener('scroll', () => {
