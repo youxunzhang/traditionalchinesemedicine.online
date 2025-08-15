@@ -74,7 +74,10 @@
                         <div class="timer-time" id="timerDisplay">
                             <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
                         </div>
-                        <div class="timer-progress" id="timerProgress"></div>
+                        <svg class="timer-progress" id="timerProgress" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#e0e0e0" stroke-width="8"/>
+                            <circle cx="50" cy="50" r="45" fill="none" stroke="#4CAF50" stroke-width="8" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="283"/>
+                        </svg>
                     </div>
                 </div>
 
@@ -292,8 +295,10 @@
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
                 // 更新进度条
-                const progress = this.totalTime > 0 ? (remainingTime / this.totalTime) * 100 : 100;
-                document.getElementById('timerProgress').style.strokeDashoffset = 440 - (440 * progress) / 100;
+                const progress = this.totalTime > 0 ? (remainingTime / this.totalTime) : 1;
+                const circumference = 2 * Math.PI * 45; // 圆的周长
+                const offset = circumference - (progress * circumference);
+                document.querySelector('#timerProgress circle:last-child').style.strokeDashoffset = offset;
 
                 // 检查是否时间到
                 if (remainingTime <= 0 && this.isRunning) {
@@ -376,6 +381,11 @@
 
         // 初始化显示
         updateTimerFromInputs();
+        
+        // 初始化进度条
+        const circumference = 2 * Math.PI * 45;
+        document.querySelector('#timerProgress circle:last-child').style.strokeDasharray = circumference;
+        document.querySelector('#timerProgress circle:last-child').style.strokeDashoffset = circumference;
     </script>
 </body>
 </html>
