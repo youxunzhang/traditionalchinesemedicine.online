@@ -1,0 +1,23 @@
+{
+    "name": "倪海厦中医诊所",
+    "short_name": "倪海厦中医",
+    "description": "传承倪海厦汉唐经方精髓，提供专业中医治疗、经方治病、中医咨询服务",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#4CAF50",
+    "theme_color": "#4CAF50",
+    "icons": [
+        {
+            "src": "https://via.placeholder.com/192x192/4CAF50/FFFFFF?text=倪",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "https://via.placeholder.com/512x512/4CAF50/FFFFFF?text=倪",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["health", "medical", "education"],
+    "lang": "zh-CN"
+}
