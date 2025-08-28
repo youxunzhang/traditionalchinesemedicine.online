@@ -897,6 +897,8 @@ body {
     font-size: 2.5rem;
     color: #4CAF50;
     margin-bottom: 1rem;
+    width: 40px;
+    text-align: center;
 }
 
 .contact-item h3 {
@@ -958,6 +960,14 @@ body {
 
 .footer-section li {
     margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-section li i {
+    color: #4CAF50;
+    width: 16px;
 }
 
 .footer-section a {
