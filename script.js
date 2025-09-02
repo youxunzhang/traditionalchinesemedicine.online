@@ -377,6 +377,9 @@ window.addEventListener('load', function() {
     setTimeout(() => {
         document.body.style.opacity = '1';
     }, 100);
+    
+    // 初始化收藏功能
+    initBookmark();
 });
 
 // 错误处理
@@ -392,6 +395,47 @@ if ('performance' in window) {
             console.log('页面加载时间:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
         }, 0);
     });
+}
+
+// 收藏功能
+function initBookmark() {
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    if (!bookmarkBtn) return;
+    
+    // 检查是否已收藏
+    const isBookmarked = localStorage.getItem('bookmarked_' + window.location.pathname);
+    updateBookmarkButton(isBookmarked === 'true');
+    
+    bookmarkBtn.addEventListener('click', function() {
+        const currentPath = window.location.pathname;
+        const bookmarkKey = 'bookmarked_' + currentPath;
+        const isCurrentlyBookmarked = localStorage.getItem(bookmarkKey) === 'true';
+        
+        if (isCurrentlyBookmarked) {
+            // 取消收藏
+            localStorage.removeItem(bookmarkKey);
+            updateBookmarkButton(false);
+            showNotification('已取消收藏', 'success');
+        } else {
+            // 添加收藏
+            localStorage.setItem(bookmarkKey, 'true');
+            updateBookmarkButton(true);
+            showNotification('已添加到收藏', 'success');
+        }
+    });
+}
+
+function updateBookmarkButton(isBookmarked) {
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    if (!bookmarkBtn) return;
+    
+    if (isBookmarked) {
+        bookmarkBtn.innerHTML = '<i class="fas fa-bookmark"></i><span>已收藏</span>';
+        bookmarkBtn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a52)';
+    } else {
+        bookmarkBtn.innerHTML = '<i class="fas fa-bookmark"></i><span>收藏</span>';
+        bookmarkBtn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+    }
 }
 
 // 注册Service Worker

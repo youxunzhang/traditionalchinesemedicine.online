@@ -27,6 +27,8 @@
     
     <!-- Google AdSense -->
     <meta name="google-adsense-account" content="ca-pub-8794607118520437">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
+         crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -86,12 +88,19 @@
                 <li class="nav-item"><a href="#ni-haixia" class="nav-link">倪海厦</a></li>
                 <li class="nav-item"><a href="#services" class="nav-link">经方治疗</a></li>
                 <li class="nav-item"><a href="#courses" class="nav-link">中医课程</a></li>
+                <li class="nav-item"><a href="#books" class="nav-link">好书推荐</a></li>
                 <li class="nav-item"><a href="#treatments" class="nav-link">疾病治疗</a></li>
                 <li class="nav-item"><a href="#consultation" class="nav-link">在线咨询</a></li>
                 <li class="nav-item"><a href="#about" class="nav-link">关于我们</a></li>
                 <li class="nav-item"><a href="#contact" class="nav-link">联系我们</a></li>
                 <li class="nav-item"><a href="postal-codes.html" class="nav-link">邮编查询</a></li>
             </ul>
+            <div class="nav-actions">
+                <button class="bookmark-btn" id="bookmarkBtn" title="收藏页面">
+                    <i class="fas fa-bookmark"></i>
+                    <span>收藏</span>
+                </button>
+            </div>
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -304,6 +313,7 @@
                         <li><a href="#contact">联系我们</a></li>
                         <li><a href="#faq">常见问题</a></li>
                         <li><a href="#treatments">治疗方案</a></li>
+                        <li><a href="#books">好书推荐</a></li>
                         <li><a href="postal-codes.html">邮编查询</a></li>
                     </ul>
                 </div>
@@ -613,6 +623,186 @@
                 <h3>开始您的倪海厦中医学习之旅</h3>
                 <p>系统学习倪师中医理论，掌握经方治病精髓，成为真正的经方家</p>
                 <a href="#consultation" class="btn btn-primary">立即报名</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 中医好书推荐 -->
+    <section id="books" class="books-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">中医好书推荐</h2>
+                <p class="section-subtitle">传承千年中医智慧，精选经典中医典籍和现代中医著作</p>
+            </div>
+            
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=center" alt="黄帝内经" loading="lazy">
+                        <div class="book-overlay">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">黄帝内经</h3>
+                        <p class="book-author">上古医家</p>
+                        <p class="book-description">中医理论的奠基之作，阐述阴阳五行、脏腑经络、病因病机等核心理论，是学习中医的必读经典。</p>
+                        <div class="book-tags">
+                            <span class="tag">中医理论</span>
+                            <span class="tag">经典著作</span>
+                            <span class="tag">必读</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=400&fit=crop&crop=center" alt="伤寒论" loading="lazy">
+                        <div class="book-overlay">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">伤寒论</h3>
+                        <p class="book-author">张仲景</p>
+                        <p class="book-description">经方医学的经典著作，系统阐述外感病的辨证论治，创立六经辨证体系，是临床实践的重要指导。</p>
+                        <div class="book-tags">
+                            <span class="tag">经方医学</span>
+                            <span class="tag">六经辨证</span>
+                            <span class="tag">临床指导</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=400&fit=crop&crop=center" alt="金匮要略" loading="lazy">
+                        <div class="book-overlay">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">金匮要略</h3>
+                        <p class="book-author">张仲景</p>
+                        <p class="book-description">与《伤寒论》并称为《伤寒杂病论》，专门论述内科杂病的辨证论治，是经方医学的重要组成部分。</p>
+                        <div class="book-tags">
+                            <span class="tag">内科杂病</span>
+                            <span class="tag">经方医学</span>
+                            <span class="tag">辨证论治</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=300&h=400&fit=crop&crop=center" alt="神农本草经" loading="lazy">
+                        <div class="book-overlay">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">神农本草经</h3>
+                        <p class="book-author">上古医家</p>
+                        <p class="book-description">中国最早的药物学专著，记载了365种药物的性味、功效、主治，为中药学的发展奠定了坚实基础。</p>
+                        <div class="book-tags">
+                            <span class="tag">药物学</span>
+                            <span class="tag">中药基础</span>
+                            <span class="tag">经典著作</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=400&fit=crop&crop=center" alt="针灸大成" loading="lazy">
+                        <div class="book-overlay">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">针灸大成</h3>
+                        <p class="book-author">杨继洲</p>
+                        <p class="book-description">明代针灸学集大成之作，系统总结针灸理论和技术，是学习针灸的重要参考书籍。</p>
+                        <div class="book-tags">
+                            <span class="tag">针灸学</span>
+                            <span class="tag">经络穴位</span>
+                            <span class="tag">技术指导</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=400&fit=crop&crop=center" alt="倪海厦人纪" loading="lazy">
+                        <div class="book-overlay">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">倪海厦人纪</h3>
+                        <p class="book-author">倪海厦</p>
+                        <p class="book-description">倪师经典著作，系统阐述中医理论和临床实践，融合传统与现代，是学习倪海厦中医思想的重要资料。</p>
+                        <div class="book-tags">
+                            <span class="tag">倪海厦</span>
+                            <span class="tag">中医理论</span>
+                            <span class="tag">临床实践</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5.0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="books-cta">
+                <h3>探索更多中医经典</h3>
+                <p>从经典著作中汲取智慧，在临床实践中提升技能</p>
+                <a href="#courses" class="cta-btn">开始学习</a>
             </div>
         </div>
     </section>
