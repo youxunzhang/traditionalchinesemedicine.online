@@ -1297,3 +1297,273 @@ body {
         margin: 0 10px;
     }
 }
+/* 神农本草经页面 */
+.herb-archive-page {
+    background: #f7f8f3;
+}
+
+.hero-herb {
+    background: linear-gradient(120deg, rgba(34, 139, 34, 0.85), rgba(76, 175, 80, 0.85)), url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1600&auto=format&fit=crop&q=80') center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 140px 20px 100px;
+}
+
+.hero-herb .page-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero-herb .page-subtitle {
+    font-size: 1.2rem;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.herb-controls {
+    padding: 40px 0;
+}
+
+.control-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: end;
+}
+
+.control-group label,
+.control-label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+    color: #1b5e20;
+}
+
+.control-group input[type="search"] {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #c8d6c3;
+    background: #fff;
+    font-size: 1rem;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.control-group input[type="search"]:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.grade-tabs {
+    display: inline-flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.grade-tab {
+    padding: 10px 18px;
+    border-radius: 999px;
+    border: 1px solid #a5d6a7;
+    background: #fff;
+    color: #2e7d32;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.grade-tab:hover {
+    transform: translateY(-1px);
+}
+
+.grade-tab.active {
+    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.25);
+}
+
+.control-hint {
+    margin-top: 18px;
+    color: #5f6f52;
+    font-size: 0.95rem;
+}
+
+.herb-list-section {
+    padding: 20px 0 80px;
+}
+
+.herb-stats {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.08), rgba(46, 125, 50, 0.12));
+    z-index: -1;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #4f5b48;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2e7d32;
+    display: block;
+    margin-top: 8px;
+}
+
+.stat-sub {
+    font-size: 0.85rem;
+    color: #7a8b70;
+}
+
+.herb-list {
+    display: grid;
+    gap: 24px;
+}
+
+.herb-entry {
+    background: #fff;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(76, 175, 80, 0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.herb-entry:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+.herb-entry__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    gap: 16px;
+}
+
+.herb-entry__grade {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(76, 175, 80, 0.12);
+    color: #2e7d32;
+}
+
+.herb-entry__name {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: #1b4332;
+}
+
+.herb-entry__id {
+    font-family: 'Fira Code', monospace;
+    background: #1b4332;
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
+}
+
+.herb-entry__meta {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-bottom: 16px;
+}
+
+.herb-entry__meta dt {
+    font-weight: 700;
+    color: #2e7d32;
+    margin-bottom: 6px;
+}
+
+.herb-entry__meta dd {
+    margin: 0;
+    color: #4f5b48;
+    line-height: 1.7;
+}
+
+.herb-entry__source {
+    border: 1px solid rgba(76, 175, 80, 0.2);
+    border-radius: 12px;
+    padding: 14px 18px;
+    background: rgba(76, 175, 80, 0.05);
+}
+
+.herb-entry__source summary {
+    font-weight: 600;
+    cursor: pointer;
+    color: #2e7d32;
+}
+
+.herb-entry__source p {
+    margin-top: 12px;
+    color: #3d4d39;
+    line-height: 1.8;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #5f6f52;
+    font-size: 1.1rem;
+    background: rgba(76, 175, 80, 0.08);
+    border-radius: 18px;
+}
+
+.page-footer {
+    background: linear-gradient(135deg, #1b4332, #2e7d32);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.page-footer .footer-note {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+@media (max-width: 768px) {
+    .hero-herb {
+        padding: 120px 16px 80px;
+    }
+
+    .hero-herb .page-title {
+        font-size: 2.2rem;
+    }
+
+    .herb-entry {
+        padding: 20px;
+    }
+
+    .herb-entry__meta {
+        grid-template-columns: 1fr;
+    }
+}
