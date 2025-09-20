@@ -228,7 +228,7 @@ function initAnimations() {
     }, observerOptions);
     
     // 观察需要动画的元素
-    const animatedElements = document.querySelectorAll('.service-card, .herb-card, .treatment-card, .info-card, .local-card, .stat-item');
+    const animatedElements = document.querySelectorAll('.service-card, .herb-card, .treatment-card, .info-card, .local-card, .stat-item, .book-card, .faq-item');
     
     animatedElements.forEach(element => {
         element.style.opacity = '0';

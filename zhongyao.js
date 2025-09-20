@@ -123,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const info = parseEntry(item.classicalText);
             const card = document.createElement('article');
             card.className = 'herb-entry';
+            card.dataset.grade = item.grade;
             card.innerHTML = `
                 <header class="herb-entry__header">
                     <div>

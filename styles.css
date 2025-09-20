@@ -226,6 +226,19 @@ body {
     margin: 0 auto;
 }
 
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    background: rgba(76, 175, 80, 0.12);
+    color: #2e7d32;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+
 /* 倪海厦介绍样式 */
 .ni-haixia-section {
     padding: 80px 0;
@@ -477,95 +490,315 @@ body {
     font-weight: bold;
 }
 
-/* 中药材展示 */
-.herbs-section {
-    padding: 5rem 0;
-    background: #f8f9fa;
+/* 神农本草（首页） */
+.shennong-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #f3f7f1 0%, #ffffff 100%);
 }
 
-.category-tabs {
+.shennong-section .section-title {
+    font-size: 2.8rem;
+    letter-spacing: 0.05em;
+}
+
+.shennong-section .section-subtitle {
+    max-width: 720px;
+    color: #4f5b48;
+}
+
+.herb-toolbar {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3rem;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.6rem 2rem;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(76, 175, 80, 0.08);
+    border: 1px solid rgba(76, 175, 80, 0.12);
 }
 
-.tab-btn {
-    padding: 10px 20px;
-    border: 2px solid #4CAF50;
-    background: transparent;
+.herb-search {
+    flex: 1;
+    min-width: 260px;
+}
+
+.herb-search label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 0.6rem;
+}
+
+.herb-search label i {
     color: #4CAF50;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: 500;
 }
 
-.tab-btn.active,
-.tab-btn:hover {
-    background: #4CAF50;
-    color: white;
+.herb-search input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #c8d6c3;
+    background: #fff;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.herb-search input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.herb-counter {
+    font-weight: 600;
+    color: #506046;
+    font-size: 1rem;
 }
 
 .herbs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .herb-card {
-    background: white;
-    border-radius: 15px;
+    background: #fff;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 18px 45px rgba(34, 139, 34, 0.08);
+    border: 1px solid rgba(76, 175, 80, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
 }
 
 .herb-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 26px 55px rgba(34, 139, 34, 0.12);
+}
+
+.herb-card__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .herb-image {
-    height: 200px;
+    position: relative;
+    padding-top: 58%;
     overflow: hidden;
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.12), rgba(46, 125, 50, 0.12));
 }
 
 .herb-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.herb-info {
-    padding: 1.5rem;
+.herb-image--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.herb-info h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #2c3e50;
+.herb-image__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    color: rgba(76, 175, 80, 0.45);
 }
 
-.herb-description {
-    color: #666;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.herb-properties {
+.herb-card__content {
+    padding: 1.8rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    flex: 1;
 }
 
-.property {
-    background: #f8f9fa;
-    padding: 0.5rem 1rem;
+.herb-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.herb-name {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #1b4332;
+}
+
+.herb-grade {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    background: rgba(76, 175, 80, 0.12);
+    color: #2e7d32;
+}
+
+.herb-grade--middle {
+    background: rgba(255, 152, 0, 0.16);
+    color: #d26900;
+}
+
+.herb-grade--lower {
+    background: rgba(229, 57, 53, 0.16);
+    color: #c62828;
+}
+
+.herb-card__summary {
+    margin: 0;
+    color: #425340;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.herb-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.8rem;
+}
+
+.herb-meta dt {
+    font-weight: 700;
+    color: #2e7d32;
+    margin-bottom: 0.25rem;
+}
+
+.herb-meta dd {
+    margin: 0;
+    color: #4f5b48;
+    line-height: 1.5;
+}
+
+.herb-card__extra {
+    margin: 0;
+    color: #2e7d32;
+    font-size: 0.95rem;
+    background: rgba(76, 175, 80, 0.08);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+}
+
+.herb-classic {
+    margin: 0;
+    color: #5d6656;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    border-top: 1px dashed rgba(76, 175, 80, 0.18);
+    padding-top: 1rem;
+}
+
+.herb-empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: rgba(76, 175, 80, 0.08);
     border-radius: 20px;
-    font-size: 0.9rem;
-    color: #555;
+    color: #506046;
+    font-weight: 500;
+}
+
+.herb-pagination {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+}
+
+.herb-pagination button {
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    background: #fff;
+    color: #2e7d32;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.herb-pagination button:hover:not(:disabled) {
+    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.herb-pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.herb-pagination button.is-active {
+    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 12px 25px rgba(76, 175, 80, 0.25);
+}
+
+.herb-pagination.is-hidden {
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .herb-toolbar {
+        padding: 1.25rem 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .shennong-section {
+        padding: 80px 0;
+    }
+
+    .shennong-section .section-title {
+        font-size: 2.2rem;
+    }
+
+    .herb-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .herb-counter {
+        width: 100%;
+        text-align: left;
+    }
+
+    .herb-card__content {
+        padding: 1.5rem;
+    }
+
+    .herb-card__header {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .herb-pagination {
+        gap: 0.4rem;
+    }
+
+    .herb-pagination button {
+        padding: 0.5rem 0.9rem;
+    }
 }
 
 /* 治疗方案 */
@@ -797,45 +1030,59 @@ body {
 
 /* FAQ */
 .faq-section {
-    padding: 5rem 0;
-    background: #f8f9fa;
+    padding: 90px 0;
+    background: linear-gradient(180deg, #f5f8f2 0%, #ffffff 100%);
 }
 
 .faq-content {
-    max-width: 800px;
+    max-width: 880px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
 }
 
 .faq-item {
-    background: white;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(76, 175, 80, 0.12);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.12);
 }
 
 .faq-question {
-    padding: 1.5rem;
+    padding: 1.5rem 1.75rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     transition: background-color 0.3s ease;
 }
 
 .faq-question:hover {
-    background-color: #f8f9fa;
+    background-color: rgba(76, 175, 80, 0.08);
 }
 
 .faq-question h3 {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #2c3e50;
+    color: #1b4332;
 }
 
 .faq-question i {
-    color: #4CAF50;
+    color: #2e7d32;
     transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+    background-color: rgba(76, 175, 80, 0.12);
 }
 
 .faq-item.active .faq-question i {
@@ -843,9 +1090,10 @@ body {
 }
 
 .faq-answer {
-    padding: 0 1.5rem 1.5rem;
-    color: #666;
-    line-height: 1.6;
+    padding: 0 1.75rem 1.75rem;
+    color: #4f5b48;
+    line-height: 1.7;
+    background: rgba(76, 175, 80, 0.05);
     display: none;
 }
 
@@ -1040,172 +1288,92 @@ body {
 
 /* 中医好书推荐样式 */
 .books-section {
-    padding: 80px 0;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 90px 0;
+    background: #ffffff;
 }
 
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
 }
 
 .book-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.6rem;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #ffffff 0%, #f7faf3 100%);
+    border: 1px solid rgba(76, 175, 80, 0.08);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .book-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.12);
 }
 
-.book-cover {
+.book-card--no-cover {
+    background: #fff;
+    border: 1px dashed rgba(76, 175, 80, 0.2);
+    box-shadow: none;
+}
+
+.book-media {
     position: relative;
-    height: 280px;
+    width: 100%;
+    border-radius: 14px;
     overflow: hidden;
+    padding-top: 130%;
+    background: #f0f4ef;
 }
 
-.book-cover img {
+.book-media img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.book-card:hover .book-cover img {
-    transform: scale(1.05);
-}
-
-.book-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(76, 175, 80, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.book-card:hover .book-overlay {
-    opacity: 1;
-}
-
-.book-overlay i {
-    color: white;
-    font-size: 3rem;
+.book-card:hover .book-media img {
+    transform: scale(1.04);
 }
 
 .book-info {
-    padding: 25px;
-    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 0.6rem;
 }
 
 .book-title {
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     font-weight: 700;
-    color: #333;
-    margin-bottom: 8px;
-    line-height: 1.3;
+    color: #1b4332;
+    line-height: 1.4;
 }
 
-.book-author {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 15px;
-    font-style: italic;
+.book-meta {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2e7d32;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .book-description {
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex: 1;
+    color: #4f5b48;
+    line-height: 1.7;
+    font-size: 0.98rem;
 }
 
-.book-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.book-tags .tag {
-    background: #e8f5e8;
-    color: #2e7d32;
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-}
-
-.book-rating {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: auto;
-}
-
-.book-rating i {
-    color: #ffc107;
-    font-size: 1rem;
-}
-
-.book-rating span {
-    color: #666;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.books-cta {
-    text-align: center;
-    margin-top: 60px;
-    padding: 40px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.books-cta h3 {
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.books-cta p {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-.cta-btn {
-    display: inline-block;
-    padding: 15px 40px;
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-}
-
-.cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+.book-card--no-cover .book-info {
+    padding: 0.5rem 0;
 }
 
 /* 响应式设计 */
@@ -1303,7 +1471,7 @@ body {
 }
 
 .hero-herb {
-    background: linear-gradient(120deg, rgba(34, 139, 34, 0.85), rgba(76, 175, 80, 0.85)), url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1600&auto=format&fit=crop&q=80') center/cover;
+    background: linear-gradient(120deg, rgba(32, 114, 46, 0.82), rgba(66, 160, 72, 0.82)), url('https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=1600&auto=format&fit=crop&q=80') center/cover;
     color: #fff;
     text-align: center;
     padding: 140px 20px 100px;
@@ -1322,7 +1490,15 @@ body {
 }
 
 .herb-controls {
-    padding: 40px 0;
+    padding: 42px 0 28px;
+    background: linear-gradient(180deg, rgba(241, 245, 238, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.herb-controls .container {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(27, 67, 50, 0.15);
+    padding: 2.4rem 2.2rem;
 }
 
 .control-grid {
@@ -1386,7 +1562,7 @@ body {
 
 .control-hint {
     margin-top: 18px;
-    color: #5f6f52;
+    color: #4f5b48;
     font-size: 0.95rem;
 }
 
@@ -1443,16 +1619,29 @@ body {
 
 .herb-entry {
     background: #fff;
-    border-radius: 18px;
-    padding: 24px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(76, 175, 80, 0.12);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.15);
+    border-left: 6px solid rgba(76, 175, 80, 0.4);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .herb-entry:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 30px 65px rgba(0, 0, 0, 0.14);
+}
+
+.herb-entry[data-grade="上品"] {
+    border-left-color: #2e7d32;
+}
+
+.herb-entry[data-grade="中品"] {
+    border-left-color: #d26900;
+}
+
+.herb-entry[data-grade="下品"] {
+    border-left-color: #c62828;
 }
 
 .herb-entry__header {
@@ -1471,7 +1660,7 @@ body {
     border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 600;
-    background: rgba(76, 175, 80, 0.12);
+    background: rgba(76, 175, 80, 0.15);
     color: #2e7d32;
 }
 
@@ -1511,10 +1700,10 @@ body {
 }
 
 .herb-entry__source {
-    border: 1px solid rgba(76, 175, 80, 0.2);
-    border-radius: 12px;
-    padding: 14px 18px;
-    background: rgba(76, 175, 80, 0.05);
+    border: 1px solid rgba(76, 175, 80, 0.18);
+    border-radius: 14px;
+    padding: 16px 20px;
+    background: rgba(76, 175, 80, 0.08);
 }
 
 .herb-entry__source summary {
@@ -1565,5 +1754,9 @@ body {
 
     .herb-entry__meta {
         grid-template-columns: 1fr;
+    }
+
+    .herb-controls .container {
+        padding: 1.8rem 1.5rem;
     }
 }
