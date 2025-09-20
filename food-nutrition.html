@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食物营养搭配 - 健康饮食指南</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>传统中医诊所</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">首页</a></li>
+                <li class="nav-item"><a href="food-nutrition.html" class="nav-link active">食物营养</a></li>
+                <li class="nav-item"><a href="zhongyao.html" class="nav-link">神农本草</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <header class="page-header">
+        <div class="container">
+            <h1>食物营养搭配指南</h1>
+            <p>探索食物营养信息，学习科学搭配，为您的健康生活提供专业指导</p>
+        </div>
+    </header>
+
+    <!-- 食物营养库 -->
+    <section id="food-database" class="food-database-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">食物营养库</h2>
+                <p class="section-subtitle">100种常见食物的详细营养信息</p>
+            </div>
+            
+            <!-- 搜索和筛选 -->
+            <div class="search-filter-container">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="搜索食物名称..." class="search-input">
+                    <button class="search-btn" onclick="performSearch()">🔍</button>
+                </div>
+                
+                <div class="filter-container">
+                    <div class="filter-group">
+                        <label>分类筛选：</label>
+                        <button class="filter-btn active" data-category="all">全部</button>
+                        <button class="filter-btn" data-category="grains">谷物类</button>
+                        <button class="filter-btn" data-category="protein">蛋白质类</button>
+                        <button class="filter-btn" data-category="dairy">乳制品</button>
+                        <button class="filter-btn" data-category="fruits">水果类</button>
+                        <button class="filter-btn" data-category="vegetables">蔬菜类</button>
+                        <button class="filter-btn" data-category="nuts">坚果类</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 食物网格 -->
+            <div class="foods-grid" id="foodsGrid">
+                <!-- 食物卡片将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 营养搭配计算器 -->
+    <section id="nutrition-calculator" class="nutrition-calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">营养搭配计算器</h2>
+                <p class="section-subtitle">选择食物，计算营养搭配效果</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="food-selector">
+                    <h3>选择食物</h3>
+                    <div class="food-categories">
+                        <button class="category-btn active" data-category="all">全部</button>
+                        <button class="category-btn" data-category="grains">谷物</button>
+                        <button class="category-btn" data-category="protein">蛋白质</button>
+                        <button class="category-btn" data-category="dairy">乳制品</button>
+                        <button class="category-btn" data-category="fruits">水果</button>
+                        <button class="category-btn" data-category="vegetables">蔬菜</button>
+                    </div>
+                    
+                    <div class="food-grid" id="foodGrid">
+                        <!-- 食物选项将通过JavaScript动态加载 -->
+                    </div>
+                </div>
+                
+                <div class="nutrition-results">
+                    <h3>营养分析</h3>
+                    <div class="selected-foods" id="selectedFoods">
+                        <p class="empty-message">请选择食物开始计算营养</p>
+                    </div>
+                    
+                    <div class="nutrition-chart">
+                        <div class="nutrition-item">
+                            <div class="nutrition-label">热量 (kcal)</div>
+                            <div class="nutrition-bar">
+                                <div class="nutrition-fill" id="caloriesFill"></div>
+                            </div>
+                            <div class="nutrition-value" id="caloriesValue">0</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-label">蛋白质 (g)</div>
+                            <div class="nutrition-bar">
+                                <div class="nutrition-fill" id="proteinFill"></div>
+                            </div>
+                            <div class="nutrition-value" id="proteinValue">0</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-label">碳水化合物 (g)</div>
+                            <div class="nutrition-bar">
+                                <div class="nutrition-fill" id="carbsFill"></div>
+                            </div>
+                            <div class="nutrition-value" id="carbsValue">0</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-label">脂肪 (g)</div>
+                            <div class="nutrition-bar">
+                                <div class="nutrition-fill" id="fatFill"></div>
+                            </div>
+                            <div class="nutrition-value" id="fatValue">0</div>
+                        </div>
+                        <div class="nutrition-item">
+                            <div class="nutrition-label">纤维 (g)</div>
+                            <div class="nutrition-bar">
+                                <div class="nutrition-fill" id="fiberFill"></div>
+                            </div>
+                            <div class="nutrition-value" id="fiberValue">0</div>
+                        </div>
+                    </div>
+                    
+                    <div class="nutrition-summary">
+                        <h4>营养建议</h4>
+                        <div id="nutritionAdvice" class="advice-text">
+                            选择食物后查看个性化营养建议
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 食物搭配建议 -->
+    <section id="food-pairing" class="food-pairing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">食物搭配建议</h2>
+                <p class="section-subtitle">科学搭配，营养均衡</p>
+            </div>
+            
+            <div class="pairing-grid">
+                <div class="pairing-card">
+                    <div class="pairing-icon">🌾</div>
+                    <h3>谷物搭配</h3>
+                    <p>全谷物与豆类搭配，提供完整蛋白质和复合碳水化合物</p>
+                    <ul>
+                        <li>燕麦 + 牛奶</li>
+                        <li>全麦面包 + 鸡蛋</li>
+                        <li>糙米 + 豆类</li>
+                    </ul>
+                </div>
+                
+                <div class="pairing-card">
+                    <div class="pairing-icon">🥗</div>
+                    <h3>蔬菜搭配</h3>
+                    <p>不同颜色蔬菜搭配，提供丰富的维生素和矿物质</p>
+                    <ul>
+                        <li>胡萝卜 + 西兰花</li>
+                        <li>西红柿 + 菠菜</li>
+                        <li>彩椒 + 黄瓜</li>
+                    </ul>
+                </div>
+                
+                <div class="pairing-card">
+                    <div class="pairing-icon">🍎</div>
+                    <h3>水果搭配</h3>
+                    <p>不同水果搭配，提供多种维生素和抗氧化物质</p>
+                    <ul>
+                        <li>苹果 + 香蕉</li>
+                        <li>橙子 + 蓝莓</li>
+                        <li>葡萄 + 草莓</li>
+                    </ul>
+                </div>
+                
+                <div class="pairing-card">
+                    <div class="pairing-icon">🥛</div>
+                    <h3>蛋白质搭配</h3>
+                    <p>优质蛋白质搭配，满足身体营养需求</p>
+                    <ul>
+                        <li>鸡蛋 + 牛奶</li>
+                        <li>鱼肉 + 豆腐</li>
+                        <li>鸡肉 + 坚果</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 营养知识 -->
+    <section id="nutrition-knowledge" class="nutrition-knowledge-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">营养知识</h2>
+                <p class="section-subtitle">了解营养学基础知识</p>
+            </div>
+            
+            <div class="knowledge-grid">
+                <div class="knowledge-card">
+                    <h3>蛋白质</h3>
+                    <p>人体必需的营养素，参与肌肉合成、免疫系统维护等重要功能。建议每日摄入量为体重的0.8-1.2g/kg。</p>
+                </div>
+                
+                <div class="knowledge-card">
+                    <h3>碳水化合物</h3>
+                    <p>人体主要能量来源，分为简单碳水化合物和复合碳水化合物。建议选择复合碳水化合物，如全谷物。</p>
+                </div>
+                
+                <div class="knowledge-card">
+                    <h3>脂肪</h3>
+                    <p>必需营养素，参与激素合成、维生素吸收等。建议选择不饱和脂肪，如橄榄油、坚果等。</p>
+                </div>
+                
+                <div class="knowledge-card">
+                    <h3>维生素</h3>
+                    <p>微量营养素，参与多种生理过程。建议通过多样化饮食获取各种维生素。</p>
+                </div>
+                
+                <div class="knowledge-card">
+                    <h3>矿物质</h3>
+                    <p>人体必需的微量元素，如钙、铁、锌等。建议通过均衡饮食获取。</p>
+                </div>
+                
+                <div class="knowledge-card">
+                    <h3>膳食纤维</h3>
+                    <p>促进消化健康，降低胆固醇，控制血糖。建议每日摄入25-35g。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>传统中医诊所</h3>
+                    <p>传承中医精髓，专业中医师坐诊，为您的健康保驾护航</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="food-nutrition.html">食物营养</a></li>
+                        <li><a href="zhongyao.html">神农本草</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 传统中医诊所. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 食物数据
+        const foodsData = [
+            // 谷物类
+            { name: "燕麦", category: "grains", calories: 389, protein: 16.9, carbs: 66.3, fat: 6.9, fiber: 10.6, emoji: "🌾" },
+            { name: "糙米", category: "grains", calories: 370, protein: 7.9, carbs: 77.2, fat: 2.9, fiber: 3.5, emoji: "🍚" },
+            { name: "全麦面包", category: "grains", calories: 247, protein: 13.4, carbs: 41.3, fat: 4.2, fiber: 6.0, emoji: "🍞" },
+            
+            // 蛋白质类
+            { name: "鸡蛋", category: "protein", calories: 155, protein: 13.0, carbs: 1.1, fat: 11.0, fiber: 0, emoji: "🥚" },
+            { name: "鸡胸肉", category: "protein", calories: 165, protein: 31.0, carbs: 0, fat: 3.6, fiber: 0, emoji: "🍗" },
+            { name: "三文鱼", category: "protein", calories: 208, protein: 25.4, carbs: 0, fat: 12.4, fiber: 0, emoji: "🐟" },
+            
+            // 乳制品
+            { name: "牛奶", category: "dairy", calories: 42, protein: 3.4, carbs: 5.0, fat: 1.0, fiber: 0, emoji: "🥛" },
+            { name: "酸奶", category: "dairy", calories: 59, protein: 10.0, carbs: 3.6, fat: 0.4, fiber: 0, emoji: "🥛" },
+            { name: "奶酪", category: "dairy", calories: 113, protein: 7.0, carbs: 1.0, fat: 9.0, fiber: 0, emoji: "🧀" },
+            
+            // 水果类
+            { name: "苹果", category: "fruits", calories: 52, protein: 0.3, carbs: 13.8, fat: 0.2, fiber: 2.4, emoji: "🍎" },
+            { name: "香蕉", category: "fruits", calories: 89, protein: 1.1, carbs: 22.8, fat: 0.3, fiber: 2.6, emoji: "🍌" },
+            { name: "橙子", category: "fruits", calories: 47, protein: 0.9, carbs: 11.8, fat: 0.1, fiber: 2.4, emoji: "🍊" },
+            
+            // 蔬菜类
+            { name: "西兰花", category: "vegetables", calories: 34, protein: 2.8, carbs: 6.6, fat: 0.4, fiber: 2.6, emoji: "🥦" },
+            { name: "胡萝卜", category: "vegetables", calories: 41, protein: 0.9, carbs: 9.6, fat: 0.2, fiber: 2.8, emoji: "🥕" },
+            { name: "菠菜", category: "vegetables", calories: 23, protein: 2.9, carbs: 3.6, fat: 0.4, fiber: 2.2, emoji: "🥬" },
+            
+            // 坚果类
+            { name: "杏仁", category: "nuts", calories: 579, protein: 21.2, carbs: 21.6, fat: 49.9, fiber: 12.5, emoji: "🥜" },
+            { name: "核桃", category: "nuts", calories: 654, protein: 15.2, carbs: 13.7, fat: 65.2, fiber: 6.7, emoji: "🌰" },
+            { name: "花生", category: "nuts", calories: 567, protein: 25.8, carbs: 16.1, fat: 49.2, fiber: 8.5, emoji: "🥜" }
+        ];
+
+        let selectedFoods = [];
+        let filteredFoods = foodsData;
+
+        // 初始化页面
+        document.addEventListener('DOMContentLoaded', function() {
+            renderFoods();
+            setupEventListeners();
+        });
+
+        // 渲染食物
+        function renderFoods() {
+            const foodsGrid = document.getElementById('foodsGrid');
+            foodsGrid.innerHTML = '';
+
+            filteredFoods.forEach(food => {
+                const foodCard = document.createElement('div');
+                foodCard.className = 'food-card';
+                foodCard.innerHTML = `
+                    <div class="food-emoji">${food.emoji}</div>
+                    <h3>${food.name}</h3>
+                    <div class="food-nutrition">
+                        <span>${food.calories}卡</span>
+                        <span>${food.protein}g蛋白</span>
+                    </div>
+                    <button onclick="showFoodDetails('${food.name}')" class="btn-details">查看详情</button>
+                `;
+                foodsGrid.appendChild(foodCard);
+            });
+        }
+
+        // 设置事件监听器
+        function setupEventListeners() {
+            // 搜索功能
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function() {
+                const query = this.value.toLowerCase();
+                filteredFoods = foodsData.filter(food => 
+                    food.name.toLowerCase().includes(query)
+                );
+                renderFoods();
+            });
+
+            // 分类筛选
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    if (category === 'all') {
+                        filteredFoods = foodsData;
+                    } else {
+                        filteredFoods = foodsData.filter(food => food.category === category);
+                    }
+                    renderFoods();
+                });
+            });
+        }
+
+        // 显示食物详情
+        function showFoodDetails(foodName) {
+            const food = foodsData.find(f => f.name === foodName);
+            if (food) {
+                alert(`${food.name}\n热量: ${food.calories}卡\n蛋白质: ${food.protein}g\n碳水化合物: ${food.carbs}g\n脂肪: ${food.fat}g\n纤维: ${food.fiber}g`);
+            }
+        }
+
+        // 搜索功能
+        function performSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const query = searchInput.value.toLowerCase();
+            filteredFoods = foodsData.filter(food => 
+                food.name.toLowerCase().includes(query)
+            );
+            renderFoods();
+        }
+    </script>
+</body>
+</html>
