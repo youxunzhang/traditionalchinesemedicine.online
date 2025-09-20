@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap
-Sitemap: https://traditionalchinesemedicine.online/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 1
