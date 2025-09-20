@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小游戏 - 放松心情 - 神农百草</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="google-adsense-account" content="ca-pub-8794607118520437">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
+         crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBGLVPRZ1R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZBGLVPRZ1R');
+    </script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span data-zh="神农百草" data-en="Shennong Herbs">神农百草</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#herbs" class="nav-link" data-zh="本草图鉴" data-en="Herb Catalog">本草图鉴</a>
+                </li>
+                <li class="nav-item">
+                    <a href="zhongyao.html" class="nav-link" data-zh="神农本草" data-en="Shennong Herbs">神农本草</a>
+                </li>
+                <li class="nav-item">
+                    <a href="books.html" class="nav-link" data-zh="中医好书" data-en="TCM Books">中医好书</a>
+                </li>
+                <li class="nav-item">
+                    <a href="timer.html" class="nav-link" data-zh="倒计时" data-en="Timer">倒计时</a>
+                </li>
+                <li class="nav-item">
+                    <a href="game.html" class="nav-link active" data-zh="小游戏" data-en="Games">小游戏</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link" data-zh="关于我们" data-en="About Us">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <button id="languageToggle" class="language-toggle">
+                        <span class="lang-text" data-zh="EN" data-en="中文">EN</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面头部 -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-zh="小游戏" data-en="Mini Games">小游戏</h1>
+            <p class="page-subtitle" data-zh="轻松有趣的小游戏，助您放松心情，缓解压力" data-en="Fun and relaxing mini games to help you unwind and relieve stress">轻松有趣的小游戏，助您放松心情，缓解压力</p>
+        </div>
+    </section>
+
+    <!-- 游戏选择区域 -->
+    <section class="games-section">
+        <div class="container">
+            <h2 class="section-title" data-zh="选择游戏" data-en="Choose a Game">选择游戏</h2>
+            
+            <div class="games-grid">
+                <!-- 记忆翻牌游戏 -->
+                <div class="game-card" data-game="memory">
+                    <div class="game-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-zh="记忆翻牌" data-en="Memory Cards">记忆翻牌</h3>
+                    <p data-zh="考验记忆力的经典游戏，找到相同的卡片配对" data-en="Classic memory game, find matching card pairs">考验记忆力的经典游戏，找到相同的卡片配对</p>
+                    <button class="play-btn" data-zh="开始游戏" data-en="Play Game">开始游戏</button>
+                </div>
+
+                <!-- 数字华容道 -->
+                <div class="game-card" data-game="puzzle">
+                    <div class="game-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3 data-zh="数字华容道" data-en="Number Puzzle">数字华容道</h3>
+                    <p data-zh="经典的滑块拼图游戏，锻炼逻辑思维" data-en="Classic sliding puzzle game to exercise logical thinking">经典的滑块拼图游戏，锻炼逻辑思维</p>
+                    <button class="play-btn" data-zh="开始游戏" data-en="Play Game">开始游戏</button>
+                </div>
+
+                <!-- 颜色消除 -->
+                <div class="game-card" data-game="color">
+                    <div class="game-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 data-zh="颜色消除" data-en="Color Match">颜色消除</h3>
+                    <p data-zh="点击相同颜色的方块进行消除，挑战高分" data-en="Click blocks of the same color to eliminate, challenge high scores">点击相同颜色的方块进行消除，挑战高分</p>
+                    <button class="play-btn" data-zh="开始游戏" data-en="Play Game">开始游戏</button>
+                </div>
+
+                <!-- 打字游戏 -->
+                <div class="game-card" data-game="typing">
+                    <div class="game-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 data-zh="打字练习" data-en="Typing Practice">打字练习</h3>
+                    <p data-zh="练习打字速度，提高输入效率" data-en="Practice typing speed and improve input efficiency">练习打字速度，提高输入效率</p>
+                    <button class="play-btn" data-zh="开始游戏" data-en="Play Game">开始游戏</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游戏说明 -->
+    <section class="game-instructions">
+        <div class="container">
+            <h2 class="section-title" data-zh="游戏说明" data-en="Game Instructions">游戏说明</h2>
+            <div class="instructions-grid">
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 data-zh="放松心情" data-en="Relax Your Mind">放松心情</h3>
+                    <p data-zh="通过简单有趣的游戏，帮助您缓解学习压力，放松身心" data-en="Through simple and fun games, help you relieve study stress and relax your body and mind">通过简单有趣的游戏，帮助您缓解学习压力，放松身心</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 data-zh="锻炼大脑" data-en="Exercise Your Brain">锻炼大脑</h3>
+                    <p data-zh="各种益智游戏可以锻炼记忆力、逻辑思维和反应能力" data-en="Various puzzle games can exercise memory, logical thinking and reaction ability">各种益智游戏可以锻炼记忆力、逻辑思维和反应能力</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 data-zh="合理休息" data-en="Reasonable Rest">合理休息</h3>
+                    <p data-zh="建议每次游戏时间控制在10-15分钟，保持学习效率" data-en="It is recommended to control each game time to 10-15 minutes to maintain learning efficiency">建议每次游戏时间控制在10-15分钟，保持学习效率</p>
+                </div>
+                <div class="instruction-card">
+                    <div class="instruction-icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <h3 data-zh="快乐学习" data-en="Happy Learning">快乐学习</h3>
+                    <p data-zh="在轻松愉快的氛围中学习，提高学习兴趣和效果" data-en="Learn in a relaxed and pleasant atmosphere to improve learning interest and effectiveness">在轻松愉快的氛围中学习，提高学习兴趣和效果</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-zh="神农百草" data-en="Shennong Herbs">神农百草</h3>
+                    <p data-zh="探索传统中医药的智慧" data-en="Explore the wisdom of traditional Chinese medicine">探索传统中医药的智慧</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                    <ul>
+                        <li><a href="index.html#herbs" data-zh="本草图鉴" data-en="Herb Catalog">本草图鉴</a></li>
+                        <li><a href="books.html" data-zh="中医好书" data-en="TCM Books">中医好书</a></li>
+                        <li><a href="timer.html" data-zh="倒计时" data-en="Timer">倒计时</a></li>
+                        <li><a href="game.html" data-zh="小游戏" data-en="Games">小游戏</a></li>
+                        <li><a href="index.html#about" data-zh="关于我们" data-en="About Us">关于我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+                    <p><i class="fas fa-envelope"></i> contact@shennong.com</p>
+                    <p><i class="fas fa-phone"></i> 400-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-zh="© 2024 神农百草. 保留所有权利." data-en="© 2024 Shennong Herbs. All rights reserved.">&copy; 2024 神农百草. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 简单的游戏选择功能
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const gameCard = e.target.closest('.game-card');
+                const gameType = gameCard.dataset.game;
+                alert(`即将开始 ${gameCard.querySelector('h3').textContent} 游戏！\n\n游戏功能正在开发中，敬请期待！`);
+            });
+        });
+    </script>
+</body>
+</html>

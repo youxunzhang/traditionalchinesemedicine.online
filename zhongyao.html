@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神农本草经中药图鉴 - 性味主治速查</title>
+    <meta name="description" content="检索《神农本草经》记载的中药性味、毒性与功效，按上品、中品、下品分类展示全书内容。">
+    <meta name="keywords" content="神农本草经,中药,药性,性味,毒性,上品,中品,下品">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="google-adsense-account" content="ca-pub-8794607118520437">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437" crossorigin="anonymous"></script>
+</head>
+<body class="herb-archive-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>神农百草</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html#herbs" class="nav-link">本草图鉴</a></li>
+                <li class="nav-item"><a href="zhongyao.html" class="nav-link active">神农本草</a></li>
+                <li class="nav-item"><a href="books.html" class="nav-link">中医好书</a></li>
+                <li class="nav-item"><a href="game.html" class="nav-link">小游戏</a></li>
+                <li class="nav-item"><a href="timer.html" class="nav-link">倒计时</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header hero-herb">
+        <div class="container">
+            <h1 class="page-title">《神农本草经》药性全录</h1>
+            <p class="page-subtitle">按上品、中品、下品分类整理365味本草的性味、毒性与主治原文，支持快速检索与筛选。</p>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <section class="herb-controls">
+            <div class="container">
+                <div class="control-grid">
+                    <div class="control-group">
+                        <label for="herbSearch"><i class="fas fa-search"></i> 搜索药名或功效</label>
+                        <input type="search" id="herbSearch" placeholder="输入药名、功效关键字或经文片段...">
+                    </div>
+                    <div class="control-group">
+                        <span class="control-label"><i class="fas fa-layer-group"></i> 三品筛选</span>
+                        <div class="grade-tabs">
+                            <button type="button" class="grade-tab active" data-grade="all">全部</button>
+                            <button type="button" class="grade-tab" data-grade="上品">上品</button>
+                            <button type="button" class="grade-tab" data-grade="中品">中品</button>
+                            <button type="button" class="grade-tab" data-grade="下品">下品</button>
+                        </div>
+                    </div>
+                </div>
+                <p class="control-hint">数据来源：《神农本草经》原文。性味、毒性、主治等字段基于经典记载自动拆分。</p>
+            </div>
+        </section>
+
+        <section class="herb-list-section">
+            <div class="container">
+                <div id="herbStats" class="herb-stats"></div>
+                <div id="herbList" class="herb-list" aria-live="polite"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <p>© 2024 神农百草 · 《神农本草经》药性整理</p>
+            <p class="footer-note">久服轻身延年——谨遵经典，辨证施治。</p>
+        </div>
+    </footer>
+
+    <script type="module" src="zhongyao.js"></script>
+</body>
+</html>

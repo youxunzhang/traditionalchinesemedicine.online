@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中午吃什么 - 神农百草</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8794607118520437"
+         crossorigin="anonymous"></script>
+    <style>
+        .lunch-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .wheel-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .wheel-title {
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .wheel-title h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .wheel-title p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .wheel {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #FF6B6B 0deg 45deg,
+                #4ECDC4 45deg 90deg,
+                #45B7D1 90deg 135deg,
+                #96CEB4 135deg 180deg,
+                #FFEAA7 180deg 225deg,
+                #DDA0DD 225deg 270deg,
+                #98D8C8 270deg 315deg,
+                #F7DC6F 315deg 360deg
+            );
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .wheel.spinning {
+            animation: spin 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(var(--spin-degrees, 1440deg)); }
+        }
+
+        .wheel-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .wheel-pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 30px solid #FF4757;
+            z-index: 5;
+        }
+
+        .wheel-sections {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .wheel-section {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            transform-origin: 100% 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .spin-button {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-weight: bold;
+        }
+
+        .spin-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .spin-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .result-content {
+            background: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .result-food {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2d5a27;
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .nutrition-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            text-align: left;
+        }
+
+        .nutrition-title {
+            font-size: 1.2rem;
+            color: #2d5a27;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .nutrition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .nutrition-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nutrition-item:last-child {
+            border-bottom: none;
+        }
+
+        .nutrition-label {
+            font-weight: 500;
+            color: #555;
+        }
+
+        .nutrition-value {
+            color: #2d5a27;
+            font-weight: bold;
+        }
+
+        .close-result {
+            background: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .close-result:hover {
+            background: #FF5252;
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .back-button:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .wheel {
+                width: 300px;
+                height: 300px;
+            }
+
+            .wheel-title h1 {
+                font-size: 2rem;
+            }
+
+            .wheel-title p {
+                font-size: 1rem;
+            }
+
+            .result-content {
+                margin: 10% auto;
+                padding: 1.5rem;
+            }
+
+            .result-food {
+                font-size: 2rem;
+            }
+
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.6rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        返回首页
+    </a>
+
+    <section class="lunch-section">
+        <div class="wheel-container">
+            <div class="wheel-title">
+                <h1>🍽️ 中午吃什么？</h1>
+                <p>转动大转盘，让命运为你选择今天的美食！</p>
+            </div>
+
+            <div class="wheel-wrapper">
+                <div class="wheel" id="wheel">
+                    <div class="wheel-pointer"></div>
+                    <div class="wheel-center">
+                        <i class="fas fa-utensils" style="font-size: 1.5rem; color: #333;"></i>
+                    </div>
+                    <div class="wheel-sections">
+                        <div class="wheel-section" style="transform: rotate(0deg);">🍜 拉面</div>
+                        <div class="wheel-section" style="transform: rotate(45deg);">🍚 盖浇饭</div>
+                        <div class="wheel-section" style="transform: rotate(90deg);">🥟 饺子</div>
+                        <div class="wheel-section" style="transform: rotate(135deg);">🍲 火锅</div>
+                        <div class="wheel-section" style="transform: rotate(180deg);">🥘 炒菜</div>
+                        <div class="wheel-section" style="transform: rotate(225deg);">🍖 烤肉</div>
+                        <div class="wheel-section" style="transform: rotate(270deg);">🥗 沙拉</div>
+                        <div class="wheel-section" style="transform: rotate(315deg);">🍕 披萨</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="spin-button" id="spinButton" onclick="spinWheel()">
+                <i class="fas fa-play"></i> 开始转动
+            </button>
+        </div>
+    </section>
+
+    <!-- 结果模态框 -->
+    <div id="resultModal" class="result-modal">
+        <div class="result-content">
+            <div id="resultContent">
+                <!-- 结果内容将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 食物数据
+        const foodData = [
+            {
+                name: "拉面",
+                emoji: "🍜",
+                nutrition: {
+                    "热量": "450-600 千卡",
+                    "蛋白质": "15-25 克",
+                    "碳水化合物": "60-80 克",
+                    "脂肪": "15-25 克",
+                    "钠": "800-1200 毫克",
+                    "维生素B1": "0.3-0.5 毫克",
+                    "铁": "2-4 毫克"
+                },
+                benefits: "拉面富含碳水化合物，能快速提供能量。汤底中的胶原蛋白有助于皮肤健康，面条中的B族维生素有助于神经系统功能。",
+                tips: "建议选择清淡汤底，少放调味料，可以加入蔬菜增加营养。"
+            },
+            {
+                name: "盖浇饭",
+                emoji: "🍚",
+                nutrition: {
+                    "热量": "500-700 千卡",
+                    "蛋白质": "20-30 克",
+                    "碳水化合物": "70-90 克",
+                    "脂肪": "15-25 克",
+                    "膳食纤维": "3-5 克",
+                    "维生素C": "10-20 毫克",
+                    "钾": "300-500 毫克"
+                },
+                benefits: "盖浇饭营养均衡，米饭提供能量，肉类提供蛋白质，蔬菜提供维生素和矿物质。",
+                tips: "选择瘦肉和多种蔬菜的搭配，少油少盐更健康。"
+            },
+            {
+                name: "饺子",
+                emoji: "🥟",
+                nutrition: {
+                    "热量": "250-350 千卡/10个",
+                    "蛋白质": "8-12 克",
+                    "碳水化合物": "35-45 克",
+                    "脂肪": "8-15 克",
+                    "膳食纤维": "2-4 克",
+                    "维生素B1": "0.2-0.3 毫克",
+                    "铁": "1.5-2.5 毫克"
+                },
+                benefits: "饺子营养丰富，皮薄馅大，蔬菜和肉类的搭配提供了多种营养素。",
+                tips: "选择蒸饺或水饺，避免煎饺以减少油脂摄入。"
+            },
+            {
+                name: "火锅",
+                emoji: "🍲",
+                nutrition: {
+                    "热量": "600-1000 千卡",
+                    "蛋白质": "30-50 克",
+                    "碳水化合物": "40-60 克",
+                    "脂肪": "25-40 克",
+                    "维生素C": "20-40 毫克",
+                    "钙": "200-400 毫克",
+                    "铁": "5-10 毫克"
+                },
+                benefits: "火锅食材多样，营养丰富，蔬菜、肉类、海鲜等搭配合理。",
+                tips: "选择清汤锅底，多放蔬菜，少放调味料，注意食材新鲜度。"
+            },
+            {
+                name: "炒菜",
+                emoji: "🥘",
+                nutrition: {
+                    "热量": "300-500 千卡",
+                    "蛋白质": "15-25 克",
+                    "碳水化合物": "40-60 克",
+                    "脂肪": "10-20 克",
+                    "膳食纤维": "5-8 克",
+                    "维生素A": "500-1000 微克",
+                    "维生素C": "30-60 毫克"
+                },
+                benefits: "炒菜营养均衡，蔬菜提供丰富的维生素和矿物质，肉类提供优质蛋白质。",
+                tips: "选择多种蔬菜搭配，少油少盐，保持食材的原味。"
+            },
+            {
+                name: "烤肉",
+                emoji: "🍖",
+                nutrition: {
+                    "热量": "400-600 千卡",
+                    "蛋白质": "25-35 克",
+                    "碳水化合物": "20-30 克",
+                    "脂肪": "20-30 克",
+                    "铁": "3-5 毫克",
+                    "锌": "4-6 毫克",
+                    "维生素B12": "1-2 微克"
+                },
+                benefits: "烤肉富含优质蛋白质和铁质，有助于肌肉生长和血液健康。",
+                tips: "选择瘦肉，避免过度烤制，搭配蔬菜沙拉平衡营养。"
+            },
+            {
+                name: "沙拉",
+                emoji: "🥗",
+                nutrition: {
+                    "热量": "150-300 千卡",
+                    "蛋白质": "8-15 克",
+                    "碳水化合物": "15-25 克",
+                    "脂肪": "8-15 克",
+                    "膳食纤维": "8-12 克",
+                    "维生素C": "50-100 毫克",
+                    "叶酸": "100-200 微克"
+                },
+                benefits: "沙拉富含膳食纤维和维生素，有助于消化和免疫系统健康。",
+                tips: "选择多种颜色的蔬菜，添加坚果或种子增加营养，少放沙拉酱。"
+            },
+            {
+                name: "披萨",
+                emoji: "🍕",
+                nutrition: {
+                    "热量": "400-600 千卡/片",
+                    "蛋白质": "15-25 克",
+                    "碳水化合物": "50-70 克",
+                    "脂肪": "15-25 克",
+                    "钙": "200-300 毫克",
+                    "维生素B1": "0.3-0.5 毫克",
+                    "铁": "2-4 毫克"
+                },
+                benefits: "披萨营养丰富，奶酪提供钙质，番茄提供番茄红素，有助于骨骼和心脏健康。",
+                tips: "选择薄底披萨，多放蔬菜，少放奶酪和肉类。"
+            }
+        ];
+
+        let isSpinning = false;
+
+        function spinWheel() {
+            if (isSpinning) return;
+            
+            isSpinning = true;
+            const spinButton = document.getElementById('spinButton');
+            const wheel = document.getElementById('wheel');
+            
+            spinButton.disabled = true;
+            spinButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 转动中...';
+            
+            // 随机选择食物
+            const randomIndex = Math.floor(Math.random() * foodData.length);
+            const selectedFood = foodData[randomIndex];
+            
+            // 计算旋转角度（确保指针指向选中的食物）
+            const baseRotation = 360 * 5; // 至少转5圈
+            const sectionAngle = 360 / foodData.length;
+            const targetAngle = 360 - (randomIndex * sectionAngle + sectionAngle / 2);
+            const finalRotation = baseRotation + targetAngle;
+            
+            wheel.style.setProperty('--spin-degrees', `${finalRotation}deg`);
+            wheel.classList.add('spinning');
+            
+            // 4秒后显示结果
+            setTimeout(() => {
+                showResult(selectedFood);
+                wheel.classList.remove('spinning');
+                spinButton.disabled = false;
+                spinButton.innerHTML = '<i class="fas fa-play"></i> 再转一次';
+                isSpinning = false;
+            }, 4000);
+        }
+
+        function showResult(food) {
+            const modal = document.getElementById('resultModal');
+            const content = document.getElementById('resultContent');
+            
+            content.innerHTML = `
+                <div class="result-food">${food.emoji}</div>
+                <div class="result-title">今天中午吃：${food.name}</div>
+                
+                <div class="nutrition-info">
+                    <div class="nutrition-title">营养信息（每份）</div>
+                    <div class="nutrition-grid">
+                        ${Object.entries(food.nutrition).map(([key, value]) => `
+                            <div class="nutrition-item">
+                                <span class="nutrition-label">${key}：</span>
+                                <span class="nutrition-value">${value}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <div style="margin: 1.5rem 0; text-align: left;">
+                    <h3 style="color: #2d5a27; margin-bottom: 0.5rem;">营养价值</h3>
+                    <p style="line-height: 1.6; color: #555;">${food.benefits}</p>
+                </div>
+                
+                <div style="margin: 1.5rem 0; text-align: left;">
+                    <h3 style="color: #2d5a27; margin-bottom: 0.5rem;">健康小贴士</h3>
+                    <p style="line-height: 1.6; color: #555;">${food.tips}</p>
+                </div>
+                
+                <button class="close-result" onclick="closeResult()">
+                    <i class="fas fa-times"></i> 关闭
+                </button>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeResult() {
+            document.getElementById('resultModal').style.display = 'none';
+        }
+
+        // 点击模态框外部关闭
+        window.onclick = function(event) {
+            const modal = document.getElementById('resultModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
