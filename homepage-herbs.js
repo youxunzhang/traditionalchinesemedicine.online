@@ -95,24 +95,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const createHerbCard = herb => {
     const info = parseEntry(herb.classicalText);
     const card = document.createElement('article');
-    card.className = 'herb-card';
+    card.className = 'herb-card herb-card--text-only';
     card.dataset.grade = herb.grade;
 
     const wrapper = document.createElement('div');
     wrapper.className = 'herb-card__body';
 
-    const imageBox = document.createElement('div');
-    imageBox.className = 'herb-image';
-    if (herb.image) {
-      const img = document.createElement('img');
-      img.src = herb.image;
-      img.alt = `${herb.name}图`; 
-      img.loading = 'lazy';
-      imageBox.appendChild(img);
-    } else {
-      imageBox.classList.add('herb-image--empty');
-      imageBox.innerHTML = '<span class="herb-image__placeholder"><i class="fas fa-leaf" aria-hidden="true"></i></span>';
-    }
+    const badge = document.createElement('div');
+    badge.className = 'herb-card__badge';
+    badge.textContent = herb.name.length > 2 ? herb.name.slice(0, 2) : herb.name;
+    badge.setAttribute('aria-hidden', 'true');
+    badge.title = herb.name;
+    wrapper.appendChild(badge);
 
     const content = document.createElement('div');
     content.className = 'herb-card__content';
@@ -167,7 +161,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     content.appendChild(classic);
 
-    wrapper.appendChild(imageBox);
     wrapper.appendChild(content);
     card.appendChild(wrapper);
 
