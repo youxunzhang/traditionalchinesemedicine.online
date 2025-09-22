@@ -1748,3 +1748,483 @@ body {
         padding: 1.8rem 1.5rem;
     }
 }
+
+/* 八部金刚功页面 */
+.practice-hero {
+    position: relative;
+    margin-top: 80px;
+    padding: 180px 0 140px;
+    background: linear-gradient(rgba(18, 32, 28, 0.75), rgba(18, 32, 28, 0.6)),
+        url('https://images.unsplash.com/photo-1517837016564-bfc120f0f167?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.practice-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(67, 160, 71, 0.65), rgba(21, 101, 192, 0.45));
+}
+
+.practice-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.practice-hero-content {
+    max-width: 840px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.practice-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 1.4rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(6px);
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.practice-hero-title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.04em;
+}
+
+.practice-hero-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+.practice-hero-points {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    padding: 0;
+}
+
+.practice-hero-points li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+}
+
+.practice-hero-points i {
+    color: #ffeb3b;
+    font-size: 1.1rem;
+}
+
+.practice-hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.practice-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.practice-section:nth-of-type(even) {
+    background: #f4f7f5;
+}
+
+.practice-section .section-header {
+    margin-bottom: 3rem;
+}
+
+.essence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.essence-card {
+    background: #ffffff;
+    padding: 2.2rem;
+    border-radius: 18px;
+    border: 1px solid rgba(76, 175, 80, 0.12);
+    box-shadow: 0 20px 45px rgba(15, 68, 48, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.essence-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 30px 60px rgba(15, 68, 48, 0.12);
+}
+
+.essence-card h3 {
+    font-size: 1.6rem;
+    color: #1b4332;
+    margin-bottom: 1rem;
+}
+
+.essence-card p {
+    color: #4f5b48;
+    margin-bottom: 1.2rem;
+    line-height: 1.8;
+}
+
+.essence-card.emphasis {
+    background: linear-gradient(145deg, rgba(76, 175, 80, 0.12), rgba(76, 175, 80, 0.04));
+    border-color: rgba(76, 175, 80, 0.25);
+}
+
+.essence-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.essence-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: #455a47;
+}
+
+.essence-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+}
+
+.practice-movements .section-subtitle {
+    max-width: 780px;
+}
+
+.movement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.movement-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(33, 150, 83, 0.15);
+    padding: 2rem;
+    box-shadow: 0 15px 40px rgba(13, 71, 29, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.movement-card h3 {
+    font-size: 1.4rem;
+    color: #1b4332;
+}
+
+.movement-card p {
+    color: #546a59;
+    line-height: 1.7;
+}
+
+.movement-focus {
+    font-weight: 600;
+    color: #2e7d32;
+    background: rgba(76, 175, 80, 0.12);
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+}
+
+.movement-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.movement-card li {
+    position: relative;
+    padding-left: 1.3rem;
+    color: #455a47;
+}
+
+.movement-card li::before {
+    content: "➤";
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    color: #4CAF50;
+    font-size: 0.9rem;
+}
+
+.practice-stages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.stage-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(76, 175, 80, 0.18);
+    padding: 2.2rem;
+    box-shadow: 0 15px 35px rgba(15, 68, 48, 0.08);
+}
+
+.stage-card h3 {
+    font-size: 1.45rem;
+    margin-bottom: 1rem;
+    color: #1b4332;
+}
+
+.stage-card p {
+    color: #4f5b48;
+    margin-bottom: 1.1rem;
+    line-height: 1.7;
+}
+
+.stage-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.stage-card li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: #455a47;
+}
+
+.stage-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(76, 175, 80, 0.6);
+}
+
+.practice-tip {
+    margin-top: 2.5rem;
+    padding: 1.6rem 2rem;
+    border-radius: 16px;
+    background: rgba(76, 175, 80, 0.1);
+    color: #2e7d32;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.practice-tip i {
+    font-size: 1.5rem;
+}
+
+.alignment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.alignment-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(76, 175, 80, 0.18);
+    padding: 2.2rem;
+    box-shadow: 0 18px 35px rgba(15, 68, 48, 0.08);
+}
+
+.alignment-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: #1b4332;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.7rem;
+}
+
+.checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: #455a47;
+    line-height: 1.6;
+}
+
+.checklist i {
+    color: #4CAF50;
+    margin-top: 0.2rem;
+}
+
+.insight-quote {
+    margin-top: 3rem;
+    padding: 2.2rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(67, 160, 71, 0.12), rgba(21, 101, 192, 0.08));
+    color: #1b4332;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-style: italic;
+}
+
+.insight-quote i {
+    font-size: 2rem;
+    color: #2e7d32;
+}
+
+.journal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.journal-entry {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(76, 175, 80, 0.18);
+    padding: 2.2rem;
+    box-shadow: 0 20px 40px rgba(15, 68, 48, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.journal-entry h3 {
+    font-size: 1.45rem;
+    color: #1b4332;
+}
+
+.journal-entry p {
+    color: #4f5b48;
+    line-height: 1.8;
+}
+
+.journal-entry ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.journal-entry li {
+    position: relative;
+    padding-left: 1.3rem;
+    color: #455a47;
+}
+
+.journal-entry li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #4CAF50;
+    font-size: 1.1rem;
+}
+
+.practice-callout {
+    background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 100%);
+}
+
+.callout-card {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+    border-radius: 24px;
+    background: #ffffff;
+    border: 1px solid rgba(76, 175, 80, 0.15);
+    box-shadow: 0 25px 55px rgba(15, 68, 48, 0.1);
+}
+
+.callout-card h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    color: #1b4332;
+}
+
+.callout-card p {
+    color: #4f5b48;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 992px) {
+    .practice-hero {
+        padding: 160px 0 120px;
+    }
+
+    .practice-hero-title {
+        font-size: 2.6rem;
+    }
+
+    .practice-hero-points {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .practice-hero {
+        padding: 140px 0 100px;
+    }
+
+    .practice-hero-title {
+        font-size: 2.3rem;
+    }
+
+    .practice-hero-subtitle {
+        font-size: 1.05rem;
+    }
+
+    .practice-hero-points {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .practice-section {
+        padding: 80px 0;
+    }
+
+    .callout-card {
+        padding: 2.2rem 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .practice-hero {
+        padding: 120px 0 80px;
+    }
+
+    .practice-hero-points li {
+        font-size: 0.95rem;
+    }
+
+    .practice-hero-actions {
+        flex-direction: column;
+    }
+}
