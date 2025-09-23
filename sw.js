@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ni-haixia-clinic-v1';
+const CACHE_NAME = 'ni-haixia-clinic-v2';
 const urlsToCache = [
     '/',
     '/postal-codes.html',
@@ -12,43 +12,65 @@ const urlsToCache = [
 
 // 安装service worker
 self.addEventListener('install', event => {
-    event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('Opened cache');
-                return cache.addAll(urlsToCache);
-            })
-    );
+    event.waitUntil((async () => {
+        const cache = await caches.open(CACHE_NAME);
+        await cache.addAll(urlsToCache);
+        self.skipWaiting();
+    })());
 });
 
 // 拦截网络请求
 self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request)
-            .then(response => {
-                // 如果找到缓存的响应，则返回缓存
-                if (response) {
-                    return response;
+    const { request } = event;
+
+    if (request.mode === 'navigate' || (request.method === 'GET' && request.headers.get('accept')?.includes('text/html'))) {
+        event.respondWith((async () => {
+            try {
+                const networkResponse = await fetch(request);
+                if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
+                    const cache = await caches.open(CACHE_NAME);
+                    await cache.put(request, networkResponse.clone());
                 }
-                return fetch(event.request);
+                return networkResponse;
+            } catch (error) {
+                const cachedResponse = await caches.match(request) || await caches.match('/');
+                if (cachedResponse) {
+                    return cachedResponse;
+                }
+                throw error;
             }
-        )
-    );
+        })());
+        return;
+    }
+
+    event.respondWith((async () => {
+        const cachedResponse = await caches.match(request);
+        if (cachedResponse) {
+            return cachedResponse;
+        }
+
+        const networkResponse = await fetch(request);
+        if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
+            const cache = await caches.open(CACHE_NAME);
+            await cache.put(request, networkResponse.clone());
+        }
+        return networkResponse;
+    })());
 });
 
 // 更新缓存
 self.addEventListener('activate', event => {
-    event.waitUntil(
-        caches.keys().then(cacheNames => {
-            return Promise.all(
-                cacheNames.map(cacheName => {
-                    if (cacheName !== CACHE_NAME) {
-                        console.log('Deleting old cache:', cacheName);
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
-    );
+    event.waitUntil((async () => {
+        const cacheNames = await caches.keys();
+        await Promise.all(
+            cacheNames.map(cacheName => {
+                if (cacheName !== CACHE_NAME) {
+                    console.log('Deleting old cache:', cacheName);
+                    return caches.delete(cacheName);
+                }
+            })
+        );
+        await self.clients.claim();
+    })());
 });
 
