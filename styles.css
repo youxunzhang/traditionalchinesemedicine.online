@@ -226,6 +226,255 @@ body {
     margin: 0 auto;
 }
 
+/* 食物营养库 */
+.food-database-section {
+    padding: 120px 0 80px;
+}
+
+.search-filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.search-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 220px;
+    max-width: 360px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: #ffffff;
+    font-size: 1rem;
+    color: #34495e;
+    box-shadow: 0 10px 30px rgba(255, 153, 102, 0.15);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #ff7e67;
+    box-shadow: 0 12px 35px rgba(255, 126, 103, 0.25);
+}
+
+.search-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(255, 126, 103, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(255, 126, 103, 0.4);
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-right: 0.5rem;
+}
+
+.filter-btn {
+    border: none;
+    border-radius: 999px;
+    padding: 0.6rem 1.3rem;
+    background: rgba(255, 255, 255, 0.85);
+    color: #ff5e62;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 153, 102, 0.2);
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(255, 126, 103, 0.25);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #ff9966, #ff5e62);
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(255, 126, 103, 0.35);
+}
+
+.foods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.food-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    padding: 26px;
+    background: linear-gradient(160deg, #ff9a9e 0%, #fad0c4 100%);
+    box-shadow: 0 20px 45px rgba(255, 105, 135, 0.25);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+}
+
+.food-card::after {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+}
+
+.food-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.food-emoji {
+    font-size: 2.4rem;
+}
+
+.food-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.food-category-label {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+.nutrition-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.nutrition-stat {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    backdrop-filter: blur(4px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    letter-spacing: 0.5px;
+}
+
+.food-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+}
+
+.btn-details {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-details:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.2);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: #ffffff;
+    color: #4f5d75;
+    padding: 2.5rem 1.5rem;
+    border-radius: 24px;
+    box-shadow: 0 18px 36px rgba(79, 93, 117, 0.15);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 992px) {
+    .food-database-section {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nutrition-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .food-card {
+        padding: 22px;
+    }
+
+    .search-input {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nutrition-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .food-card {
+        min-height: auto;
+    }
+
+    .search-filter-container {
+        gap: 1rem;
+    }
+}
+
 .section-eyebrow {
     display: inline-flex;
     align-items: center;

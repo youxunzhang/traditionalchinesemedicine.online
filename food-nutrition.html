@@ -272,36 +272,1121 @@
     <script>
         // 食物数据
         const foodsData = [
-            // 谷物类
-            { name: "燕麦", category: "grains", calories: 389, protein: 16.9, carbs: 66.3, fat: 6.9, fiber: 10.6, emoji: "🌾" },
-            { name: "糙米", category: "grains", calories: 370, protein: 7.9, carbs: 77.2, fat: 2.9, fiber: 3.5, emoji: "🍚" },
-            { name: "全麦面包", category: "grains", calories: 247, protein: 13.4, carbs: 41.3, fat: 4.2, fiber: 6.0, emoji: "🍞" },
-            
-            // 蛋白质类
-            { name: "鸡蛋", category: "protein", calories: 155, protein: 13.0, carbs: 1.1, fat: 11.0, fiber: 0, emoji: "🥚" },
-            { name: "鸡胸肉", category: "protein", calories: 165, protein: 31.0, carbs: 0, fat: 3.6, fiber: 0, emoji: "🍗" },
-            { name: "三文鱼", category: "protein", calories: 208, protein: 25.4, carbs: 0, fat: 12.4, fiber: 0, emoji: "🐟" },
-            
-            // 乳制品
-            { name: "牛奶", category: "dairy", calories: 42, protein: 3.4, carbs: 5.0, fat: 1.0, fiber: 0, emoji: "🥛" },
-            { name: "酸奶", category: "dairy", calories: 59, protein: 10.0, carbs: 3.6, fat: 0.4, fiber: 0, emoji: "🥛" },
-            { name: "奶酪", category: "dairy", calories: 113, protein: 7.0, carbs: 1.0, fat: 9.0, fiber: 0, emoji: "🧀" },
-            
-            // 水果类
-            { name: "苹果", category: "fruits", calories: 52, protein: 0.3, carbs: 13.8, fat: 0.2, fiber: 2.4, emoji: "🍎" },
-            { name: "香蕉", category: "fruits", calories: 89, protein: 1.1, carbs: 22.8, fat: 0.3, fiber: 2.6, emoji: "🍌" },
-            { name: "橙子", category: "fruits", calories: 47, protein: 0.9, carbs: 11.8, fat: 0.1, fiber: 2.4, emoji: "🍊" },
-            
-            // 蔬菜类
-            { name: "西兰花", category: "vegetables", calories: 34, protein: 2.8, carbs: 6.6, fat: 0.4, fiber: 2.6, emoji: "🥦" },
-            { name: "胡萝卜", category: "vegetables", calories: 41, protein: 0.9, carbs: 9.6, fat: 0.2, fiber: 2.8, emoji: "🥕" },
-            { name: "菠菜", category: "vegetables", calories: 23, protein: 2.9, carbs: 3.6, fat: 0.4, fiber: 2.2, emoji: "🥬" },
-            
-            // 坚果类
-            { name: "杏仁", category: "nuts", calories: 579, protein: 21.2, carbs: 21.6, fat: 49.9, fiber: 12.5, emoji: "🥜" },
-            { name: "核桃", category: "nuts", calories: 654, protein: 15.2, carbs: 13.7, fat: 65.2, fiber: 6.7, emoji: "🌰" },
-            { name: "花生", category: "nuts", calories: 567, protein: 25.8, carbs: 16.1, fat: 49.2, fiber: 8.5, emoji: "🥜" }
+            {
+                "name": "全麦面包",
+                "category": "grains",
+                "calories": 247,
+                "protein": 13.4,
+                "carbs": 41.3,
+                "fat": 4.2,
+                "fiber": 6.0,
+                "emoji": "🍞",
+                "description": "富含膳食纤维和B族维生素，适合搭配高蛋白食物作为早餐。"
+            },
+            {
+                "name": "燕麦片",
+                "category": "grains",
+                "calories": 389,
+                "protein": 16.9,
+                "carbs": 66.3,
+                "fat": 6.9,
+                "fiber": 10.6,
+                "emoji": "🌾",
+                "description": "β-葡聚糖含量高，有助于降低胆固醇并稳定血糖。"
+            },
+            {
+                "name": "玉米粥",
+                "category": "grains",
+                "calories": 116,
+                "protein": 2.6,
+                "carbs": 25.6,
+                "fat": 1.2,
+                "fiber": 1.6,
+                "emoji": "🌽",
+                "description": "口感细腻易消化，适合肠胃功能较弱或术后人群。"
+            },
+            {
+                "name": "小米粥",
+                "category": "grains",
+                "calories": 117,
+                "protein": 3.6,
+                "carbs": 23.7,
+                "fat": 1.3,
+                "fiber": 1.5,
+                "emoji": "🥣",
+                "description": "含有丰富的维生素B族和铁质，具有养胃安神的作用。"
+            },
+            {
+                "name": "莜麦面",
+                "category": "grains",
+                "calories": 366,
+                "protein": 13.2,
+                "carbs": 71.5,
+                "fat": 3.3,
+                "fiber": 8.5,
+                "emoji": "🍜",
+                "description": "北方传统粗粮，纤维含量高，有助于延长饱腹感。"
+            },
+            {
+                "name": "糯米",
+                "category": "grains",
+                "calories": 356,
+                "protein": 6.9,
+                "carbs": 79.5,
+                "fat": 0.8,
+                "fiber": 0.9,
+                "emoji": "🍚",
+                "description": "黏性强、能量高，可增强体力但需适量以免不易消化。"
+            },
+            {
+                "name": "糙米",
+                "category": "grains",
+                "calories": 370,
+                "protein": 7.9,
+                "carbs": 77.2,
+                "fat": 2.9,
+                "fiber": 3.5,
+                "emoji": "🌾",
+                "description": "保留了米糠层与胚芽，富含矿物质与膳食纤维。"
+            },
+            {
+                "name": "黑米",
+                "category": "grains",
+                "calories": 356,
+                "protein": 8.6,
+                "carbs": 75.1,
+                "fat": 2.8,
+                "fiber": 4.5,
+                "emoji": "🍚",
+                "description": "花青素含量高，具有良好的抗氧化与补血效果。"
+            },
+            {
+                "name": "大麦",
+                "category": "grains",
+                "calories": 354,
+                "protein": 12.5,
+                "carbs": 73.5,
+                "fat": 2.3,
+                "fiber": 17.3,
+                "emoji": "🌾",
+                "description": "富含β-葡聚糖，有助于降血脂并改善肠道健康。"
+            },
+            {
+                "name": "玉米糁",
+                "category": "grains",
+                "calories": 218,
+                "protein": 4.5,
+                "carbs": 46.2,
+                "fat": 1.5,
+                "fiber": 5.8,
+                "emoji": "🌽",
+                "description": "粗粮代表之一，富含膳食纤维，有利于控制体重。"
+            },
+            {
+                "name": "藜麦",
+                "category": "grains",
+                "calories": 368,
+                "protein": 14.1,
+                "carbs": 64.2,
+                "fat": 6.1,
+                "fiber": 7.0,
+                "emoji": "🍚",
+                "description": "被誉为“超级谷物”，完整蛋白质来源且不含麸质。"
+            },
+            {
+                "name": "荞麦面",
+                "category": "grains",
+                "calories": 348,
+                "protein": 13.0,
+                "carbs": 70.2,
+                "fat": 2.1,
+                "fiber": 3.7,
+                "emoji": "🍝",
+                "description": "含有芸香苷，可保护血管健康，适合搭配清淡汤品。"
+            },
+            {
+                "name": "高粱米",
+                "category": "grains",
+                "calories": 329,
+                "protein": 10.4,
+                "carbs": 72.1,
+                "fat": 3.3,
+                "fiber": 6.7,
+                "emoji": "🌾",
+                "description": "富含多酚和抗氧化成分，有助于调节血糖。"
+            },
+            {
+                "name": "薏米",
+                "category": "grains",
+                "calories": 362,
+                "protein": 12.8,
+                "carbs": 70.6,
+                "fat": 5.5,
+                "fiber": 8.0,
+                "emoji": "🥣",
+                "description": "中医常用食材，具有健脾祛湿、利水消肿的功效。"
+            },
+            {
+                "name": "黑麦面包",
+                "category": "grains",
+                "calories": 259,
+                "protein": 9.0,
+                "carbs": 48.3,
+                "fat": 3.3,
+                "fiber": 5.8,
+                "emoji": "🍞",
+                "description": "质地扎实，血糖反应较低，适合糖尿病人群适量食用。"
+            },
+            {
+                "name": "全麦意大利面",
+                "category": "grains",
+                "calories": 348,
+                "protein": 14.6,
+                "carbs": 72.0,
+                "fat": 2.5,
+                "fiber": 8.5,
+                "emoji": "🍝",
+                "description": "保留麦麸层的全麦制品，提供长效能量。"
+            },
+            {
+                "name": "燕麦麸皮",
+                "category": "grains",
+                "calories": 246,
+                "protein": 17.3,
+                "carbs": 66.2,
+                "fat": 7.0,
+                "fiber": 15.4,
+                "emoji": "🌾",
+                "description": "富含可溶性纤维，改善肠道微生态并延缓血糖上升。"
+            },
+            {
+                "name": "荞麦米",
+                "category": "grains",
+                "calories": 343,
+                "protein": 13.3,
+                "carbs": 71.5,
+                "fat": 3.4,
+                "fiber": 10.0,
+                "emoji": "🍚",
+                "description": "无麸质谷物，镁含量高，可帮助放松肌肉与血管。"
+            },
+            {
+                "name": "小米饭",
+                "category": "grains",
+                "calories": 378,
+                "protein": 11.0,
+                "carbs": 72.8,
+                "fat": 4.2,
+                "fiber": 8.6,
+                "emoji": "🍚",
+                "description": "颗粒金黄软糯，富含铁与锌，适合补充矿物质。"
+            },
+            {
+                "name": "玉米饼",
+                "category": "grains",
+                "calories": 300,
+                "protein": 6.4,
+                "carbs": 58.5,
+                "fat": 3.9,
+                "fiber": 5.1,
+                "emoji": "🫓",
+                "description": "口感香甜，可搭配蔬菜与瘦肉，构成均衡餐盘。"
+            },
+            {
+                "name": "鸡蛋",
+                "category": "protein",
+                "calories": 155,
+                "protein": 13.0,
+                "carbs": 1.1,
+                "fat": 11.0,
+                "fiber": 0.0,
+                "emoji": "🥚",
+                "description": "优质完全蛋白，富含胆碱，有助于大脑健康。"
+            },
+            {
+                "name": "鸡胸肉",
+                "category": "protein",
+                "calories": 165,
+                "protein": 31.0,
+                "carbs": 0.0,
+                "fat": 3.6,
+                "fiber": 0.0,
+                "emoji": "🍗",
+                "description": "高蛋白低脂肪，是健身增肌常备食材。"
+            },
+            {
+                "name": "三文鱼",
+                "category": "protein",
+                "calories": 208,
+                "protein": 25.4,
+                "carbs": 0.0,
+                "fat": 12.4,
+                "fiber": 0.0,
+                "emoji": "🐟",
+                "description": "富含Ω-3脂肪酸，保护心血管和大脑。"
+            },
+            {
+                "name": "牛里脊",
+                "category": "protein",
+                "calories": 217,
+                "protein": 26.1,
+                "carbs": 0.0,
+                "fat": 12.0,
+                "fiber": 0.0,
+                "emoji": "🥩",
+                "description": "铁和锌含量高，是补充血红素铁的优质来源。"
+            },
+            {
+                "name": "猪里脊",
+                "category": "protein",
+                "calories": 242,
+                "protein": 27.0,
+                "carbs": 0.0,
+                "fat": 14.0,
+                "fiber": 0.0,
+                "emoji": "🍖",
+                "description": "脂肪含量较低，适合需要补充蛋白的家庭餐。"
+            },
+            {
+                "name": "羊排",
+                "category": "protein",
+                "calories": 294,
+                "protein": 25.6,
+                "carbs": 0.0,
+                "fat": 21.2,
+                "fiber": 0.0,
+                "emoji": "🍖",
+                "description": "富含铁质与优质脂肪，寒冷季节可增强体力。"
+            },
+            {
+                "name": "虾仁",
+                "category": "protein",
+                "calories": 99,
+                "protein": 24.0,
+                "carbs": 0.2,
+                "fat": 0.3,
+                "fiber": 0.0,
+                "emoji": "🦐",
+                "description": "高蛋白低脂肪，富含虾青素帮助抗氧化。"
+            },
+            {
+                "name": "鲈鱼",
+                "category": "protein",
+                "calories": 124,
+                "protein": 20.3,
+                "carbs": 0.0,
+                "fat": 4.3,
+                "fiber": 0.0,
+                "emoji": "🐟",
+                "description": "肉质细嫩，含优质蛋白和DHA促进脑部发育。"
+            },
+            {
+                "name": "鸡肝",
+                "category": "protein",
+                "calories": 167,
+                "protein": 24.5,
+                "carbs": 1.0,
+                "fat": 6.5,
+                "fiber": 0.0,
+                "emoji": "🍗",
+                "description": "富含维生素A和铁质，是补血佳品。"
+            },
+            {
+                "name": "豆腐",
+                "category": "protein",
+                "calories": 76,
+                "protein": 8.1,
+                "carbs": 1.9,
+                "fat": 4.8,
+                "fiber": 0.3,
+                "emoji": "🍥",
+                "description": "植物蛋白代表，含钙丰富且易于吸收。"
+            },
+            {
+                "name": "豆干",
+                "category": "protein",
+                "calories": 121,
+                "protein": 13.2,
+                "carbs": 4.6,
+                "fat": 5.3,
+                "fiber": 2.6,
+                "emoji": "🧈",
+                "description": "水分少营养密集，适合凉拌或热炒。"
+            },
+            {
+                "name": "黄豆",
+                "category": "protein",
+                "calories": 446,
+                "protein": 36.5,
+                "carbs": 30.2,
+                "fat": 19.9,
+                "fiber": 9.3,
+                "emoji": "🫘",
+                "description": "含有大豆异黄酮，有助于调节内分泌。"
+            },
+            {
+                "name": "黑豆",
+                "category": "protein",
+                "calories": 436,
+                "protein": 35.0,
+                "carbs": 34.8,
+                "fat": 19.9,
+                "fiber": 15.5,
+                "emoji": "🫘",
+                "description": "黑色素丰富，滋补肾精并提升气血。"
+            },
+            {
+                "name": "红豆",
+                "category": "protein",
+                "calories": 329,
+                "protein": 22.1,
+                "carbs": 60.0,
+                "fat": 0.8,
+                "fiber": 12.7,
+                "emoji": "🫘",
+                "description": "富含钾和膳食纤维，有助于利水消肿。"
+            },
+            {
+                "name": "鹰嘴豆",
+                "category": "protein",
+                "calories": 364,
+                "protein": 19.3,
+                "carbs": 60.7,
+                "fat": 6.0,
+                "fiber": 17.4,
+                "emoji": "🫘",
+                "description": "低GI高纤维，帮助稳定血糖与增强饱腹。"
+            },
+            {
+                "name": "扁豆",
+                "category": "protein",
+                "calories": 353,
+                "protein": 25.8,
+                "carbs": 60.1,
+                "fat": 1.1,
+                "fiber": 30.5,
+                "emoji": "🫘",
+                "description": "蛋白与纤维兼具，适合熬汤或加入沙拉。"
+            },
+            {
+                "name": "青豌豆",
+                "category": "protein",
+                "calories": 118,
+                "protein": 8.6,
+                "carbs": 21.1,
+                "fat": 0.4,
+                "fiber": 7.5,
+                "emoji": "🟢",
+                "description": "含有叶黄素与维生素K，保护视力和骨骼。"
+            },
+            {
+                "name": "鳕鱼",
+                "category": "protein",
+                "calories": 82,
+                "protein": 18.0,
+                "carbs": 0.0,
+                "fat": 0.7,
+                "fiber": 0.0,
+                "emoji": "🐟",
+                "description": "肉质细嫩，脂肪低且富含维生素D。"
+            },
+            {
+                "name": "鸡腿肉",
+                "category": "protein",
+                "calories": 209,
+                "protein": 18.3,
+                "carbs": 0.0,
+                "fat": 14.2,
+                "fiber": 0.0,
+                "emoji": "🍗",
+                "description": "含有胶原蛋白与铁质，口感多汁适合红烧烹调。"
+            },
+            {
+                "name": "火鸡胸肉",
+                "category": "protein",
+                "calories": 135,
+                "protein": 29.0,
+                "carbs": 0.0,
+                "fat": 1.0,
+                "fiber": 0.0,
+                "emoji": "🍗",
+                "description": "低脂高蛋白，适合体重管理与健身人群。"
+            },
+            {
+                "name": "牛奶",
+                "category": "dairy",
+                "calories": 42,
+                "protein": 3.4,
+                "carbs": 5.0,
+                "fat": 1.0,
+                "fiber": 0.0,
+                "emoji": "🥛",
+                "description": "钙质丰富，补充蛋白和乳糖营养。"
+            },
+            {
+                "name": "酸奶",
+                "category": "dairy",
+                "calories": 59,
+                "protein": 10.0,
+                "carbs": 3.6,
+                "fat": 0.4,
+                "fiber": 0.0,
+                "emoji": "🥛",
+                "description": "含有益生菌，促进肠道菌群平衡。"
+            },
+            {
+                "name": "奶酪",
+                "category": "dairy",
+                "calories": 113,
+                "protein": 7.0,
+                "carbs": 1.0,
+                "fat": 9.0,
+                "fiber": 0.0,
+                "emoji": "🧀",
+                "description": "乳制品浓缩形式，补钙效率高。"
+            },
+            {
+                "name": "低脂牛奶",
+                "category": "dairy",
+                "calories": 35,
+                "protein": 3.5,
+                "carbs": 5.1,
+                "fat": 0.2,
+                "fiber": 0.0,
+                "emoji": "🥛",
+                "description": "降低脂肪摄入同时保留蛋白质与钙。"
+            },
+            {
+                "name": "希腊酸奶",
+                "category": "dairy",
+                "calories": 97,
+                "protein": 9.0,
+                "carbs": 3.6,
+                "fat": 5.0,
+                "fiber": 0.0,
+                "emoji": "🥣",
+                "description": "质地浓稠，高蛋白低糖适合代餐。"
+            },
+            {
+                "name": "黄油",
+                "category": "dairy",
+                "calories": 717,
+                "protein": 0.9,
+                "carbs": 0.1,
+                "fat": 81.1,
+                "fiber": 0.0,
+                "emoji": "🧈",
+                "description": "提供脂溶性维生素，烘焙少量使用增香。"
+            },
+            {
+                "name": "全脂牛奶",
+                "category": "dairy",
+                "calories": 64,
+                "protein": 3.3,
+                "carbs": 4.8,
+                "fat": 3.7,
+                "fiber": 0.0,
+                "emoji": "🥛",
+                "description": "口感醇厚，含天然乳脂与维生素A。"
+            },
+            {
+                "name": "奶粉",
+                "category": "dairy",
+                "calories": 496,
+                "protein": 24.5,
+                "carbs": 38.4,
+                "fat": 26.7,
+                "fiber": 0.0,
+                "emoji": "🥛",
+                "description": "营养高度浓缩，冲调方便补充能量。"
+            },
+            {
+                "name": "奶油奶酪",
+                "category": "dairy",
+                "calories": 342,
+                "protein": 6.1,
+                "carbs": 4.1,
+                "fat": 34.0,
+                "fiber": 0.0,
+                "emoji": "🧀",
+                "description": "质地柔滑，适合烘焙甜点或作为抹酱。"
+            },
+            {
+                "name": "羊奶",
+                "category": "dairy",
+                "calories": 69,
+                "protein": 3.9,
+                "carbs": 4.5,
+                "fat": 4.1,
+                "fiber": 0.0,
+                "emoji": "🐐",
+                "description": "乳糖含量较低，易于消化吸收。"
+            },
+            {
+                "name": "苹果",
+                "category": "fruits",
+                "calories": 52,
+                "protein": 0.3,
+                "carbs": 13.8,
+                "fat": 0.2,
+                "fiber": 2.4,
+                "emoji": "🍎",
+                "description": "富含果胶和抗氧化物，有助于清理肠道。"
+            },
+            {
+                "name": "香蕉",
+                "category": "fruits",
+                "calories": 89,
+                "protein": 1.1,
+                "carbs": 22.8,
+                "fat": 0.3,
+                "fiber": 2.6,
+                "emoji": "🍌",
+                "description": "钾含量高，可缓解运动后的肌肉疲劳。"
+            },
+            {
+                "name": "橙子",
+                "category": "fruits",
+                "calories": 47,
+                "protein": 0.9,
+                "carbs": 11.8,
+                "fat": 0.1,
+                "fiber": 2.4,
+                "emoji": "🍊",
+                "description": "维生素C丰富，提升免疫力并抗氧化。"
+            },
+            {
+                "name": "葡萄",
+                "category": "fruits",
+                "calories": 69,
+                "protein": 0.7,
+                "carbs": 18.1,
+                "fat": 0.2,
+                "fiber": 0.9,
+                "emoji": "🍇",
+                "description": "含多酚与白藜芦醇，保护心血管。"
+            },
+            {
+                "name": "草莓",
+                "category": "fruits",
+                "calories": 33,
+                "protein": 0.8,
+                "carbs": 7.7,
+                "fat": 0.3,
+                "fiber": 2.0,
+                "emoji": "🍓",
+                "description": "花青素和维C含量高，帮助美容养颜。"
+            },
+            {
+                "name": "蓝莓",
+                "category": "fruits",
+                "calories": 57,
+                "protein": 0.7,
+                "carbs": 14.5,
+                "fat": 0.3,
+                "fiber": 2.4,
+                "emoji": "🫐",
+                "description": "被称为脑黄金，保护视力与记忆力。"
+            },
+            {
+                "name": "芒果",
+                "category": "fruits",
+                "calories": 60,
+                "protein": 0.8,
+                "carbs": 15.0,
+                "fat": 0.4,
+                "fiber": 1.6,
+                "emoji": "🥭",
+                "description": "β-胡萝卜素含量高，保护皮肤免受氧化。"
+            },
+            {
+                "name": "菠萝",
+                "category": "fruits",
+                "calories": 50,
+                "protein": 0.5,
+                "carbs": 13.1,
+                "fat": 0.1,
+                "fiber": 1.4,
+                "emoji": "🍍",
+                "description": "含菠萝蛋白酶，帮助分解蛋白质。"
+            },
+            {
+                "name": "西瓜",
+                "category": "fruits",
+                "calories": 30,
+                "protein": 0.6,
+                "carbs": 7.6,
+                "fat": 0.2,
+                "fiber": 0.4,
+                "emoji": "🍉",
+                "description": "水分充足，夏季清凉解暑首选。"
+            },
+            {
+                "name": "柠檬",
+                "category": "fruits",
+                "calories": 29,
+                "protein": 1.1,
+                "carbs": 9.3,
+                "fat": 0.3,
+                "fiber": 2.8,
+                "emoji": "🍋",
+                "description": "富含柠檬酸与维C，帮助抗氧化排毒。"
+            },
+            {
+                "name": "猕猴桃",
+                "category": "fruits",
+                "calories": 61,
+                "protein": 1.1,
+                "carbs": 14.7,
+                "fat": 0.5,
+                "fiber": 3.0,
+                "emoji": "🥝",
+                "description": "维生素C含量极高，促进胶原蛋白合成。"
+            },
+            {
+                "name": "木瓜",
+                "category": "fruits",
+                "calories": 43,
+                "protein": 0.5,
+                "carbs": 10.8,
+                "fat": 0.3,
+                "fiber": 1.7,
+                "emoji": "🍈",
+                "description": "含木瓜酶，帮助蛋白质消化吸收。"
+            },
+            {
+                "name": "石榴",
+                "category": "fruits",
+                "calories": 83,
+                "protein": 1.7,
+                "carbs": 18.7,
+                "fat": 1.2,
+                "fiber": 4.0,
+                "emoji": "🍎",
+                "description": "富含鞣花酸，多酚抗氧化保护心血管。"
+            },
+            {
+                "name": "樱桃",
+                "category": "fruits",
+                "calories": 63,
+                "protein": 1.1,
+                "carbs": 16.0,
+                "fat": 0.2,
+                "fiber": 2.1,
+                "emoji": "🍒",
+                "description": "花青素丰富，帮助缓解炎症与促进睡眠。"
+            },
+            {
+                "name": "桃子",
+                "category": "fruits",
+                "calories": 39,
+                "protein": 0.9,
+                "carbs": 9.5,
+                "fat": 0.3,
+                "fiber": 1.5,
+                "emoji": "🍑",
+                "description": "含多种维生素矿物质，补水润肺。"
+            },
+            {
+                "name": "梨",
+                "category": "fruits",
+                "calories": 57,
+                "protein": 0.4,
+                "carbs": 15.2,
+                "fat": 0.1,
+                "fiber": 3.1,
+                "emoji": "🍐",
+                "description": "水分和纤维丰富，润肺止咳促排毒。"
+            },
+            {
+                "name": "火龙果",
+                "category": "fruits",
+                "calories": 60,
+                "protein": 1.2,
+                "carbs": 13.0,
+                "fat": 0.2,
+                "fiber": 3.0,
+                "emoji": "🐉",
+                "description": "富含植物性纤维，促进肠道蠕动。"
+            },
+            {
+                "name": "百香果",
+                "category": "fruits",
+                "calories": 97,
+                "protein": 2.2,
+                "carbs": 23.4,
+                "fat": 0.7,
+                "fiber": 10.4,
+                "emoji": "🥭",
+                "description": "香气浓郁，膳食纤维与多酚含量极高。"
+            },
+            {
+                "name": "柚子",
+                "category": "fruits",
+                "calories": 38,
+                "protein": 0.8,
+                "carbs": 9.6,
+                "fat": 0.1,
+                "fiber": 1.4,
+                "emoji": "🍊",
+                "description": "低糖高纤，帮助控卡与减脂。"
+            },
+            {
+                "name": "牛油果",
+                "category": "fruits",
+                "calories": 160,
+                "protein": 2.0,
+                "carbs": 8.5,
+                "fat": 15.0,
+                "fiber": 6.7,
+                "emoji": "🥑",
+                "description": "富含单不饱和脂肪酸，保护心血管系统。"
+            },
+            {
+                "name": "西兰花",
+                "category": "vegetables",
+                "calories": 34,
+                "protein": 2.8,
+                "carbs": 6.6,
+                "fat": 0.4,
+                "fiber": 2.6,
+                "emoji": "🥦",
+                "description": "维生素C与叶酸丰富，帮助抗氧化。"
+            },
+            {
+                "name": "胡萝卜",
+                "category": "vegetables",
+                "calories": 41,
+                "protein": 0.9,
+                "carbs": 9.6,
+                "fat": 0.2,
+                "fiber": 2.8,
+                "emoji": "🥕",
+                "description": "β-胡萝卜素含量高，保护视力和皮肤。"
+            },
+            {
+                "name": "菠菜",
+                "category": "vegetables",
+                "calories": 23,
+                "protein": 2.9,
+                "carbs": 3.6,
+                "fat": 0.4,
+                "fiber": 2.2,
+                "emoji": "🥬",
+                "description": "铁与叶酸丰富，补血护眼。"
+            },
+            {
+                "name": "生菜",
+                "category": "vegetables",
+                "calories": 15,
+                "protein": 1.4,
+                "carbs": 2.9,
+                "fat": 0.2,
+                "fiber": 1.3,
+                "emoji": "🥬",
+                "description": "低热量高水分，适合作沙拉生食。"
+            },
+            {
+                "name": "紫甘蓝",
+                "category": "vegetables",
+                "calories": 31,
+                "protein": 1.4,
+                "carbs": 7.4,
+                "fat": 0.2,
+                "fiber": 2.5,
+                "emoji": "🥬",
+                "description": "花青素丰富，增强免疫力。"
+            },
+            {
+                "name": "西红柿",
+                "category": "vegetables",
+                "calories": 18,
+                "protein": 0.9,
+                "carbs": 3.9,
+                "fat": 0.2,
+                "fiber": 1.2,
+                "emoji": "🍅",
+                "description": "富含番茄红素，保护心血管系统。"
+            },
+            {
+                "name": "黄瓜",
+                "category": "vegetables",
+                "calories": 16,
+                "protein": 0.7,
+                "carbs": 3.6,
+                "fat": 0.1,
+                "fiber": 0.5,
+                "emoji": "🥒",
+                "description": "解暑利尿，补充水分和微量元素。"
+            },
+            {
+                "name": "香菇",
+                "category": "vegetables",
+                "calories": 34,
+                "protein": 2.2,
+                "carbs": 6.8,
+                "fat": 0.5,
+                "fiber": 2.5,
+                "emoji": "🍄",
+                "description": "含香菇多糖，提高免疫力。"
+            },
+            {
+                "name": "土豆",
+                "category": "vegetables",
+                "calories": 77,
+                "protein": 2.0,
+                "carbs": 17.5,
+                "fat": 0.1,
+                "fiber": 2.2,
+                "emoji": "🥔",
+                "description": "富含钾和维生素C，可作为主食替代。"
+            },
+            {
+                "name": "红薯",
+                "category": "vegetables",
+                "calories": 86,
+                "protein": 1.6,
+                "carbs": 20.1,
+                "fat": 0.1,
+                "fiber": 3.0,
+                "emoji": "🍠",
+                "description": "膳食纤维含量高，帮助通便控糖。"
+            },
+            {
+                "name": "芦笋",
+                "category": "vegetables",
+                "calories": 20,
+                "protein": 2.2,
+                "carbs": 3.9,
+                "fat": 0.1,
+                "fiber": 2.1,
+                "emoji": "🌱",
+                "description": "富含叶酸与维生素K，利尿消肿。"
+            },
+            {
+                "name": "花菜",
+                "category": "vegetables",
+                "calories": 25,
+                "protein": 2.0,
+                "carbs": 5.0,
+                "fat": 0.3,
+                "fiber": 2.5,
+                "emoji": "🥦",
+                "description": "含硫代葡萄糖苷，帮助解毒抗癌。"
+            },
+            {
+                "name": "茄子",
+                "category": "vegetables",
+                "calories": 24,
+                "protein": 1.0,
+                "carbs": 5.7,
+                "fat": 0.2,
+                "fiber": 3.4,
+                "emoji": "🍆",
+                "description": "紫色外皮含花青素，保护心脑血管。"
+            },
+            {
+                "name": "彩椒",
+                "category": "vegetables",
+                "calories": 31,
+                "protein": 1.0,
+                "carbs": 6.0,
+                "fat": 0.3,
+                "fiber": 2.1,
+                "emoji": "🫑",
+                "description": "维生素C含量极高，增强免疫力。"
+            },
+            {
+                "name": "南瓜",
+                "category": "vegetables",
+                "calories": 26,
+                "protein": 1.0,
+                "carbs": 6.5,
+                "fat": 0.1,
+                "fiber": 0.5,
+                "emoji": "🎃",
+                "description": "富含胡萝卜素与钾，温补养胃。"
+            },
+            {
+                "name": "豌豆苗",
+                "category": "vegetables",
+                "calories": 32,
+                "protein": 3.6,
+                "carbs": 5.5,
+                "fat": 0.4,
+                "fiber": 3.0,
+                "emoji": "🌿",
+                "description": "维生素K与叶绿素丰富，清热解毒。"
+            },
+            {
+                "name": "油菜",
+                "category": "vegetables",
+                "calories": 13,
+                "protein": 1.5,
+                "carbs": 2.2,
+                "fat": 0.2,
+                "fiber": 1.2,
+                "emoji": "🥬",
+                "description": "钙含量高，帮助骨骼与牙齿健康。"
+            },
+            {
+                "name": "空心菜",
+                "category": "vegetables",
+                "calories": 19,
+                "protein": 2.0,
+                "carbs": 3.4,
+                "fat": 0.2,
+                "fiber": 2.1,
+                "emoji": "🥬",
+                "description": "含铁丰富，夏日清热降火。"
+            },
+            {
+                "name": "白萝卜",
+                "category": "vegetables",
+                "calories": 18,
+                "protein": 0.7,
+                "carbs": 4.1,
+                "fat": 0.1,
+                "fiber": 1.6,
+                "emoji": "🥕",
+                "description": "助消化化痰，搭配肉类可去腻解腥。"
+            },
+            {
+                "name": "莲藕",
+                "category": "vegetables",
+                "calories": 74,
+                "protein": 2.6,
+                "carbs": 17.2,
+                "fat": 0.1,
+                "fiber": 4.9,
+                "emoji": "🌸",
+                "description": "富含黏液蛋白，补血益胃并有止血功效。"
+            },
+            {
+                "name": "杏仁",
+                "category": "nuts",
+                "calories": 579,
+                "protein": 21.2,
+                "carbs": 21.6,
+                "fat": 49.9,
+                "fiber": 12.5,
+                "emoji": "🥜",
+                "description": "富含维生素E与优质脂肪，增强抗氧化能力。"
+            },
+            {
+                "name": "核桃",
+                "category": "nuts",
+                "calories": 654,
+                "protein": 15.2,
+                "carbs": 13.7,
+                "fat": 65.2,
+                "fiber": 6.7,
+                "emoji": "🌰",
+                "description": "植物性Ω-3来源，滋补脑部提升记忆。"
+            },
+            {
+                "name": "花生",
+                "category": "nuts",
+                "calories": 567,
+                "protein": 25.8,
+                "carbs": 16.1,
+                "fat": 49.2,
+                "fiber": 8.5,
+                "emoji": "🥜",
+                "description": "含有白藜芦醇，有助于保护心脏健康。"
+            },
+            {
+                "name": "腰果",
+                "category": "nuts",
+                "calories": 553,
+                "protein": 18.4,
+                "carbs": 30.2,
+                "fat": 43.9,
+                "fiber": 3.3,
+                "emoji": "🥜",
+                "description": "富含镁和铁质，帮助缓解疲劳。"
+            },
+            {
+                "name": "开心果",
+                "category": "nuts",
+                "calories": 562,
+                "protein": 20.3,
+                "carbs": 27.2,
+                "fat": 45.4,
+                "fiber": 10.0,
+                "emoji": "🥜",
+                "description": "高纤维低GI，是健康零食的好选择。"
+            },
+            {
+                "name": "榛子",
+                "category": "nuts",
+                "calories": 628,
+                "protein": 14.1,
+                "carbs": 16.7,
+                "fat": 60.8,
+                "fiber": 9.7,
+                "emoji": "🌰",
+                "description": "维生素E含量高，有助于美容养颜。"
+            },
+            {
+                "name": "松子",
+                "category": "nuts",
+                "calories": 673,
+                "protein": 13.7,
+                "carbs": 13.1,
+                "fat": 68.4,
+                "fiber": 3.7,
+                "emoji": "🌰",
+                "description": "富含不饱和脂肪酸，滋阴润燥。"
+            },
+            {
+                "name": "南瓜子",
+                "category": "nuts",
+                "calories": 574,
+                "protein": 29.8,
+                "carbs": 14.7,
+                "fat": 49.1,
+                "fiber": 6.0,
+                "emoji": "🎃",
+                "description": "含锌量高，保护前列腺与免疫健康。"
+            },
+            {
+                "name": "葵花籽",
+                "category": "nuts",
+                "calories": 584,
+                "protein": 20.8,
+                "carbs": 20.0,
+                "fat": 51.5,
+                "fiber": 8.6,
+                "emoji": "🌻",
+                "description": "维生素E和硒丰富，帮助抗氧化。"
+            },
+            {
+                "name": "巴西坚果",
+                "category": "nuts",
+                "calories": 659,
+                "protein": 14.3,
+                "carbs": 11.7,
+                "fat": 67.1,
+                "fiber": 7.5,
+                "emoji": "🥜",
+                "description": "富含硒元素，支持免疫系统与甲状腺。"
+            }
         ];
+
+        const categoryLabels = {
+            grains: "谷物类",
+            protein: "蛋白质类",
+            dairy: "乳制品",
+            fruits: "水果类",
+            vegetables: "蔬菜类",
+            nuts: "坚果类"
+        };
+
+        const formatNumber = (value) => {
+            const numericValue = Number(value);
+            return Number.isInteger(numericValue) ? numericValue : numericValue.toFixed(1);
+        };
 
         let selectedFoods = [];
         let filteredFoods = foodsData;
@@ -317,19 +1402,67 @@
             const foodsGrid = document.getElementById('foodsGrid');
             foodsGrid.innerHTML = '';
 
+            if (filteredFoods.length === 0) {
+                const emptyState = document.createElement('div');
+                emptyState.className = 'empty-state';
+                emptyState.textContent = '未找到符合条件的食物，请尝试更换关键词或分类。';
+                foodsGrid.appendChild(emptyState);
+                return;
+            }
+
             filteredFoods.forEach(food => {
-                const foodCard = document.createElement('div');
+                const foodCard = document.createElement('article');
                 foodCard.className = 'food-card';
                 foodCard.innerHTML = `
-                    <div class="food-emoji">${food.emoji}</div>
-                    <h3>${food.name}</h3>
-                    <div class="food-nutrition">
-                        <span>${food.calories}卡</span>
-                        <span>${food.protein}g蛋白</span>
+                    <div class="food-card-header">
+                        <div class="food-emoji">${food.emoji}</div>
+                        <div>
+                            <h3 class="food-name">${food.name}</h3>
+                            <p class="food-category-label">${categoryLabels[food.category] || '综合分类'}</p>
+                        </div>
                     </div>
+                    <div class="nutrition-stats">
+                        <div class="nutrition-stat">
+                            <span class="stat-number">${formatNumber(food.calories)}</span>
+                            <span class="stat-label">千卡</span>
+                        </div>
+                        <div class="nutrition-stat">
+                            <span class="stat-number">${formatNumber(food.protein)}</span>
+                            <span class="stat-label">蛋白质(g)</span>
+                        </div>
+                        <div class="nutrition-stat">
+                            <span class="stat-number">${formatNumber(food.carbs)}</span>
+                            <span class="stat-label">碳水(g)</span>
+                        </div>
+                        <div class="nutrition-stat">
+                            <span class="stat-number">${formatNumber(food.fat)}</span>
+                            <span class="stat-label">脂肪(g)</span>
+                        </div>
+                        <div class="nutrition-stat">
+                            <span class="stat-number">${formatNumber(food.fiber)}</span>
+                            <span class="stat-label">纤维(g)</span>
+                        </div>
+                    </div>
+                    <p class="food-description">${food.description}</p>
                     <button onclick="showFoodDetails('${food.name}')" class="btn-details">查看详情</button>
                 `;
                 foodsGrid.appendChild(foodCard);
+            });
+        }
+
+        function filterFoodsByQuery(query) {
+            const normalized = query.trim().toLowerCase();
+
+            if (!normalized) {
+                return foodsData;
+            }
+
+            return foodsData.filter(food => {
+                const label = (categoryLabels[food.category] || '').toLowerCase();
+                const description = food.description ? food.description.toLowerCase() : '';
+                return food.name.toLowerCase().includes(normalized) ||
+                    description.includes(normalized) ||
+                    label.includes(normalized);
             });
         }
 
@@ -338,10 +1471,7 @@
             // 搜索功能
             const searchInput = document.getElementById('searchInput');
             searchInput.addEventListener('input', function() {
-                const query = this.value.toLowerCase();
-                filteredFoods = foodsData.filter(food => 
-                    food.name.toLowerCase().includes(query)
-                );
+                filteredFoods = filterFoodsByQuery(this.value);
                 renderFoods();
             });
 
@@ -367,17 +1497,25 @@
         function showFoodDetails(foodName) {
             const food = foodsData.find(f => f.name === foodName);
             if (food) {
-                alert(`${food.name}\n热量: ${food.calories}卡\n蛋白质: ${food.protein}g\n碳水化合物: ${food.carbs}g\n脂肪: ${food.fat}g\n纤维: ${food.fiber}g`);
+                const details = [
+                    `${food.name}`,
+                    `分类：${categoryLabels[food.category] || '综合分类'}`,
+                    `热量：${formatNumber(food.calories)}卡`,
+                    `蛋白质：${formatNumber(food.protein)}克`,
+                    `碳水化合物：${formatNumber(food.carbs)}克`,
+                    `脂肪：${formatNumber(food.fat)}克`,
+                    `膳食纤维：${formatNumber(food.fiber)}克`,
+                    '',
+                    `${food.description}`
+                ].join('\n');
+                alert(details);
             }
         }
 
         // 搜索功能
         function performSearch() {
             const searchInput = document.getElementById('searchInput');
-            const query = searchInput.value.toLowerCase();
-            filteredFoods = foodsData.filter(food => 
-                food.name.toLowerCase().includes(query)
-            );
+            filteredFoods = filterFoodsByQuery(searchInput.value);
             renderFoods();
         }
     </script>
