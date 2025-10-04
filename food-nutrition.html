@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>食物营养分析 - 健康饮食指南</title>
+    <title>TCM-Inspired Nutrition | Heritage TCM</title>
+    <meta name="description" content="Seasonal meal ideas, warming and cooling ingredients, and breakfast pairings inspired by Traditional Chinese Medicine.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="nutrition-page-body">
@@ -13,12 +13,12 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <i class="fas fa-leaf"></i>
-                <span>传统中医诊所</span>
+                <span>Heritage TCM</span>
             </div>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="index.html" class="nav-link">首页</a></li>
-                <li class="nav-item"><a href="food-nutrition.html" class="nav-link active">食物营养</a></li>
-                <li class="nav-item"><a href="zhongyao.html" class="nav-link">神农本草</a></li>
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="food-nutrition.html" class="nav-link active">TCM Nutrition</a></li>
+                <li class="nav-item"><a href="zhongyao.html" class="nav-link">Herbal Library</a></li>
             </ul>
         </div>
     </nav>
@@ -26,9 +26,9 @@
     <main class="nutrition-page">
         <header class="nutrition-header">
             <div class="container">
-                <p class="section-eyebrow">每日饮食灵感</p>
-                <h1>食物营养分析</h1>
-                <p class="section-subtitle">挑选常见食物，快速了解热量、蛋白质、碳水化合物、脂肪与膳食纤维含量。</p>
+                <p class="section-eyebrow">Daily nourishment</p>
+                <h1>TCM-Inspired Nutrition Planner</h1>
+                <p class="section-subtitle">Build balanced meals with whole foods that align with your constitution and the season.</p>
             </div>
         </header>
 
@@ -36,306 +36,116 @@
             <div class="container nutrition-layout">
                 <div class="food-panel">
                     <div class="panel-header">
-                        <h2>选择食物</h2>
-                        <div class="food-tags" id="foodTags"></div>
+                        <h2>Breakfast pairings</h2>
                     </div>
-                    <div class="food-grid" id="foodGrid"></div>
+                    <div class="food-grid nutrition-cards">
+                        <article class="nutrition-card">
+                            <h3>Oats + Goji + Walnut</h3>
+                            <p>Builds spleen qi and nourishes the blood. Add cinnamon if mornings feel chilly.</p>
+                            <ul>
+                                <li>Approx. 320 kcal</li>
+                                <li>Plant protein · Omega-3 fats · Fibre</li>
+                            </ul>
+                        </article>
+                        <article class="nutrition-card">
+                            <h3>Millet Congee + Pear</h3>
+                            <p>Moistens dryness and soothes digestion—ideal for late summer and early autumn.</p>
+                            <ul>
+                                <li>Approx. 280 kcal</li>
+                                <li>Cooling, gentle on the stomach</li>
+                            </ul>
+                        </article>
+                        <article class="nutrition-card">
+                            <h3>Egg + Steamed Greens</h3>
+                            <p>Supports liver blood and keeps energy steady for busy mornings.</p>
+                            <ul>
+                                <li>Approx. 300 kcal</li>
+                                <li>High-quality protein · Folate · Iron</li>
+                            </ul>
+                        </article>
+                    </div>
                 </div>
 
-                <div class="analysis-panel" id="analysisPanel">
-                    <div class="panel-header">
-                        <div class="selected-food-meta">
-                            <span class="selected-food-icon" id="selectedFoodIcon">🥖</span>
-                            <div>
-                                <h2 id="selectedFoodName">全麦面包</h2>
-                                <p id="selectedFoodCategory" class="selected-food-category">全谷物 · 早餐主食首选</p>
-                            </div>
-                        </div>
-                        <button class="btn-light" id="resetSelection" type="button">重置选择</button>
+                <div class="analysis-panel nutrition-guidance">
+                    <h2>Seasonal guidance</h2>
+                    <div class="season-grid">
+                        <article>
+                            <h3>Spring · Wood element</h3>
+                            <p>Focus on lightly cooked greens, sprouts, and sour flavours. Sip chrysanthemum tea to cool rising yang.</p>
+                        </article>
+                        <article>
+                            <h3>Summer · Fire element</h3>
+                            <p>Hydrate with watermelon, cucumber, and mung bean soup. Keep cooking methods quick to preserve vitality.</p>
+                        </article>
+                        <article>
+                            <h3>Late Summer · Earth element</h3>
+                            <p>Support the spleen with millet, sweet potato, and adzuki bean soups. Avoid excessive cold drinks.</p>
+                        </article>
+                        <article>
+                            <h3>Autumn · Metal element</h3>
+                            <p>Moisten lung yin with pear, lily bulb, sesame, and honey. Add ginger to dispel wind chill.</p>
+                        </article>
+                        <article>
+                            <h3>Winter · Water element</h3>
+                            <p>Warm the kidneys with black beans, lamb broth, and cinnamon-spiced teas. Emphasise hearty stews.</p>
+                        </article>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="nutrition-breakdown">
-                        <h3>营养分析</h3>
-                        <ul class="nutrition-list" id="nutritionList">
-                            <li class="nutrition-item">
-                                <div class="label">热量 (kcal)</div>
-                                <div class="bar"><span></span></div>
-                                <div class="value">0</div>
-                            </li>
-                            <li class="nutrition-item">
-                                <div class="label">蛋白质 (g)</div>
-                                <div class="bar"><span></span></div>
-                                <div class="value">0</div>
-                            </li>
-                            <li class="nutrition-item">
-                                <div class="label">碳水化合物 (g)</div>
-                                <div class="bar"><span></span></div>
-                                <div class="value">0</div>
-                            </li>
-                            <li class="nutrition-item">
-                                <div class="label">脂肪 (g)</div>
-                                <div class="bar"><span></span></div>
-                                <div class="value">0</div>
-                            </li>
-                            <li class="nutrition-item">
-                                <div class="label">膳食纤维 (g)</div>
-                                <div class="bar"><span></span></div>
-                                <div class="value">0</div>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="nutrition-advice">
-                        <h3>饮食建议</h3>
-                        <p id="adviceText">选择左侧食物即可查看专属营养解析与饮食建议。</p>
-                    </div>
+        <section class="nutrition-tips">
+            <div class="container">
+                <div class="section-header">
+                    <p class="section-eyebrow">Quick tips</p>
+                    <h2 class="section-title">Make every meal count</h2>
+                    <p class="section-subtitle">Small shifts can align your diet with TCM principles.</p>
+                </div>
+                <div class="tips-grid">
+                    <article>
+                        <h3>Balance temperature</h3>
+                        <p>Pair warming ingredients (ginger, cinnamon, lamb) with cooling ones (pear, cucumber, tofu) to suit your internal climate.</p>
+                    </article>
+                    <article>
+                        <h3>Favour whole grains</h3>
+                        <p>Switch refined carbs for millet, barley, or brown rice to stabilise qi and nourish the spleen.</p>
+                    </article>
+                    <article>
+                        <h3>Eat with the clock</h3>
+                        <p>Enjoy the largest meal at midday when digestive fire peaks; keep dinners lighter to support sleep.</p>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
 
-    <script>
-        const categories = [
-            { id: 'all', label: '全部' },
-            { id: 'grains', label: '全谷物' },
-            { id: 'protein', label: '高蛋白' },
-            { id: 'fruits', label: '水果' },
-            { id: 'vegetables', label: '蔬菜' },
-            { id: 'dairy', label: '乳制品' },
-            { id: 'nuts', label: '坚果' }
-        ];
-
-        const foods = [
-            {
-                id: 'whole-grain-bread',
-                name: '全麦面包',
-                icon: '🥖',
-                category: 'grains',
-                categoryText: '全谷物',
-                description: '早餐主食首选',
-                calories: 220,
-                protein: 8,
-                carbs: 38,
-                fat: 4,
-                fiber: 6,
-                advice: '富含膳食纤维，能稳定血糖，适合搭配鸡蛋或牛奶形成均衡早餐。'
-            },
-            {
-                id: 'salmon',
-                name: '三文鱼',
-                icon: '🐟',
-                category: 'protein',
-                categoryText: '高蛋白',
-                description: '优质Omega-3来源',
-                calories: 208,
-                protein: 20,
-                carbs: 0,
-                fat: 13,
-                fiber: 0,
-                advice: '富含Omega-3脂肪酸，有助心血管健康，搭配绿叶菜减少油脂摄入。'
-            },
-            {
-                id: 'greek-yogurt',
-                name: '希腊酸奶',
-                icon: '🥛',
-                category: 'dairy',
-                categoryText: '乳制品',
-                description: '高蛋白低脂',
-                calories: 130,
-                protein: 11,
-                carbs: 6,
-                fat: 5,
-                fiber: 0,
-                advice: '含益生菌和蛋白质，可搭配燕麦与莓果增加饱腹感及抗氧化能力。'
-            },
-            {
-                id: 'avocado',
-                name: '牛油果',
-                icon: '🥑',
-                category: 'vegetables',
-                categoryText: '蔬菜',
-                description: '健康脂肪代表',
-                calories: 160,
-                protein: 2,
-                carbs: 9,
-                fat: 15,
-                fiber: 7,
-                advice: '富含不饱和脂肪酸和钾元素，适合搭配全麦面包或沙拉。'
-            },
-            {
-                id: 'blueberry',
-                name: '蓝莓',
-                icon: '🫐',
-                category: 'fruits',
-                categoryText: '水果',
-                description: '抗氧化之星',
-                calories: 85,
-                protein: 1,
-                carbs: 21,
-                fat: 0.5,
-                fiber: 3.5,
-                advice: '多酚含量高，保护心血管与视力，搭配酸奶或燕麦片十分合适。'
-            },
-            {
-                id: 'almonds',
-                name: '杏仁',
-                icon: '🌰',
-                category: 'nuts',
-                categoryText: '坚果',
-                description: '随手营养零食',
-                calories: 170,
-                protein: 6,
-                carbs: 6,
-                fat: 15,
-                fiber: 4,
-                advice: '富含维生素E与健康脂肪，控制每日一小把即可，避免热量过剩。'
-            },
-            {
-                id: 'spinach',
-                name: '菠菜',
-                icon: '🥬',
-                category: 'vegetables',
-                categoryText: '蔬菜',
-                description: '叶酸铁质补给',
-                calories: 30,
-                protein: 3,
-                carbs: 4,
-                fat: 0.4,
-                fiber: 2.5,
-                advice: '富含叶酸与铁质，焯水后搭配芝麻酱或蒜蓉补充钙铁吸收。'
-            },
-            {
-                id: 'oats',
-                name: '燕麦片',
-                icon: '🥣',
-                category: 'grains',
-                categoryText: '全谷物',
-                description: '饱腹慢能量',
-                calories: 150,
-                protein: 5,
-                carbs: 27,
-                fat: 3,
-                fiber: 4,
-                advice: 'β-葡聚糖有助调节胆固醇，建议搭配坚果与水果提升口感与营养。'
-            }
-        ];
-
-        const reference = {
-            calories: 600,
-            protein: 30,
-            carbs: 80,
-            fat: 25,
-            fiber: 20
-        };
-
-        const foodTags = document.getElementById('foodTags');
-        const foodGrid = document.getElementById('foodGrid');
-        const nutritionList = document.getElementById('nutritionList');
-        const adviceText = document.getElementById('adviceText');
-        const selectedFoodName = document.getElementById('selectedFoodName');
-        const selectedFoodCategory = document.getElementById('selectedFoodCategory');
-        const selectedFoodIcon = document.getElementById('selectedFoodIcon');
-        const resetSelection = document.getElementById('resetSelection');
-
-        let activeCategory = 'all';
-        let selectedFood = null;
-
-        function renderTags() {
-            foodTags.innerHTML = '';
-            categories.forEach(cat => {
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.dataset.category = cat.id;
-                button.textContent = cat.label;
-                button.className = cat.id === activeCategory ? 'tag-btn active' : 'tag-btn';
-                button.addEventListener('click', () => {
-                    activeCategory = cat.id;
-                    renderTags();
-                    renderFoods();
-                });
-                foodTags.appendChild(button);
-            });
-        }
-
-        function renderFoods() {
-            foodTags.querySelectorAll('button').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.category === activeCategory);
-            });
-
-            foodGrid.innerHTML = '';
-            foods
-                .filter(food => activeCategory === 'all' || food.category === activeCategory)
-                .forEach(food => {
-                    const card = document.createElement('button');
-                    card.type = 'button';
-                    card.className = 'food-card';
-                    card.innerHTML = `
-                        <span class="icon">${food.icon}</span>
-                        <div class="info">
-                            <strong>${food.name}</strong>
-                            <small>${food.categoryText} · ${food.description}</small>
-                        </div>
-                    `;
-                    if (selectedFood && selectedFood.id === food.id) {
-                        card.classList.add('selected');
-                    }
-                    card.addEventListener('click', () => selectFood(food));
-                    foodGrid.appendChild(card);
-                });
-        }
-
-        function selectFood(food) {
-            selectedFood = food;
-            selectedFoodName.textContent = food.name;
-            selectedFoodCategory.textContent = `${food.categoryText} · ${food.description}`;
-            selectedFoodIcon.textContent = food.icon;
-            adviceText.textContent = food.advice;
-
-            const values = [
-                food.calories,
-                food.protein,
-                food.carbs,
-                food.fat,
-                food.fiber
-            ];
-
-            const refs = [
-                reference.calories,
-                reference.protein,
-                reference.carbs,
-                reference.fat,
-                reference.fiber
-            ];
-
-            nutritionList.querySelectorAll('.nutrition-item').forEach((item, index) => {
-                const bar = item.querySelector('.bar span');
-                const valueEl = item.querySelector('.value');
-                const percent = Math.min(100, Math.round((values[index] / refs[index]) * 100));
-                bar.style.width = `${percent}%`;
-                valueEl.textContent = values[index];
-            });
-
-            foodGrid.querySelectorAll('.food-card').forEach(card => {
-                card.classList.toggle('selected', card.querySelector('strong').textContent === food.name);
-            });
-        }
-
-        resetSelection.addEventListener('click', () => {
-            selectedFood = null;
-            selectedFoodIcon.textContent = '🍽️';
-            selectedFoodName.textContent = '选择食物';
-            selectedFoodCategory.textContent = '从左侧列表中挑选一个食物了解详情';
-            adviceText.textContent = '选择左侧食物即可查看专属营养解析与饮食建议。';
-            nutritionList.querySelectorAll('.nutrition-item').forEach(item => {
-                item.querySelector('.bar span').style.width = '0%';
-                item.querySelector('.value').textContent = '0';
-            });
-            foodGrid.querySelectorAll('.food-card').forEach(card => card.classList.remove('selected'));
-        });
-
-        renderTags();
-        renderFoods();
-        selectFood(foods[0]);
-    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Heritage TCM</h3>
+                    <p>Classical wisdom, practical nourishment.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="famous-tcm-doctors.html">Practitioners</a></li>
+                        <li><a href="zhongyao.html">Herbal Library</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@heritagetcm.com</li>
+                        <li><i class="fas fa-phone"></i> +1-407-555-1688</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Heritage TCM. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
