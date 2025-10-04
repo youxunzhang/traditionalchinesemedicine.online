@@ -1,4 +1,4 @@
-/* 全局样式 */
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -18,7 +18,7 @@ body {
     padding: 0 20px;
 }
 
-/* 导航栏 */
+/* Navigation */
 .navbar {
     background: linear-gradient(135deg, #4CAF50, #45a049);
     padding: 1rem 0;
@@ -113,7 +113,7 @@ body {
     transition: 0.3s;
 }
 
-/* 主页横幅 */
+/* Hero banner */
 .hero-section {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
     background-size: cover;
@@ -206,7 +206,7 @@ body {
     color: #4CAF50;
 }
 
-/* 通用部分样式 */
+/* Shared section styling */
 .section-header {
     text-align: center;
     margin-bottom: 3rem;
@@ -219,7 +219,7 @@ body {
     margin-bottom: 1rem;
 }
 
-/* 食物营养页面 */
+/* Nutrition page */
 .nutrition-page-body {
     background: #f4f6fb;
 }
@@ -492,7 +492,7 @@ body {
     margin-bottom: 1.2rem;
 }
 
-/* 倪海厦介绍样式 */
+/* Ni Hai-Xia page */
 .ni-haixia-section {
     padding: 80px 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -572,7 +572,7 @@ body {
     line-height: 1.6;
 }
 
-/* 中医课程样式 */
+/* Course highlights */
 .courses-section {
     padding: 80px 0;
     background: white;
@@ -669,7 +669,7 @@ body {
     opacity: 0.9;
 }
 
-/* 服务项目 */
+/* Services */
 .services-section {
     padding: 5rem 0;
     background: white;
@@ -743,7 +743,7 @@ body {
     font-weight: bold;
 }
 
-/* 神农本草（首页） */
+/* Shennong section on homepage */
 .shennong-section {
     padding: 100px 0;
     background: linear-gradient(180deg, #f3f7f1 0%, #ffffff 100%);
@@ -1129,7 +1129,7 @@ body {
     }
 }
 
-/* 治疗方案 */
+/* Treatment plans */
 .treatments-section {
     padding: 5rem 0;
     background: white;
@@ -1216,7 +1216,7 @@ body {
     font-weight: 500;
 }
 
-/* 在线咨询 */
+/* Consultations */
 .consultation-section {
     padding: 5rem 0;
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -1305,7 +1305,7 @@ body {
     border-color: #4CAF50;
 }
 
-/* 本地化信息 */
+/* Localised info */
 .local-info-section {
     padding: 5rem 0;
     background: white;
@@ -1429,7 +1429,7 @@ body {
     display: block;
 }
 
-/* 关于我们 */
+/* About section */
 .about-section {
     padding: 5rem 0;
     background: white;
@@ -1474,7 +1474,7 @@ body {
     font-weight: 500;
 }
 
-/* 联系我们 */
+/* Contact section */
 .contact-section {
     padding: 5rem 0;
     background: linear-gradient(135deg, #f8f9fa, #e9ecef);
@@ -1535,7 +1535,7 @@ body {
     text-align: center;
 }
 
-/* 页脚 */
+/* Footer */
 .footer {
     background: #2c3e50;
     color: white;
@@ -1614,7 +1614,7 @@ body {
     color: #bdc3c7;
 }
 
-/* 中医好书推荐样式 */
+/* Recommended reading */
 .books-section {
     padding: 90px 0;
     background: #ffffff;
@@ -1704,7 +1704,7 @@ body {
     padding: 0.5rem 0;
 }
 
-/* 响应式设计 */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -1793,7 +1793,7 @@ body {
         margin: 0 10px;
     }
 }
-/* 神农本草经页面 */
+/* Materia medica archive */
 .herb-archive-page {
     background: #f7f8f3;
 }
@@ -1960,15 +1960,15 @@ body {
     box-shadow: 0 30px 65px rgba(0, 0, 0, 0.14);
 }
 
-.herb-entry[data-grade="上品"] {
+.herb-entry[data-grade="Superior"] {
     border-left-color: #2e7d32;
 }
 
-.herb-entry[data-grade="中品"] {
+.herb-entry[data-grade="Medium"] {
     border-left-color: #d26900;
 }
 
-.herb-entry[data-grade="下品"] {
+.herb-entry[data-grade="Regular"] {
     border-left-color: #c62828;
 }
 
@@ -2089,7 +2089,7 @@ body {
     }
 }
 
-/* 八部金刚功页面 */
+/* Ba Bu Jingang Gong */
 .practice-hero {
     position: relative;
     margin-top: 80px;

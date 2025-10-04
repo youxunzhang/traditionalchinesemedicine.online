@@ -1,6 +1,6 @@
 import shennongHerbs from './data/shennong-herbs.js';
 
-const gradeOrder = ['上品', '中品', '下品'];
+const gradeOrder = ['Superior', 'Medium', 'Regular'];
 
 document.addEventListener('DOMContentLoaded', () => {
     const listEl = document.getElementById('herbList');
@@ -19,59 +19,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    searchInput.addEventListener('input', () => {
-        render();
-    });
-
-    function parseEntry(entryText) {
-        const info = {
-            taste: '',
-            toxicity: '',
-            mainFunctions: '',
-            extra: ''
-        };
-
-        if (!entryText) return info;
-
-        const normalized = entryText.replace(/\s+/g, '');
-        const toxicityMatch = normalized.match(/(无毒|有毒|小毒|大毒|微毒)/);
-        if (toxicityMatch) {
-            info.toxicity = toxicityMatch[1];
-        }
-
-        const tasteMatch = normalized.match(/味([^。；]+)/);
-        if (tasteMatch) {
-            let tasteText = tasteMatch[1];
-            if (info.toxicity && tasteText.includes(info.toxicity)) {
-                tasteText = tasteText.replace(info.toxicity, '');
-            }
-            info.taste = tasteText.replace(/^[，。]/, '').replace(/。$/, '');
-        }
-
-        const mainMatch = normalized.match(/主([^。]+)/);
-        if (mainMatch) {
-            info.mainFunctions = mainMatch[1]
-                .replace(/^[，。]/, '')
-                .replace(/。$/, '')
-                .replace(/久服.*$/, '')
-                .replace(/主/, '');
-        }
-
-        const extraMatch = normalized.match(/久服[^。]+/);
-        if (extraMatch) {
-            info.extra = extraMatch[0];
-        }
-
-        return info;
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            render();
+        });
     }
 
     function getFilteredHerbs() {
-        const keyword = searchInput.value.trim().toLowerCase();
+        const keyword = searchInput ? searchInput.value.trim().toLowerCase() : '';
         return shennongHerbs.filter(item => {
             const gradeOk = activeGrade === 'all' || item.grade === activeGrade;
             if (!gradeOk) return false;
             if (!keyword) return true;
-            const haystack = `${item.name}${item.classicalText}`.toLowerCase();
+            const haystack = `${item.name} ${item.classicalText}`.toLowerCase();
             return haystack.includes(keyword);
         }).sort((a, b) => {
             if (a.grade === b.grade) {
@@ -95,17 +55,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         statsEl.innerHTML = `
             <div class="stat-card">
-                <span class="stat-label">收录总数</span>
+                <span class="stat-label">Total entries</span>
                 <span class="stat-value">${total}</span>
             </div>
             ${gradeOrder.map(grade => `
                 <div class="stat-card">
                     <span class="stat-label">${grade}</span>
                     <span class="stat-value">${gradeCounts[grade]}</span>
-                    <span class="stat-sub">当前筛选：${filteredCounts[grade]}</span>
+                    <span class="stat-sub">Visible now: ${filteredCounts[grade]}</span>
                 </div>
             `).join('')}
         `;
+    }
+
+    function createHerbEntry(herb) {
+        const entry = document.createElement('article');
+        entry.className = 'herb-entry';
+        entry.dataset.grade = herb.grade;
+
+        entry.innerHTML = `
+            <header class="herb-entry__header">
+                <div>
+                    <div class="herb-entry__grade">${herb.grade}</div>
+                    <h3 class="herb-entry__name">${herb.name}</h3>
+                </div>
+                <span class="herb-entry__id">#${String(herb.id).padStart(2, '0')}</span>
+            </header>
+            <p class="herb-entry__classic">${herb.classicalText}</p>
+        `;
+
+        return entry;
     }
 
     function render() {
@@ -115,44 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
         listEl.innerHTML = '';
 
         if (!filtered.length) {
-            listEl.innerHTML = `<p class="empty-state">未找到符合条件的本草，请调整筛选或关键词。</p>`;
+            listEl.innerHTML = `<p class="empty-state">No herbs match the current filters. Try adjusting the search.</p>`;
             return;
         }
 
-        filtered.forEach(item => {
-            const info = parseEntry(item.classicalText);
-            const card = document.createElement('article');
-            card.className = 'herb-entry';
-            card.dataset.grade = item.grade;
-            card.innerHTML = `
-                <header class="herb-entry__header">
-                    <div>
-                        <span class="herb-entry__grade">${item.grade}</span>
-                        <h2 class="herb-entry__name">${item.name}</h2>
-                    </div>
-                    <span class="herb-entry__id">#${String(item.id).padStart(3, '0')}</span>
-                </header>
-                <dl class="herb-entry__meta">
-                    <div>
-                        <dt>性味</dt>
-                        <dd>${info.taste || '经典中未明述'}</dd>
-                    </div>
-                    <div>
-                        <dt>毒性</dt>
-                        <dd>${info.toxicity || '经典中未标注'}</dd>
-                    </div>
-                    <div>
-                        <dt>主治</dt>
-                        <dd>${info.mainFunctions || '详见原文'}</dd>
-                    </div>
-                    ${info.extra ? `<div><dt>久服</dt><dd>${info.extra}</dd></div>` : ''}
-                </dl>
-                <details class="herb-entry__source">
-                    <summary>《神农本草经》原文</summary>
-                    <p>${item.classicalText}</p>
-                </details>
-            `;
-            listEl.appendChild(card);
+        filtered.forEach(herb => {
+            listEl.appendChild(createHerbEntry(herb));
         });
     }
 
