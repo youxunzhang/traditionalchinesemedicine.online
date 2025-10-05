@@ -1,19 +1,19 @@
-# Heritage TCM Website
+# 承古堂網站說明
 
-An English-language refresh of the TraditionalChineseMedicine.online project. The site highlights classical formulas, trusted practitioners, movement practices, and nutrition ideas in a modern layout.
+本專案為 TraditionalChineseMedicine.online 的繁體中文版本，內容涵蓋經典方藥、名醫紀事、導引功法與食療養生，版面以現代視覺呈現。
 
-## Key pages
-- **index.html** – Landing page with herbal spotlights, recommended reading, and FAQs.
-- **famous-tcm-doctors.html** – Profiles of influential TCM physicians with links to detailed biographies.
-- **ba-duan-jin.html** – English guide to the Eight Brocades qigong sequence with video recommendations.
-- **babu-jingang-gong.html** – Advanced practice notes for Ba Bu Jingang Gong.
-- **ni-haixia.html** – Tribute page to Dr. Ni Hai-Xia and his teaching legacy.
-- **food-nutrition.html** – TCM-inspired meal planning tips and seasonal guidance.
-- **zhongyao.html** – Materia medica highlights (see the homepage herb search for quick access).
+## 主要頁面
+- **index.html**：首頁，集結本草精選、經典書單與常見問題。
+- **famous-tcm-doctors.html**：歷代名醫概覽，可進入各人物詳細傳記。
+- **ba-duan-jin.html**：八段錦氣功教學與影音推薦。
+- **babu-jingang-gong.html**：八部金剛功進階訓練筆記。
+- **ni-haixia.html**：倪海廈醫師專頁，介紹生平與研習資源。
+- **food-nutrition.html**：中醫飲食規畫與四時食養建議。
+- **zhongyao.html**：神農本草精要，可快速搜尋藥性與等級。
 
-## Development notes
-- All copy has been rewritten in English to suit an international audience.
-- Herbal data for the homepage lives in `data/shennong-herbs.js` and currently covers 24 herbs spanning the superior, medium, and regular classes. Add new entries to extend it further.
-- Global interactions (navigation, FAQ toggles, smooth scrolling) are handled in `script.js`.
+## 開發備註
+- 文字內容全面改寫為繁體中文，以貼近華語讀者。
+- 首頁本草資料來源於 `data/shennong-herbs.js`，目前收錄 24 味藥材，可依需求擴增。
+- 導航、常見問題展開與平滑捲動等互動功能集中於 `script.js`。
 
-To explore locally, open `index.html` in your browser and follow the navigation links. No build step is required.
+開發者可直接在瀏覽器開啟 `index.html` 進行檢視，無需額外建置流程。
