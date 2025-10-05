@@ -1,6 +1,11 @@
 import shennongHerbs from './data/shennong-herbs.js';
 
 const gradeOrder = ['Superior', 'Medium', 'Regular'];
+const gradeLabels = {
+    Superior: '上品',
+    Medium: '中品',
+    Regular: '下品'
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     const listEl = document.getElementById('herbList');
@@ -55,14 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         statsEl.innerHTML = `
             <div class="stat-card">
-                <span class="stat-label">Total entries</span>
+                <span class="stat-label">收錄藥味總數</span>
                 <span class="stat-value">${total}</span>
             </div>
             ${gradeOrder.map(grade => `
                 <div class="stat-card">
-                    <span class="stat-label">${grade}</span>
+                    <span class="stat-label">${gradeLabels[grade] || grade}</span>
                     <span class="stat-value">${gradeCounts[grade]}</span>
-                    <span class="stat-sub">Visible now: ${filteredCounts[grade]}</span>
+                    <span class="stat-sub">目前顯示：${filteredCounts[grade]}</span>
                 </div>
             `).join('')}
         `;
@@ -76,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.innerHTML = `
             <header class="herb-entry__header">
                 <div>
-                    <div class="herb-entry__grade">${herb.grade}</div>
+                    <div class="herb-entry__grade">${gradeLabels[herb.grade] || herb.grade}</div>
                     <h3 class="herb-entry__name">${herb.name}</h3>
                 </div>
                 <span class="herb-entry__id">#${String(herb.id).padStart(2, '0')}</span>
@@ -94,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         listEl.innerHTML = '';
 
         if (!filtered.length) {
-            listEl.innerHTML = `<p class="empty-state">No herbs match the current filters. Try adjusting the search.</p>`;
+            listEl.innerHTML = `<p class="empty-state">目前沒有符合條件的藥味，請調整搜尋或篩選設定。</p>`;
             return;
         }
 

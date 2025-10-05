@@ -89,7 +89,7 @@ function initForms() {
     if (consultationForm) {
         consultationForm.addEventListener('submit', event => {
             event.preventDefault();
-            handleFormSubmission(consultationForm, 'Consultation request');
+            handleFormSubmission(consultationForm, '諮詢需求');
         });
     }
 
@@ -97,16 +97,16 @@ function initForms() {
     if (contactForm) {
         contactForm.addEventListener('submit', event => {
             event.preventDefault();
-            handleFormSubmission(contactForm, 'Message');
+            handleFormSubmission(contactForm, '訊息');
         });
     }
 }
 
 function handleFormSubmission(form, label) {
     const data = Object.fromEntries(new FormData(form).entries());
-    showNotification(`${label} received! We will be in touch soon.`, 'success');
+    showNotification(`已收到${label}，我們會盡快與您聯繫。`, 'success');
     form.reset();
-    console.log('Form submission preview:', data);
+    console.log('表單內容預覽：', data);
 }
 
 function showNotification(message, type = 'info') {

@@ -3,9 +3,9 @@ import shennongHerbs from './data/shennong-herbs.js';
 const PAGE_SIZE = 6;
 
 const gradeLabels = {
-  Superior: 'Superior class',
-  Medium: 'Middle class',
-  Regular: 'Lower class'
+  Superior: '上品',
+  Medium: '中品',
+  Regular: '下品'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateCounter = (filteredCount, totalPages) => {
     if (!counterEl) return;
     if (!filteredCount) {
-      counterEl.textContent = 'No matching herbs yet';
+      counterEl.textContent = '尚無符合條件的藥味';
       return;
     }
 
     const base = keyword
-      ? `${filteredCount} herbs match your search`
-      : `${totalCount} classical herbs available`;
-    counterEl.textContent = `${base} · Page ${currentPage} of ${totalPages}`;
+      ? `共有 ${filteredCount} 味藥符合搜尋`
+      : `館藏 ${totalCount} 味本草`;
+    counterEl.textContent = `${base} · 第 ${currentPage} / ${totalPages} 頁`;
   };
 
   const createHerbCard = herb => {
@@ -81,7 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const summary = document.createElement('p');
     summary.className = 'herb-card__summary';
-    summary.textContent = herb.classicalText.split('. ')[0] || herb.classicalText;
+    const summaryText = herb.classicalText.includes('。')
+      ? herb.classicalText.split('。')[0]
+      : herb.classicalText.split('. ')[0];
+    summary.textContent = summaryText || herb.classicalText;
 
     const classic = document.createElement('p');
     classic.className = 'herb-classic';
@@ -137,17 +140,17 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    paginationEl.appendChild(createButton('Prev', currentPage - 1, currentPage === 1, 'Previous page'));
+    paginationEl.appendChild(createButton('上一頁', currentPage - 1, currentPage === 1, '前往上一頁'));
 
     for (let page = 1; page <= totalPages; page += 1) {
-      const btn = createButton(String(page), page, false, `Go to page ${page}`);
+      const btn = createButton(String(page), page, false, `跳至第 ${page} 頁`);
       if (page === currentPage) {
         btn.classList.add('is-active');
       }
       paginationEl.appendChild(btn);
     }
 
-    paginationEl.appendChild(createButton('Next', currentPage + 1, currentPage === totalPages, 'Next page'));
+    paginationEl.appendChild(createButton('下一頁', currentPage + 1, currentPage === totalPages, '前往下一頁'));
   };
 
   if (searchInput) {

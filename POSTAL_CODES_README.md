@@ -1,42 +1,42 @@
-# Postal Codes & Area Codes Directory
+# 郵遞區號與國際區碼查詢平台
 
-## 🌍 Overview
+## 🌍 概覽
 
-A comprehensive web application for looking up postal codes and telephone area codes worldwide. Built with modern web technologies and optimized for both desktop and mobile devices.
+這是一個可查詢全球郵遞區號與電話區碼的網頁應用，以現代前端技術打造，兼顧桌機與行動裝置的使用體驗。
 
-## ✨ Features
+## ✨ 特色功能
 
-### 🔍 Search Functionality
-- **Multi-tab Search**: Search by postal codes, area codes, or country codes
-- **Flexible Search**: Support for city, state, province, or country names
-- **Exact Match Option**: Toggle between exact and partial matching
-- **Real-time Results**: Instant search results with loading animations
+### 🔍 查詢機制
+- **多分頁搜尋**：可依郵遞區號、電話區碼或國碼切換查詢。
+- **關鍵字彈性**：支援城市、州、省或國家名稱等多元輸入。
+- **精確比對選項**：可切換完全符合或模糊搜尋。
+- **即時結果**：輸入後立即顯示結果，並具載入動畫。
 
-### 📊 Data Display
-- **Comprehensive Results**: Country, city, state/province, postal code, area code, and timezone
-- **Country Flags**: Visual country identification using flag icons
-- **Responsive Table**: Mobile-friendly results display
-- **Export Functionality**: Download results as CSV file
+### 📊 資料呈現
+- **資訊完整**：顯示國家、城市、州／省、郵遞區號、電話區碼與時區。
+- **國旗圖示**：以旗幟辨識國別。
+- **響應式表格**：行動裝置也能清晰閱讀。
+- **匯出功能**：支援下載 CSV 報表。
 
-### 🎨 User Experience
-- **Modern Design**: Clean, professional interface with gradient backgrounds
-- **Responsive Layout**: Optimized for all screen sizes
-- **Interactive Elements**: Hover effects and smooth animations
-- **Loading States**: Professional loading indicators
+### 🎨 使用體驗
+- **現代設計**：乾淨專業的漸層介面。
+- **自適應版面**：針對各種螢幕尺寸最佳化。
+- **互動效果**：滑鼠懸停與平滑動畫。
+- **載入提示**：提供明確的載入狀態。
 
-### 📱 Mobile Optimization
-- **Touch-Friendly**: Optimized for mobile devices
-- **Responsive Tables**: Adaptive table layouts for small screens
-- **Fast Loading**: Optimized performance for mobile networks
+### 📱 行動優化
+- **觸控友善**：行動操作順暢。
+- **可調式表格**：小螢幕自動調整欄位。
+- **快速載入**：針對行動網路最佳化效能。
 
-## 🛠️ Technical Implementation
+## 🛠️ 技術實作
 
-### Frontend Technologies
-- **HTML5**: Semantic markup structure
-- **CSS3**: Modern styling with Flexbox and Grid
-- **JavaScript (ES6+)**: Interactive functionality
-- **Font Awesome**: Icon library
-- **Google Fonts**: Inter font family
+### 前端技術
+- **HTML5**：語意化標記結構。
+- **CSS3**：運用 Flexbox 與 Grid 的現代化樣式。
+- **JavaScript (ES6+)**：負責互動邏輯。
+- **Font Awesome**：圖示資源。
+- **Google Fonts**：Inter 字體家族。
 
 ### SEO Optimization
 - **Meta Tags**: Comprehensive SEO meta tags
@@ -79,65 +79,65 @@ The application includes sample data for major cities worldwide:
 - **Case Insensitive**: Search works regardless of case
 - **Multiple Fields**: Searches across all data fields
 
-### Export Functionality
-- **CSV Export**: Download search results as CSV file
-- **Complete Data**: Includes all fields in export
-- **Formatted Output**: Properly formatted for spreadsheet applications
+### 匯出功能
+- **CSV 匯出**：可將查詢結果下載為 CSV 檔。
+- **資料完整**：匯出內容包含所有欄位。
+- **格式友善**：適用於試算表程式。
 
-## 📱 Mobile Experience
+## 📱 行動體驗
 
-### Responsive Design
-- **Adaptive Layout**: Automatically adjusts to screen size
-- **Touch Optimization**: Large touch targets for mobile
-- **Fast Performance**: Optimized for mobile networks
-- **Offline Support**: Service Worker caching
+### 響應式設計
+- **自適應版面**：依螢幕尺寸自動調整。
+- **觸控優化**：大型按鈕方便手機操作。
+- **高速效能**：針對行動網路調整載入速度。
+- **離線支援**：Service Worker 快取機制。
 
-### Mobile Features
-- **Swipe Navigation**: Touch-friendly interface
-- **Optimized Tables**: Mobile-friendly table display
-- **Quick Search**: Streamlined search experience
-- **Export Support**: Mobile-compatible export functionality
+### 行動特色
+- **滑動操作**：介面支援手勢切換。
+- **表格最佳化**：行動版呈現易於閱讀。
+- **快速搜尋**：提供精簡搜尋流程。
+- **匯出支援**：行動裝置亦可匯出資料。
 
-## 🔧 Customization
+## 🔧 自訂調整
 
-### Adding New Data
+### 新增資料
 ```javascript
 const newData = {
-    country: 'Country Name',
-    city: 'City Name',
-    state: 'State/Province',
-    postal: 'Postal Code Range',
-    area: 'Area Code',
-    timezone: 'Timezone'
+    country: '國家名稱',
+    city: '城市名稱',
+    state: '州／省',
+    postal: '郵遞區號範圍',
+    area: '電話區碼',
+    timezone: '時區'
 };
 ```
 
-### Styling Customization
-- **Color Scheme**: Modify CSS variables for branding
-- **Layout**: Adjust grid and flexbox properties
-- **Typography**: Customize font families and sizes
-- **Animations**: Modify transition and animation properties
+### 介面調整
+- **配色**：調整 CSS 變數以符合品牌。
+- **版面**：修改 Grid 與 Flexbox 設定。
+- **字體**：自訂字型與大小。
+- **動畫**：調整轉場與動畫參數。
 
-## 📈 Performance Metrics
+## 📈 效能指標
 
-### Loading Speed
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **First Input Delay**: < 100ms
+### 載入速度
+- **首次內容繪製**：小於 1.5 秒。
+- **最大內容繪製**：小於 2.5 秒。
+- **累積版面偏移**：低於 0.1。
+- **首次輸入延遲**：低於 100 毫秒。
 
-### SEO Score
-- **PageSpeed Insights**: 90+ (Mobile & Desktop)
-- **Core Web Vitals**: All metrics in green
-- **Accessibility**: WCAG 2.1 AA compliant
-- **Best Practices**: 100% score
+### SEO 與可及性
+- **PageSpeed Insights**：行動與桌機皆達 90 分以上。
+- **核心網路指標**：全部維持綠色標準。
+- **無障礙**：符合 WCAG 2.1 AA 等級。
+- **最佳實務**：達成 100% 評分。
 
-## 🔗 Integration
+## 🔗 整合指引
 
-### Navigation Integration
-- **Main Site**: Integrated into primary navigation
-- **Footer Links**: Added to site footer
-- **Sitemap**: Included in XML sitemap
+### 導覽整合
+- **主選單**：可納入網站導覽列。
+- **頁尾連結**：於頁尾提供快速進入。
+- **網站地圖**：可加入 XML sitemap 便於索引。
 - **Service Worker**: Cached for offline access
 
 ### SEO Integration

@@ -1,7 +1,7 @@
 {
-    "name": "Heritage TCM",
-    "short_name": "Heritage TCM",
-    "description": "Classical Chinese Medicine insights, herbal spotlights, movement guides, and nutrition tips for an English-speaking audience.",
+    "name": "承古堂中醫",
+    "short_name": "承古堂",
+    "description": "提供中醫經典解讀、本草精選、養生功法與飲食指南的繁體中文資源。",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#1a8f5f",

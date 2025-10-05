@@ -1,147 +1,147 @@
 const shennongHerbs = [
   {
     id: 1,
-    name: 'Ren Shen (Ginseng)',
+    name: '人參（Ren Shen）',
     grade: 'Superior',
-    classicalText: 'Shennong says: sweet and slightly cool. Replenishes the five zang, calms the spirit, settles palpitations, and extends life when taken regularly.'
+    classicalText: '神農曰：味甘微寒，補五臟，安精神，止驚悸，久服輕身延年。'
   },
   {
     id: 2,
-    name: 'Dang Gui (Angelica Root)',
+    name: '當歸（Dang Gui）',
     grade: 'Superior',
-    classicalText: 'Sweet and warm. Nourishes and moves the blood, warms the center, and relieves pain. Long-term use keeps the complexion vibrant.'
+    classicalText: '味甘辛而溫，補血活血，溫中止痛，久服潤澤容顏。'
   },
   {
     id: 3,
-    name: 'Huang Qi (Astragalus)',
+    name: '黃耆（Huang Qi）',
     grade: 'Superior',
-    classicalText: 'Sweet and slightly warm. Fortifies qi, lifts yang, supports recovery from fatigue, and protects against wind.'
+    classicalText: '味甘微溫，補氣舉陽，托毒生肌，固表禦風。'
   },
   {
     id: 4,
-    name: 'Gan Cao (Licorice)',
+    name: '甘草（Gan Cao）',
     grade: 'Superior',
-    classicalText: 'Sweet and neutral. Harmonises formulas, eases spasms, soothes sore throats, and moderates toxicity.'
+    classicalText: '味甘平，調和諸藥，緩急止痛，潤肺解毒，和中護咽。'
   },
   {
     id: 5,
-    name: 'Gui Zhi (Cinnamon Twig)',
+    name: '桂枝（Gui Zhi）',
     grade: 'Superior',
-    classicalText: 'Pungent and warm. Warms the channels, promotes circulation, releases exterior cold, and supports healthy sweating.'
+    classicalText: '味辛甘而溫，溫通經脈，發散風寒，調和營衛，助汗達表。'
   },
   {
     id: 6,
-    name: 'Sheng Jiang (Fresh Ginger)',
+    name: '生薑（Sheng Jiang）',
     grade: 'Superior',
-    classicalText: 'Pungent and warm. Warms the middle, stops nausea, alleviates cough, and resolves surface-level wind-cold.'
+    classicalText: '味辛溫，溫胃散寒，止嘔化痰，解魚蟹之毒，表散風寒。'
   },
   {
     id: 7,
-    name: 'Mai Men Dong (Ophiopogon)',
+    name: '麥門冬（Mai Men Dong）',
     grade: 'Superior',
-    classicalText: 'Sweet and slightly cold. Nourishes yin of the stomach and lungs, generates fluids, and eases dry cough.'
+    classicalText: '味甘微寒，養胃肺之陰，生津潤燥，止咳清心。'
   },
   {
     id: 8,
-    name: 'Shi Hu (Dendrobium)',
+    name: '石斛（Shi Hu）',
     grade: 'Superior',
-    classicalText: 'Sweet and cool. Enriches yin, clears deficiency heat, and sharpens vision when used consistently.'
+    classicalText: '味甘淡而微寒，養陰清熱，益胃生津，久服明目強腰膝。'
   },
   {
     id: 9,
-    name: 'Fu Ling (Poria)',
+    name: '茯苓（Fu Ling）',
     grade: 'Superior',
-    classicalText: 'Sweet and neutral. Leaches dampness, calms the heart spirit, and supports digestion.'
+    classicalText: '味甘淡平，滲濕利水，健脾安神，和胃助運化。'
   },
   {
     id: 10,
-    name: 'Bai Zhu (Atractylodes Macrocephala)',
+    name: '白朮（Bai Zhu）',
     grade: 'Superior',
-    classicalText: 'Bitter and warm. Strengthens spleen qi, dries dampness, and helps retain body fluids.'
+    classicalText: '味苦甘溫，健脾益氣，燥濕利水，固表攝汗。'
   },
   {
     id: 11,
-    name: 'Wu Wei Zi (Schisandra)',
+    name: '五味子（Wu Wei Zi）',
     grade: 'Superior',
-    classicalText: 'Pungent, sweet, and sour. Astringes lung qi, nourishes the kidneys, and steadies the spirit.'
+    classicalText: '味酸甘溫，斂肺止咳，滋腎寧心，固精攝汗，益氣生津。'
   },
   {
     id: 12,
-    name: 'Shu Di Huang (Prepared Rehmannia)',
+    name: '熟地黃（Shu Di Huang）',
     grade: 'Superior',
-    classicalText: 'Sweet and warm. Replenishes blood and essence, nourishes yin, and anchors deficiency fire.'
+    classicalText: '味甘微溫，滋陰補血，填精補髓，鎮攝虛火。'
   },
   {
     id: 13,
-    name: 'Chen Pi (Aged Tangerine Peel)',
+    name: '陳皮（Chen Pi）',
     grade: 'Medium',
-    classicalText: 'Pungent and bitter, slightly warm. Regulates qi, dries dampness, resolves phlegm, and refreshes the middle burner when stagnation lingers.'
+    classicalText: '味辛苦微溫，理氣健脾，燥濕化痰，醒脾和中。'
   },
   {
     id: 14,
-    name: 'Ban Xia (Pinellia Rhizome)',
+    name: '半夏（Ban Xia）',
     grade: 'Medium',
-    classicalText: 'Acrid and warm yet slightly toxic. Dries dampness, transforms phlegm, descends rebellious qi, and relieves nodules when prepared properly.'
+    classicalText: '味辛溫而有小毒，燥濕化痰，降逆止嘔，散結消痞，須炮製乃可用。'
   },
   {
     id: 15,
-    name: 'Fu Zi (Prepared Aconite)',
+    name: '附子（Fu Zi）',
     grade: 'Medium',
-    classicalText: 'Acrid, very hot, and toxic. Restores devastated yang, warms the fire at the gate of vitality, and dispels cold from the channels once detoxified.'
+    classicalText: '味辛大熱有毒，回陽救逆，補火助陽，散寒止痛，炮制去毒方可。'
   },
   {
     id: 16,
-    name: 'Hou Po (Magnolia Bark)',
+    name: '厚朴（Hou Po）',
     grade: 'Medium',
-    classicalText: 'Bitter and warm with a fragrant lift. Moves qi, dries damp, calms wheezing, and eases food stagnation in the chest and abdomen.'
+    classicalText: '味苦辛溫而香，行氣燥濕，下氣平喘，消除滿悶積滯。'
   },
   {
     id: 17,
-    name: 'Cang Zhu (Atractylodes Lancea)',
+    name: '蒼朮（Cang Zhu）',
     grade: 'Medium',
-    classicalText: 'Pungent and warm. Dries dampness, fortifies the spleen, dispels wind-cold-damp, and brightens the eyes when used steadily.'
+    classicalText: '味辛苦溫，燥濕健脾，祛風散寒，明目助運。'
   },
   {
     id: 18,
-    name: 'Zhi Ke (Bitter Orange)',
+    name: '枳殼（Zhi Ke）',
     grade: 'Medium',
-    classicalText: 'Bitter and slightly cold. Regulates qi, relieves distention, transforms phlegm, and assists in moving food accumulations.'
+    classicalText: '味苦微寒，行氣寬中，消脹除痞，化痰行滯。'
   },
   {
     id: 19,
-    name: 'Da Huang (Rhubarb Root)',
+    name: '大黃（Da Huang）',
     grade: 'Regular',
-    classicalText: 'Bitter and cold. Purges accumulations, clears heat, moves blood stasis, and drains damp-heat when used briefly.'
+    classicalText: '味苦寒，攻下積滯，清熱解毒，破瘀通經，善走血分。'
   },
   {
     id: 20,
-    name: 'Mang Xiao (Mirabilite)',
+    name: '芒硝（Mang Xiao）',
     grade: 'Regular',
-    classicalText: 'Salty and very cold. Softens hardness, moistens dryness, clears heat, and relieves constipation by guiding water downward.'
+    classicalText: '味鹹寒，軟堅潤燥，清熱通便，引水下行。'
   },
   {
     id: 21,
-    name: 'Gan Sui (Kansui Root)',
+    name: '甘遂（Gan Sui）',
     grade: 'Regular',
-    classicalText: 'Bitter, sweet, and cold with marked toxicity. Drives out congested fluids, reduces swelling, and opens bowels in severe water build-up.'
+    classicalText: '味苦甘寒有毒，瀉逐水飲，消腫散結，逐痰開閉，須慎量用。'
   },
   {
     id: 22,
-    name: 'Ba Dou (Croton Seed)',
+    name: '巴豆（Ba Dou）',
     grade: 'Regular',
-    classicalText: 'Acrid, warm, and intensely toxic. Powerfully purges cold accumulation, drives out thin mucus, and bursts clumped qi when expertly administered.'
+    classicalText: '味辛熱劇毒，峻下寒積，逐水退腫，豁痰破滯，當專業慎用。'
   },
   {
     id: 23,
-    name: 'Qian Niu Zi (Morning Glory Seed)',
+    name: '牽牛子（Qian Niu Zi）',
     grade: 'Regular',
-    classicalText: 'Bitter and cold, slightly toxic. Drains water, dispels phlegm, breaks accumulations, and expels parasites.'
+    classicalText: '味苦寒微毒，瀉水消腫，逐痰破積，殺蟲去濕。'
   },
   {
     id: 24,
-    name: 'Yu Li Ren (Bush Cherry Pit)',
+    name: '郁李仁（Yu Li Ren）',
     grade: 'Regular',
-    classicalText: 'Sweet and neutral. Moistens the intestines, unblocks the bowels, promotes urination, and relieves edema with gentle action.'
+    classicalText: '味甘苦平，潤腸通便，利水消腫，動而不峻，尤宜津虧便秘。'
   }
 ];
 
