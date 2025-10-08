@@ -2,674 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://traditionalchinesemedicine.online/</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>daily</changefreq>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://traditionalchinesemedicine.online/index.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://traditionalchinesemedicine.online/ba-duan-jin.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/babu-jingang-gong.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://traditionalchinesemedicine.online/books.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <loc>https://traditionalchinesemedicine.online/famous-tcm-doctors.html</loc>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://traditionalchinesemedicine.online/data/dapei.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <loc>https://traditionalchinesemedicine.online/food-nutrition.html</loc>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.6</priority>
     </url>
     <url>
-        <loc>https://traditionalchinesemedicine.online/data/foods.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <loc>https://traditionalchinesemedicine.online/ni-haixia.html</loc>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://traditionalchinesemedicine.online/zhongyao.html</loc>
+        <lastmod>2025-01-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/bian-que.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/chao-yuanfang.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/chen-cangqi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/chen-keji.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/chen-shiduo.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/chen-xiuyuan.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/chen-ziming.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/cheng-xinnong.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/cheng-zhongling.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/chunyu-yi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/deng-tietao.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/dong-feng.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/fang-youzhi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/fei-boxiong.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/fu-qingzhu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/gao-lian.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/gong-tingxian.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/guo-ziguang.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/han-zhihuo.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/heng-guqing.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/hu-xishu.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/hua-tuo.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/huang-huang.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/huang-yuanyu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/huangfu-mi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/jiang-jianhua.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-chan.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-ding.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-gao.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-ke.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-dongyuan.html</loc>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/li-shizhen.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-yongcui.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-zhenhua.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-zhongzi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/liu-duzhou.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/liu-lihong.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/liu-qingquan.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/liu-wansu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/liu-ying.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/lu-zhizheng.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/lv-jingshan.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/ni-haixia.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/peng-ziyi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/qin-bowei.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/qiu-maoliang.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/ren-yingqiu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/shi-jinmo.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/shi-xuemin.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/su-jing.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/su-song.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/sun-guangrong.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <loc>https://traditionalchinesemedicine.online/famous-doctors/qi-bo.html</loc>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/sun-simiao.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/sun-yikui.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/tao-hongjing.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/tong-xiaolin.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/tong-xuemei.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wan-quan.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-ang.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-bing.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-dao.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-haogu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-huaiyin.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-jiamei.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-mianzhi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-qi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-qingren.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-shixiong.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-shuhe.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-xuetai.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-yongyan.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/wu-jutong.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wu-kun.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wu-peiheng.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wu-pu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wu-qian.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wu-youke.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/xia-guicheng.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/xu-chunfu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/xu-lingtai.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/xu-shuwei.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/xue-shengbai.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/ye-juquan.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/ye-tianshi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/yu-chang.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/yue-meizhong.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-boli.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-cigong.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-congzheng.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-daning.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-jingyue.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-lu.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-qi.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-shanlei.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-xichun.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-yuansu.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-zhongjing.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhen-quan.html</loc>
-        <lastmod>2025-10-01</lastmod>
+        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhu-danxi.html</loc>
+        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhou-meiling.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhou-zhongying.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhu-zhenheng.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-tcm-doctors.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/food-nutrition.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/game.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/lunch.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/timer.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/zhongyao.html</loc>
-        <lastmod>2025-10-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
     </url>
 </urlset>
