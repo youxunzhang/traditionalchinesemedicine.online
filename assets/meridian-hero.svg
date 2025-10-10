@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Stylised Meridian Map</title>
+  <desc id="desc">Minimalist illustration of a human silhouette with highlighted acupuncture meridians.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#012a34" />
+      <stop offset="100%" stop-color="#0d5b4e" />
+    </linearGradient>
+    <linearGradient id="meridian" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#4de2b9" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#9bffd0" stop-opacity="0.7" />
+    </linearGradient>
+    <linearGradient id="meridianWarm" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff9966" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ffd37d" stop-opacity="0.7" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)" />
+  <rect width="1200" height="800" fill="url(#glow)" />
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="10">
+    <path stroke="rgba(255,255,255,0.2)" d="M400 130 Q430 90 470 90 H730 Q770 90 800 130 Q860 210 860 380 V610 Q860 730 780 760 H420 Q340 730 340 610 V380 Q340 210 400 130 Z" />
+  </g>
+  <g fill="none" stroke-width="12" stroke-linecap="round">
+    <path stroke="url(#meridian)" d="M520 120 C540 240 560 360 560 520 C560 620 540 700 520 760" />
+    <path stroke="url(#meridianWarm)" d="M680 120 C660 240 640 360 640 520 C640 620 660 700 680 760" />
+    <path stroke="url(#meridian)" d="M600 140 C600 220 600 300 600 380 C600 470 600 560 600 650" />
+    <path stroke="url(#meridianWarm)" d="M470 220 Q520 260 560 320 Q600 380 600 450 Q600 520 560 580 Q520 640 470 680" />
+    <path stroke="url(#meridian)" d="M730 220 Q680 260 640 320 Q600 380 600 450 Q600 520 640 580 Q680 640 730 680" />
+    <path stroke="url(#meridian)" d="M520 220 Q520 320 520 420 Q520 520 520 620" stroke-dasharray="40 30" />
+    <path stroke="url(#meridianWarm)" d="M680 220 Q680 320 680 420 Q680 520 680 620" stroke-dasharray="40 30" />
+  </g>
+  <g fill="#f5fffa" opacity="0.85">
+    <circle cx="520" cy="220" r="10" />
+    <circle cx="520" cy="420" r="10" />
+    <circle cx="520" cy="620" r="10" />
+    <circle cx="680" cy="220" r="10" />
+    <circle cx="680" cy="420" r="10" />
+    <circle cx="680" cy="620" r="10" />
+    <circle cx="600" cy="320" r="9" />
+    <circle cx="600" cy="520" r="9" />
+  </g>
+</svg>
