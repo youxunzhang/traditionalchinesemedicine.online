@@ -1,4 +1,4 @@
-import shennongHerbs from './data/shennong-herbs.js';
+import loadShennongHerbs from './data/shennong-loader.js';
 
 const gradeOrder = ['Superior', 'Medium', 'Regular'];
 const gradeLabels = {
@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('herbSearch');
     const gradeTabs = document.querySelectorAll('.grade-tab');
 
+    if (!listEl || !statsEl) {
+        return;
+    }
+
+    let herbs = [];
     let activeGrade = 'all';
 
     gradeTabs.forEach(tab => {
@@ -32,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function getFilteredHerbs() {
         const keyword = searchInput ? searchInput.value.trim().toLowerCase() : '';
-        return shennongHerbs.filter(item => {
+        return herbs.filter(item => {
             const gradeOk = activeGrade === 'all' || item.grade === activeGrade;
             if (!gradeOk) return false;
             if (!keyword) return true;
@@ -47,9 +52,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateStats(filtered) {
-        const total = shennongHerbs.length;
+        if (!statsEl) return;
+        const total = herbs.length;
+        if (!total) {
+            statsEl.innerHTML = `
+                <div class="stat-card">
+                    <span class="stat-label">收錄藥味總數</span>
+                    <span class="stat-value">0</span>
+                </div>
+            `;
+            return;
+        }
+
         const gradeCounts = gradeOrder.reduce((acc, grade) => {
-            acc[grade] = shennongHerbs.filter(item => item.grade === grade).length;
+            acc[grade] = herbs.filter(item => item.grade === grade).length;
             return acc;
         }, {});
 
@@ -66,8 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ${gradeOrder.map(grade => `
                 <div class="stat-card">
                     <span class="stat-label">${gradeLabels[grade] || grade}</span>
-                    <span class="stat-value">${gradeCounts[grade]}</span>
-                    <span class="stat-sub">目前顯示：${filteredCounts[grade]}</span>
+                    <span class="stat-value">${gradeCounts[grade] || 0}</span>
+                    <span class="stat-sub">目前顯示：${filteredCounts[grade] || 0}</span>
                 </div>
             `).join('')}
         `;
@@ -98,6 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         listEl.innerHTML = '';
 
+        if (!herbs.length) {
+            listEl.innerHTML = `<p class="empty-state">目前無法載入《神農本草經》資料，請稍後再試。</p>`;
+            return;
+        }
+
         if (!filtered.length) {
             listEl.innerHTML = `<p class="empty-state">目前沒有符合條件的藥味，請調整搜尋或篩選設定。</p>`;
             return;
@@ -108,5 +129,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    render();
+    async function initialize() {
+        listEl.innerHTML = `<p class="empty-state">資料載入中，請稍候…</p>`;
+        try {
+            herbs = await loadShennongHerbs();
+            render();
+        } catch (error) {
+            console.error('[zhongyao] 無法載入本草資料：', error);
+            listEl.innerHTML = `<p class="empty-state">目前無法載入本草資料，請稍後再試。</p>`;
+            statsEl.innerHTML = `
+                <div class="stat-card">
+                    <span class="stat-label">收錄藥味總數</span>
+                    <span class="stat-value">0</span>
+                </div>
+            `;
+        }
+    }
+
+    initialize();
 });

@@ -3,161 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>倪海廈醫師｜承古堂</title>
-    <meta name="description" content="認識漢唐中醫創辦人倪海廈醫師的生平、授課風格與研習資源。">
+    <title>倪海廈醫師｜TCM 傳統醫學館</title>
+    <meta name="description" content="參考 nihaixia.org 內容彙整倪海廈醫師的生平年表、漢唐醫館特色、課程教材與研習資源。">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="nhx-page">
     <nav class="nhx-nav">
         <div class="nav-inner">
-            <a class="brand" href="index.html"><i class="fas fa-compass"></i>承古堂</a>
+            <a class="brand" href="index.html"><i class="fas fa-compass"></i>TCM</a>
             <div class="nav-links">
-                <a href="#biography">生平軌跡</a>
-                <a href="#teaching">教學理念</a>
-                <a href="#courses">課程出版</a>
+                <a href="#overview">倪師簡介</a>
+                <a href="#clinic">漢唐醫館</a>
+                <a href="#curriculum">課程教材</a>
+                <a href="#philosophy">醫道理念</a>
                 <a href="#media">影音精選</a>
                 <a href="#resources">研習資源</a>
             </div>
         </div>
     </nav>
 
-    <header class="nhx-hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text">
+    <header class="nhx-hero" id="overview">
+        <div class="nhx-hero__overlay"></div>
+        <div class="nhx-hero__content container">
+            <div class="nhx-hero__text">
+                <p class="nhx-eyebrow">漢唐中醫創辦人</p>
                 <h1>倪海廈醫師</h1>
-                <p>漢唐中醫創辦人，以熱情活力串連經典與現代，將天文、經絡與經方融合，教導學員如何貼近實際病家。</p>
-                <div class="hero-meta">
-                    <span class="tag">1954–2012</span>
-                    <span class="tag">經方醫案</span>
-                    <span class="tag">跨國講師</span>
+                <p class="nhx-subtitle">1954 – 2012｜將經方、天文曆法、經絡與醫德相結合，透過漢唐醫館與國際課程傳承中醫命脈。</p>
+                <div class="nhx-hero__meta">
+                    <span>經方醫案</span>
+                    <span>針藥並行</span>
+                    <span>天干地支推演</span>
+                </div>
+                <div class="nhx-hero__actions">
+                    <a class="btn btn-primary" href="#curriculum">查看課程傳承</a>
+                    <a class="btn btn-secondary" href="https://nihaixia.org" target="_blank" rel="noopener">前往 nihaixia.org</a>
                 </div>
             </div>
-            <figure class="hero-portrait">
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Herbal medicine table">
+            <figure class="nhx-hero__portrait" aria-hidden="true">
+                <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=720&q=80" alt="經方講堂示意">
             </figure>
         </div>
     </header>
 
     <main class="nhx-main">
-        <section id="biography" class="nhx-section">
-            <div class="section-header">
-                <p class="section-eyebrow">生平足跡</p>
-                <h2 class="section-title">從臺灣走向世界</h2>
-                <p class="section-subtitle">倪醫師先在臺灣臨床行醫，後移居美國佛州創辦漢唐中醫，開啟國際授課之路。</p>
-            </div>
-            <div class="timeline">
-                <article class="timeline-card">
-                    <h3>早年學養</h3>
-                    <p>師承漢代經方傳脈，尤重《傷寒論》《金匱要略》，奠定扎實的經典功底。</p>
-                </article>
-                <article class="timeline-card">
-                    <h3>漢唐醫館</h3>
-                    <p>於美國奧蘭多創立漢唐中醫，以經方與針灸為患者量身調理。</p>
-                </article>
-                <article class="timeline-card">
-                    <h3>全球授課</h3>
-                    <p>足跡遍及美洲、歐洲與亞洲，以實案結合天文推演，啟發無數學員。</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="teaching" class="nhx-section">
-            <div class="section-header">
-                <p class="section-eyebrow">教學風格</p>
-                <h2 class="section-title">倪醫師如何授課</h2>
-                <p class="section-subtitle">嚴謹經典搭配生活語彙，讓課堂深入人心。</p>
-            </div>
-            <div class="teaching-grid">
-                <article>
-                    <h3>以故事串聯</h3>
-                    <p>將繁複理論化為真實案例，患者如朋友般陪伴學習，循症狀追蹤證候。</p>
-                </article>
-                <article>
-                    <h3>天文曆法觀</h3>
-                    <p>以天干地支與節氣之氣解說方藥效應，說明同一方在不同時令的差異。</p>
-                </article>
-                <article>
-                    <h3>經絡工藝</h3>
-                    <p>針藥並論，隨時對照經絡走向與藥物所行之路，培養整體觀。</p>
-                </article>
+        <section class="nhx-section" id="timeline">
+            <div class="container">
+                <div class="nhx-section__header">
+                    <p class="section-eyebrow">生平年表</p>
+                    <h2 class="section-title">從臺灣漢唐到全球講堂</h2>
+                    <p class="section-subtitle">內容依據 nihaixia.org 整理，呈現倪醫師求學、臨床與授課的重要節點。</p>
+                </div>
+                <div class="nhx-timeline">
+                    <article>
+                        <h3>1970s｜經方啟蒙</h3>
+                        <p>在臺灣師承經方名家，日夜研讀《傷寒論》《金匱要略》《黃帝內經》，奠定辨證論治的基礎。</p>
+                    </article>
+                    <article>
+                        <h3>1980s｜漢唐醫館創立</h3>
+                        <p>移居美國佛羅里達州奧蘭多，創辦漢唐中醫診所，以針藥並用與天干地支推算體質見長。</p>
+                    </article>
+                    <article>
+                        <h3>1990s｜國際講座</h3>
+                        <p>巡迴美洲、歐洲、亞洲授課，提出「天紀」系列課程，結合天象、節氣與人體氣機。</p>
+                    </article>
+                    <article>
+                        <h3>2000s｜影音教材出版</h3>
+                        <p>拍攝《經方實例》《黃帝內經講記》《靈樞要義》等課程，建立完整教學體系並開放弟子隨堂錄影。</p>
+                    </article>
+                    <article>
+                        <h3>2012｜薪火延續</h3>
+                        <p>倪醫師辭世後，弟子們透過 nihaixia.org 持續整理教材、醫案與課程，推動全球研習社群。</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section id="courses" class="nhx-section">
-            <div class="section-header">
-                <p class="section-eyebrow">進修指南</p>
-                <h2 class="section-title">課程與出版</h2>
-                <p class="section-subtitle">想持續研習倪醫師傳承，可由以下資源著手。</p>
-            </div>
-            <div class="resource-grid">
-                <article>
-                    <h3>經方密集班</h3>
-                    <p>多週課程逐條講解方證，著重如何依現代體質調整劑量與配伍。</p>
-                </article>
-                <article>
-                    <h3>天地之間</h3>
-                    <p>圖文並陳，介紹漢唐經絡觀、節氣養生與生活儀式。</p>
-                </article>
-                <article>
-                    <h3>診間實習</h3>
-                    <p>於漢唐醫館隨診，結合問診、切脈與抓方煎製的實務演練。</p>
-                </article>
-            </div>
-        </section>
-
-        <section id="media" class="nhx-section">
-            <div class="section-header">
-                <p class="section-eyebrow">視聽學習</p>
-                <h2 class="section-title">人氣講座</h2>
-                <p class="section-subtitle">精選倪醫師影音課程，附中文字幕與重點整理。</p>
-            </div>
-            <div class="media-grid">
-                <article class="media-card">
-                    <iframe src="https://www.youtube.com/embed/1dTH0PjzvCk" title="六經傳變速覽" loading="lazy" allowfullscreen></iframe>
-                    <h3>六經傳變速覽</h3>
-                    <span>150 萬次觀看｜解析太陽至厥陰的潮汐律動。</span>
-                </article>
-                <article class="media-card">
-                    <iframe src="https://www.youtube.com/embed/8SdnzM2KQh4" title="金匱臨床要訣" loading="lazy" allowfullscreen></iframe>
-                    <h3><em>金匱</em>臨床要訣</h3>
-                    <span>120 萬次觀看｜慢性內科證治案例剖析。</span>
-                </article>
-                <article class="media-card">
-                    <iframe src="https://www.youtube.com/embed/3Jb5rLxN6BY" title="經絡實務運用" loading="lazy" allowfullscreen></iframe>
-                    <h3>經絡實務運用</h3>
-                    <span>98 萬次觀看｜針藥合參的臨床示範。</span>
-                </article>
+        <section class="nhx-section nhx-section--alt" id="clinic">
+            <div class="container">
+                <div class="nhx-section__header">
+                    <p class="section-eyebrow">漢唐醫館</p>
+                    <h2 class="section-title">臨床實證與弟子實習基地</h2>
+                    <p class="section-subtitle">漢唐醫館以佛州奧蘭多為核心，結合診療、教學與社群推廣，堅持純正藥材與經方精神。</p>
+                </div>
+                <div class="nhx-clinic-grid">
+                    <article>
+                        <h3>診療特色</h3>
+                        <ul>
+                            <li>經方辨證配伍，搭配天干地支推算體質與節氣變化。</li>
+                            <li>針灸、推拿與導引並行，強調筋骨與經絡鬆開。</li>
+                            <li>嚴選藥材來源，採用傳統炮製，提供抓藥與煎藥服務。</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>弟子培訓</h3>
+                        <ul>
+                            <li>設有隨診制度，學員直接參與問診、切脈、處方、煎煮。</li>
+                            <li>臨床筆記與錄影檔案開放研讀，對照病例與經典原文。</li>
+                            <li>成立校友支援網，方便轉介病患與案例討論。</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>聯絡資訊</h3>
+                        <p>地址｜漢唐中醫診所（Florida, Orlando）<br>官方網站｜<a href="https://nihaixia.org" target="_blank" rel="noopener">nihaixia.org</a><br>電子信箱｜support@nihaixia.org</p>
+                        <p class="nhx-note">欲申請實習或課程，請於官網填寫申請表，並準備經方與經絡基礎資料。</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section id="resources" class="nhx-section">
-            <div class="section-header">
-                <p class="section-eyebrow">持續研修</p>
-                <h2 class="section-title">指南與社群</h2>
-                <p class="section-subtitle">與同道相伴，延續倪醫師的教學精神。</p>
+        <section class="nhx-section" id="curriculum">
+            <div class="container">
+                <div class="nhx-section__header">
+                    <p class="section-eyebrow">課程教材</p>
+                    <h2 class="section-title">依 nihaixia.org 重新編排的核心課程</h2>
+                    <p class="section-subtitle">倪醫師課程以經方、經絡、天文曆法三大主軸展開，搭配實務醫案與問答。以下選粹重點教材。</p>
+                </div>
+                <div class="nhx-curriculum-grid">
+                    <article>
+                        <h3>經方經典班</h3>
+                        <p>完整講解《傷寒論》《金匱要略》六經傳變，解釋每條條文的病機、脈象與方藥運用，並搭配臨床案例。</p>
+                        <ul>
+                            <li>教材：經方實例講義、六經表格</li>
+                            <li>重點：辨證思維、劑量調整、加減配伍</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>天紀系列</h3>
+                        <p>倪醫師獨創課程，將天干地支、節氣與人體氣機相互對照，說明季節與方藥呼應關係，協助醫者掌握時令。</p>
+                        <ul>
+                            <li>教材：天紀講義、節氣作息表</li>
+                            <li>重點：節氣起伏、運氣學、天文養生</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>經絡針灸課</h3>
+                        <p>解析《靈樞》《難經》要義，搭配穴道定位、針法示範與經絡導引練習，強調針藥同源的臨床觀。</p>
+                        <ul>
+                            <li>教材：經絡工藝手冊、穴位圖冊</li>
+                            <li>重點：經絡循行、取穴思路、針法手感</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
-            <div class="resource-grid">
-                <article>
-                    <h3>下載式講義</h3>
-                    <p>搭配《傷寒》《金匱》課程的 PDF，含方證表、干支曆與案例紀錄。</p>
-                </article>
-                <article>
-                    <h3>國際討論社</h3>
-                    <p>線上聚會討論案例、邀請講者分享，彼此督促持續進修。</p>
-                </article>
-                <article>
-                    <h3>漢唐醫師名錄</h3>
-                    <p>連結受訓醫師，便於轉介或尋求指導。</p>
-                </article>
+        </section>
+
+        <section class="nhx-section nhx-section--alt" id="philosophy">
+            <div class="container">
+                <div class="nhx-section__header">
+                    <p class="section-eyebrow">醫道理念</p>
+                    <h2 class="section-title">倪醫師常提的三個核心</h2>
+                </div>
+                <div class="nhx-philosophy-grid">
+                    <article>
+                        <h3>經典為師</h3>
+                        <p>無論臨床多忙，必須每日讀經。倪醫師強調「經文在前、醫案在後」，以原文引導診療思維。</p>
+                    </article>
+                    <article>
+                        <h3>仁心立身</h3>
+                        <p>醫者先安身心，才能洞察病患。漢唐醫館以關懷、尊重與陪伴為診療基調，重視心理支持。</p>
+                    </article>
+                    <article>
+                        <h3>天人合一</h3>
+                        <p>天象、節氣、地理環境皆影響人體。倪醫師以天干地支推演病勢，提醒醫者調和作息與心念。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="nhx-section" id="media">
+            <div class="container">
+                <div class="nhx-section__header">
+                    <p class="section-eyebrow">影音精選</p>
+                    <h2 class="section-title">循序研習倪醫師的講座</h2>
+                    <p class="section-subtitle">精選自 nihaixia.org 與官方 YouTube 資源，建議依序觀看以掌握重點。</p>
+                </div>
+                <div class="nhx-media-grid">
+                    <article class="media-card">
+                        <iframe src="https://www.youtube.com/embed/lQ4YzfzDOpo" title="經方入門" loading="lazy" allowfullscreen></iframe>
+                        <h3>經方入門｜認識六經</h3>
+                        <span>定位：初階</span>
+                    </article>
+                    <article class="media-card">
+                        <iframe src="https://www.youtube.com/embed/zjg2vhL9lAU" title="天紀課程導讀" loading="lazy" allowfullscreen></iframe>
+                        <h3>天紀導讀｜節氣與人體</h3>
+                        <span>定位：中階</span>
+                    </article>
+                    <article class="media-card">
+                        <iframe src="https://www.youtube.com/embed/C9f6-0CnGQ0" title="經絡臨床分享" loading="lazy" allowfullscreen></iframe>
+                        <h3>經絡臨床｜針藥合參</h3>
+                        <span>定位：進階</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="nhx-section nhx-section--resources" id="resources">
+            <div class="container">
+                <div class="nhx-section__header">
+                    <p class="section-eyebrow">研習資源</p>
+                    <h2 class="section-title">延續倪醫師的教學精神</h2>
+                </div>
+                <div class="nhx-resource-grid">
+                    <article>
+                        <h3>官方網站</h3>
+                        <p>最新課程公告、教材下載、醫案整理與弟子公告皆匯集於官方網站。</p>
+                        <a href="https://nihaixia.org" target="_blank" rel="noopener" class="resource-link">https://nihaixia.org</a>
+                    </article>
+                    <article>
+                        <h3>教材下載</h3>
+                        <p>《經方實例》《天紀課程講義》《靈樞講記》等 PDF 與課程錄影可於官方網站申請取得。</p>
+                    </article>
+                    <article>
+                        <h3>線上社群</h3>
+                        <p>漢唐弟子在 Telegram、Discord 等平台建立研討群，分享臨床心得、節氣提醒與問答。</p>
+                    </article>
+                    <article>
+                        <h3>推薦閱讀</h3>
+                        <ul>
+                            <li>《傷寒論》《金匱要略》原文與倪師講記</li>
+                            <li>《黃帝內經太素》《靈樞講記》</li>
+                            <li>《經方實例》《天紀講義》</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="nhx-footer">
-        <p>&copy; 2024 承古堂。靈感源自倪海廈醫師的教誨。</p>
-        <p><a href="index.html">回到首頁</a> · <a href="famous-tcm-doctors.html">更多影響力名家</a></p>
+        <p>&copy; 2024 TCM 傳統醫學館。靈感源自倪海廈醫師的教誨。</p>
+        <p><a href="index.html">回到首頁</a> · <a href="famous-tcm-doctors.html">更多名醫故事</a></p>
     </footer>
 </body>
 </html>

@@ -115,46 +115,344 @@ body {
 
 /* Hero banner */
 .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+    position: relative;
+    background: #0f4039;
+    background-image: linear-gradient(135deg, rgba(3, 40, 44, 0.85), rgba(9, 81, 67, 0.75)), url('assets/meridian-hero.svg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    text-align: center;
-    color: white;
+    color: #f5fffa;
     margin-top: 80px;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(96, 221, 196, 0.28), transparent 60%);
+    pointer-events: none;
 }
 
 .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
+    position: relative;
+    max-width: 760px;
+    padding: 4rem 0;
+    text-align: left;
+}
+
+.hero-eyebrow {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(96, 221, 196, 0.2);
+    color: #9bffe3;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 4vw, 3.6rem);
     font-weight: 900;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #e8f5e8;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
     line-height: 1.8;
+    color: rgba(245, 255, 250, 0.85);
+    margin-bottom: 2rem;
 }
 
 .hero-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    justify-content: center;
     margin-bottom: 3rem;
+    justify-content: flex-start;
+}
+
+.hero-buttons .btn-secondary {
+    border-color: rgba(245, 255, 250, 0.85);
+}
+
+.hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-highlights div {
+    background: rgba(3, 40, 44, 0.55);
+    border: 1px solid rgba(155, 255, 227, 0.25);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.hero-highlights dt {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #9bffe3;
+    margin-bottom: 0.4rem;
+}
+
+.hero-highlights dd {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(245, 255, 250, 0.85);
+}
+
+/* Famous doctors page */
+.doctors-page {
+    background: #f4f7f5;
+}
+
+.doctors-hero {
+    background: linear-gradient(135deg, #0b3d32 0%, #14523f 55%, #1b5e46 100%);
+    color: #f4fffb;
+    padding: 140px 0 100px;
+    margin-top: 80px;
+}
+
+.doctors-hero .hero-eyebrow {
+    background: rgba(94, 226, 180, 0.2);
+    color: #b8ffe5;
+}
+
+.doctors-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.doctors-hero .hero-subtitle {
+    max-width: 720px;
+    color: rgba(244, 255, 251, 0.85);
+}
+
+.doctors-hero__points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.doctors-hero__points div {
+    background: rgba(3, 50, 41, 0.35);
+    border: 1px solid rgba(186, 255, 233, 0.28);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+.doctors-hero__points strong {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #b8ffe5;
+}
+
+.doctors-hero__points span {
+    display: block;
+    font-size: 0.95rem;
+    color: rgba(244, 255, 251, 0.8);
+    margin-top: 0.35rem;
+}
+
+.doctor-controls {
+    padding: 2.5rem 0 1rem;
+}
+
+.doctor-controls__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    font-weight: 600;
+    color: #1d4739;
+}
+
+.control-group input,
+.control-group select {
+    border: 1px solid rgba(30, 74, 56, 0.2);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    font-size: 1rem;
+    background: #fff;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.control-group input:focus,
+.control-group select:focus {
+    outline: none;
+    border-color: #2f7a5b;
+    box-shadow: 0 0 0 4px rgba(47, 122, 91, 0.12);
+}
+
+.doctor-count {
+    font-weight: 600;
+    color: #1f4d3d;
+}
+
+.doctor-stats {
+    margin: 0 0 2rem;
+}
+
+.doctor-stats__summary {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(25, 115, 84, 0.1), rgba(25, 115, 84, 0.02));
+    border-radius: 18px;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1f4d3d;
+}
+
+.doctor-stats__summary strong {
+    font-size: 1.6rem;
+    margin-right: 0.3rem;
+}
+
+.doctor-stats__breakdown {
+    max-width: 1100px;
+    margin: 1.2rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+}
+
+.doctor-stats__item {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid rgba(31, 77, 61, 0.12);
+    box-shadow: 0 18px 40px rgba(31, 77, 61, 0.08);
+}
+
+.doctor-stats__item .label {
+    display: block;
+    font-weight: 600;
+    color: #1d4739;
+    margin-bottom: 0.4rem;
+}
+
+.doctor-stats__item .value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2f7a5b;
+}
+
+.doctor-stats__item .total {
+    display: block;
+    font-size: 0.85rem;
+    color: #6a7d72;
+}
+
+.doctor-list {
+    max-width: 1100px;
+    margin: 0 auto 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.doctor-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: 0 18px 40px rgba(25, 74, 56, 0.1);
+    border: 1px solid rgba(25, 74, 56, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 55px rgba(25, 74, 56, 0.16);
+}
+
+.doctor-card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.doctor-card__name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1c4133;
+    margin: 0;
+}
+
+.doctor-card__era {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6c7c73;
+}
+
+.doctor-card__contribution {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #2d493d;
+}
+
+.doctor-card__specialties,
+.doctor-card__works {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.doctor-card__specialties li {
+    background: rgba(47, 122, 91, 0.12);
+    color: #2f7a5b;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.doctor-card__works li {
+    background: rgba(25, 74, 56, 0.08);
+    color: #1f4d3d;
+    padding: 0.35rem 0.75rem;
+    border-radius: 10px;
+    font-size: 0.82rem;
+}
+
+.doctor-empty {
+    grid-column: 1 / -1;
+    background: rgba(31, 77, 61, 0.08);
+    border-radius: 18px;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    color: #315a48;
+    font-weight: 600;
 }
 
 .btn {
@@ -759,7 +1057,8 @@ body {
     color: #4f5b48;
 }
 
-.food-nutrition-highlight {
+.food-nutrition-highlight,
+.herb-feature-gallery {
     margin: 2.5rem 0 3rem;
     padding: 2.5rem;
     background: linear-gradient(135deg, rgba(76, 175, 80, 0.08), rgba(76, 175, 80, 0.02));
@@ -1085,7 +1384,8 @@ body {
         font-size: 2.2rem;
     }
 
-    .food-nutrition-highlight {
+    .food-nutrition-highlight,
+    .herb-feature-gallery {
         padding: 1.75rem;
         margin: 2rem 0 2.5rem;
     }
@@ -2196,6 +2496,38 @@ body {
     margin-bottom: 3rem;
 }
 
+.lineage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.lineage-grid article {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.6rem;
+    box-shadow: 0 18px 40px rgba(25, 74, 56, 0.08);
+    border: 1px solid rgba(25, 74, 56, 0.08);
+}
+
+.lineage-grid h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    color: #184f3f;
+}
+
+.lineage-grid p,
+.lineage-grid ul {
+    color: #345044;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.lineage-grid ul {
+    padding-left: 1.1rem;
+    margin: 0.6rem 0 0;
+}
+
 .practice-videos {
     background: radial-gradient(circle at top left, rgba(76, 175, 80, 0.2), rgba(6, 14, 10, 0.95));
     color: #f0f7f1;
@@ -3236,5 +3568,355 @@ body {
 
     .cta-card {
         padding: 2.2rem 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctors-hero {
+        padding: 110px 0 70px;
+    }
+
+    .doctors-hero__points {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-controls__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-list {
+        padding: 0 1rem;
+    }
+}
+
+/* Ni Haixia feature page */
+.nhx-page {
+    background: #f5f7f8;
+    color: #1f2d3d;
+}
+
+.nhx-nav {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: rgba(10, 47, 43, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.85rem 0;
+}
+
+.nhx-nav .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nhx-nav .brand {
+    font-weight: 700;
+    color: #c6fff4;
+    text-decoration: none;
+    letter-spacing: 0.08em;
+}
+
+.nhx-nav .brand i {
+    margin-right: 0.45rem;
+}
+
+.nhx-nav .nav-links {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nhx-nav .nav-links a {
+    color: rgba(230, 255, 247, 0.85);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.nhx-nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(135deg, #5bf5c0, #37b894);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+}
+
+.nhx-nav .nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+.nhx-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 140px 0 110px;
+    background: radial-gradient(circle at 20% 20%, rgba(91, 245, 192, 0.18), transparent 60%),
+        linear-gradient(135deg, #062b27, #0f3e37 55%, #125047 100%);
+    color: #f1fffb;
+    margin-bottom: 60px;
+}
+
+.nhx-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.12), transparent 55%);
+    pointer-events: none;
+}
+
+.nhx-hero__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nhx-eyebrow {
+    display: inline-block;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(91, 245, 192, 0.18);
+    color: #b8ffe8;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.nhx-hero__text h1 {
+    font-size: clamp(2.6rem, 4.2vw, 3.6rem);
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.nhx-subtitle {
+    font-size: 1.1rem;
+    max-width: 520px;
+    line-height: 1.8;
+    color: rgba(241, 255, 251, 0.85);
+}
+
+.nhx-hero__meta {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.nhx-hero__meta span {
+    background: rgba(6, 43, 39, 0.55);
+    border: 1px solid rgba(91, 245, 192, 0.25);
+    border-radius: 999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.9rem;
+}
+
+.nhx-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.nhx-hero__portrait img {
+    width: 100%;
+    border-radius: 28px;
+    box-shadow: 0 28px 60px rgba(4, 33, 30, 0.45);
+}
+
+.nhx-main {
+    padding: 0 0 4rem;
+}
+
+.nhx-section {
+    padding: 80px 0;
+}
+
+.nhx-section--alt {
+    background: #eef5f2;
+}
+
+.nhx-section--resources {
+    background: #0f3e37;
+    color: #e9fffa;
+}
+
+.nhx-section__header {
+    text-align: center;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+}
+
+.nhx-section__header .section-title {
+    font-size: 2.4rem;
+    color: #16342c;
+}
+
+.nhx-section--alt .section-title {
+    color: #16342c;
+}
+
+.nhx-section--resources .section-title {
+    color: #b8ffe8;
+}
+
+.nhx-section--resources .section-subtitle,
+.nhx-section--resources .section-eyebrow {
+    color: rgba(232, 255, 249, 0.82);
+}
+
+.nhx-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.nhx-timeline article {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.5rem;
+    box-shadow: 0 14px 32px rgba(15, 62, 55, 0.08);
+    border: 1px solid rgba(15, 62, 55, 0.08);
+}
+
+.nhx-timeline h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #144438;
+}
+
+.nhx-clinic-grid,
+.nhx-curriculum-grid,
+.nhx-philosophy-grid,
+.nhx-media-grid,
+.nhx-resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.nhx-clinic-grid article,
+.nhx-curriculum-grid article,
+.nhx-philosophy-grid article,
+.nhx-resource-grid article {
+    background: #fff;
+    border-radius: 18px;
+    padding: 1.6rem;
+    box-shadow: 0 18px 40px rgba(15, 62, 55, 0.08);
+    border: 1px solid rgba(15, 62, 55, 0.08);
+}
+
+.nhx-section--alt .nhx-clinic-grid article {
+    background: #ffffff;
+}
+
+.nhx-section--resources .nhx-resource-grid article {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(184, 255, 232, 0.24);
+    box-shadow: none;
+}
+
+.nhx-section--resources .nhx-resource-grid article h3 {
+    color: #b8ffe8;
+}
+
+.nhx-section--resources .nhx-resource-grid article p,
+.nhx-section--resources .nhx-resource-grid article ul {
+    color: rgba(233, 255, 250, 0.85);
+}
+
+.nhx-resource-grid ul {
+    padding-left: 1.1rem;
+}
+
+.nhx-clinic-grid ul,
+.nhx-curriculum-grid ul {
+    margin: 1rem 0 0;
+    padding-left: 1.1rem;
+    color: #38544a;
+}
+
+.nhx-note {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #3f5b52;
+}
+
+.nhx-philosophy-grid article {
+    text-align: center;
+}
+
+.nhx-media-grid .media-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(10, 47, 43, 0.12);
+    border: 1px solid rgba(10, 47, 43, 0.08);
+}
+
+.nhx-media-grid iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.nhx-media-grid h3 {
+    font-size: 1.1rem;
+    margin: 1rem 1.25rem 0.4rem;
+    color: #154138;
+}
+
+.nhx-media-grid span {
+    display: block;
+    margin: 0 1.25rem 1.25rem;
+    color: #47645b;
+    font-size: 0.9rem;
+}
+
+.nhx-resource-grid .resource-link {
+    color: #39a788;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nhx-resource-grid .resource-link:hover {
+    text-decoration: underline;
+}
+
+.nhx-footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: #062b27;
+    color: #e8fff7;
+}
+
+.nhx-footer a {
+    color: #7df5ce;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .nhx-nav .nav-links {
+        display: none;
+    }
+
+    .nhx-hero {
+        padding: 120px 0 80px;
+    }
+
+    .nhx-hero__content {
+        grid-template-columns: 1fr;
+    }
+
+    .nhx-section__header .section-title {
+        font-size: 2rem;
     }
 }

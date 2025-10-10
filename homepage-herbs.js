@@ -1,4 +1,4 @@
-import shennongHerbs from './data/shennong-herbs.js';
+import loadShennongHerbs from './data/shennong-loader.js';
 
 const PAGE_SIZE = 6;
 
@@ -18,17 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  let herbs = [];
+  let totalCount = 0;
   let currentPage = 1;
   let keyword = '';
 
-  const totalCount = shennongHerbs.length;
+  const renderStatus = (message) => {
+    listEl.innerHTML = `<p class="empty-state">${message}</p>`;
+    paginationEl.innerHTML = '';
+    if (counterEl) {
+      counterEl.textContent = message;
+    }
+  };
 
   const getFilteredHerbs = () => {
     if (!keyword) {
-      return shennongHerbs;
+      return herbs;
     }
     const lower = keyword.toLowerCase();
-    return shennongHerbs.filter(item => {
+    return herbs.filter(item => {
       const haystack = `${item.name} ${item.classicalText}`.toLowerCase();
       return haystack.includes(lower);
     });
@@ -37,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const updateCounter = (filteredCount, totalPages) => {
     if (!counterEl) return;
     if (!filteredCount) {
-      counterEl.textContent = '尚無符合條件的藥味';
+      counterEl.textContent = keyword
+        ? '尚無符合條件的藥味'
+        : '暫無本草資料';
       return;
     }
 
@@ -100,25 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return card;
   };
 
-  const renderList = () => {
-    const filtered = getFilteredHerbs();
-    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-    if (currentPage > totalPages) {
-      currentPage = totalPages;
-    }
-
-    const start = (currentPage - 1) * PAGE_SIZE;
-    const pageItems = filtered.slice(start, start + PAGE_SIZE);
-
-    listEl.innerHTML = '';
-    pageItems.forEach(herb => {
-      listEl.appendChild(createHerbCard(herb));
-    });
-
-    renderPagination(totalPages);
-    updateCounter(filtered.length, totalPages);
-  };
-
   const createButton = (label, page, disabled = false, ariaLabel = '') => {
     const btn = document.createElement('button');
     btn.className = 'pagination-btn';
@@ -153,6 +144,36 @@ document.addEventListener('DOMContentLoaded', () => {
     paginationEl.appendChild(createButton('下一頁', currentPage + 1, currentPage === totalPages, '前往下一頁'));
   };
 
+  const renderList = () => {
+    const filtered = getFilteredHerbs();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    if (currentPage > totalPages) {
+      currentPage = totalPages;
+    }
+
+    const start = (currentPage - 1) * PAGE_SIZE;
+    const pageItems = filtered.slice(start, start + PAGE_SIZE);
+
+    listEl.innerHTML = '';
+
+    if (!filtered.length) {
+      const message = keyword
+        ? '尚無符合搜尋條件的本草，請換個關鍵字試試。'
+        : '暫無本草資料可供顯示。';
+      listEl.innerHTML = `<p class="empty-state">${message}</p>`;
+      paginationEl.innerHTML = '';
+      updateCounter(filtered.length, 1);
+      return;
+    }
+
+    pageItems.forEach(herb => {
+      listEl.appendChild(createHerbCard(herb));
+    });
+
+    renderPagination(totalPages);
+    updateCounter(filtered.length, totalPages);
+  };
+
   if (searchInput) {
     searchInput.addEventListener('input', e => {
       keyword = e.target.value.trim();
@@ -161,5 +182,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  renderList();
+  const initialize = async () => {
+    renderStatus('資料載入中，請稍候…');
+    try {
+      herbs = await loadShennongHerbs();
+      totalCount = herbs.length;
+      if (!totalCount) {
+        renderStatus('暫無本草資料可供顯示。');
+        return;
+      }
+      renderList();
+    } catch (error) {
+      console.error('[homepage-herbs] 無法載入本草資料：', error);
+      renderStatus('目前無法載入本草資料，請稍後再試。');
+    }
+  };
+
+  initialize();
 });
