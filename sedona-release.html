@@ -9,13 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="sedona-page">
-    <nav class="sedona-nav">
+    <nav class="sedona-nav" aria-label="聖多納釋放法專頁選單">
         <div class="sedona-nav__inner">
             <a class="sedona-brand" href="index.html" aria-label="返回首頁">
-                <i class="fas fa-mountain"></i>
+                <i class="fas fa-mountain" aria-hidden="true"></i>
                 <span>TCM</span>
             </a>
-            <div class="sedona-nav__links">
+            <button class="sedona-nav__toggle" type="button" aria-label="切換導覽" aria-controls="sedonaNavLinks" aria-expanded="false">
+                <span class="sedona-nav__bar"></span>
+                <span class="sedona-nav__bar"></span>
+                <span class="sedona-nav__bar"></span>
+            </button>
+            <div class="sedona-nav__links" id="sedonaNavLinks">
                 <a href="#overview">概要</a>
                 <a href="#history">歷史沿革</a>
                 <a href="#method">四步驟</a>
@@ -215,5 +220,6 @@
         <p>&copy; 2024 TCM 傳統醫學館。情緒釋放與經方調理相輔相成。</p>
         <p><a href="index.html">回到首頁</a> · <a href="ni-haixia.html">閱讀倪海廈專頁</a></p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

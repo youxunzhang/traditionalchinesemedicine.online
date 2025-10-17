@@ -10,22 +10,45 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Navigation: mobile hamburger + sticky styling
 function initNavigation() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    const navConfigs = [
+        {
+            toggle: document.querySelector('.hamburger'),
+            menu: document.querySelector('.nav-menu'),
+            activeClass: 'active',
+            linkSelector: 'a'
+        },
+        {
+            toggle: document.querySelector('.sedona-nav__toggle'),
+            menu: document.querySelector('.sedona-nav__links'),
+            activeClass: 'is-open',
+            linkSelector: 'a'
+        }
+    ];
 
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+    navConfigs.forEach(({ toggle, menu, activeClass, linkSelector }) => {
+        if (!toggle || !menu) return;
+
+        const navLinks = menu.querySelectorAll(linkSelector);
+        const setExpanded = (isOpen) => {
+            if (toggle.hasAttribute('aria-expanded')) {
+                toggle.setAttribute('aria-expanded', String(isOpen));
+            }
+        };
+
+        toggle.addEventListener('click', () => {
+            const isOpen = menu.classList.toggle(activeClass);
+            toggle.classList.toggle('active', isOpen);
+            setExpanded(isOpen);
         });
 
-        document.querySelectorAll('.nav-link').forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
+                menu.classList.remove(activeClass);
+                toggle.classList.remove('active');
+                setExpanded(false);
             });
         });
-    }
+    });
 
     window.addEventListener('scroll', () => {
         const navbar = document.querySelector('.navbar');

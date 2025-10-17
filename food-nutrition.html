@@ -9,18 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="nutrition-page-body">
-    <nav class="navbar">
+    <nav class="navbar" aria-label="主要導覽">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-leaf"></i>
+                <i class="fas fa-leaf" aria-hidden="true"></i>
                 <span>TCM</span>
             </div>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nutritionPrimaryNav">
                 <li class="nav-item"><a href="index.html" class="nav-link">首頁</a></li>
                 <li class="nav-item"><a href="food-nutrition.html" class="nav-link active">中醫飲食</a></li>
                 <li class="nav-item"><a href="foodpairing.html" class="nav-link">食物輪盤</a></li>
                 <li class="nav-item"><a href="zhongyao.html" class="nav-link">本草庫</a></li>
             </ul>
+            <button class="hamburger" type="button" aria-label="切換選單" aria-controls="nutritionPrimaryNav" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </nav>
 
@@ -148,5 +153,6 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
