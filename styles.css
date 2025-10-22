@@ -1111,7 +1111,6 @@ body {
     color: #4f5b48;
 }
 
-.food-nutrition-highlight,
 .herb-feature-gallery {
     margin: 2.5rem 0 3rem;
     padding: 2.5rem;
@@ -1438,7 +1437,6 @@ body {
         font-size: 2.2rem;
     }
 
-    .food-nutrition-highlight,
     .herb-feature-gallery {
         padding: 1.75rem;
         margin: 2rem 0 2.5rem;
