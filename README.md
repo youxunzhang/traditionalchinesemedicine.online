@@ -8,7 +8,6 @@
 - **ba-duan-jin.html**：八段錦氣功教學與影音推薦。
 - **babu-jingang-gong.html**：八部金剛功進階訓練筆記。
 - **ni-haixia.html**：倪海廈醫師專頁，介紹生平與研習資源。
-- **food-nutrition.html**：中醫飲食規畫與四時食養建議。
 - **zhongyao.html**：神農本草精要，可快速搜尋藥性與等級。
 
 ## 開發備註
