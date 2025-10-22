@@ -2601,6 +2601,134 @@ body {
     margin: 0.6rem 0 0;
 }
 
+.overview-grid,
+.benefit-grid,
+.sequence-grid,
+.routine-grid,
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.overview-grid article,
+.benefit-card,
+.sequence-card,
+.routine-card,
+.research-grid article {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.8rem;
+    box-shadow: 0 18px 40px rgba(25, 74, 56, 0.08);
+    border: 1px solid rgba(25, 74, 56, 0.08);
+}
+
+.overview-grid h3,
+.benefit-card h3,
+.sequence-card h3,
+.routine-card h3,
+.research-grid h3 {
+    font-size: 1.25rem;
+    color: #184f3f;
+    margin-bottom: 0.75rem;
+}
+
+.overview-grid p,
+.overview-grid ul,
+.benefit-card ul,
+.sequence-card p,
+.sequence-meta ul,
+.routine-card p,
+.routine-card ul,
+.research-grid ul {
+    font-size: 0.96rem;
+    line-height: 1.8;
+    color: #345044;
+}
+
+.overview-grid ul,
+.benefit-card ul,
+.sequence-meta ul,
+.routine-card ul,
+.research-grid ul {
+    padding-left: 1.2rem;
+}
+
+.sequence-card header {
+    margin-bottom: 1.2rem;
+}
+
+.sequence-card header p {
+    margin-top: 0.5rem;
+    color: #3d5d4f;
+}
+
+.sequence-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+}
+
+.sequence-meta h4 {
+    font-size: 1.05rem;
+    color: #20604d;
+    margin-bottom: 0.4rem;
+}
+
+.sequence-meta li {
+    margin-bottom: 0.4rem;
+}
+
+.routine-card p {
+    margin-bottom: 0.9rem;
+    font-weight: 500;
+    color: #1f5b48;
+}
+
+.routine-card ul li {
+    margin-bottom: 0.45rem;
+}
+
+.practice-health {
+    background: #f4f7f5;
+}
+
+.research-grid article ul li {
+    margin-bottom: 0.5rem;
+}
+
+.practice-references {
+    background: #0f4039;
+    color: #f1fffb;
+}
+
+.practice-references .section-title {
+    color: #f1fffb;
+}
+
+.practice-references .section-subtitle,
+.practice-references .section-eyebrow {
+    color: rgba(241, 255, 251, 0.82);
+}
+
+.reference-list {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    font-size: 0.98rem;
+    line-height: 1.8;
+}
+
+.reference-list a {
+    color: #9be5c1;
+    text-decoration: underline;
+}
+
+.reference-list a:hover {
+    color: #b5f2d7;
+}
+
 .practice-videos {
     background: radial-gradient(circle at top left, rgba(76, 175, 80, 0.2), rgba(6, 14, 10, 0.95));
     color: #f0f7f1;
@@ -3166,6 +3294,18 @@ body {
 
     .practice-section {
         padding: 80px 0;
+    }
+
+    .overview-grid,
+    .benefit-grid,
+    .sequence-grid,
+    .routine-grid,
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sequence-meta {
+        grid-template-columns: 1fr;
     }
 
     .callout-card {
