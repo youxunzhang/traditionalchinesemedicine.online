@@ -5243,3 +5243,208 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Herb matrix layout */
+.matrix-overview {
+    padding: 4rem 0 2rem;
+    background: linear-gradient(135deg, rgba(15, 64, 57, 0.06), rgba(15, 64, 57, 0));
+}
+
+.matrix-overview__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: start;
+}
+
+.matrix-section {
+    padding: 2rem 0 5rem;
+}
+
+.matrix-section__head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 760px;
+}
+
+.matrix-overview .section-title,
+.matrix-section .section-title {
+    font-size: 2rem;
+    color: #0f4039;
+    letter-spacing: 0.08em;
+}
+
+.matrix-overview .section-intro,
+.matrix-section .section-intro {
+    font-size: 1rem;
+    color: #3d5a58;
+    line-height: 1.8;
+}
+
+.matrix-legend {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.75rem;
+    box-shadow: 0 20px 45px rgba(15, 64, 57, 0.08);
+    border: 1px solid rgba(15, 64, 57, 0.06);
+}
+
+.matrix-legend__title {
+    font-size: 1.1rem;
+    color: #0f4039;
+    margin-bottom: 1rem;
+}
+
+.matrix-legend__list {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.matrix-legend__list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #2f4f4f;
+}
+
+.matrix-legend__source {
+    font-weight: 600;
+}
+
+.matrix-legend__count {
+    color: #4f7c78;
+}
+
+.matrix-grid {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.75rem;
+}
+
+.matrix-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 18px 40px rgba(15, 64, 57, 0.08);
+    border: 1px solid rgba(15, 64, 57, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 100%;
+}
+
+.matrix-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    border-radius: 18px 18px 0 0;
+}
+
+.matrix-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0f4039;
+}
+
+.matrix-card__source {
+    font-weight: 700;
+}
+
+.matrix-card__tag {
+    font-weight: 600;
+    color: rgba(15, 64, 57, 0.75);
+}
+
+.matrix-card__title {
+    font-size: 1.35rem;
+    color: #0f4039;
+    line-height: 1.4;
+}
+
+.matrix-card__summary {
+    font-size: 0.95rem;
+    color: #3d5a58;
+    line-height: 1.7;
+}
+
+.matrix-card__herbs {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 1rem;
+    font-size: 0.95rem;
+    color: #17413a;
+    padding: 0;
+}
+
+.matrix-card__note {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: #4f7c78;
+    line-height: 1.6;
+}
+
+.matrix-card--emerald::before {
+    background: linear-gradient(90deg, #1abc9c, #16a085);
+}
+
+.matrix-card--amber::before {
+    background: linear-gradient(90deg, #f4b350, #e67e22);
+}
+
+.matrix-card--crimson::before {
+    background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.matrix-card--teal::before {
+    background: linear-gradient(90deg, #1abc9c, #11806a);
+}
+
+.matrix-card--copper::before {
+    background: linear-gradient(90deg, #d35400, #b34700);
+}
+
+.matrix-card--indigo::before {
+    background: linear-gradient(90deg, #5b6fd6, #3449a8);
+}
+
+.matrix-card--jade::before {
+    background: linear-gradient(90deg, #48c9b0, #0e9b85);
+}
+
+.matrix-card--bronze::before {
+    background: linear-gradient(90deg, #cd8c3f, #a86822);
+}
+
+.matrix-card--scarlet::before {
+    background: linear-gradient(90deg, #ff6b6b, #d9364f);
+}
+
+@media (max-width: 768px) {
+    .matrix-overview {
+        padding-top: 3rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .matrix-card {
+        padding: 1.5rem;
+    }
+
+    .matrix-card__herbs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
