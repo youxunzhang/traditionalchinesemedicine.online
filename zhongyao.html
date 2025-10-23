@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神農本草圖鑑｜TCM 傳統醫學館</title>
-    <meta name="description" content="快速篩選《神農本草經》經典藥味，閱讀原文提要與三品分類，掌握藥性精髓。">
+    <title>神農本草精華導覽｜TCM 傳統醫學館</title>
+    <meta name="description" content="瀏覽《神農本草經》、《本草綱目》與朱良春蟲藥九宮格分類，快速掌握中藥學經典脈絡與代表藥味。">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -30,37 +30,31 @@
 
     <header class="page-header hero-herb">
         <div class="container">
-            <h1 class="page-title">神農本草精華導覽</h1>
-            <p class="page-subtitle">萃取《神農本草經》重點，提供繁體中文摘要，可依上中下品或藥名檢索閱讀原文精義。</p>
+            <h1 class="page-title">神農本草九宮格</h1>
+            <p class="page-subtitle">同覽《神農本草經》、《本草綱目》與朱良春蟲藥精要，透過九宮格脈絡化經典藥群，迅速理解功效定位與代表藥味。</p>
         </div>
     </header>
 
     <main class="page-content">
-        <section class="herb-controls">
+        <section class="matrix-overview">
             <div class="container">
-                <div class="control-grid">
-                    <div class="control-group">
-                        <label for="herbSearch"><i class="fas fa-search"></i> 藥名／功效搜尋</label>
-                        <input type="search" id="herbSearch" placeholder="輸入藥名、功效或原文片段…">
+                <div class="matrix-overview__grid">
+                    <div>
+                        <h2 class="section-title">經典三源，一覽全局</h2>
+                        <p class="section-intro">《神農本草經》奠定上、中、下品的養生格局，《本草綱目》以博物分類拓展藥材視野，當代名醫朱良春則以蟲藥專長強調通絡與解毒。本頁依三大經典來源各取三類代表藥群，構成九宮格綜觀。</p>
                     </div>
-                    <div class="control-group">
-                        <span class="control-label"><i class="fas fa-layer-group"></i> 依等級篩選</span>
-                        <div class="grade-tabs">
-                            <button type="button" class="grade-tab active" data-grade="all">全部</button>
-                            <button type="button" class="grade-tab" data-grade="Superior">上品</button>
-                            <button type="button" class="grade-tab" data-grade="Medium">中品</button>
-                            <button type="button" class="grade-tab" data-grade="Regular">下品</button>
-                        </div>
-                    </div>
+                    <div id="herbMatrixLegend" class="matrix-legend" aria-live="polite"></div>
                 </div>
-                <p class="control-hint">內容擷取或意譯自《神農本草經》，等級依傳統上、中、下品分類呈現。</p>
             </div>
         </section>
 
-        <section class="herb-list-section">
+        <section class="matrix-section">
             <div class="container">
-                <div id="herbStats" class="herb-stats"></div>
-                <div id="herbList" class="herb-list" aria-live="polite"></div>
+                <div class="matrix-section__head">
+                    <h2 class="section-title">九宮格本草分類</h2>
+                    <p class="section-intro">依來源與功效定位分類，每格羅列 4–5 味代表藥，並附註經典要點，協助快速比對與延伸研讀。</p>
+                </div>
+                <div id="herbMatrix" class="matrix-grid" aria-live="polite" role="list"></div>
             </div>
         </section>
     </main>
