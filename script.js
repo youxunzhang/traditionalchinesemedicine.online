@@ -1,5 +1,67 @@
+const OPENCC_CDN_URL = 'https://unpkg.com/opencc-js@1.0.4/dist/umd/full.js';
+
+async function initSimplifiedConversion() {
+    const htmlEl = document.documentElement;
+    if (htmlEl && htmlEl.lang !== 'zh-Hans') {
+        htmlEl.lang = 'zh-Hans';
+    }
+
+    try {
+        const OpenCC = await loadOpenCC();
+        if (!OpenCC || typeof OpenCC.Converter !== 'function') {
+            throw new Error('OpenCC converter is unavailable.');
+        }
+
+        const converter = OpenCC.Converter({ from: 'tw', to: 'cn' });
+        const ignoreParents = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT']);
+        const walker = document.createTreeWalker(
+            document.body,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        let current = walker.nextNode();
+        while (current) {
+            const parent = current.parentNode;
+            if (parent && !ignoreParents.has(parent.nodeName)) {
+                const original = current.nodeValue;
+                const converted = converter(original);
+                if (converted !== original) {
+                    current.nodeValue = converted;
+                }
+            }
+            current = walker.nextNode();
+        }
+    } catch (error) {
+        console.error('Simplified Chinese conversion failed:', error);
+    }
+}
+
+function loadOpenCC() {
+    if (window.OpenCC) {
+        return Promise.resolve(window.OpenCC);
+    }
+
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = OPENCC_CDN_URL;
+        script.async = true;
+        script.onload = () => {
+            if (window.OpenCC) {
+                resolve(window.OpenCC);
+            } else {
+                reject(new Error('OpenCC did not initialise as expected.'));
+            }
+        };
+        script.onerror = () => reject(new Error('Failed to load OpenCC library.'));
+        document.head.appendChild(script);
+    });
+}
+
 // Initialise core interactions once the DOM is ready
 window.addEventListener('DOMContentLoaded', () => {
+    initSimplifiedConversion();
     initNavigation();
     initFAQ();
     initHerbCategories();
@@ -112,7 +174,7 @@ function initForms() {
     if (consultationForm) {
         consultationForm.addEventListener('submit', event => {
             event.preventDefault();
-            handleFormSubmission(consultationForm, '諮詢需求');
+            handleFormSubmission(consultationForm, '咨询需求');
         });
     }
 
@@ -120,16 +182,16 @@ function initForms() {
     if (contactForm) {
         contactForm.addEventListener('submit', event => {
             event.preventDefault();
-            handleFormSubmission(contactForm, '訊息');
+            handleFormSubmission(contactForm, '信息');
         });
     }
 }
 
 function handleFormSubmission(form, label) {
     const data = Object.fromEntries(new FormData(form).entries());
-    showNotification(`已收到${label}，我們會盡快與您聯繫。`, 'success');
+    showNotification(`已收到${label}，我们会尽快与您联系。`, 'success');
     form.reset();
-    console.log('表單內容預覽：', data);
+    console.log('表单内容预览：', data);
 }
 
 function showNotification(message, type = 'info') {
