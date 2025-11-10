@@ -46,15 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!counterEl) return;
     if (!filteredCount) {
       counterEl.textContent = keyword
-        ? '尚無符合條件的藥味'
+        ? '尚無符合條件的本草'
         : '暫無本草資料';
       return;
     }
 
     const base = keyword
-      ? `共有 ${filteredCount} 味藥符合搜尋`
-      : `館藏 ${totalCount} 味本草`;
-    counterEl.textContent = `${base} · 第 ${currentPage} / ${totalPages} 頁`;
+      ? `共找到 ${filteredCount} 味本草`
+      : `共收錄 ${totalCount} 味本草`;
+    counterEl.textContent = `${base} · 第${currentPage}/${totalPages}頁`;
   };
 
   const createHerbCard = herb => {
