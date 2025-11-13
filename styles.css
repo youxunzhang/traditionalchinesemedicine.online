@@ -5459,3 +5459,439 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* Calorie calculator page */
+.calorie-page {
+    background: #f5f7f4;
+}
+
+.calorie-main {
+    padding-top: 96px;
+}
+
+.calorie-hero {
+    background: linear-gradient(135deg, #14532d, #0f766e 55%, #22c55e);
+    color: #f0fff4;
+    padding: 7rem 0 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.calorie-hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.18), transparent 60%),
+                radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.15), transparent 55%);
+    pointer-events: none;
+}
+
+.calorie-hero__inner {
+    position: relative;
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: center;
+    z-index: 1;
+}
+
+.calorie-hero__content h1 {
+    font-size: clamp(2.2rem, 3vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.calorie-hero__lead {
+    max-width: 34rem;
+    margin-bottom: 1.75rem;
+    font-size: 1.05rem;
+    color: rgba(240, 255, 244, 0.92);
+}
+
+.calorie-hero__highlights {
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+    margin: 0 0 2rem;
+    padding: 0;
+}
+
+.calorie-hero__highlights li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(15, 118, 110, 0.45);
+    padding: 0.75rem 1rem;
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.calorie-hero__highlights i {
+    font-size: 1.2rem;
+}
+
+.calorie-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.calorie-hero__card {
+    background: rgba(12, 43, 37, 0.65);
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 24px 48px rgba(10, 66, 55, 0.35);
+    backdrop-filter: blur(8px);
+}
+
+.calorie-hero__card-top {
+    margin-bottom: 1.5rem;
+}
+
+.card-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.calorie-hero__card h2 {
+    font-size: 1.5rem;
+    margin: 0.35rem 0 0.5rem;
+}
+
+.calorie-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.calorie-hero__stats dt {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.calorie-hero__stats dd {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.calorie-hero__note {
+    font-size: 0.95rem;
+    color: rgba(240, 255, 244, 0.88);
+    line-height: 1.6;
+}
+
+.calorie-tool {
+    padding: 4rem 0 3rem;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 2.5rem;
+    align-items: start;
+}
+
+.calorie-form {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(15, 118, 110, 0.1);
+    display: grid;
+    gap: 1.5rem;
+}
+
+.calorie-form label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #0f3d35;
+}
+
+.calorie-form select,
+.calorie-form input[type="number"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    border: 1px solid #cbd5d1;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.calorie-form select:focus,
+.calorie-form input[type="number"]:focus,
+.calorie-form input[type="range"]:focus {
+    outline: none;
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+}
+
+.calorie-form input[type="range"] {
+    width: 100%;
+    accent-color: #0f766e;
+}
+
+.range-value {
+    font-size: 0.95rem;
+    color: #0f766e;
+    margin-top: 0.5rem;
+}
+
+.inline-group input[type="number"] {
+    max-width: 140px;
+}
+
+.toppings-group {
+    border: 1px solid rgba(15, 118, 110, 0.18);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    background: rgba(239, 253, 245, 0.65);
+}
+
+.toppings-group legend {
+    font-weight: 600;
+    color: #0f3d35;
+    padding: 0 0.5rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.checkbox-option input {
+    width: 18px;
+    height: 18px;
+    accent-color: #0f766e;
+}
+
+.calorie-hint {
+    font-size: 0.85rem;
+    color: #4a5d58;
+    line-height: 1.5;
+}
+
+.calorie-summary {
+    background: linear-gradient(160deg, #0b3a32, #14532d 65%, #1f7a53);
+    color: #f4fff7;
+    border-radius: 28px;
+    padding: 2.25rem;
+    display: grid;
+    gap: 1.75rem;
+    position: sticky;
+    top: 120px;
+    box-shadow: 0 24px 50px rgba(10, 57, 49, 0.35);
+}
+
+.summary-header h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.35rem;
+}
+
+.summary-core {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.summary-calorie {
+    display: grid;
+    gap: 0.5rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 1rem;
+    border-radius: 24px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.summary-calorie strong {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.summary-macros {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.summary-macros div {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.75rem 1rem;
+    border-radius: 18px;
+    display: grid;
+    gap: 0.35rem;
+    text-align: center;
+}
+
+.summary-macros span {
+    font-size: 0.9rem;
+    color: rgba(240, 255, 244, 0.75);
+}
+
+.summary-detail dl {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.summary-detail div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 0.95rem;
+}
+
+.summary-tips p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(240, 255, 244, 0.85);
+}
+
+.summary-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.wellness-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.18);
+    color: #f0fff4;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.wellness-tag--warning {
+    background: rgba(255, 196, 0, 0.22);
+    border-color: rgba(255, 212, 59, 0.6);
+    color: #fff8e1;
+}
+
+.wellness-tag--positive {
+    background: rgba(34, 197, 94, 0.25);
+    border-color: rgba(74, 222, 128, 0.6);
+    color: #ecfdf5;
+}
+
+.calorie-picks {
+    padding: 4rem 0;
+    background: #fdfcf8;
+}
+
+.picks-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.pick-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(100, 116, 139, 0.18);
+    display: grid;
+    gap: 1rem;
+}
+
+.pick-card h3 {
+    font-size: 1.25rem;
+    color: #0f4039;
+}
+
+.pick-card ul {
+    list-style: none;
+    display: grid;
+    gap: 0.65rem;
+    color: #3f4b45;
+}
+
+.calorie-tips {
+    padding: 4rem 0 5rem;
+}
+
+.tips-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.tip-card {
+    background: linear-gradient(180deg, #0f766e 0%, #0b4e3f 100%);
+    color: #f1fff9;
+    padding: 2rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(13, 71, 59, 0.35);
+    display: grid;
+    gap: 0.9rem;
+}
+
+.tip-card h3 {
+    font-size: 1.2rem;
+}
+
+.tip-card ul {
+    list-style: none;
+    display: grid;
+    gap: 0.5rem;
+}
+
+.tip-card ul li::before {
+    content: '•';
+    margin-right: 0.5rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 1024px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calorie-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .calorie-main {
+        padding-top: 80px;
+    }
+
+    .calorie-hero {
+        padding: 6rem 0 4rem;
+    }
+
+    .calorie-form {
+        padding: 1.5rem;
+    }
+
+    .calorie-summary {
+        padding: 1.75rem;
+    }
+
+    .calorie-hero__card {
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .calorie-hero__highlights li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .summary-macros {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+

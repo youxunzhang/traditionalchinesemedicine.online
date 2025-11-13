@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡路里計算器｜TCM 傳統醫學館</title>
+    <meta name="description" content="參考星巴克菜單設計的卡路里計算器，快速估算咖啡、茶飲與冰沙飲品的熱量、糖分與咖啡因，並提供中醫體質調整建議。">
+    <meta name="keywords" content="星巴克 卡路里, 咖啡 熱量, 飲料 糖分, 中醫 養生, calorie calculator">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="calorie-page">
+    <a class="skip-link" href="#calculator">跳到卡路里計算器</a>
+    <nav class="navbar" aria-label="主要導覽">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf" aria-hidden="true"></i>
+                <span>TCM</span>
+            </div>
+            <ul class="nav-menu" id="caloriePrimaryNav">
+                <li class="nav-item"><a href="index.html#shennong" class="nav-link">首頁</a></li>
+                <li class="nav-item"><a href="index.html#books" class="nav-link">中醫好書</a></li>
+                <li class="nav-item"><a href="calorie-calculator.html" class="nav-link active">卡路里計算器</a></li>
+                <li class="nav-item"><a href="foodpairing.html" class="nav-link">食物輪盤</a></li>
+                <li class="nav-item"><a href="famous-tcm-doctors.html" class="nav-link">名醫薈萃</a></li>
+                <li class="nav-item"><a href="ni-haixia.html" class="nav-link">倪海廈專頁</a></li>
+                <li class="nav-item"><a href="sedona-release.html" class="nav-link">聖多納釋放法</a></li>
+                <li class="nav-item"><a href="zhongyao.html" class="nav-link">本草庫</a></li>
+                <li class="nav-item"><a href="babu-jingang-gong.html" class="nav-link">八部金剛功</a></li>
+                <li class="nav-item"><a href="ba-duan-jin.html" class="nav-link">八段錦</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="bookmark-btn" id="bookmarkBtn" type="button" title="將本頁加入書籤">
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                    <span>收藏</span>
+                </button>
+            </div>
+            <button class="hamburger" type="button" aria-label="切換選單" aria-controls="caloriePrimaryNav" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="calorie-main">
+        <section class="calorie-hero" id="hero">
+            <div class="container calorie-hero__inner">
+                <div class="calorie-hero__content">
+                    <p class="section-eyebrow">Inspired by Starbucks®</p>
+                    <h1>咖啡 & 茶飲卡路里計算器</h1>
+                    <p class="calorie-hero__lead">參考星巴克菜單常見的咖啡、茶與星冰樂比例，快速試算各杯型的熱量、糖分、咖啡因與營養概況，並搭配中醫體質調理提示，讓外帶飲品更貼近身體所需。</p>
+                    <ul class="calorie-hero__highlights" aria-label="功能亮點">
+                        <li><i class="fas fa-mug-hot" aria-hidden="true"></i> 14 款人氣飲品與 3 種杯型精準參考值</li>
+                        <li><i class="fas fa-calculator" aria-hidden="true"></i> 自選奶類、糖漿、配料即時更新熱量與糖分</li>
+                        <li><i class="fas fa-leaf" aria-hidden="true"></i> 體質建議與飲用時機，平衡寒熱虛實</li>
+                    </ul>
+                    <div class="calorie-hero__actions">
+                        <a class="btn btn-light" href="#calculator">開始計算</a>
+                        <a class="btn btn-outline-light" href="#pairings">查看推薦搭配</a>
+                    </div>
+                </div>
+                <div class="calorie-hero__card" aria-hidden="true">
+                    <div class="calorie-hero__card-top">
+                        <span class="card-eyebrow">Today&apos;s Order</span>
+                        <h2>抹茶杏仁奶那堤</h2>
+                        <p>Grande｜杏仁奶＋2 泵香草糖漿</p>
+                    </div>
+                    <dl class="calorie-hero__stats">
+                        <div>
+                            <dt>卡路里</dt>
+                            <dd>225 kcal</dd>
+                        </div>
+                        <div>
+                            <dt>糖分</dt>
+                            <dd>23 g</dd>
+                        </div>
+                        <div>
+                            <dt>咖啡因</dt>
+                            <dd>80 mg</dd>
+                        </div>
+                    </dl>
+                    <p class="calorie-hero__note">加入薑粉或肉桂粉，可暖中健脾並減少冰飲寒涼。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="calorie-tool" id="calculator">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-eyebrow">互動試算</p>
+                    <h2 class="section-title">選擇飲品，自訂配方，即時掌握熱量</h2>
+                    <p class="section-subtitle">每個飲品的參考數據取自公開營養資訊，並依中醫調養角度提供「寒熱平衡」「脾胃負擔」與「咖啡因敏感度」三大指標作為提醒。</p>
+                </header>
+                <div class="calculator-grid">
+                    <form id="calorieForm" class="calorie-form" aria-describedby="calorieHint">
+                        <div class="form-group">
+                            <label for="beverageSelect">選擇飲品</label>
+                            <select id="beverageSelect"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sizeSelect">杯型</label>
+                            <select id="sizeSelect">
+                                <option value="tall">Tall 12oz / 355ml</option>
+                                <option value="grande">Grande 16oz / 473ml</option>
+                                <option value="venti">Venti 24oz / 710ml</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="milkSelect">奶類 / 植物奶</label>
+                            <select id="milkSelect"></select>
+                        </div>
+                        <div class="form-group">
+                            <label for="syrupRange">糖漿（每泵 20 kcal / 5g 糖）</label>
+                            <input type="range" id="syrupRange" min="0" max="6" step="1" value="0">
+                            <div class="range-value" aria-live="polite">目前 0 泵</div>
+                        </div>
+                        <div class="form-group inline-group">
+                            <label for="extraShots">加濃縮（每份 +5 kcal / +75mg 咖啡因）</label>
+                            <input type="number" id="extraShots" min="0" max="4" value="0" inputmode="numeric" pattern="[0-4]">
+                        </div>
+                        <fieldset class="form-group toppings-group">
+                            <legend>其他配料</legend>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="whipCheck" value="whip">
+                                <label for="whipCheck">鮮奶油 (+80 kcal)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="coldFoamCheck" value="coldFoam">
+                                <label for="coldFoamCheck">雲朵奶泡 (+40 kcal)</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="proteinCheck" value="protein">
+                                <label for="proteinCheck">植物蛋白粉 (+12g 蛋白質)</label>
+                            </div>
+                        </fieldset>
+                        <p id="calorieHint" class="calorie-hint">飲品數據為參考值，實際熱量會依使用食材與地域略有差異。</p>
+                    </form>
+                    <aside class="calorie-summary" aria-live="polite" aria-atomic="true">
+                        <div class="summary-header">
+                            <h3 id="summaryName">請選擇飲品</h3>
+                            <p id="summaryDescriptor">設定杯型與配料後，將顯示熱量與營養資訊。</p>
+                        </div>
+                        <div class="summary-core">
+                            <div class="summary-calorie">
+                                <span class="summary-label">總熱量</span>
+                                <strong id="totalCalories">0 kcal</strong>
+                            </div>
+                            <div class="summary-macros">
+                                <div>
+                                    <span>糖分</span>
+                                    <strong id="totalSugar">0 g</strong>
+                                </div>
+                                <div>
+                                    <span>蛋白質</span>
+                                    <strong id="totalProtein">0 g</strong>
+                                </div>
+                                <div>
+                                    <span>脂肪</span>
+                                    <strong id="totalFat">0 g</strong>
+                                </div>
+                                <div>
+                                    <span>咖啡因</span>
+                                    <strong id="totalCaffeine">0 mg</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="summary-tags" id="wellnessTags" aria-live="polite"></div>
+                        <div class="summary-detail">
+                            <h4>營養細節</h4>
+                            <dl>
+                                <div>
+                                    <dt>碳水化合物</dt>
+                                    <dd id="totalCarbs">0 g</dd>
+                                </div>
+                                <div>
+                                    <dt>纖維</dt>
+                                    <dd id="totalFiber">0 g</dd>
+                                </div>
+                                <div>
+                                    <dt>鈉含量</dt>
+                                    <dd id="totalSodium">0 mg</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <div class="summary-tips">
+                            <h4>中醫小叮嚀</h4>
+                            <p id="tcmTip">選擇飲品後，將依脾胃寒熱、氣血狀態提供調整建議。</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="calorie-picks" id="pairings">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-eyebrow">每日靈感</p>
+                    <h2 class="section-title">三種情境的飲品＋點心搭配</h2>
+                    <p class="section-subtitle">以星巴克常見飲品為基礎，搭配低糖點心與中醫調養觀點，幫助你在忙碌生活中保持能量穩定。</p>
+                </header>
+                <div class="picks-grid">
+                    <article class="pick-card">
+                        <h3>晨間提神｜暖陽拉花拿鐵</h3>
+                        <ul>
+                            <li>Grande 馥郁那堤 + 杏仁奶 + 1 泵香草糖漿</li>
+                            <li>搭配：無糖優格 + 少量燕麥，補益脾氣</li>
+                            <li>中醫觀點：加入肉桂粉暖陽，適合手腳冰冷、早晨易疲倦者。</li>
+                        </ul>
+                    </article>
+                    <article class="pick-card">
+                        <h3>午后放鬆｜桂花冷萃氣泡</h3>
+                        <ul>
+                            <li>Tall 冷萃咖啡 + 燕麥奶 + 桂花糖漿 1 泵</li>
+                            <li>搭配：烘焙堅果一小把，補肝腎兼顧血糖</li>
+                            <li>中醫觀點：桂花香溫疏肝，冷熱同調，適合長時間久坐辦公族。</li>
+                        </ul>
+                    </article>
+                    <article class="pick-card">
+                        <h3>夜間療癒｜抹茶豆乳星冰樂</h3>
+                        <ul>
+                            <li>Tall 抹茶星冰樂 + 豆乳 + 無糖製作</li>
+                            <li>搭配：紅棗核桃糕 1 片，養血安神</li>
+                            <li>中醫觀點：抹茶清肝熱，豆乳補氣血，建議晚餐後 2 小時慢慢飲用。</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="calorie-tips" id="tcm">
+            <div class="container">
+                <header class="section-header">
+                    <p class="section-eyebrow">體質導向</p>
+                    <h2 class="section-title">依寒熱與作息調整你的咖啡時間</h2>
+                    <p class="section-subtitle">善用薑粉、桂皮、陳皮等溫暖香料，或以菊花、決明子平衡火氣，讓每一杯咖啡都成為調氣養身的時刻。</p>
+                </header>
+                <div class="tips-grid">
+                    <article class="tip-card">
+                        <h3>手腳冰冷・容易腹瀉</h3>
+                        <p>建議選擇熱飲或少冰，搭配薑汁黑糖或肉桂粉，避免大量冰塊與全脂鮮奶油造成脾胃負擔。</p>
+                        <ul>
+                            <li>首選：熱那堤、熱黑糖瑪奇朵</li>
+                            <li>可加：薑粉、肉桂粉、芝麻粉</li>
+                        </ul>
+                    </article>
+                    <article class="tip-card">
+                        <h3>容易口乾舌燥・睡眠淺</h3>
+                        <p>選擇低咖啡因或茶飲系列，加上燕麥奶、豆乳等滋陰食材，必要時搭配菊花茶或洛神花解熱。</p>
+                        <ul>
+                            <li>首選：玄米抹茶那堤、金萱冷萃茶</li>
+                            <li>可加：菊花茶包、低糖椰奶</li>
+                        </ul>
+                    </article>
+                    <article class="tip-card">
+                        <h3>需要長時間專注</h3>
+                        <p>可選擇冷萃或美式咖啡搭配堅果，避免一次攝取太多糖分造成血糖震盪，午後轉換為花草茶舒緩。</p>
+                        <ul>
+                            <li>首選：氮氣冷萃、美式咖啡</li>
+                            <li>可加：杏仁奶、黑巧碎片</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <p>&copy; 2024 TCM 傳統醫學館。杯杯有度，身心平衡。</p>
+            <p class="footer-note"><a href="index.html">返回首頁</a> · <a href="#hero">回到頂部</a></p>
+        </div>
+    </footer>
+
+    <script defer src="script.js"></script>
+    <script type="module" src="calorie-calculator.js"></script>
+</body>
+</html>
