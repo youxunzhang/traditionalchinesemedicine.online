@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .map(text => text.trim())
         .filter(Boolean)
     )
-  ).sort((a, b) => a.localeCompare(b, 'zh-Hant'));
+  ).sort((a, b) => a.localeCompare(b, 'zh-Hans'));
 
   const createOption = (value, label) => {
     const option = document.createElement('option');

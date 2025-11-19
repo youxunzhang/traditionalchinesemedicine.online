@@ -1,7 +1,7 @@
 {
-    "name": "TCM 傳統醫學館",
+    "name": "TCM 传统医学馆",
     "short_name": "TCM",
-    "description": "提供中醫經典解讀、本草精選、養生功法與飲食指南的繁體中文資源。",
+    "description": "提供中医经典解读、本草精选、养生功法与饮食指南的简体中文资源。",
     "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#1a8f5f",
