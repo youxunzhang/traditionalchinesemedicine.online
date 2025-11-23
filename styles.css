@@ -147,6 +147,140 @@ body {
     outline-offset: 2px;
 }
 
+/* Minimal monochrome theme overrides */
+body {
+    background-color: #ffffff;
+    color: #222;
+}
+
+.skip-link {
+    background: #333;
+    color: #fff;
+    box-shadow: none;
+}
+
+.navbar {
+    background: #ffffff;
+    color: #222;
+    box-shadow: none;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.nav-logo,
+.nav-link {
+    color: #222;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+.bookmark-btn {
+    background: #f2f2f2;
+    color: #222;
+    border: 1px solid #cfcfcf;
+    box-shadow: none;
+}
+
+.bookmark-btn:hover {
+    transform: none;
+    box-shadow: none;
+    background: #e6e6e6;
+}
+
+.hamburger {
+    color: #222;
+}
+
+.hero-section,
+.shennong-section,
+.faq-section,
+.books-section,
+.footer {
+    background: #f7f7f7;
+}
+
+.shennong-title,
+.section-title {
+    color: #111;
+}
+
+.shennong-description,
+.section-subtitle {
+    color: #444;
+}
+
+.herb-feature-gallery {
+    background: #f1f1f1;
+    border: 1px solid #e0e0e0;
+    box-shadow: none;
+}
+
+.highlight-eyebrow {
+    color: #222;
+    background-color: #e0e0e0;
+}
+
+.highlight-title,
+.book-title,
+.faq-question h3,
+.footer-section h3,
+.footer-section h4 {
+    color: #111;
+}
+
+.highlight-description,
+.book-meta,
+.footer-section p,
+.footer-section a,
+.faq-answer {
+    color: #333;
+}
+
+.book-card,
+.faq-item {
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    box-shadow: none;
+}
+
+.book-card:hover,
+.faq-item:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.book-card--no-cover {
+    border: 1px solid #d9d9d9;
+}
+
+.faq-question:hover {
+    background-color: #f0f0f0;
+}
+
+.faq-item.active .faq-question {
+    background-color: #ededed;
+}
+
+.faq-question i,
+.footer-section li i {
+    color: #666;
+}
+
+.footer {
+    color: #222;
+    border-top: 1px solid #dcdcdc;
+}
+
+.footer-section a:hover {
+    color: #000;
+}
+
+.footer-bottom {
+    border-top: 1px solid #dcdcdc;
+    color: #444;
+}
+
 .bar {
     width: 24px;
     height: 2px;
