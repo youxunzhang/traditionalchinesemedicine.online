@@ -122,12 +122,31 @@
     });
   }
 
+  function ensureLanguageMetadata() {
+    const html = document.documentElement;
+    if (html && html.lang !== 'zh-CN') {
+      html.lang = 'zh-CN';
+    }
+    const meta = document.querySelector('meta[http-equiv="Content-Language"]');
+    if (meta) {
+      if (meta.getAttribute('content') !== 'zh-CN') {
+        meta.setAttribute('content', 'zh-CN');
+      }
+    } else {
+      const languageMeta = document.createElement('meta');
+      languageMeta.setAttribute('http-equiv', 'Content-Language');
+      languageMeta.setAttribute('content', 'zh-CN');
+      const head = document.head || document.querySelector('head');
+      if (head) {
+        head.prepend(languageMeta);
+      }
+    }
+  }
+
   function initialize() {
     const converter = createConverter();
     if (!converter) return;
-    if (document.documentElement && document.documentElement.lang !== 'zh-Hans') {
-      document.documentElement.lang = 'zh-Hans';
-    }
+    ensureLanguageMetadata();
     const applyConversion = () => {
       if (document.body) {
         traverse(document.body, converter);
