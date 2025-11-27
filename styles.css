@@ -6113,3 +6113,236 @@ body {
     }
 }
 
+
+/* Monochrome redesign */
+:root {
+    --mono-bg: #ffffff;
+    --mono-surface: #f5f5f5;
+    --mono-border: #cfcfcf;
+    --mono-text: #111111;
+    --mono-muted: #555555;
+}
+
+body {
+    background: var(--mono-bg);
+    color: var(--mono-text);
+}
+
+a,
+.nav-link {
+    color: var(--mono-text);
+    text-decoration: none;
+}
+
+.nav-link:hover,
+.footer-section a:hover,
+.hero-subtitle a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    background: var(--mono-bg);
+    color: var(--mono-text);
+    border-bottom: 1px solid var(--mono-border);
+    box-shadow: none;
+}
+
+.nav-logo,
+.nav-actions,
+.hamburger,
+.bookmark-btn {
+    color: var(--mono-text);
+}
+
+.bookmark-btn,
+.btn,
+.btn-primary,
+.btn-secondary,
+.tag-btn,
+.action-btn,
+.calorie-action,
+.calculate-btn,
+.copy-btn,
+.generate-btn,
+.calorie-form button {
+    background: var(--mono-bg);
+    color: var(--mono-text);
+    border: 1px solid var(--mono-text);
+    box-shadow: none;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.bookmark-btn:hover,
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.tag-btn:hover,
+.action-btn:hover,
+.calorie-action:hover,
+.calculate-btn:hover,
+.copy-btn:hover,
+.generate-btn:hover,
+.calorie-form button:hover {
+    background: var(--mono-text);
+    color: var(--mono-bg);
+}
+
+.hero-section,
+.doctors-hero,
+.calorie-hero,
+.section,
+.section-header,
+.nutrition-page-body,
+.calorie-main {
+    background: var(--mono-bg);
+    color: var(--mono-text);
+}
+
+.hero-section {
+    background: var(--mono-bg);
+    color: var(--mono-text);
+    border-bottom: 1px solid var(--mono-border);
+    margin-top: 80px;
+}
+
+.hero-section::before {
+    display: none;
+}
+
+.hero-eyebrow,
+.highlight-eyebrow,
+.hero-buttons .btn-secondary {
+    background: var(--mono-surface);
+    color: var(--mono-text);
+    border: 1px solid var(--mono-border);
+}
+
+.hero-title,
+.shennong-title,
+.section-title,
+.book-title,
+.faq-question h3,
+.footer-section h3,
+.footer-section h4,
+.doctors-hero h1,
+.calorie-hero h1 {
+    color: var(--mono-text);
+}
+
+.hero-subtitle,
+.shennong-description,
+.section-subtitle,
+.book-meta,
+.faq-answer,
+.footer-section p,
+.footer-section a,
+.calorie-hero p,
+.nutrition-header h1 {
+    color: var(--mono-muted);
+}
+
+.hero-highlights div,
+.herb-feature-gallery,
+.book-card,
+.faq-item,
+.doctor-card,
+.doctors-hero__points div,
+.food-panel,
+.analysis-panel,
+.calorie-hero__card,
+.calorie-summary,
+.calorie-form,
+.nutrition-workspace .panel-header,
+.calorie-hero__highlights li {
+    background: var(--mono-surface);
+    color: var(--mono-text);
+    border: 1px solid var(--mono-border);
+    box-shadow: none;
+}
+
+.book-card:hover,
+.faq-item:hover,
+.doctor-card:hover,
+.calorie-hero__card:hover,
+.calorie-summary:hover,
+.calorie-form:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.faq-question,
+.book-card__content,
+.doctor-card__header,
+.doctor-card__stats,
+.calorie-hero__highlights li,
+.calorie-summary .summary-macros li,
+.calorie-summary .summary-numbers,
+.calorie-hero__card .card-body,
+.food-panel .food-tags,
+.analysis-panel .analysis-body {
+    color: var(--mono-text);
+}
+
+.faq-question:hover,
+.faq-item.active .faq-question {
+    background: var(--mono-bg);
+}
+
+.footer,
+.footer-bottom {
+    background: var(--mono-bg);
+    color: var(--mono-muted);
+    border-top: 1px solid var(--mono-border);
+}
+
+input,
+select,
+textarea,
+.control-group input,
+.control-group select,
+.calorie-form input,
+.calorie-form select,
+.calorie-form textarea,
+.search-box input,
+.search-box select,
+.search-input,
+.search-select {
+    background: var(--mono-bg);
+    color: var(--mono-text);
+    border: 1px solid var(--mono-text);
+    box-shadow: none;
+}
+
+.control-group,
+.doctor-count,
+.doctor-stats__summary,
+.selected-food-category,
+.selected-food-meta,
+.selected-food-icon {
+    color: var(--mono-text);
+}
+
+.hero-highlights dt,
+.doctors-hero__points strong,
+.summary-macros dt,
+.summary-numbers strong {
+    color: var(--mono-text);
+}
+
+.hero-highlights dd,
+.doctors-hero__points span,
+.summary-macros dd,
+.summary-numbers span {
+    color: var(--mono-muted);
+}
+
+.bar {
+    background-color: currentColor;
+}
+
+hr,
+.section-divider {
+    border: 0;
+    border-top: 1px solid var(--mono-border);
+}
