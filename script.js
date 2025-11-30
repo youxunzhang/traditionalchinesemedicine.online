@@ -55,11 +55,13 @@ function initNavigation() {
         if (!navbar) return;
 
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(30, 68, 51, 0.95)';
-            navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.background = 'rgba(255, 255, 255, 0.96)';
+            navbar.style.backdropFilter = 'blur(12px)';
+            navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
         } else {
-            navbar.style.background = 'transparent';
-            navbar.style.backdropFilter = 'none';
+            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+            navbar.style.backdropFilter = 'blur(10px)';
+            navbar.style.boxShadow = '0 6px 24px rgba(0,0,0,0.06)';
         }
     });
 }
