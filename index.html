@@ -113,64 +113,54 @@
     </nav>
 
     <!-- Hero -->
-    <section id="hero" class="hero-section">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <span class="hero-eyebrow">养生 × 科学 × 经典</span>
-                <h1 class="hero-title">传统医学的全方位日常，从神农本草到大脑专护</h1>
-                <p class="hero-subtitle">以经方思维串联饮食、作息、情志与专注力，让每一次呼吸、每一口茶、每一场睡眠都成为养护脾胃与神明的仪式。</p>
-                <div class="hero-buttons">
-                    <a class="btn btn-primary" href="#shennong">立即查找方药</a>
-                    <a class="btn btn-secondary" href="brain.html">开启大脑清醒计划</a>
+    <section id="hero" class="hero-section ziwu-hero">
+        <div class="container ziwu-grid">
+            <div class="ziwu-intro">
+                <span class="hero-eyebrow">子午流注</span>
+                <h1 class="hero-title">子午流注时钟</h1>
+                <p class="hero-subtitle">跟随十二时辰的气血流转，提示当令经络与养护动作，让日常作息与经典节律同频。</p>
+                <div class="ziwu-tags">
+                    <span class="pill">实时更新</span>
+                    <span class="pill pill--calm">经络提醒</span>
+                    <span class="pill pill--rest">行动建议</span>
                 </div>
-                <ul class="hero-checklist">
-                    <li><i class="fas fa-circle-check"></i> 365 味本草检索，快速定位功效与配伍</li>
-                    <li><i class="fas fa-circle-check"></i> 脑与心神双向养护，附每日行动建议</li>
-                    <li><i class="fas fa-circle-check"></i> 名医选读、养生运动与饮食工具整合</li>
-                </ul>
+                <div class="ziwu-next">
+                    <p class="ziwu-next__label">下一时辰</p>
+                    <div class="ziwu-next__content">
+                        <span class="ziwu-next__name">—</span>
+                        <span class="ziwu-next__time">—</span>
+                    </div>
+                </div>
+                <div class="ziwu-intro__cta">
+                    <a class="btn btn-primary" href="#shennong">查本草</a>
+                    <a class="btn btn-secondary" href="brain.html">专注与养脑</a>
+                </div>
             </div>
-            <div class="hero-panel">
-                <div class="hero-panel__header">今日关键行动</div>
-                <div class="hero-panel__body">
-                    <div class="hero-task">
-                        <div>
-                            <p class="task-label">晨间</p>
-                            <h3>温阳醒脑茶</h3>
-                            <p class="task-note">桂枝 + 陈皮 + 少许生姜，暖脾胃、提神明</p>
-                        </div>
-                        <span class="pill">5 分钟</span>
-                    </div>
-                    <div class="hero-task">
-                        <div>
-                            <p class="task-label">午前</p>
-                            <h3>足三里揉按</h3>
-                            <p class="task-note">每侧 60 圈，稳血糖、养气血，为午后专注充电</p>
-                        </div>
-                        <span class="pill pill--calm">3 分钟</span>
-                    </div>
-                    <div class="hero-task">
-                        <div>
-                            <p class="task-label">夜间</p>
-                            <h3>松果体休息线</h3>
-                            <p class="task-note">睡前 90 分钟远离蓝光，配合 4-7-8 呼吸安神</p>
-                        </div>
-                        <span class="pill pill--rest">放松</span>
+
+            <div class="ziwu-clock-card">
+                <div class="ziwu-clock">
+                    <div class="ziwu-clock__ring"></div>
+                    <div class="ziwu-clock__hand"></div>
+                    <div class="ziwu-clock__center"></div>
+                    <div class="ziwu-clock__dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
-                <dl class="hero-highlights">
-                    <div>
-                        <dt>365</dt>
-                        <dd>经典本草快速检索</dd>
+                <div class="ziwu-clock__meta">
+                    <div class="ziwu-clock__time" aria-live="polite">--:--</div>
+                    <div class="ziwu-period">
+                        <span class="ziwu-period__badge">当前时辰</span>
+                        <h3 class="ziwu-period__title">—</h3>
+                        <p class="ziwu-period__tip">—</p>
                     </div>
-                    <div>
-                        <dt>30+</dt>
-                        <dd>身心调养行动手册</dd>
+                    <div class="ziwu-progress" role="progressbar" aria-label="时辰进度">
+                        <div class="ziwu-progress__bar"></div>
                     </div>
-                    <div>
-                        <dt>8</dt>
-                        <dd>子午流注钟表</dd>
-                    </div>
-                </dl>
+                </div>
+                <ul class="ziwu-timeline" aria-label="十二时辰与经络"></ul>
             </div>
         </div>
     </section>
