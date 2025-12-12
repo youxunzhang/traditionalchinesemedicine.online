@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const renderCard = doctor => {
+    const detailUrl = `famous-doctors/doctor-${doctor.id}.html`;
     const article = document.createElement('article');
     article.className = 'doctor-card';
 
@@ -61,7 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const nameEl = document.createElement('h3');
     nameEl.className = 'doctor-card__name';
-    nameEl.textContent = doctor.name;
+    const nameLink = document.createElement('a');
+    nameLink.href = detailUrl;
+    nameLink.textContent = doctor.name;
+    nameLink.setAttribute('aria-label', `${doctor.name} 詳細介紹`);
+    nameEl.appendChild(nameLink);
 
     const eraEl = document.createElement('p');
     eraEl.className = 'doctor-card__era';
@@ -90,10 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
       worksList.appendChild(li);
     });
 
+    const cta = document.createElement('a');
+    cta.className = 'doctor-card__cta';
+    cta.href = detailUrl;
+    cta.textContent = '查看詳情';
+
     article.appendChild(header);
     article.appendChild(contributionEl);
     article.appendChild(specialtyList);
     article.appendChild(worksList);
+    article.appendChild(cta);
 
     return article;
   };

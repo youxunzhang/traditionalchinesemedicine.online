@@ -1168,6 +1168,16 @@ body {
     margin: 0;
 }
 
+.doctor-card__name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.doctor-card__name a:hover,
+.doctor-card__name a:focus {
+    text-decoration: underline;
+}
+
 .doctor-card__era {
     margin: 0;
     font-size: 0.95rem;
@@ -1206,6 +1216,24 @@ body {
     padding: 0.35rem 0.75rem;
     border-radius: 10px;
     font-size: 0.82rem;
+}
+
+.doctor-card__cta {
+    align-self: flex-start;
+    padding: 0.6rem 1.1rem;
+    background: linear-gradient(135deg, #1f5b45, #2f7a5b);
+    color: #fff;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(31, 91, 69, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.doctor-card__cta:hover,
+.doctor-card__cta:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(31, 91, 69, 0.3);
 }
 
 .doctor-empty {
