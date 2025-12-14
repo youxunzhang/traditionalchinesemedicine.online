@@ -7375,3 +7375,254 @@ hr,
         padding: 60px 0;
     }
 }
+
+/* Chanting Classics Page */
+.chanting-page {
+    background: #f7f9fb;
+    color: #1f2a3d;
+}
+
+.chanting-hero {
+    position: relative;
+    padding: 120px 0 90px;
+    overflow: hidden;
+}
+
+.chanting-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(53, 132, 91, 0.2), transparent 35%),
+                radial-gradient(circle at 80% 10%, rgba(26, 85, 60, 0.15), transparent 30%),
+                linear-gradient(135deg, #e3f4ed 0%, #f9fbff 60%);
+    z-index: 0;
+}
+
+.chanting-hero__content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+}
+
+.chanting-hero h1 {
+    font-size: 2.6rem;
+    margin: 12px 0;
+}
+
+.chanting-hero__subtitle {
+    color: #425466;
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+.chanting-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 16px;
+}
+
+.chanting-hero__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.chanting-hero__number {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1f6f53;
+}
+
+.chanting-hero__card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 12px 34px rgba(31, 111, 83, 0.1);
+    border: 1px solid #e5f0eb;
+}
+
+.chanting-hero__card p {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1f6f53;
+}
+
+.chanting-hero__card ul {
+    margin: 12px 0 0;
+    padding-left: 20px;
+    color: #425466;
+    line-height: 1.6;
+}
+
+.chanting-section {
+    padding: 80px 0;
+}
+
+.chanting-section--alt {
+    background: #f1f6f3;
+}
+
+.chanting-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 28px;
+}
+
+.chanting-card {
+    background: #ffffff;
+    border: 1px solid #e6f0eb;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 24px rgba(14, 68, 48, 0.06);
+    display: grid;
+    gap: 10px;
+}
+
+.chanting-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1f6f53, #2f8f6b);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.chanting-meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 8px;
+    color: #425466;
+}
+
+.chanting-meta i {
+    color: #1f6f53;
+    margin-right: 8px;
+}
+
+.chanting-section__header {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.chanting-header__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chanting-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.chanting-lines {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e3ede7;
+    padding: 22px;
+    line-height: 1.8;
+    color: #1f2a3d;
+    counter-reset: chant-count;
+    display: grid;
+    gap: 8px;
+}
+
+.chanting-lines li {
+    list-style: none;
+    position: relative;
+    padding-left: 36px;
+    border-radius: 10px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.chanting-lines li::before {
+    counter-increment: chant-count;
+    content: counter(chant-count);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #e5f1ec;
+    color: #1f6f53;
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.chanting-line--active {
+    background: linear-gradient(90deg, #e6f3ec, #f7fbf9);
+    transform: translateX(4px);
+    box-shadow: 0 12px 24px rgba(31, 111, 83, 0.08);
+}
+
+.chanting-tips {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 24px;
+}
+
+.tip-card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid #e5f0eb;
+    padding: 18px;
+    box-shadow: 0 8px 20px rgba(15, 61, 46, 0.06);
+}
+
+.tip-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: #1f6f53;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 960px) {
+    .chanting-hero__content {
+        grid-template-columns: 1fr;
+    }
+
+    .chanting-hero {
+        padding: 100px 0 70px;
+    }
+}
+
+@media (max-width: 640px) {
+    .chanting-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .chanting-controls {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .chanting-lines li {
+        padding-left: 30px;
+    }
+}
