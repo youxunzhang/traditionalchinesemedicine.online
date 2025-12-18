@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子午流注钟表｜顺时调养的 24 小时经络导航</title>
+    <meta name="description" content="依据子午流注规划 24 小时作息，提供经络高峰、日常行动、穴位茶饮与应急提示，帮助你以中医节律养护气血。">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="clock-page">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>TCM</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a class="nav-link" href="index.html#hero">首页</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html#shennong">本草检索</a></li>
+                <li class="nav-item"><a class="nav-link" href="brain.html">大脑养护</a></li>
+                <li class="nav-item"><a class="nav-link" href="sleep.html">睡眠养生</a></li>
+                <li class="nav-item"><a class="nav-link" href="foodpairing.html">食物轮盘</a></li>
+                <li class="nav-item"><a class="nav-link" href="#meridian-schedule">流注钟表</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a class="btn btn-primary" href="#quick-start">一分钟速览</a>
+            </div>
+            <div class="hamburger" aria-label="切换选单" aria-expanded="false" aria-controls="primary-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="clock-hero" id="clock-top">
+        <div class="container clock-hero__grid">
+            <div>
+                <span class="hero-eyebrow">子午流注·作息路线</span>
+                <h1>顺着经络走，24 小时都有解方</h1>
+                <p>找出当下时辰对应的经脉，选择合适的呼吸、茶饮、穴位与运动。让睡眠、工作与饮食都贴合身体的气血节律。</p>
+                <div class="clock-hero__actions">
+                    <a class="btn btn-primary" href="#meridian-schedule">查看时辰对照</a>
+                    <a class="btn btn-secondary" href="#practice">常见情境攻略</a>
+                </div>
+                <ul class="hero-checklist">
+                    <li><i class="fas fa-circle-check"></i> 每个时段给出 2–3 个立刻可做的动作</li>
+                    <li><i class="fas fa-circle-check"></i> 穴位与茶饮搭配，兼顾办公室与居家场景</li>
+                    <li><i class="fas fa-circle-check"></i> 特别标注睡眠、护胃、护脑、排毒四大关键</li>
+                </ul>
+            </div>
+            <div class="clock-hero__panel">
+                <div class="panel-title">今日节律快照</div>
+                <ul class="timeline clock-timeline">
+                    <li>
+                        <span>05:00</span>
+                        <div>
+                            <strong>肺经开端</strong>
+                            <p>窗边深呼吸 10 次，轻拍胸廓，预防晨间鼻塞。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>13:00</span>
+                        <div>
+                            <strong>小肠经旺</strong>
+                            <p>温水 200ml + 伸展肩颈，帮助午餐消化与清理脑雾。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span>22:00</span>
+                        <div>
+                            <strong>三焦预备</strong>
+                            <p>泡脚 10 分钟，揉按太冲、涌泉，让血下行助眠。</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clock-badges">
+                    <span class="pill pill--rest"><i class="fas fa-moon"></i> 深睡黄金：23:00 前入眠</span>
+                    <span class="pill pill--calm"><i class="fas fa-leaf"></i> 脾胃护航：09:00–11:00 处理专案</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="clock-main">
+        <section id="quick-start" class="clock-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">一分钟速览：三步用法</h2>
+                    <p class="section-subtitle">确认时辰 → 参考经络特点 → 套用动作组合，少思考即可上手。</p>
+                </div>
+                <div class="clock-steps">
+                    <article class="step-card">
+                        <div class="step-icon"><i class="fas fa-clock"></i></div>
+                        <h3>01｜定位时辰</h3>
+                        <p>以当前整点所在的两个小时为主，如 15:30 先看 15–17 点的膀胱经。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-check"></i> 23–03 点优先睡眠，避免剧烈运动</li>
+                            <li><i class="fas fa-check"></i> 07–11 点安排思考与会议</li>
+                        </ul>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-icon"><i class="fas fa-route"></i></div>
+                        <h3>02｜挑动作组合</h3>
+                        <p>每个时段提供 “呼吸/伸展 + 穴位 + 茶饮或食物” 的最简组合。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-check"></i> 需要静心：选含太冲、内关的组别</li>
+                            <li><i class="fas fa-check"></i> 需要提神：选含桂枝、陈皮或柠檬水</li>
+                        </ul>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <h3>03｜记录反馈</h3>
+                        <p>睡前复盘：今日哪个时段最累、最专注？明天同一时段提前 15 分钟调整。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-check"></i> 专注下降：前移 30 分钟加餐或散步</li>
+                            <li><i class="fas fa-check"></i> 睡眠浅：晚上加泡脚 + 太冲 50 下</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="meridian-schedule" class="clock-section clock-section--highlight">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">十二时辰经络流注对照表</h2>
+                    <p class="section-subtitle">掌握每个时段最需要守护的脏腑，并给出立刻能做的练习与饮食提示。</p>
+                </div>
+                <div class="clock-grid">
+                    <article class="clock-card">
+                        <div class="time-badge">23:00–01:00</div>
+                        <h3>胆经｜入睡 + 排浊</h3>
+                        <p>尽量 23:00 前入睡，协助胆汁代谢与夜间修复。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-bed"></i> 熄灯、轻揉侧肋，放慢呼吸 4-7-8</li>
+                            <li><i class="fas fa-mug-hot"></i> 睡前 1 小时停止咖啡因</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> 穴位：丘墟、阳陵泉</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">01:00–03:00</div>
+                        <h3>肝经｜深睡 + 疏泄</h3>
+                        <p>主导情绪调节与解毒，浅眠或易醒者此段要护肝血。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-moon"></i> 热水泡脚后加按太冲、行间</li>
+                            <li><i class="fas fa-wine-bottle"></i> 晚餐减酒精与重油，隔天更清醒</li>
+                            <li><i class="fas fa-leaf"></i> 茶饮：玫瑰 + 枸杞温水</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">03:00–05:00</div>
+                        <h3>肺经｜换气 + 整理</h3>
+                        <p>肺气宣发开始，晨练前先温暖气道，减少清晨咳嗽。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-wind"></i> 窗边鼻吸口呼 10 次，轻拍胸廓</li>
+                            <li><i class="fas fa-broom"></i> 有痰：肩胛拉伸 + 拍打天突</li>
+                            <li><i class="fas fa-mug-hot"></i> 温水加陈皮 1 片润肺</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">05:00–07:00</div>
+                        <h3>大肠经｜排便 + 醒神</h3>
+                        <p>肠道蠕动旺，先喝温盐水或温开水，借势排空。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-toilet"></i> 200–300ml 温水 + 5 分钟蹲马步</li>
+                            <li><i class="fas fa-hand-sparkles"></i> 穴位：合谷、曲池帮助宣肺通便</li>
+                            <li><i class="fas fa-bread-slice"></i> 早餐前避免冰品与生冷果汁</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">07:00–09:00</div>
+                        <h3>胃经｜补充燃料</h3>
+                        <p>一天最重要的早餐时段，谷物 + 蛋白 + 温热为主。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-egg"></i> 小米粥 + 鸡蛋或豆腐，少油煎炸</li>
+                            <li><i class="fas fa-hand-point-up"></i> 按压足三里、内庭，护胃提神</li>
+                            <li><i class="fas fa-coffee"></i> 咖啡延后到 09:30 以后更稳</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">09:00–11:00</div>
+                        <h3>脾经｜专注 + 转化</h3>
+                        <p>脾主运化，为高效学习工作黄金段。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-brain"></i> 安排深度工作 60–90 分钟区块</li>
+                            <li><i class="fas fa-leaf"></i> 茶饮：茯苓陈皮茶，清滞不困倦</li>
+                            <li><i class="fas fa-hands"></i> 穴位：太白、公孙，健脾祛湿</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">11:00–13:00</div>
+                        <h3>心经｜午间小憩</h3>
+                        <p>心经旺盛，适合短暂放松，避免情绪过度起伏。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-chair"></i> 10–20 分钟闭目或冥想，勿过长午睡</li>
+                            <li><i class="fas fa-apple-alt"></i> 午餐少生冷，多温熟、少甜饮</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> 穴位：神门、内关，稳心率</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">13:00–15:00</div>
+                        <h3>小肠经｜分清浊</h3>
+                        <p>帮助午餐吸收与代谢，避免脑雾与餐后嗜睡。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-walking"></i> 饭后 10–15 分钟散步 + 耸肩</li>
+                            <li><i class="fas fa-mug-hot"></i> 温水 200ml，勿猛喝冰饮</li>
+                            <li><i class="fas fa-hand-holding-medical"></i> 穴位：后溪、腕骨放松肩颈</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">15:00–17:00</div>
+                        <h3>膀胱经｜补水 + 伸展</h3>
+                        <p>经络沿背腰腿，适合站立伸展与补水，预防下午疲劳。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-beer"></i> 每 30 分钟喝 100ml 温水</li>
+                            <li><i class="fas fa-child"></i> 站立摸脚尖或靠墙拉伸小腿</li>
+                            <li><i class="fas fa-hand-sparkles"></i> 穴位：委中、昆仑，舒缓腰背</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">17:00–19:00</div>
+                        <h3>肾经｜收纳 + 补养</h3>
+                        <p>肾藏精，傍晚可补充优质蛋白与温热汤水。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-fish"></i> 晚餐适量鱼肉或豆类，勿太晚太油</li>
+                            <li><i class="fas fa-shoe-prints"></i> 轻度慢跑或快走 15–20 分钟</li>
+                            <li><i class="fas fa-hand-holding-water"></i> 穴位：太溪、涌泉，固肾安神</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">19:00–21:00</div>
+                        <h3>心包经｜放松 + 联络</h3>
+                        <p>社交与放松时段，心包护心，适合轻松谈话与拉伸。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-comments"></i> 选择低噪、低蓝光的娱乐方式</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> 穴位：内关、郄门，缓解胸闷</li>
+                            <li><i class="fas fa-mug-hot"></i> 茶饮：酸枣仁 + 柏子仁小袋泡饮</li>
+                        </ul>
+                    </article>
+                    <article class="clock-card">
+                        <div class="time-badge">21:00–23:00</div>
+                        <h3>三焦经｜入眠准备</h3>
+                        <p>掌管水道与气机，降低脑内兴奋，替睡眠铺路。</p>
+                        <ul class="clock-actions">
+                            <li><i class="fas fa-bath"></i> 温热泡脚或热水淋浴 8–10 分钟</li>
+                            <li><i class="fas fa-yoga"></i> 轻度拉伸：猫牛式、侧屈 5 组</li>
+                            <li><i class="fas fa-book"></i> 远离蓝光，改为阅读纸本 15 分钟</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="practice" class="clock-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">常见情境的调养组合</h2>
+                    <p class="section-subtitle">针对上班族、夜班、学生与睡眠差等需求，直接调用对应时段的组合即可。</p>
+                </div>
+                <div class="practice-grid">
+                    <article class="practice-card">
+                        <div class="practice-icon"><i class="fas fa-laptop"></i></div>
+                        <h3>办公室久坐</h3>
+                        <p>下午易腰酸或脑胀？把膀胱经与脾经的小动作放进行程。</p>
+                        <ul class="tip-list">
+                            <li>15–17 点：每 30 分钟起立，脚跟提踵 20 下</li>
+                            <li>09–11 点：茯苓陈皮茶 + 足三里按 1 分钟</li>
+                            <li>配合 20–20–20 眼休息规则，减少屏幕疲劳</li>
+                        </ul>
+                    </article>
+                    <article class="practice-card">
+                        <div class="practice-icon"><i class="fas fa-moon"></i></div>
+                        <h3>夜班或跨时差</h3>
+                        <p>无法按传统作息？优先守护肝胆与脾胃的节律，缩小生物钟偏差。</p>
+                        <ul class="tip-list">
+                            <li>上班前模拟晨间：鼻吸口呼 + 温热早餐</li>
+                            <li>“睡眠块”保持固定，照表选择最近的休息时段</li>
+                            <li>咖啡因截止在“个人 7–9 点”的 4 小时后</li>
+                        </ul>
+                    </article>
+                    <article class="practice-card">
+                        <div class="practice-icon"><i class="fas fa-child"></i></div>
+                        <h3>学生考前冲刺</h3>
+                        <p>专注与记忆需要脾胃与心血支持，把高强度学习排在 09–11 点。</p>
+                        <ul class="tip-list">
+                            <li>07–09 点：温热早餐 + 足三里/内庭按压</li>
+                            <li>11–13 点：10 分钟小睡或正念呼吸，缓解紧张</li>
+                            <li>21–23 点：拉伸 + 太冲 50 下，避免睡前刷手机</li>
+                        </ul>
+                    </article>
+                    <article class="practice-card">
+                        <div class="practice-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h3>易焦虑或睡浅</h3>
+                        <p>多用肝经、心包与三焦的安神动作，建立固定的晚间关闭仪式。</p>
+                        <ul class="tip-list">
+                            <li>19–21 点：内关、郄门按压各 1 分钟</li>
+                            <li>21–23 点：热水泡脚 + 缓慢呼吸 5 轮</li>
+                            <li>睡前记录 3 件完成的小事，降低过度反刍</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="clock-section clock-section--panel">
+            <div class="container clock-panel-grid">
+                <div class="panel-card">
+                    <div class="panel-head">
+                        <h3>穴位口袋组合</h3>
+                        <p>两三分钟就能完成的小型组合，按当前时段灵活替换。</p>
+                    </div>
+                    <div class="chip-row">
+                        <span class="point-chip">太冲 + 行间（疏肝解郁）</span>
+                        <span class="point-chip">足三里 + 内庭（护胃醒脑）</span>
+                        <span class="point-chip">内关 + 神门（安神稳心）</span>
+                        <span class="point-chip">委中 + 昆仑（舒缓腰背）</span>
+                        <span class="point-chip">合谷 + 曲池（宣肺通便）</span>
+                    </div>
+                </div>
+                <div class="panel-card">
+                    <div class="panel-head">
+                        <h3>茶饮与食材替换</h3>
+                        <p>围绕“温阳、健脾、疏肝、安神”四大主题，随时段选择。</p>
+                    </div>
+                    <div class="chip-row chip-row--wrap">
+                        <span class="herb-chip herb-chip--warm">桂枝 + 生姜：温阳散寒</span>
+                        <span class="herb-chip herb-chip--digest">陈皮 + 茯苓：化湿醒脑</span>
+                        <span class="herb-chip herb-chip--soothe">玫瑰 + 枸杞：疏肝养血</span>
+                        <span class="herb-chip herb-chip--calm">酸枣仁 + 柏子仁：宁心安睡</span>
+                        <span class="herb-chip herb-chip--light">薏仁 + 山药：轻盈饱腹不胀气</span>
+                        <span class="herb-chip herb-chip--cool">菊花 + 桑叶：眼疲劳时清爽</span>
+                    </div>
+                </div>
+                <div class="panel-card">
+                    <div class="panel-head">
+                        <h3>节律守则</h3>
+                        <p>抓住高峰与低谷，尽量保持固定的“吃、动、睡”时间点。</p>
+                    </div>
+                    <ul class="tip-list tip-list--compact">
+                        <li><strong>睡眠：</strong>23:00 前关灯，若需晚睡，仍维持固定起床时间。</li>
+                        <li><strong>饮食：</strong>早餐 07–09 点最丰盛，晚餐量减半，睡前 3 小时不进食。</li>
+                        <li><strong>运动：</strong>15–19 点温和有氧或力量，避免 21 点后激烈运动。</li>
+                        <li><strong>情绪：</strong>19–21 点谈难题更易平和，23 点后停止重大决策。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>TCM</h3>
+                    <p>以节律与经络为线索，陪你把传统中医落实在每天的作息里。</p>
+                    <div class="social-links">
+                        <a href="#" title="微信：zhangyouxun2013"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="电子信箱：hello@heritagetcm.com"><i class="fas fa-envelope"></i></a>
+                        <a href="#" title="电话：+1-407-555-1688"><i class="fas fa-phone"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>快速连结</h4>
+                    <ul>
+                        <li><a href="index.html#hero">首页</a></li>
+                        <li><a href="index.html#shennong">神农本草</a></li>
+                        <li><a href="sleep.html">睡眠养生</a></li>
+                        <li><a href="brain.html">大脑养护</a></li>
+                        <li><a href="meridian-clock.html">子午流注钟表</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>联络方式</h4>
+                    <ul>
+                        <li><i class="fab fa-weixin"></i> 微信：zhangyouxun2013</li>
+                        <li><i class="fas fa-envelope"></i> 电子信箱：hello@heritagetcm.com</li>
+                        <li><i class="fas fa-phone"></i> 联络电话：+1-407-555-1688</li>
+                        <li><i class="fas fa-clock"></i> 门诊时间：08:00–22:00（UTC-5）</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 TCM 传统医学馆。顺时而行，滋养气血，愿你夜夜好眠、日日轻盈。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
