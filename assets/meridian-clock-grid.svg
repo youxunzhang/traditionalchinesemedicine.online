@@ -1,0 +1,84 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg3" x1="40" y1="30" x2="920" y2="690" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#0f4039" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#0c7a5b" stop-opacity="0.9"/>
+  </linearGradient>
+</defs>
+<rect width="960" height="720" rx="30" fill="url(#bg3)"/>
+<text x="60" y="88" font-family="'Noto Sans SC','Inter',sans-serif" font-size="34" font-weight="900" fill="#f5fffa">24 小时经络值班表</text>
+<text x="60" y="122" font-family="'Noto Sans SC','Inter',sans-serif" font-size="16" fill="#c8f6e7">打印或收藏，随时对照当下时辰的守护重点、穴位与饮食提醒。</text>
+
+<g transform="translate(60,160)">
+  <rect x="0" y="0" width="840" height="32" rx="10" fill="#0f604a" fill-opacity="0.28"/>
+  <text x="20" y="22" font-family="'Noto Sans SC','Inter',sans-serif" font-size="14" font-weight="800" fill="#f4fff9">时段</text>
+  <text x="140" y="22" font-family="'Noto Sans SC','Inter',sans-serif" font-size="14" font-weight="800" fill="#f4fff9">经络重点</text>
+  <text x="330" y="22" font-family="'Noto Sans SC','Inter',sans-serif" font-size="14" font-weight="800" fill="#f4fff9">动作/穴位</text>
+  <text x="640" y="22" font-family="'Noto Sans SC','Inter',sans-serif" font-size="14" font-weight="800" fill="#f4fff9">饮食/水分</text>
+</g>
+
+<g transform="translate(60,200)" font-family="'Noto Sans SC','Inter',sans-serif" font-size="14" fill="#e6fff4">
+  <rect x="0" y="0" width="840" height="440" rx="18" fill="#0f4b3c" fill-opacity="0.6" stroke="#9bffe3" stroke-opacity="0.2"/>
+  <g transform="translate(0,0)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.22"/>
+    <text x="20" y="33" font-weight="800">23-01 胆</text>
+    <text x="140" y="33">入睡、修复</text>
+    <text x="330" y="33">4-7-8 呼吸 · 丘墟/阳陵泉</text>
+    <text x="640" y="33">避免咖啡因，睡前不进食</text>
+  </g>
+  <g transform="translate(0,55)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.16"/>
+    <text x="20" y="33" font-weight="800">01-03 肝</text>
+    <text x="140" y="33">疏泄、深睡</text>
+    <text x="330" y="33">泡脚 · 太冲/行间</text>
+    <text x="640" y="33">减少酒精重油</text>
+  </g>
+  <g transform="translate(0,110)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.22"/>
+    <text x="20" y="33" font-weight="800">03-05 肺</text>
+    <text x="140" y="33">换气、宣发</text>
+    <text x="330" y="33">鼻吸口呼 · 拍打天突</text>
+    <text x="640" y="33">温水 + 陈皮</text>
+  </g>
+  <g transform="translate(0,165)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.16"/>
+    <text x="20" y="33" font-weight="800">05-07 大肠</text>
+    <text x="140" y="33">排便、醒神</text>
+    <text x="330" y="33">温水 + 马步 · 合谷/曲池</text>
+    <text x="640" y="33">避免冰品</text>
+  </g>
+  <g transform="translate(0,220)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.22"/>
+    <text x="20" y="33" font-weight="800">07-09 胃</text>
+    <text x="140" y="33">补充燃料</text>
+    <text x="330" y="33">足三里/内庭 · 深呼吸</text>
+    <text x="640" y="33">谷物 + 蛋白 + 温热</text>
+  </g>
+  <g transform="translate(0,275)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.16"/>
+    <text x="20" y="33" font-weight="800">09-11 脾</text>
+    <text x="140" y="33">专注、运化</text>
+    <text x="330" y="33">深度工作 · 茯苓陈皮茶</text>
+    <text x="640" y="33">少甜饮，少零食</text>
+  </g>
+  <g transform="translate(0,330)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.22"/>
+    <text x="20" y="33" font-weight="800">11-13 心</text>
+    <text x="140" y="33">午间安神</text>
+    <text x="330" y="33">闭目 10-20 分钟 · 神门/内关</text>
+    <text x="640" y="33">午餐温熟，少冷饮</text>
+  </g>
+  <g transform="translate(0,385)">
+    <rect x="0" y="0" width="840" height="55" fill="#0f604a" fill-opacity="0.16"/>
+    <text x="20" y="33" font-weight="800">13-15 小肠</text>
+    <text x="140" y="33">分清浊</text>
+    <text x="330" y="33">散步/耸肩 · 后溪/腕骨</text>
+    <text x="640" y="33">温水，不喝冰饮</text>
+  </g>
+</g>
+
+<g transform="translate(60,655)" font-family="'Noto Sans SC','Inter',sans-serif">
+  <rect x="0" y="0" width="840" height="40" rx="14" fill="#f4fff9" fill-opacity="0.12" stroke="#9bffe3" stroke-opacity="0.5"/>
+  <text x="18" y="26" font-size="14" font-weight="700" fill="#f5fffa">提示：打印时勾选“缩放至整页”，或右键图片另存为，即可保存高清版对照表。</text>
+</g>
+</svg>

@@ -1,0 +1,68 @@
+<svg width="720" height="720" viewBox="0 0 720 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="120" y1="80" x2="640" y2="640" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#0f604a" stop-opacity="0.9"/>
+    <stop offset="1" stop-color="#0c7a5b" stop-opacity="0.95"/>
+  </linearGradient>
+  <linearGradient id="ring" x1="360" y1="40" x2="360" y2="680" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#f4fff9" stop-opacity="0.15"/>
+    <stop offset="1" stop-color="#9bffe3" stop-opacity="0.6"/>
+  </linearGradient>
+</defs>
+<rect width="720" height="720" rx="36" fill="url(#bg)"/>
+<circle cx="360" cy="360" r="270" stroke="url(#ring)" stroke-width="22" fill="#0d3b30" fill-opacity="0.35"/>
+<circle cx="360" cy="360" r="170" stroke="#9bffe3" stroke-width="5" stroke-dasharray="14 16" fill="#0f4b3c" fill-opacity="0.55"/>
+<circle cx="360" cy="360" r="95" fill="#f4fff9"/>
+<text x="360" y="370" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="32" font-weight="800" fill="#0f4039">子午流注</text>
+<text x="360" y="405" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="16" font-weight="600" fill="#0f604a">24 小时经络轮盘</text>
+
+<!-- hour dots -->
+<g fill="#9bffe3">
+  <circle cx="360" cy="95" r="6"/>
+  <circle cx="507" cy="127" r="6"/>
+  <circle cx="593" cy="240" r="6"/>
+  <circle cx="593" cy="480" r="6"/>
+  <circle cx="507" cy="593" r="6"/>
+  <circle cx="360" cy="625" r="6"/>
+  <circle cx="213" cy="593" r="6"/>
+  <circle cx="127" cy="480" r="6"/>
+  <circle cx="127" cy="240" r="6"/>
+  <circle cx="213" cy="127" r="6"/>
+</g>
+
+<!-- time label ring -->
+<g font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="16" font-weight="700" fill="#f4fff9">
+  <text x="360" y="75" text-anchor="middle">23-01 胆</text>
+  <text x="508" y="110" text-anchor="middle">01-03 肝</text>
+  <text x="610" y="210" text-anchor="middle">03-05 肺</text>
+  <text x="635" y="360" text-anchor="middle">05-07 大肠</text>
+  <text x="610" y="510" text-anchor="middle">07-09 胃</text>
+  <text x="508" y="610" text-anchor="middle">09-11 脾</text>
+  <text x="360" y="645" text-anchor="middle">11-13 心</text>
+  <text x="210" y="610" text-anchor="middle">13-15 小肠</text>
+  <text x="110" y="510" text-anchor="middle">15-17 膀胱</text>
+  <text x="85" y="360" text-anchor="middle">17-19 肾</text>
+  <text x="110" y="210" text-anchor="middle">19-21 心包</text>
+  <text x="210" y="110" text-anchor="middle">21-23 三焦</text>
+</g>
+
+<!-- action pointers -->
+<g font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="14" fill="#e5fff5">
+  <text x="360" y="160" text-anchor="middle">深睡修复</text>
+  <text x="470" y="185" text-anchor="middle">疏肝解郁</text>
+  <text x="520" y="260" text-anchor="middle">晨起换气</text>
+  <text x="520" y="455" text-anchor="middle">温养胃气</text>
+  <text x="470" y="535" text-anchor="middle">健脾提神</text>
+  <text x="360" y="565" text-anchor="middle">午间安神</text>
+  <text x="250" y="535" text-anchor="middle">拉伸腰背</text>
+  <text x="200" y="455" text-anchor="middle">固肾补水</text>
+  <text x="200" y="260" text-anchor="middle">社交放松</text>
+  <text x="250" y="185" text-anchor="middle">睡前关机</text>
+</g>
+
+<!-- center tips -->
+<rect x="265" y="300" width="190" height="120" rx="18" fill="#0f604a" fill-opacity="0.08" stroke="#0f604a" stroke-opacity="0.3"/>
+<text x="360" y="332" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="15" font-weight="700" fill="#0f4039">三件事牢记</text>
+<text x="360" y="355" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="13" fill="#1f4d3d">23 点前睡 · 7-9 点吃 · 15-19 点动</text>
+<text x="360" y="380" text-anchor="middle" font-family="'Noto Sans SC', 'Inter', sans-serif" font-size="13" fill="#1f4d3d">按时辰换动作，顺势而为。</text>
+</svg>
