@@ -7669,6 +7669,65 @@ hr,
     box-shadow: 0 8px 20px rgba(12, 58, 48, 0.06);
 }
 
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.download-card {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e3ece8;
+    box-shadow: 0 14px 36px rgba(12, 58, 48, 0.06);
+    display: grid;
+    gap: 0.75rem;
+    overflow: hidden;
+}
+
+.download-thumb {
+    background: linear-gradient(135deg, rgba(15, 64, 57, 0.08), rgba(12, 122, 91, 0.08));
+    padding: 0.6rem;
+}
+
+.download-thumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #dfe8e4;
+    background: #f7fbf9;
+}
+
+.download-card h3 {
+    margin: 0 1rem;
+    color: #0f4039;
+}
+
+.download-card p {
+    margin: 0 1rem;
+    color: #3a4b46;
+}
+
+.download-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0 1rem 1rem;
+}
+
+.btn-download {
+    padding: 10px 22px;
+    border-radius: 12px;
+}
+
+.download-hint {
+    color: #50645c;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
 .herb-chip--warm { color: #b4551f; border-color: rgba(180, 85, 31, 0.25); }
 .herb-chip--digest { color: #1f6f53; border-color: rgba(31, 111, 83, 0.25); }
 .herb-chip--soothe { color: #8f2b5b; border-color: rgba(143, 43, 91, 0.25); }
