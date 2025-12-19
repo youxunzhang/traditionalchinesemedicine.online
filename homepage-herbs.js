@@ -11,51 +11,20 @@ const gradeLabels = {
 document.addEventListener('DOMContentLoaded', () => {
   const listEl = document.getElementById('homepageHerbList');
   const paginationEl = document.getElementById('homepageHerbPagination');
-  const counterEl = document.getElementById('homepageHerbCounter');
-  const searchInput = document.getElementById('homepageHerbSearch');
 
-  if (!listEl || !paginationEl || !counterEl) {
+  if (!listEl || !paginationEl) {
     return;
   }
 
   let herbs = [];
-  let totalCount = 0;
   let currentPage = 1;
-  let keyword = '';
 
   const renderStatus = (message) => {
     listEl.innerHTML = `<p class="empty-state">${message}</p>`;
     paginationEl.innerHTML = '';
-    if (counterEl) {
-      counterEl.textContent = message;
-    }
   };
 
-  const getFilteredHerbs = () => {
-    if (!keyword) {
-      return herbs;
-    }
-    const lower = keyword.toLowerCase();
-    return herbs.filter(item => {
-      const haystack = `${item.name} ${item.classicalText}`.toLowerCase();
-      return haystack.includes(lower);
-    });
-  };
-
-  const updateCounter = (filteredCount, totalPages) => {
-    if (!counterEl) return;
-    if (!filteredCount) {
-      counterEl.textContent = keyword
-        ? '尚無符合條件的本草'
-        : '暫無本草資料';
-      return;
-    }
-
-    const base = keyword
-      ? `共找到 ${filteredCount} 味本草`
-      : `共收錄 ${totalCount} 味本草`;
-    counterEl.textContent = `${base} · 第${currentPage}/${totalPages}頁`;
-  };
+  const getFilteredHerbs = () => herbs;
 
   const createHerbCard = herb => {
     const card = document.createElement('article');
@@ -162,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         : '暫無本草資料可供顯示。';
       listEl.innerHTML = `<p class="empty-state">${message}</p>`;
       paginationEl.innerHTML = '';
-      updateCounter(filtered.length, 1);
       return;
     }
 
@@ -171,23 +139,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderPagination(totalPages);
-    updateCounter(filtered.length, totalPages);
   };
-
-  if (searchInput) {
-    searchInput.addEventListener('input', e => {
-      keyword = e.target.value.trim();
-      currentPage = 1;
-      renderList();
-    });
-  }
 
   const initialize = async () => {
     renderStatus('資料載入中，請稍候…');
     try {
       herbs = await loadShennongHerbs();
-      totalCount = herbs.length;
-      if (!totalCount) {
+      if (!herbs.length) {
         renderStatus('暫無本草資料可供顯示。');
         return;
       }
