@@ -1,7 +1,6 @@
 // Initialise core interactions once the DOM is ready
 window.addEventListener('DOMContentLoaded', () => {
     initNavigation();
-    initFAQ();
     initHerbCategories();
     initForms();
     initSmoothScroll();
@@ -63,24 +62,6 @@ function initNavigation() {
             navbar.style.backdropFilter = 'blur(10px)';
             navbar.style.boxShadow = '0 6px 24px rgba(0,0,0,0.06)';
         }
-    });
-}
-
-// FAQ accordion
-function initFAQ() {
-    const faqItems = document.querySelectorAll('.faq-item');
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-        if (!question) return;
-
-        question.addEventListener('click', () => {
-            faqItems.forEach(other => {
-                if (other !== item) {
-                    other.classList.remove('active');
-                }
-            });
-            item.classList.toggle('active');
-        });
     });
 }
 
@@ -203,4 +184,3 @@ function initAnimations() {
 
     animatedElements.forEach(element => observer.observe(element));
 }
-
