@@ -12,6 +12,25 @@ body {
     background-color: #f8f9fa;
 }
 
+:where(main, section) p:not([class]) {
+    margin: 0 0 1rem;
+}
+
+:where(main, section) p:not([class]):last-child {
+    margin-bottom: 0;
+}
+
+:where(main, section) ul:not([class]),
+:where(main, section) ol:not([class]) {
+    margin: 0 0 1rem;
+    padding-left: 1.5rem;
+}
+
+:where(main, section) ul:not([class]) li,
+:where(main, section) ol:not([class]) li {
+    margin: 0.4rem 0;
+}
+
 .skip-link {
     position: absolute;
     left: -999px;
@@ -3038,9 +3057,10 @@ body {
         right: 20px;
         width: min(240px, calc(100vw - 40px));
         padding: 1rem 1.25rem;
-        background: rgba(30, 68, 51, 0.96);
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid rgba(15, 64, 57, 0.12);
         border-radius: 16px;
-        box-shadow: 0 18px 40px rgba(10, 47, 43, 0.35);
+        box-shadow: 0 18px 40px rgba(15, 64, 57, 0.18);
         z-index: 1010;
     }
 
