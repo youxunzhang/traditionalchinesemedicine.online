@@ -420,6 +420,7 @@ function updateSummary() {
     const sizeSelect = document.getElementById('sizeSelect');
     const milkSelect = document.getElementById('milkSelect');
     const syrupRange = document.getElementById('syrupRange');
+    const rangeValue = document.querySelector('.range-value');
     const extraShots = document.getElementById('extraShots');
     const toppingInputs = document.querySelectorAll('.toppings-group input[type="checkbox"]');
 
@@ -435,10 +436,18 @@ function updateSummary() {
     const totalSodium = document.getElementById('totalSodium');
     const tcmTip = document.getElementById('tcmTip');
     const wellnessTags = document.getElementById('wellnessTags');
+    const customSummary = document.getElementById('customSummary');
 
     const beverage = beverageMap.get(beverageSelect?.value);
     const sizeKey = sizeSelect?.value || 'grande';
     const baseSizeData = beverage?.sizes?.[sizeKey];
+    const pumps = Number.parseInt(syrupRange?.value ?? '0', 10) || 0;
+
+    if (rangeValue) {
+        rangeValue.textContent = pumps > 0
+            ? `目前 ${pumps} 泵 · +${pumps * 20} kcal / +${pumps * 5} g 糖`
+            : '目前 0 泵';
+    }
 
     if (!beverage || !baseSizeData) {
         summaryName.textContent = '請選擇飲品';
@@ -453,6 +462,9 @@ function updateSummary() {
         totalCaffeine.textContent = '0 mg';
         tcmTip.textContent = '選擇飲品後，將依脾胃寒熱、氣血狀態提供調整建議。';
         wellnessTags.innerHTML = '';
+        if (customSummary) {
+            customSummary.innerHTML = '<li>使用預設配方</li>';
+        }
         return;
     }
 
@@ -468,7 +480,6 @@ function updateSummary() {
         }
     }
 
-    const pumps = Number.parseInt(syrupRange?.value ?? '0', 10) || 0;
     if (pumps > 0) {
         const syrupDelta = {
             calories: pumps * 20,
@@ -530,6 +541,15 @@ function updateSummary() {
     totalCaffeine.textContent = `${Math.round(totals.caffeine)} mg`;
 
     renderWellnessTags(wellnessTags, beverage.wellness, totals);
+    if (customSummary) {
+        const items = adjustments.length ? adjustments : ['使用預設配方'];
+        customSummary.innerHTML = '';
+        items.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            customSummary.appendChild(li);
+        });
+    }
     tcmTip.textContent = composeTip(beverage, milkOption, totals, pumps, shots, adjustments);
 }
 
