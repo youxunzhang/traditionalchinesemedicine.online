@@ -3,6 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initHerbCategories();
     initForms();
+    initFaq();
     initSmoothScroll();
     initAnimations();
 });
@@ -180,6 +181,21 @@ function initSmoothScroll() {
             event.preventDefault();
             const offsetTop = target.offsetTop - 80;
             window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        });
+    });
+}
+
+// FAQ toggles
+function initFaq() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    if (!faqItems.length) return;
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        if (!question) return;
+
+        question.addEventListener('click', () => {
+            item.classList.toggle('active');
         });
     });
 }
