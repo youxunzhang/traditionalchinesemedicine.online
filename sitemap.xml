@@ -13,12 +13,6 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://traditionalchinesemedicine.online/brain.html</loc>
-        <lastmod>2025-01-10</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.82</priority>
-    </url>
-    <url>
         <loc>https://traditionalchinesemedicine.online/books.html</loc>
         <lastmod>2025-01-09</lastmod>
         <changefreq>monthly</changefreq>
@@ -33,12 +27,6 @@
     <url>
         <loc>https://traditionalchinesemedicine.online/babu-jingang-gong.html</loc>
         <lastmod>2025-01-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-tcm-doctors.html</loc>
-        <lastmod>2025-01-08</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -84,82 +72,3 @@
         <changefreq>monthly</changefreq>
         <priority>0.74</priority>
     </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/zhongyao.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/bian-que.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/hua-tuo.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-dongyuan.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/li-shizhen.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/ni-haixia.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/qi-bo.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/sun-simiao.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wang-shuhe.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/wu-jutong.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/ye-tianshi.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhang-zhongjing.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://traditionalchinesemedicine.online/famous-doctors/zhu-danxi.html</loc>
-        <lastmod>2025-01-08</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-</urlset>
