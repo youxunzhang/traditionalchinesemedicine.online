@@ -28,6 +28,7 @@ function initNavigation() {
         if (!toggle || !menu) return;
 
         const navLinks = menu.querySelectorAll(linkSelector);
+        removeDeprecatedNavLinks(menu);
         const setExpanded = (isOpen) => {
             if (toggle.hasAttribute('aria-expanded')) {
                 toggle.setAttribute('aria-expanded', String(isOpen));
@@ -61,6 +62,21 @@ function initNavigation() {
             navbar.style.background = 'rgba(255, 255, 255, 0.9)';
             navbar.style.backdropFilter = 'blur(10px)';
             navbar.style.boxShadow = '0 6px 24px rgba(0,0,0,0.06)';
+        }
+    });
+}
+
+function removeDeprecatedNavLinks(menu) {
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+        const label = link.textContent?.trim();
+        if (label === '中医好书') {
+            const listItem = link.closest('li');
+            if (listItem) {
+                listItem.remove();
+            } else {
+                link.remove();
+            }
         }
     });
 }
