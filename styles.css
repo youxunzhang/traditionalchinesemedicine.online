@@ -574,6 +574,165 @@ body {
     background: #f4f7f5;
 }
 
+/* Game updates page */
+.game-page {
+    background: #f5f7f6;
+    color: #1f2a24;
+}
+
+.game-hero {
+    margin-top: 80px;
+    padding: 120px 0 90px;
+    background: linear-gradient(135deg, #0f3b31 0%, #15624e 55%, #1a7a61 100%);
+    color: #f5fffa;
+}
+
+.game-hero__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.game-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    margin: 0.8rem 0 1rem;
+}
+
+.game-hero p {
+    color: rgba(245, 255, 250, 0.85);
+}
+
+.game-hero__panel {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(155, 255, 227, 0.22);
+    border-radius: 18px;
+    padding: 1.6rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.game-metrics {
+    display: grid;
+    gap: 1rem;
+}
+
+.game-metrics dt {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(245, 255, 250, 0.7);
+}
+
+.game-metrics dd {
+    margin: 0.2rem 0 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.game-panel-note {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    color: rgba(245, 255, 250, 0.7);
+}
+
+.game-main {
+    padding: 80px 0 120px;
+}
+
+.game-updates .section-header {
+    text-align: left;
+}
+
+.update-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.update-item {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 18px 45px rgba(15, 46, 37, 0.08);
+    border: 1px solid rgba(15, 46, 37, 0.08);
+    display: grid;
+    gap: 0.8rem;
+}
+
+.update-date {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 600;
+    color: #1f2a24;
+}
+
+.update-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    background: rgba(26, 122, 97, 0.12);
+    color: #1a7a61;
+    font-size: 0.8rem;
+}
+
+.update-content h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.2rem;
+    color: #14221b;
+}
+
+.update-content p {
+    margin: 0 0 0.6rem;
+    color: #42524a;
+}
+
+.update-link {
+    font-weight: 600;
+    color: #15624e;
+    word-break: break-all;
+}
+
+.game-highlight {
+    margin-top: 90px;
+}
+
+.game-highlight__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: center;
+}
+
+.game-highlight__list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.game-highlight__list i {
+    color: #1a7a61;
+    margin-right: 0.6rem;
+}
+
+.game-highlight__panel {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.6rem;
+    border: 1px solid rgba(15, 46, 37, 0.12);
+    box-shadow: 0 18px 45px rgba(15, 46, 37, 0.08);
+}
+
+.game-highlight__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.2rem;
+}
+
 /* Brain page */
 .brain-page {
     background: #f7f9fb;
