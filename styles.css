@@ -471,7 +471,7 @@ body {
 /* Heart Sutra landing */
 .heart-sutra-section {
     position: relative;
-    padding: 120px 0;
+    padding: 140px 0 130px;
     background: radial-gradient(circle at top left, rgba(15, 64, 57, 0.15), transparent 55%),
         radial-gradient(circle at 80% 20%, rgba(96, 221, 196, 0.22), transparent 45%),
         linear-gradient(135deg, #f8fbfa, #eef4f2);
@@ -496,6 +496,15 @@ body {
     align-items: center;
 }
 
+.heart-sutra-copy {
+    background: rgba(255, 255, 255, 0.72);
+    border-radius: 26px;
+    padding: 2.4rem 2.6rem;
+    border: 1px solid rgba(15, 64, 57, 0.12);
+    box-shadow: 0 22px 50px rgba(15, 64, 57, 0.1);
+    backdrop-filter: blur(10px);
+}
+
 .heart-sutra-copy .section-title {
     font-size: clamp(2rem, 3.2vw, 2.8rem);
 }
@@ -509,6 +518,7 @@ body {
     margin-top: 2rem;
     display: grid;
     gap: 0.85rem;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
 .heart-sutra-pill {
