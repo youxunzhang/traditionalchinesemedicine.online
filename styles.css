@@ -600,6 +600,142 @@ body {
     font-weight: 600;
 }
 
+/* Meridian clock preview */
+.meridian-preview {
+    padding: 110px 0 120px;
+    background: radial-gradient(circle at top right, rgba(208, 179, 128, 0.2), transparent 55%),
+        linear-gradient(135deg, #fbf7f1, #f4efe6);
+}
+
+.meridian-preview__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.meridian-preview__visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.meridian-preview__wheel {
+    width: min(520px, 100%);
+    height: auto;
+    filter: drop-shadow(0 25px 40px rgba(79, 63, 32, 0.18));
+}
+
+.meridian-preview__time-card {
+    position: absolute;
+    bottom: 12%;
+    right: 12%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    padding: 1.2rem 1.4rem;
+    max-width: 240px;
+    border: 1px solid rgba(97, 76, 40, 0.18);
+    box-shadow: 0 18px 40px rgba(98, 78, 40, 0.18);
+    color: #4a3a1f;
+    backdrop-filter: blur(6px);
+}
+
+.meridian-preview__time {
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.meridian-preview__label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.meridian-preview__time-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.meridian-preview__content .section-title {
+    margin-bottom: 0.75rem;
+}
+
+.meridian-preview__content .section-subtitle {
+    margin: 0 0 2rem;
+    max-width: 520px;
+}
+
+.meridian-preview__cards {
+    display: grid;
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.meridian-preview__info {
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    padding: 1.4rem 1.6rem;
+    border: 1px solid rgba(98, 78, 40, 0.12);
+    box-shadow: 0 18px 36px rgba(98, 78, 40, 0.12);
+}
+
+.meridian-preview__info--light {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.meridian-preview__info h3 {
+    margin: 0 0 0.8rem;
+    font-size: 1.1rem;
+    color: #3e2f1b;
+}
+
+.meridian-preview__info p {
+    margin: 0;
+    color: #5a4a35;
+    line-height: 1.7;
+}
+
+.meridian-preview__info ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #5a4a35;
+    line-height: 1.7;
+}
+
+.meridian-preview__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 0.7rem;
+}
+
+.meridian-preview__tags span {
+    background: rgba(202, 176, 132, 0.25);
+    color: #4d3a1e;
+    border-radius: 999px;
+    padding: 0.35rem 0.85rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .meridian-preview {
+        padding: 90px 0 100px;
+    }
+
+    .meridian-preview__time-card {
+        position: static;
+        margin-top: 1.5rem;
+        max-width: 100%;
+    }
+}
+
 /* Homepage featured videos */
 .featured-video-section {
     padding: 120px 0 90px;
