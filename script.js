@@ -241,10 +241,10 @@ function initXhalrBreathing() {
     };
 
     const phaseConfig = {
-        inhale: { label: '吸气', scale: 1.08, stateClass: 'is-inhale' },
-        inhaleHold: { label: '停顿', scale: 1.08, stateClass: 'is-hold' },
-        exhale: { label: '呼气', scale: 0.86, stateClass: 'is-exhale' },
-        exhaleHold: { label: '停顿', scale: 0.86, stateClass: 'is-hold' }
+        inhale: { label: '吸气', scale: 1.22, stateClass: 'is-inhale' },
+        inhaleHold: { label: '停顿', scale: 1.12, stateClass: 'is-hold' },
+        exhale: { label: '呼气', scale: 0.78, stateClass: 'is-exhale' },
+        exhaleHold: { label: '停顿', scale: 0.9, stateClass: 'is-hold' }
     };
 
     const getPhaseValues = () => ({
@@ -282,10 +282,8 @@ function initXhalrBreathing() {
         pulseCountdown.textContent = remainingSeconds;
 
         const duration = Math.max(phase.duration, 1);
-        outerCircle.style.transitionDuration = `${duration}s`;
-        innerCircle.style.transitionDuration = `${duration}s`;
-        outerCircle.style.transform = `scale(${config.scale})`;
-        innerCircle.style.transform = `scale(${config.scale})`;
+        pulse.style.setProperty('--pulse-duration', `${duration}s`);
+        pulse.style.setProperty('--pulse-scale', config.scale);
     };
 
     const advancePhase = () => {
