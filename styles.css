@@ -468,8 +468,8 @@ body {
     gap: 1rem;
 }
 
-/* Heart Sutra landing */
-.heart-sutra-section {
+/* Abdominal breathing landing */
+.breathing-section {
     position: relative;
     padding: 140px 0 130px;
     background: radial-gradient(circle at top left, rgba(15, 64, 57, 0.15), transparent 55%),
@@ -478,7 +478,7 @@ body {
     overflow: hidden;
 }
 
-.heart-sutra-section::before {
+.breathing-section::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -488,7 +488,7 @@ body {
     pointer-events: none;
 }
 
-.heart-sutra-grid {
+.breathing-grid {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -496,7 +496,7 @@ body {
     align-items: center;
 }
 
-.heart-sutra-copy {
+.breathing-copy {
     background: rgba(255, 255, 255, 0.72);
     border-radius: 26px;
     padding: 2.4rem 2.6rem;
@@ -505,23 +505,23 @@ body {
     backdrop-filter: blur(10px);
 }
 
-.heart-sutra-copy .section-title {
+.breathing-copy .section-title {
     font-size: clamp(2rem, 3.2vw, 2.8rem);
 }
 
-.heart-sutra-copy .section-subtitle {
+.breathing-copy .section-subtitle {
     font-size: 1.05rem;
     color: #3b4b44;
 }
 
-.heart-sutra-actions {
+.breathing-actions {
     margin-top: 2rem;
     display: grid;
     gap: 0.85rem;
     grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
-.heart-sutra-pill {
+.breathing-pill {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
@@ -533,11 +533,11 @@ body {
     box-shadow: 0 12px 30px rgba(15, 64, 57, 0.08);
 }
 
-.heart-sutra-pill i {
+.breathing-pill i {
     color: #0f4039;
 }
 
-.heart-sutra-card {
+.breathing-card {
     background: rgba(255, 255, 255, 0.92);
     border-radius: 28px;
     border: 1px solid rgba(15, 64, 57, 0.12);
@@ -548,7 +548,7 @@ body {
     backdrop-filter: blur(12px);
 }
 
-.heart-sutra-card__header {
+.breathing-card__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -559,7 +559,7 @@ body {
     font-size: 0.85rem;
 }
 
-.heart-sutra-badge {
+.breathing-badge {
     padding: 0.4rem 0.9rem;
     border-radius: 999px;
     background: rgba(15, 64, 57, 0.12);
@@ -568,7 +568,7 @@ body {
     font-size: 0.75rem;
 }
 
-.heart-sutra-text {
+.breathing-text {
     display: grid;
     gap: 1rem;
     font-size: 1rem;
@@ -577,27 +577,46 @@ body {
     font-weight: 500;
 }
 
-.heart-sutra-text p {
+.breathing-text p {
     margin: 0;
 }
 
-.heart-sutra-mantra {
+.breathing-cycle {
+    display: grid;
+    gap: 1rem;
+}
+
+.breathing-cycle__step {
+    padding: 0.9rem 1rem;
+    border-radius: 16px;
+    background: rgba(15, 64, 57, 0.08);
+    color: #163a32;
+    display: grid;
+    gap: 0.35rem;
+    font-weight: 600;
+}
+
+.breathing-cycle__step span {
+    font-size: 1.05rem;
+}
+
+.breathing-cycle__step small {
+    font-size: 0.9rem;
+    color: #3b4b44;
+    font-weight: 500;
+}
+
+.breathing-benefits {
+    display: grid;
+    gap: 0.4rem;
+    padding-left: 1.1rem;
+    color: #1f2f28;
+}
+
+.breathing-note {
     font-weight: 700;
     font-size: 1.05rem;
     color: #0f4039;
-}
-
-.heart-sutra-card__footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.95rem;
-    color: #3b4b44;
-}
-
-.heart-sutra-card__footer .text-link {
-    font-weight: 600;
 }
 
 /* Meridian clock preview */
