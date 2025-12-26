@@ -11,90 +11,68 @@
 </head>
 <body class="home-xhalr">
     <div class="app-container">
-        <div id="pulse" class="pulse" aria-live="polite">
-            <div class="pulse-circle pulse-circle--outer"></div>
-            <div class="pulse-circle pulse-circle--inner"></div>
-            <div class="pulse-text" id="pulseText">吸气</div>
-            <div class="pulse-countdown" id="pulseCountdown">4</div>
-        </div>
-
-        <input type="checkbox" id="sidebarToggle" class="toggle-checkbox">
-        <label for="sidebarToggle" class="xhalr-hamburger" aria-label="打开设置面板" role="button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-
-        <aside class="sidebar" aria-label="呼吸节奏设置">
-            <div class="sidebar__header">
-                <h1><span class="muted">呼吸</span>节奏</h1>
-                <p class="version">v 1.0</p>
-            </div>
-            <p class="sidebar__intro">跟随呼吸节拍放松身心，可在瑜伽、冥想或工作间隙使用。</p>
-            <p class="sidebar__intro">如有焦虑或不适，请及时寻求专业帮助。</p>
-
-            <div class="control-row presets">
-                <span class="preset flexible" data-values="4,0,6,0">默认</span>
-                <span class="preset flexible" data-values="4,4,4,4">方形呼吸</span>
-                <span class="preset flexible" data-values="7,4,8,0">调息练习</span>
-                <span class="preset flexible" data-values="7,0,7,0">均衡呼吸</span>
+        <main class="breath-hero">
+            <div class="hero-header">
+                <span class="hero-badge">🧘 呼吸休息</span>
+                <h1>跟随节奏，给自己一段安静的呼吸</h1>
+                <p class="hero-subtitle">默认节奏：吸气 4 秒、停顿 2 秒、吐气 6 秒。你可以根据需要调整每一段时长。</p>
+                <div class="hero-tags">
+                    <span class="hero-tag">✓ 极简</span>
+                    <span class="hero-tag">✓ 专注功能</span>
+                    <span class="hero-tag">✓ 低门槛</span>
+                    <span class="hero-tag">✓ 快速可用</span>
+                    <span class="hero-tag">✓ 无干扰</span>
+                    <span class="hero-tag">✓ 用户即时满足</span>
+                </div>
             </div>
 
-            <div class="control-row">
-                <label for="inhaleInput" class="flexible">吸气</label>
-                <input type="number" id="inhaleInput" class="pulse-number" min="1" max="30" value="4">
-            </div>
-            <input type="range" id="inhaleSlider" class="pulse-slider" min="1" max="30" value="4">
+            <section class="breath-card">
+                <div class="breath-display">
+                    <div id="pulse" class="pulse" aria-live="polite">
+                        <div class="pulse-circle pulse-circle--outer"></div>
+                        <div class="pulse-circle pulse-circle--inner"></div>
+                        <div class="pulse-text" id="pulseText">吸气</div>
+                        <div class="pulse-countdown" id="pulseCountdown">4s</div>
+                    </div>
+                    <p class="breath-tip">保持平稳坐姿，视线自然放松。</p>
+                    <div class="breath-actions">
+                        <button class="breath-button breath-button--primary" id="pauseButton" type="button">暂停</button>
+                        <button class="breath-button" id="resetButton" type="button">重置</button>
+                    </div>
+                </div>
 
-            <div class="control-row">
-                <label for="inhaleHoldInput" class="flexible">屏息</label>
-                <input type="number" id="inhaleHoldInput" class="pulse-number" min="0" max="30" value="0">
-            </div>
-            <input type="range" id="inhaleHoldSlider" class="pulse-slider" min="0" max="30" value="0">
+                <div class="breath-controls" aria-label="节奏设置">
+                    <h2>节奏设置</h2>
+                    <p class="controls-subtitle">建议保持稳定、顺畅的呼吸节奏。</p>
 
-            <div class="control-row">
-                <label for="exhaleInput" class="flexible">呼气</label>
-                <input type="number" id="exhaleInput" class="pulse-number" min="1" max="30" value="6">
-            </div>
-            <input type="range" id="exhaleSlider" class="pulse-slider" min="1" max="30" value="6">
+                    <div class="control-group">
+                        <label for="inhaleInput">吸气时长（秒）</label>
+                        <input type="number" id="inhaleInput" class="breath-input" min="1" max="30" value="4">
+                    </div>
 
-            <div class="control-row">
-                <label for="exhaleHoldInput" class="flexible">停顿</label>
-                <input type="number" id="exhaleHoldInput" class="pulse-number" min="0" max="30" value="0">
-            </div>
-            <input type="range" id="exhaleHoldSlider" class="pulse-slider" min="0" max="30" value="0">
+                    <div class="control-group">
+                        <label for="inhaleHoldInput">停顿时长（秒）</label>
+                        <input type="number" id="inhaleHoldInput" class="breath-input" min="0" max="30" value="2">
+                    </div>
 
-            <div class="rhythm-summary" aria-live="polite">
-                <p>当前节奏</p>
-                <span id="rhythmSummary">吸气 4s · 屏息 0s · 呼气 6s · 停顿 0s</span>
-            </div>
+                    <div class="control-group">
+                        <label for="exhaleInput">吐气时长（秒）</label>
+                        <input type="number" id="exhaleInput" class="breath-input" min="1" max="30" value="6">
+                    </div>
 
-            <h2 class="sidebar__title">偏好设置</h2>
-            <div class="control-row">
-                <span class="label flexible">夜间模式</span>
-                <input type="checkbox" id="themeToggle" class="pulse-checkbox toggle-checkbox">
-                <label for="themeToggle" class="toggle toggle-daynight">
-                    <span class="toggle-background"></span>
-                    <span class="toggle-knob"></span>
-                </label>
-            </div>
-            <div class="control-row">
-                <span class="label flexible">显示文字</span>
-                <input type="checkbox" id="wordsToggle" class="pulse-checkbox toggle-checkbox" checked>
-                <label for="wordsToggle" class="toggle toggle-normal">
-                    <span class="toggle-background"></span>
-                    <span class="toggle-knob"></span>
-                </label>
-            </div>
-            <div class="control-row">
-                <span class="label flexible">显示数字</span>
-                <input type="checkbox" id="countdownToggle" class="pulse-checkbox toggle-checkbox" checked>
-                <label for="countdownToggle" class="toggle toggle-normal">
-                    <span class="toggle-background"></span>
-                    <span class="toggle-knob"></span>
-                </label>
-            </div>
-        </aside>
+                    <input type="range" id="inhaleSlider" class="pulse-slider is-hidden" min="1" max="30" value="4">
+                    <input type="range" id="inhaleHoldSlider" class="pulse-slider is-hidden" min="0" max="30" value="2">
+                    <input type="range" id="exhaleSlider" class="pulse-slider is-hidden" min="1" max="30" value="6">
+                    <input type="range" id="exhaleHoldSlider" class="pulse-slider is-hidden" min="0" max="30" value="0">
+                    <input type="number" id="exhaleHoldInput" class="breath-input is-hidden" min="0" max="30" value="0">
+
+                    <div class="rhythm-summary" aria-live="polite">
+                        <p>当前节奏</p>
+                        <span id="rhythmSummary">吸气 4s · 停顿 2s · 吐气 6s</span>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
     <script src="script.js"></script>
