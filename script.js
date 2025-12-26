@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initFaq();
     initSmoothScroll();
     initAnimations();
+    initXhalrBreathing();
 });
 
 // Navigation: mobile hamburger + sticky styling
@@ -198,6 +199,172 @@ function initFaq() {
             item.classList.toggle('active');
         });
     });
+}
+
+function initXhalrBreathing() {
+    if (!document.body.classList.contains('home-xhalr')) return;
+
+    const pulse = document.getElementById('pulse');
+    const pulseText = document.getElementById('pulseText');
+    const pulseCountdown = document.getElementById('pulseCountdown');
+    const rhythmSummary = document.getElementById('rhythmSummary');
+    const themeToggle = document.getElementById('themeToggle');
+    const wordsToggle = document.getElementById('wordsToggle');
+    const countdownToggle = document.getElementById('countdownToggle');
+
+    const inhaleInput = document.getElementById('inhaleInput');
+    const inhaleSlider = document.getElementById('inhaleSlider');
+    const inhaleHoldInput = document.getElementById('inhaleHoldInput');
+    const inhaleHoldSlider = document.getElementById('inhaleHoldSlider');
+    const exhaleInput = document.getElementById('exhaleInput');
+    const exhaleSlider = document.getElementById('exhaleSlider');
+    const exhaleHoldInput = document.getElementById('exhaleHoldInput');
+    const exhaleHoldSlider = document.getElementById('exhaleHoldSlider');
+
+    if (!pulse || !pulseText || !pulseCountdown || !rhythmSummary) return;
+
+    const outerCircle = pulse.querySelector('.pulse-circle--outer');
+    const innerCircle = pulse.querySelector('.pulse-circle--inner');
+    const presetButtons = document.querySelectorAll('.preset');
+
+    if (!outerCircle || !innerCircle) return;
+
+    let timerId = null;
+    let phases = [];
+    let currentPhaseIndex = 0;
+    let remainingSeconds = 0;
+
+    const sanitizeValue = (value, min) => {
+        const parsed = Number.parseInt(value, 10);
+        if (Number.isNaN(parsed)) return min;
+        return Math.max(parsed, min);
+    };
+
+    const phaseConfig = {
+        inhale: { label: '吸气', scale: 1.08, stateClass: 'is-inhale' },
+        inhaleHold: { label: '停顿', scale: 1.08, stateClass: 'is-hold' },
+        exhale: { label: '呼气', scale: 0.86, stateClass: 'is-exhale' },
+        exhaleHold: { label: '停顿', scale: 0.86, stateClass: 'is-hold' }
+    };
+
+    const getPhaseValues = () => ({
+        inhale: sanitizeValue(inhaleInput.value, 1),
+        inhaleHold: sanitizeValue(inhaleHoldInput.value, 0),
+        exhale: sanitizeValue(exhaleInput.value, 1),
+        exhaleHold: sanitizeValue(exhaleHoldInput.value, 0)
+    });
+
+    const buildPhases = () => {
+        const values = getPhaseValues();
+        return [
+            { key: 'inhale', duration: values.inhale },
+            { key: 'inhaleHold', duration: values.inhaleHold },
+            { key: 'exhale', duration: values.exhale },
+            { key: 'exhaleHold', duration: values.exhaleHold }
+        ];
+    };
+
+    const getActivePhases = () => {
+        const list = buildPhases().filter(phase => phase.duration > 0);
+        return list.length ? list : [{ key: 'inhale', duration: 1 }];
+    };
+
+    const updateSummary = () => {
+        const values = getPhaseValues();
+        rhythmSummary.textContent = `吸气 ${values.inhale}s · 屏息 ${values.inhaleHold}s · 呼气 ${values.exhale}s · 停顿 ${values.exhaleHold}s`;
+    };
+
+    const updatePulseState = (phase) => {
+        const config = phaseConfig[phase.key];
+        pulse.classList.remove('is-inhale', 'is-exhale', 'is-hold');
+        pulse.classList.add(config.stateClass);
+        pulseText.textContent = config.label;
+        pulseCountdown.textContent = remainingSeconds;
+
+        const duration = Math.max(phase.duration, 1);
+        outerCircle.style.transitionDuration = `${duration}s`;
+        innerCircle.style.transitionDuration = `${duration}s`;
+        outerCircle.style.transform = `scale(${config.scale})`;
+        innerCircle.style.transform = `scale(${config.scale})`;
+    };
+
+    const advancePhase = () => {
+        currentPhaseIndex = (currentPhaseIndex + 1) % phases.length;
+        remainingSeconds = phases[currentPhaseIndex].duration;
+        if (remainingSeconds <= 0) {
+            advancePhase();
+            return;
+        }
+        updatePulseState(phases[currentPhaseIndex]);
+    };
+
+    const tick = () => {
+        remainingSeconds -= 1;
+        if (remainingSeconds <= 0) {
+            advancePhase();
+        } else {
+            pulseCountdown.textContent = remainingSeconds;
+        }
+    };
+
+    const startBreathing = () => {
+        clearInterval(timerId);
+        phases = getActivePhases();
+        currentPhaseIndex = 0;
+        remainingSeconds = phases[0].duration;
+        updatePulseState(phases[0]);
+        timerId = setInterval(tick, 1000);
+    };
+
+    const bindControl = (input, slider, min) => {
+        const handleInput = (value) => {
+            const sanitized = sanitizeValue(value, min);
+            input.value = sanitized;
+            slider.value = sanitized;
+            updateSummary();
+            startBreathing();
+        };
+
+        input.addEventListener('input', () => handleInput(input.value));
+        slider.addEventListener('input', () => handleInput(slider.value));
+    };
+
+    bindControl(inhaleInput, inhaleSlider, 1);
+    bindControl(inhaleHoldInput, inhaleHoldSlider, 0);
+    bindControl(exhaleInput, exhaleSlider, 1);
+    bindControl(exhaleHoldInput, exhaleHoldSlider, 0);
+
+    presetButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const values = button.dataset.values?.split(',').map(value => Number.parseInt(value, 10));
+            if (!values || values.length !== 4 || values.some(Number.isNaN)) return;
+            inhaleInput.value = values[0];
+            inhaleSlider.value = values[0];
+            inhaleHoldInput.value = values[1];
+            inhaleHoldSlider.value = values[1];
+            exhaleInput.value = values[2];
+            exhaleSlider.value = values[2];
+            exhaleHoldInput.value = values[3];
+            exhaleHoldSlider.value = values[3];
+            updateSummary();
+            startBreathing();
+        });
+    });
+
+    themeToggle?.addEventListener('change', () => {
+        document.body.classList.toggle('is-night', themeToggle.checked);
+    });
+
+    wordsToggle?.addEventListener('change', () => {
+        document.body.classList.toggle('hide-words', !wordsToggle.checked);
+    });
+
+    countdownToggle?.addEventListener('change', () => {
+        document.body.classList.toggle('hide-countdown', !countdownToggle.checked);
+    });
+
+    updateSummary();
+    startBreathing();
 }
 
 // Intersection Observer animations (if the classes exist)
