@@ -4,195 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Language" content="zh-CN">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>承古堂｜腹式呼吸法与中医日常调养</title>
-    <meta name="description" content="TraditionalChineseMedicine.online 聚焦腹式呼吸法、经方养生与日常调理，提供呼吸练习、睡眠养护、八段锦与中医生活工具。">
+    <title>承古堂｜呼吸节奏练习</title>
+    <meta name="description" content="承古堂呼吸节奏练习，参考 XHALR 呼吸节拍，帮助放松与专注。">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <a class="skip-link" href="#hero">跳到主要内容</a>
-    <nav class="navbar" aria-label="主导航">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <i class="fas fa-leaf" aria-hidden="true"></i>
-                <span>TCM</span>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item"><a class="nav-link" href="#hero">首页</a></li>
-                <li class="nav-item"><a class="nav-link" href="#breathing">腹式呼吸</a></li>
-                <li class="nav-item"><a class="nav-link" href="sleep.html">睡眠养生</a></li>
-                <li class="nav-item"><a class="nav-link" href="chanting-classics.html">经典诵读</a></li>
-                <li class="nav-item"><a class="nav-link" href="foodpairing.html">食物轮盘</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a class="btn btn-secondary btn-secondary--dark" href="brain.html">清醒力手册</a>
-            </div>
-            <div class="hamburger" aria-label="切换导航" aria-expanded="false" aria-controls="primary-menu" role="button" tabindex="0">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+<body class="home-xhalr">
+    <div class="app-container">
+        <div id="pulse" class="pulse" aria-live="polite">
+            <div class="pulse-circle pulse-circle--outer"></div>
+            <div class="pulse-circle pulse-circle--inner"></div>
+            <div class="pulse-text" id="pulseText">吸气</div>
+            <div class="pulse-countdown" id="pulseCountdown">4</div>
         </div>
-    </nav>
 
-    <main>
-        <header class="hero-section breathing-section" id="hero">
-            <div class="container breathing-grid" id="breathing">
-                <div class="breathing-copy">
-                    <h2 class="section-title">腹式呼吸法</h2>
-                    <p class="section-subtitle">
-                        参考 <a href="https://aiaiy.com/rest" target="_blank" rel="noopener">AIAIY Rest</a> 的节奏设计，把腹式呼吸变成随时可用的安定仪式。
-                        双手轻覆腹部，跟随节拍让气息缓缓落下。
-                    </p>
-                    <div class="breathing-actions">
-                        <div class="breathing-pill">
-                            <i class="fas fa-spa" aria-hidden="true"></i>
-                            <span>坐直或仰卧，肩颈放松</span>
-                        </div>
-                        <div class="breathing-pill">
-                            <i class="fas fa-wind" aria-hidden="true"></i>
-                            <span>鼻吸 4 拍，腹部向外鼓起</span>
-                        </div>
-                        <div class="breathing-pill">
-                            <i class="fas fa-pause" aria-hidden="true"></i>
-                            <span>停 2 拍，感受气息扩散</span>
-                        </div>
-                        <div class="breathing-pill">
-                            <i class="fas fa-feather" aria-hidden="true"></i>
-                            <span>口呼 6 拍，腹部缓缓回落</span>
-                        </div>
-                    </div>
-                </div>
-                <article class="breathing-card" aria-label="腹式呼吸节拍">
-                    <div class="breathing-card__header">
-                        <span>腹式呼吸节拍</span>
-                        <span class="breathing-badge">4 - 2 - 6</span>
-                    </div>
-                    <div class="breathing-timer">
-                        <div id="breathCircle" class="breathing-timer__circle">
-                            <div class="breathing-timer__label" id="phaseLabel">吸气</div>
-                            <div class="breathing-timer__countdown" id="phaseCountdown">4s</div>
-                        </div>
-                        <p class="breathing-timer__tip">保持平稳坐姿，视线自然放松。</p>
-                        <div class="breathing-timer__controls">
-                            <button id="startButton" class="btn btn-primary breathing-timer__button">开始</button>
-                            <button id="resetButton" class="btn breathing-timer__button breathing-timer__button--ghost">重置</button>
-                        </div>
-                        <div class="breathing-timer__settings">
-                            <label class="breathing-timer__field">
-                                <span>吸气时长（秒）</span>
-                                <input id="inhaleInput" type="number" min="1" value="4" inputmode="numeric" />
-                            </label>
-                            <label class="breathing-timer__field">
-                                <span>停顿时长（秒）</span>
-                                <input id="holdInput" type="number" min="0" value="2" inputmode="numeric" />
-                            </label>
-                            <label class="breathing-timer__field">
-                                <span>吐气时长（秒）</span>
-                                <input id="exhaleInput" type="number" min="1" value="6" inputmode="numeric" />
-                            </label>
-                        </div>
-                        <div class="breathing-timer__summary">
-                            <p>当前节奏</p>
-                            <span id="rhythmSummary">吸气 4s · 停顿 2s · 吐气 6s</span>
-                        </div>
-                    </div>
-                    <div class="breathing-cycle">
-                        <div class="breathing-cycle__step">
-                            <span>吸气 4 拍</span>
-                            <small>鼻吸，肚脐向外缓慢鼓起</small>
-                        </div>
-                        <div class="breathing-cycle__step">
-                            <span>停顿 2 拍</span>
-                            <small>保持腹部张力，觉察胸腹安静</small>
-                        </div>
-                        <div class="breathing-cycle__step">
-                            <span>呼气 6 拍</span>
-                            <small>口呼或鼻呼，腹部自然回落</small>
-                        </div>
-                    </div>
-                    <div class="breathing-text">
-                        <p>建议连续完成 5 轮，必要时可延长至 10 轮。</p>
-                        <ul class="breathing-benefits">
-                            <li>减轻浅快呼吸带来的紧张感</li>
-                            <li>帮助睡前放松、恢复专注</li>
-                            <li>适合办公间隙或夜间醒来时练习</li>
-                        </ul>
-                        <p class="breathing-note">持续 3 分钟，即可让身心回到稳态。</p>
-                    </div>
-                </article>
-            </div>
-        </header>
+        <input type="checkbox" id="sidebarToggle" class="toggle-checkbox">
+        <label for="sidebarToggle" class="xhalr-hamburger" aria-label="打开设置面板" role="button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-        <section class="meridian-preview" id="meridian-preview">
-            <div class="container meridian-preview__grid">
-                <div class="meridian-preview__visual">
-                    <img class="meridian-preview__wheel" src="assets/meridian-clock-wheel.svg" alt="子午流注十二时辰经络钟表示意图">
-                    <div class="meridian-preview__time-card" aria-label="时辰提示卡片">
-                        <span class="meridian-preview__time">05:00 - 06:59</span>
-                        <strong class="meridian-preview__label">大肠经旺 · 排浊醒神</strong>
-                        <p>起床后先喝温水，配合轻柔扭腰与拍打手臂，帮助顺利排便。</p>
-                    </div>
-                </div>
-                <div class="meridian-preview__content">
-                    <span class="section-eyebrow">子午流注钟表</span>
-                    <h2 class="section-title">子午流注实时解读</h2>
-                    <p class="section-subtitle">将 24 小时拆成十二时辰，给每一段提供对应经络、养护动作与饮食提示，把节律变成可执行的日常提醒。</p>
-                    <div class="meridian-preview__cards">
-                        <article class="meridian-preview__info">
-                            <h3>当前时段：卯时（日出）</h3>
-                            <div class="meridian-preview__tags">
-                                <span>大肠经旺</span>
-                                <span>五行：金</span>
-                            </div>
-                            <p>卯时主排泄与清理，适合温和起身、喝温水、进行排便训练，让身体轻盈开启一天。</p>
-                        </article>
-                        <article class="meridian-preview__info meridian-preview__info--light">
-                            <h3>三件立刻可做的小事</h3>
-                            <ul>
-                                <li>温水 200ml + 3 分钟腹式呼吸</li>
-                                <li>按揉合谷、曲池 30 秒，疏通经络</li>
-                                <li>早餐以温热为主，避免生冷刺激</li>
-                            </ul>
-                        </article>
-                    </div>
-                    <a class="btn btn-primary" href="meridian-clock.html">进入子午流注钟表</a>
-                </div>
+        <aside class="sidebar" aria-label="呼吸节奏设置">
+            <div class="sidebar__header">
+                <h1><span class="muted">呼吸</span>节奏</h1>
+                <p class="version">v 1.0</p>
             </div>
-        </section>
-    </main>
+            <p class="sidebar__intro">跟随呼吸节拍放松身心，可在瑜伽、冥想或工作间隙使用。</p>
+            <p class="sidebar__intro">如有焦虑或不适，请及时寻求专业帮助。</p>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>承古堂</h3>
-                    <p>以经典为心，以日常为用，让养生回归简洁而可执行的节律。</p>
-                </div>
-                <div class="footer-section">
-                    <h4>快速入口</h4>
-                    <ul>
-                        <li><a href="sleep.html">睡眠养生</a></li>
-                        <li><a href="ba-duan-jin.html">八段锦</a></li>
-                        <li><a href="foodpairing.html">食物轮盘</a></li>
-                        <li><a href="brain.html">大脑养护</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>关注内容</h4>
-                    <ul>
-                        <li><a href="meridian-clock.html">子午流注</a></li>
-                        <li><a href="chanting-classics.html">经典诵读</a></li>
-                        <li><a href="ni-haixia.html">人物专题</a></li>
-                    </ul>
-                </div>
+            <div class="control-row presets">
+                <span class="preset flexible" data-values="4,0,6,0">默认</span>
+                <span class="preset flexible" data-values="4,4,4,4">方形呼吸</span>
+                <span class="preset flexible" data-values="7,4,8,0">调息练习</span>
+                <span class="preset flexible" data-values="7,0,7,0">均衡呼吸</span>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 承古堂 TraditionalChineseMedicine.online</p>
+
+            <div class="control-row">
+                <label for="inhaleInput" class="flexible">吸气</label>
+                <input type="number" id="inhaleInput" class="pulse-number" min="1" max="30" value="4">
             </div>
-        </div>
-    </footer>
+            <input type="range" id="inhaleSlider" class="pulse-slider" min="1" max="30" value="4">
+
+            <div class="control-row">
+                <label for="inhaleHoldInput" class="flexible">屏息</label>
+                <input type="number" id="inhaleHoldInput" class="pulse-number" min="0" max="30" value="0">
+            </div>
+            <input type="range" id="inhaleHoldSlider" class="pulse-slider" min="0" max="30" value="0">
+
+            <div class="control-row">
+                <label for="exhaleInput" class="flexible">呼气</label>
+                <input type="number" id="exhaleInput" class="pulse-number" min="1" max="30" value="6">
+            </div>
+            <input type="range" id="exhaleSlider" class="pulse-slider" min="1" max="30" value="6">
+
+            <div class="control-row">
+                <label for="exhaleHoldInput" class="flexible">停顿</label>
+                <input type="number" id="exhaleHoldInput" class="pulse-number" min="0" max="30" value="0">
+            </div>
+            <input type="range" id="exhaleHoldSlider" class="pulse-slider" min="0" max="30" value="0">
+
+            <div class="rhythm-summary" aria-live="polite">
+                <p>当前节奏</p>
+                <span id="rhythmSummary">吸气 4s · 屏息 0s · 呼气 6s · 停顿 0s</span>
+            </div>
+
+            <h2 class="sidebar__title">偏好设置</h2>
+            <div class="control-row">
+                <span class="label flexible">夜间模式</span>
+                <input type="checkbox" id="themeToggle" class="pulse-checkbox toggle-checkbox">
+                <label for="themeToggle" class="toggle toggle-daynight">
+                    <span class="toggle-background"></span>
+                    <span class="toggle-knob"></span>
+                </label>
+            </div>
+            <div class="control-row">
+                <span class="label flexible">显示文字</span>
+                <input type="checkbox" id="wordsToggle" class="pulse-checkbox toggle-checkbox" checked>
+                <label for="wordsToggle" class="toggle toggle-normal">
+                    <span class="toggle-background"></span>
+                    <span class="toggle-knob"></span>
+                </label>
+            </div>
+            <div class="control-row">
+                <span class="label flexible">显示数字</span>
+                <input type="checkbox" id="countdownToggle" class="pulse-checkbox toggle-checkbox" checked>
+                <label for="countdownToggle" class="toggle toggle-normal">
+                    <span class="toggle-background"></span>
+                    <span class="toggle-knob"></span>
+                </label>
+            </div>
+        </aside>
+    </div>
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.4/dist/umd/full.js" defer></script>
