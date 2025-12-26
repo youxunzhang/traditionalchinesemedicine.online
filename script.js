@@ -208,6 +208,8 @@ function initXhalrBreathing() {
     const pulseText = document.getElementById('pulseText');
     const pulseCountdown = document.getElementById('pulseCountdown');
     const rhythmSummary = document.getElementById('rhythmSummary');
+    const pauseButton = document.getElementById('pauseButton');
+    const resetButton = document.getElementById('resetButton');
     const themeToggle = document.getElementById('themeToggle');
     const wordsToggle = document.getElementById('wordsToggle');
     const countdownToggle = document.getElementById('countdownToggle');
@@ -233,6 +235,7 @@ function initXhalrBreathing() {
     let phases = [];
     let currentPhaseIndex = 0;
     let remainingSeconds = 0;
+    let isPaused = false;
 
     const sanitizeValue = (value, min) => {
         const parsed = Number.parseInt(value, 10);
@@ -243,7 +246,7 @@ function initXhalrBreathing() {
     const phaseConfig = {
         inhale: { label: '吸气', scale: 1.22, stateClass: 'is-inhale' },
         inhaleHold: { label: '停顿', scale: 1.12, stateClass: 'is-hold' },
-        exhale: { label: '呼气', scale: 0.78, stateClass: 'is-exhale' },
+        exhale: { label: '吐气', scale: 0.78, stateClass: 'is-exhale' },
         exhaleHold: { label: '停顿', scale: 0.9, stateClass: 'is-hold' }
     };
 
@@ -271,7 +274,7 @@ function initXhalrBreathing() {
 
     const updateSummary = () => {
         const values = getPhaseValues();
-        rhythmSummary.textContent = `吸气 ${values.inhale}s · 屏息 ${values.inhaleHold}s · 呼气 ${values.exhale}s · 停顿 ${values.exhaleHold}s`;
+        rhythmSummary.textContent = `吸气 ${values.inhale}s · 停顿 ${values.inhaleHold}s · 吐气 ${values.exhale}s`;
     };
 
     const updatePulseState = (phase) => {
@@ -279,7 +282,7 @@ function initXhalrBreathing() {
         pulse.classList.remove('is-inhale', 'is-exhale', 'is-hold');
         pulse.classList.add(config.stateClass);
         pulseText.textContent = config.label;
-        pulseCountdown.textContent = remainingSeconds;
+        pulseCountdown.textContent = `${remainingSeconds}s`;
 
         const duration = Math.max(phase.duration, 1);
         pulse.style.setProperty('--pulse-duration', `${duration}s`);
@@ -301,7 +304,7 @@ function initXhalrBreathing() {
         if (remainingSeconds <= 0) {
             advancePhase();
         } else {
-            pulseCountdown.textContent = remainingSeconds;
+            pulseCountdown.textContent = `${remainingSeconds}s`;
         }
     };
 
@@ -312,6 +315,10 @@ function initXhalrBreathing() {
         remainingSeconds = phases[0].duration;
         updatePulseState(phases[0]);
         timerId = setInterval(tick, 1000);
+        isPaused = false;
+        if (pauseButton) {
+            pauseButton.textContent = '暂停';
+        }
     };
 
     const bindControl = (input, slider, min) => {
@@ -347,6 +354,33 @@ function initXhalrBreathing() {
             updateSummary();
             startBreathing();
         });
+    });
+
+    const pauseBreathing = () => {
+        if (!timerId) return;
+        clearInterval(timerId);
+        timerId = null;
+        isPaused = true;
+    };
+
+    const resumeBreathing = () => {
+        if (timerId) return;
+        timerId = setInterval(tick, 1000);
+        isPaused = false;
+    };
+
+    pauseButton?.addEventListener('click', () => {
+        if (isPaused) {
+            resumeBreathing();
+            pauseButton.textContent = '暂停';
+        } else {
+            pauseBreathing();
+            pauseButton.textContent = '继续';
+        }
+    });
+
+    resetButton?.addEventListener('click', () => {
+        startBreathing();
     });
 
     themeToggle?.addEventListener('change', () => {
