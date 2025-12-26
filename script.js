@@ -6,6 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initFaq();
     initSmoothScroll();
     initAnimations();
+    initBreathingTimer();
 });
 
 // Navigation: mobile hamburger + sticky styling
@@ -198,6 +199,181 @@ function initFaq() {
             item.classList.toggle('active');
         });
     });
+}
+
+function initBreathingTimer() {
+    const inhaleInput = document.getElementById('inhaleInput');
+    const holdInput = document.getElementById('holdInput');
+    const exhaleInput = document.getElementById('exhaleInput');
+    const startButton = document.getElementById('startButton');
+    const resetButton = document.getElementById('resetButton');
+    const phaseLabel = document.getElementById('phaseLabel');
+    const phaseCountdown = document.getElementById('phaseCountdown');
+    const breathCircle = document.getElementById('breathCircle');
+    const rhythmSummary = document.getElementById('rhythmSummary');
+
+    if (!inhaleInput || !holdInput || !exhaleInput || !startButton || !resetButton || !phaseLabel || !phaseCountdown || !breathCircle || !rhythmSummary) {
+        return;
+    }
+
+    const inputs = [inhaleInput, holdInput, exhaleInput];
+    const phaseScales = {
+        inhale: 1.15,
+        hold: 1.05,
+        exhale: 0.88
+    };
+
+    let timerId = null;
+    let phases = [];
+    let currentPhaseIndex = 0;
+    let remainingSeconds = 0;
+    let isRunning = false;
+    let isPaused = false;
+
+    const sanitizeValue = (value, min) => {
+        const parsed = Number.parseInt(value, 10);
+        if (Number.isNaN(parsed)) return min;
+        return Math.max(parsed, min);
+    };
+
+    const buildPhases = () => {
+        const inhale = sanitizeValue(inhaleInput.value, 1);
+        const hold = sanitizeValue(holdInput.value, 0);
+        const exhale = sanitizeValue(exhaleInput.value, 1);
+
+        return [
+            { key: 'inhale', label: '吸气', duration: inhale },
+            { key: 'hold', label: '停顿', duration: hold },
+            { key: 'exhale', label: '吐气', duration: exhale }
+        ];
+    };
+
+    const getActivePhases = () => {
+        const list = buildPhases().filter(phase => phase.duration > 0);
+        return list.length ? list : [{ key: 'inhale', label: '吸气', duration: 1 }];
+    };
+
+    const updateSummary = () => {
+        const inhale = sanitizeValue(inhaleInput.value, 1);
+        const hold = sanitizeValue(holdInput.value, 0);
+        const exhale = sanitizeValue(exhaleInput.value, 1);
+        rhythmSummary.textContent = `吸气 ${inhale}s · 停顿 ${hold}s · 吐气 ${exhale}s`;
+    };
+
+    const updateCircleState = (phase) => {
+        breathCircle.classList.remove('is-hold', 'is-exhale');
+        if (phase.key === 'hold') {
+            breathCircle.classList.add('is-hold');
+        }
+        if (phase.key === 'exhale') {
+            breathCircle.classList.add('is-exhale');
+        }
+        breathCircle.style.transitionDuration = `${Math.max(phase.duration, 1)}s`;
+        breathCircle.style.transform = `scale(${phaseScales[phase.key]})`;
+    };
+
+    const updatePhaseDisplay = () => {
+        const phase = phases[currentPhaseIndex];
+        phaseLabel.textContent = phase.label;
+        phaseCountdown.textContent = `${remainingSeconds}s`;
+        updateCircleState(phase);
+    };
+
+    const setInputsDisabled = (disabled) => {
+        inputs.forEach((input) => {
+            input.disabled = disabled;
+            input.classList.toggle('is-disabled', disabled);
+        });
+    };
+
+    const tick = () => {
+        if (!isRunning) return;
+        remainingSeconds -= 1;
+        if (remainingSeconds <= 0) {
+            currentPhaseIndex = (currentPhaseIndex + 1) % phases.length;
+            remainingSeconds = phases[currentPhaseIndex].duration || 0;
+            if (remainingSeconds === 0) {
+                tick();
+                return;
+            }
+            updatePhaseDisplay();
+        } else {
+            phaseCountdown.textContent = `${remainingSeconds}s`;
+        }
+    };
+
+    const startTimer = () => {
+        phases = getActivePhases();
+        currentPhaseIndex = 0;
+        remainingSeconds = phases[0].duration;
+        isRunning = true;
+        isPaused = false;
+        setInputsDisabled(true);
+        startButton.textContent = '暂停';
+        updatePhaseDisplay();
+        clearInterval(timerId);
+        timerId = setInterval(tick, 1000);
+    };
+
+    const pauseTimer = () => {
+        isRunning = false;
+        isPaused = true;
+        clearInterval(timerId);
+        startButton.textContent = '继续';
+    };
+
+    const resumeTimer = () => {
+        if (isRunning) return;
+        isRunning = true;
+        isPaused = false;
+        setInputsDisabled(true);
+        startButton.textContent = '暂停';
+        clearInterval(timerId);
+        timerId = setInterval(tick, 1000);
+    };
+
+    const resetTimer = () => {
+        clearInterval(timerId);
+        isRunning = false;
+        isPaused = false;
+        phases = getActivePhases();
+        currentPhaseIndex = 0;
+        remainingSeconds = phases[0].duration;
+        setInputsDisabled(false);
+        startButton.textContent = '开始';
+        updatePhaseDisplay();
+    };
+
+    startButton.addEventListener('click', () => {
+        if (isRunning) {
+            pauseTimer();
+            return;
+        }
+        if (isPaused) {
+            resumeTimer();
+            return;
+        }
+        startTimer();
+    });
+
+    resetButton.addEventListener('click', resetTimer);
+
+    inputs.forEach((input) => {
+        input.addEventListener('input', () => {
+            updateSummary();
+            if (!isRunning) {
+                phases = getActivePhases();
+                currentPhaseIndex = 0;
+                remainingSeconds = phases[0].duration;
+                updatePhaseDisplay();
+            }
+        });
+    });
+
+    updateSummary();
+    phases = getActivePhases();
+    remainingSeconds = phases[0].duration;
+    updatePhaseDisplay();
 }
 
 // Intersection Observer animations (if the classes exist)

@@ -69,6 +69,35 @@
                         <span>腹式呼吸节拍</span>
                         <span class="breathing-badge">4 - 2 - 6</span>
                     </div>
+                    <div class="breathing-timer">
+                        <div id="breathCircle" class="breathing-timer__circle">
+                            <div class="breathing-timer__label" id="phaseLabel">吸气</div>
+                            <div class="breathing-timer__countdown" id="phaseCountdown">4s</div>
+                        </div>
+                        <p class="breathing-timer__tip">保持平稳坐姿，视线自然放松。</p>
+                        <div class="breathing-timer__controls">
+                            <button id="startButton" class="btn btn-primary breathing-timer__button">开始</button>
+                            <button id="resetButton" class="btn breathing-timer__button breathing-timer__button--ghost">重置</button>
+                        </div>
+                        <div class="breathing-timer__settings">
+                            <label class="breathing-timer__field">
+                                <span>吸气时长（秒）</span>
+                                <input id="inhaleInput" type="number" min="1" value="4" inputmode="numeric" />
+                            </label>
+                            <label class="breathing-timer__field">
+                                <span>停顿时长（秒）</span>
+                                <input id="holdInput" type="number" min="0" value="2" inputmode="numeric" />
+                            </label>
+                            <label class="breathing-timer__field">
+                                <span>吐气时长（秒）</span>
+                                <input id="exhaleInput" type="number" min="1" value="6" inputmode="numeric" />
+                            </label>
+                        </div>
+                        <div class="breathing-timer__summary">
+                            <p>当前节奏</p>
+                            <span id="rhythmSummary">吸气 4s · 停顿 2s · 吐气 6s</span>
+                        </div>
+                    </div>
                     <div class="breathing-cycle">
                         <div class="breathing-cycle__step">
                             <span>吸气 4 拍</span>
