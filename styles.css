@@ -54,19 +54,38 @@ body.home-xhalr .pulse {
     align-items: center;
     justify-content: center;
     color: inherit;
+    isolation: isolate;
+    --pulse-scale: 1;
+    --pulse-duration: 4s;
+    --pulse-accent: #9bb8f7;
+    --pulse-glow: rgba(76, 110, 194, 0.35);
+}
+
+body.home-xhalr .pulse::before {
+    content: '';
+    position: absolute;
+    inset: -6%;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--pulse-glow) 0%, transparent 70%);
+    opacity: 0.85;
+    transform: scale(var(--pulse-scale));
+    transition: transform var(--pulse-duration, 4s) ease-in-out, opacity 0.6s ease;
+    z-index: 0;
 }
 
 body.home-xhalr .pulse-circle {
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    transform: scale(1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    transform: scale(var(--pulse-scale));
+    transition: transform var(--pulse-duration, 4s) ease-in-out, box-shadow 0.6s ease,
+        background-color 0.6s ease;
+    z-index: 1;
 }
 
 body.home-xhalr .pulse-circle--outer {
-    background: #9bb8f7;
-    box-shadow: 0 30px 60px rgba(76, 110, 194, 0.3);
+    background: var(--pulse-accent);
+    box-shadow: 0 30px 60px var(--pulse-glow);
 }
 
 body.home-xhalr .pulse-circle--inner {
@@ -78,8 +97,8 @@ body.home-xhalr .pulse-circle--inner {
 }
 
 body.home-xhalr.is-night .pulse-circle--outer {
-    background: #4b6cbf;
-    box-shadow: 0 30px 60px rgba(59, 130, 246, 0.4);
+    background: var(--pulse-accent);
+    box-shadow: 0 30px 60px var(--pulse-glow);
 }
 
 body.home-xhalr.is-night .pulse-circle--inner {
@@ -124,15 +143,45 @@ body.home-xhalr.hide-countdown .pulse-countdown {
 }
 
 body.home-xhalr .pulse.is-inhale .pulse-circle--outer {
-    background: #9bb8f7;
+    background: var(--pulse-accent);
 }
 
 body.home-xhalr .pulse.is-exhale .pulse-circle--outer {
-    background: #7fbf93;
+    background: var(--pulse-accent);
 }
 
 body.home-xhalr .pulse.is-hold .pulse-circle--outer {
-    background: #9fa5ff;
+    background: var(--pulse-accent);
+}
+
+body.home-xhalr .pulse.is-inhale {
+    --pulse-accent: #8fb0ff;
+    --pulse-glow: rgba(104, 133, 229, 0.45);
+}
+
+body.home-xhalr .pulse.is-exhale {
+    --pulse-accent: #7fbf93;
+    --pulse-glow: rgba(76, 150, 100, 0.35);
+}
+
+body.home-xhalr .pulse.is-hold {
+    --pulse-accent: #9fa5ff;
+    --pulse-glow: rgba(129, 140, 248, 0.4);
+}
+
+body.home-xhalr.is-night .pulse.is-inhale {
+    --pulse-accent: #5f86ff;
+    --pulse-glow: rgba(59, 130, 246, 0.55);
+}
+
+body.home-xhalr.is-night .pulse.is-exhale {
+    --pulse-accent: #5ea47d;
+    --pulse-glow: rgba(56, 172, 117, 0.45);
+}
+
+body.home-xhalr.is-night .pulse.is-hold {
+    --pulse-accent: #7a82ff;
+    --pulse-glow: rgba(99, 102, 241, 0.55);
 }
 
 body.home-xhalr .xhalr-hamburger {
