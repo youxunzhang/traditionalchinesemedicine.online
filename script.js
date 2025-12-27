@@ -244,9 +244,9 @@ function initXhalrBreathing() {
     };
 
     const phaseConfig = {
-        inhale: { label: '吸气', scale: 1.22, stateClass: 'is-inhale' },
+        inhale: { label: 'Inhale', scale: 1.22, stateClass: 'is-inhale' },
         inhaleHold: { label: '停顿', scale: 1.12, stateClass: 'is-hold' },
-        exhale: { label: '吐气', scale: 0.78, stateClass: 'is-exhale' },
+        exhale: { label: 'Exhale', scale: 0.78, stateClass: 'is-exhale' },
         exhaleHold: { label: '停顿', scale: 0.9, stateClass: 'is-hold' }
     };
 
@@ -274,7 +274,7 @@ function initXhalrBreathing() {
 
     const updateSummary = () => {
         const values = getPhaseValues();
-        rhythmSummary.textContent = `吸气 ${values.inhale}s · 停顿 ${values.inhaleHold}s · 吐气 ${values.exhale}s`;
+        rhythmSummary.textContent = `Inhale ${values.inhale}s · 停顿 ${values.inhaleHold}s · Exhale ${values.exhale}s`;
     };
 
     const updatePulseState = (phase) => {
