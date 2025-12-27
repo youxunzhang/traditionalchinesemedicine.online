@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta http-equiv="Content-Language" content="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>承古堂｜呼吸节奏练习</title>
-    <meta name="description" content="承古堂呼吸节奏练习，参考 XHALR 呼吸节拍，帮助放松与专注。">
+    <title>Cheng Gu Tang | Breathing Rhythm Practice</title>
+    <meta name="description" content="Cheng Gu Tang breathing rhythm practice, inspired by XHALR breathing cadence for relaxation and focus.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -13,16 +13,16 @@
     <div class="app-container">
         <main class="breath-hero">
             <div class="hero-header">
-                <span class="hero-badge">🧘 呼吸休息</span>
-                <h1>跟随节奏，给自己一段安静的呼吸</h1>
-                <p class="hero-subtitle">默认节奏：吸气 4 秒、停顿 2 秒、吐气 6 秒。你可以根据需要调整每一段时长。</p>
+                <span class="hero-badge">🧘 Breathing Break</span>
+                <h1>Follow the rhythm and give yourself a calm moment to breathe.</h1>
+                <p class="hero-subtitle">Default rhythm: inhale 4s, hold 2s, exhale 6s. Adjust each phase as needed.</p>
                 <div class="hero-tags">
-                    <span class="hero-tag">✓ 极简</span>
-                    <span class="hero-tag">✓ 专注功能</span>
-                    <span class="hero-tag">✓ 低门槛</span>
-                    <span class="hero-tag">✓ 快速可用</span>
-                    <span class="hero-tag">✓ 无干扰</span>
-                    <span class="hero-tag">✓ 用户即时满足</span>
+                    <span class="hero-tag">✓ Minimal</span>
+                    <span class="hero-tag">✓ Focus-friendly</span>
+                    <span class="hero-tag">✓ Low effort</span>
+                    <span class="hero-tag">✓ Ready fast</span>
+                    <span class="hero-tag">✓ Distraction-free</span>
+                    <span class="hero-tag">✓ Immediate calm</span>
                 </div>
             </div>
 
@@ -32,32 +32,32 @@
                         <div class="pulse-circle pulse-circle--outer"></div>
                         <div class="pulse-circle pulse-circle--inner"></div>
                         <div class="pulse-marker" aria-hidden="true"></div>
-                        <div class="pulse-text" id="pulseText">吸气</div>
+                        <div class="pulse-text" id="pulseText">Inhale</div>
                         <div class="pulse-countdown" id="pulseCountdown">4s</div>
                     </div>
-                    <p class="breath-tip">保持平稳坐姿，视线自然放松。</p>
+                    <p class="breath-tip">Sit comfortably and soften your gaze.</p>
                     <div class="breath-actions">
-                        <button class="breath-button breath-button--primary" id="pauseButton" type="button">暂停</button>
-                        <button class="breath-button" id="resetButton" type="button">重置</button>
+                        <button class="breath-button breath-button--primary" id="pauseButton" type="button">Pause</button>
+                        <button class="breath-button" id="resetButton" type="button">Reset</button>
                     </div>
                 </div>
 
-                <div class="breath-controls" aria-label="节奏设置">
-                    <h2>节奏设置</h2>
-                    <p class="controls-subtitle">建议保持稳定、顺畅的呼吸节奏。</p>
+                <div class="breath-controls" aria-label="Rhythm settings">
+                    <h2>Rhythm settings</h2>
+                    <p class="controls-subtitle">Aim for a steady, smooth breathing pace.</p>
 
                     <div class="control-group">
-                        <label for="inhaleInput">吸气时长（秒）</label>
+                        <label for="inhaleInput">Inhale duration (seconds)</label>
                         <input type="number" id="inhaleInput" class="breath-input" min="1" max="30" value="4">
                     </div>
 
                     <div class="control-group">
-                        <label for="inhaleHoldInput">停顿时长（秒）</label>
+                        <label for="inhaleHoldInput">Hold duration (seconds)</label>
                         <input type="number" id="inhaleHoldInput" class="breath-input" min="0" max="30" value="2">
                     </div>
 
                     <div class="control-group">
-                        <label for="exhaleInput">吐气时长（秒）</label>
+                        <label for="exhaleInput">Exhale duration (seconds)</label>
                         <input type="number" id="exhaleInput" class="breath-input" min="1" max="30" value="6">
                     </div>
 
@@ -68,8 +68,8 @@
                     <input type="number" id="exhaleHoldInput" class="breath-input is-hidden" min="0" max="30" value="0">
 
                     <div class="rhythm-summary" aria-live="polite">
-                        <p>当前节奏</p>
-                        <span id="rhythmSummary">吸气 4s · 停顿 2s · 吐气 6s</span>
+                        <p>Current rhythm</p>
+                        <span id="rhythmSummary">Inhale 4s · Hold 2s · Exhale 6s</span>
                     </div>
                 </div>
             </section>
