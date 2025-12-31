@@ -72,7 +72,7 @@ function removeDeprecatedNavLinks(menu) {
     const links = menu.querySelectorAll('a');
     links.forEach(link => {
         const label = link.textContent?.trim();
-        if (label === '中医好书') {
+        if (label === 'TCM Books') {
             const listItem = link.closest('li');
             if (listItem) {
                 listItem.remove();
@@ -113,7 +113,7 @@ function initForms() {
     if (consultationForm) {
         consultationForm.addEventListener('submit', event => {
             event.preventDefault();
-            handleFormSubmission(consultationForm, '咨询需求');
+            handleFormSubmission(consultationForm, 'consultation request');
         });
     }
 
@@ -121,16 +121,16 @@ function initForms() {
     if (contactForm) {
         contactForm.addEventListener('submit', event => {
             event.preventDefault();
-            handleFormSubmission(contactForm, '信息');
+            handleFormSubmission(contactForm, 'message');
         });
     }
 }
 
 function handleFormSubmission(form, label) {
     const data = Object.fromEntries(new FormData(form).entries());
-    showNotification(`已收到${label}，我们会尽快与您联系。`, 'success');
+    showNotification(`Thanks! We received your ${label} and will reach out soon.`, 'success');
     form.reset();
-    console.log('表单内容预览：', data);
+    console.log('Form preview:', data);
 }
 
 function showNotification(message, type = 'info') {
@@ -245,9 +245,9 @@ function initXhalrBreathing() {
 
     const phaseConfig = {
         inhale: { label: 'Inhale', scale: 1.22, stateClass: 'is-inhale' },
-        inhaleHold: { label: '停顿', scale: 1.12, stateClass: 'is-hold' },
+        inhaleHold: { label: 'Hold', scale: 1.12, stateClass: 'is-hold' },
         exhale: { label: 'Exhale', scale: 0.78, stateClass: 'is-exhale' },
-        exhaleHold: { label: '停顿', scale: 0.9, stateClass: 'is-hold' }
+        exhaleHold: { label: 'Hold', scale: 0.9, stateClass: 'is-hold' }
     };
 
     const getPhaseValues = () => ({
@@ -274,7 +274,7 @@ function initXhalrBreathing() {
 
     const updateSummary = () => {
         const values = getPhaseValues();
-        rhythmSummary.textContent = `Inhale ${values.inhale}s · 停顿 ${values.inhaleHold}s · Exhale ${values.exhale}s`;
+        rhythmSummary.textContent = `Inhale ${values.inhale}s · Hold ${values.inhaleHold}s · Exhale ${values.exhale}s`;
     };
 
     const updatePulseState = (phase) => {
@@ -317,7 +317,7 @@ function initXhalrBreathing() {
         timerId = setInterval(tick, 1000);
         isPaused = false;
         if (pauseButton) {
-            pauseButton.textContent = '暂停';
+            pauseButton.textContent = 'Pause';
         }
     };
 
@@ -372,10 +372,10 @@ function initXhalrBreathing() {
     pauseButton?.addEventListener('click', () => {
         if (isPaused) {
             resumeBreathing();
-            pauseButton.textContent = '暂停';
+            pauseButton.textContent = 'Pause';
         } else {
             pauseBreathing();
-            pauseButton.textContent = '继续';
+            pauseButton.textContent = 'Resume';
         }
     });
 
