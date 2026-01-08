@@ -132,6 +132,76 @@
             </div>
         </section>
 
+        <section id="clock-locator" class="clock-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">时间定位与时区说明</h2>
+                    <p class="section-subtitle">本页以用户装置的本地时间（前端 JS）为准，并提供时区切换、24/12 小时制切换与手动选择时辰的后备入口。</p>
+                </div>
+                <div class="clock-locator-grid">
+                    <article class="clock-locator-card">
+                        <h3>当前时间与时辰</h3>
+                        <p>时间来源说明：仅读取你的装置本地时间，不依赖服务器时间。</p>
+                        <div class="clock-locator-meta">
+                            <div>
+                                <span class="meta-label">当前时间</span>
+                                <strong id="clockCurrentTime" class="meta-value">--:--</strong>
+                            </div>
+                            <div>
+                                <span class="meta-label">当前时辰</span>
+                                <strong id="clockCurrentSlot" class="meta-value">--</strong>
+                            </div>
+                        </div>
+                        <div class="clock-locator-controls">
+                            <label for="clockTimeZoneSelect">时区显示（本地时区/可切换）</label>
+                            <select id="clockTimeZoneSelect">
+                                <option value="local">本地时区</option>
+                                <option value="Asia/Shanghai">Asia/Shanghai</option>
+                                <option value="Asia/Taipei">Asia/Taipei</option>
+                                <option value="Asia/Tokyo">Asia/Tokyo</option>
+                                <option value="Europe/London">Europe/London</option>
+                                <option value="America/Los_Angeles">America/Los_Angeles</option>
+                                <option value="UTC">UTC</option>
+                            </select>
+                            <span id="clockTimeZoneNote" class="clock-locator-note">--</span>
+                            <label for="clockTimeFormatSelect">时间格式（24h/12h）</label>
+                            <select id="clockTimeFormatSelect">
+                                <option value="24">24 小时制</option>
+                                <option value="12">12 小时制</option>
+                            </select>
+                        </div>
+                    </article>
+                    <article class="clock-locator-card">
+                        <h3>时辰划分规则与手动选择</h3>
+                        <ul class="tip-list">
+                            <li>时辰以连续 2 小时为一段，例如 15:30 → 15–17 时段（膀胱经）。</li>
+                            <li>跨日时段仍归前一经络，例如 23:30 → 23–01（胆经）。</li>
+                            <li>自动定位不准时，可用下方下拉作为后备入口。</li>
+                        </ul>
+                        <div class="clock-locator-manual">
+                            <label for="clockManualSelect">手动选择时辰</label>
+                            <select id="clockManualSelect">
+                                <option value="">选择时辰跳转</option>
+                                <option value="slot-23-01">23:00–01:00 胆经</option>
+                                <option value="slot-01-03">01:00–03:00 肝经</option>
+                                <option value="slot-03-05">03:00–05:00 肺经</option>
+                                <option value="slot-05-07">05:00–07:00 大肠经</option>
+                                <option value="slot-07-09">07:00–09:00 胃经</option>
+                                <option value="slot-09-11">09:00–11:00 脾经</option>
+                                <option value="slot-11-13">11:00–13:00 心经</option>
+                                <option value="slot-13-15">13:00–15:00 小肠经</option>
+                                <option value="slot-15-17">15:00–17:00 膀胱经</option>
+                                <option value="slot-17-19">17:00–19:00 肾经</option>
+                                <option value="slot-19-21">19:00–21:00 心包经</option>
+                                <option value="slot-21-23">21:00–23:00 三焦经</option>
+                            </select>
+                            <span class="clock-locator-note">提示：选择后会自动滚动至对应时辰卡片。</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section id="meridian-schedule" class="clock-section clock-section--highlight">
             <div class="container">
                 <div class="section-header">
@@ -139,7 +209,7 @@
                     <p class="section-subtitle">掌握每个时段最需要守护的脏腑，并给出立刻能做的练习与饮食提示。</p>
                 </div>
                 <div class="clock-grid">
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-23-01">
                         <div class="time-badge">23:00–01:00</div>
                         <h3>胆经｜入睡 + 排浊</h3>
                         <p>尽量 23:00 前入睡，协助胆汁代谢与夜间修复。</p>
@@ -149,7 +219,7 @@
                             <li><i class="fas fa-hand-holding-heart"></i> 穴位：丘墟、阳陵泉</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-01-03">
                         <div class="time-badge">01:00–03:00</div>
                         <h3>肝经｜深睡 + 疏泄</h3>
                         <p>主导情绪调节与解毒，浅眠或易醒者此段要护肝血。</p>
@@ -159,7 +229,7 @@
                             <li><i class="fas fa-leaf"></i> 茶饮：玫瑰 + 枸杞温水</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-03-05">
                         <div class="time-badge">03:00–05:00</div>
                         <h3>肺经｜换气 + 整理</h3>
                         <p>肺气宣发开始，晨练前先温暖气道，减少清晨咳嗽。</p>
@@ -169,7 +239,7 @@
                             <li><i class="fas fa-mug-hot"></i> 温水加陈皮 1 片润肺</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-05-07">
                         <div class="time-badge">05:00–07:00</div>
                         <h3>大肠经｜排便 + 醒神</h3>
                         <p>肠道蠕动旺，先喝温盐水或温开水，借势排空。</p>
@@ -179,7 +249,7 @@
                             <li><i class="fas fa-bread-slice"></i> 早餐前避免冰品与生冷果汁</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-07-09">
                         <div class="time-badge">07:00–09:00</div>
                         <h3>胃经｜补充燃料</h3>
                         <p>一天最重要的早餐时段，谷物 + 蛋白 + 温热为主。</p>
@@ -189,7 +259,7 @@
                             <li><i class="fas fa-coffee"></i> 咖啡延后到 09:30 以后更稳</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-09-11">
                         <div class="time-badge">09:00–11:00</div>
                         <h3>脾经｜专注 + 转化</h3>
                         <p>脾主运化，为高效学习工作黄金段。</p>
@@ -199,7 +269,7 @@
                             <li><i class="fas fa-hands"></i> 穴位：太白、公孙，健脾祛湿</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-11-13">
                         <div class="time-badge">11:00–13:00</div>
                         <h3>心经｜午间小憩</h3>
                         <p>心经旺盛，适合短暂放松，避免情绪过度起伏。</p>
@@ -209,7 +279,7 @@
                             <li><i class="fas fa-hand-holding-heart"></i> 穴位：神门、内关，稳心率</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-13-15">
                         <div class="time-badge">13:00–15:00</div>
                         <h3>小肠经｜分清浊</h3>
                         <p>帮助午餐吸收与代谢，避免脑雾与餐后嗜睡。</p>
@@ -219,7 +289,7 @@
                             <li><i class="fas fa-hand-holding-medical"></i> 穴位：后溪、腕骨放松肩颈</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-15-17">
                         <div class="time-badge">15:00–17:00</div>
                         <h3>膀胱经｜补水 + 伸展</h3>
                         <p>经络沿背腰腿，适合站立伸展与补水，预防下午疲劳。</p>
@@ -229,7 +299,7 @@
                             <li><i class="fas fa-hand-sparkles"></i> 穴位：委中、昆仑，舒缓腰背</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-17-19">
                         <div class="time-badge">17:00–19:00</div>
                         <h3>肾经｜收纳 + 补养</h3>
                         <p>肾藏精，傍晚可补充优质蛋白与温热汤水。</p>
@@ -239,7 +309,7 @@
                             <li><i class="fas fa-hand-holding-water"></i> 穴位：太溪、涌泉，固肾安神</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-19-21">
                         <div class="time-badge">19:00–21:00</div>
                         <h3>心包经｜放松 + 联络</h3>
                         <p>社交与放松时段，心包护心，适合轻松谈话与拉伸。</p>
@@ -249,7 +319,7 @@
                             <li><i class="fas fa-mug-hot"></i> 茶饮：酸枣仁 + 柏子仁小袋泡饮</li>
                         </ul>
                     </article>
-                    <article class="clock-card">
+                    <article class="clock-card" id="slot-21-23">
                         <div class="time-badge">21:00–23:00</div>
                         <h3>三焦经｜入眠准备</h3>
                         <p>掌管水道与气机，降低脑内兴奋，替睡眠铺路。</p>

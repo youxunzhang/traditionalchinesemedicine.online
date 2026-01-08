@@ -7,6 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initAnimations();
     initXhalrBreathing();
+    initMeridianClock();
 });
 
 // Navigation: mobile hamburger + sticky styling
@@ -397,6 +398,124 @@ function initXhalrBreathing() {
 
     updateSummary();
     startBreathing();
+}
+
+function initMeridianClock() {
+    const timeEl = document.getElementById('clockCurrentTime');
+    const slotEl = document.getElementById('clockCurrentSlot');
+    const timeZoneSelect = document.getElementById('clockTimeZoneSelect');
+    const timeZoneNote = document.getElementById('clockTimeZoneNote');
+    const formatSelect = document.getElementById('clockTimeFormatSelect');
+    const manualSelect = document.getElementById('clockManualSelect');
+
+    if (!timeEl || !slotEl || !timeZoneSelect || !formatSelect) return;
+
+    const timeSlots = [
+        { start: 23, end: 1, label: '23:00–01:00', meridian: '胆经', id: 'slot-23-01' },
+        { start: 1, end: 3, label: '01:00–03:00', meridian: '肝经', id: 'slot-01-03' },
+        { start: 3, end: 5, label: '03:00–05:00', meridian: '肺经', id: 'slot-03-05' },
+        { start: 5, end: 7, label: '05:00–07:00', meridian: '大肠经', id: 'slot-05-07' },
+        { start: 7, end: 9, label: '07:00–09:00', meridian: '胃经', id: 'slot-07-09' },
+        { start: 9, end: 11, label: '09:00–11:00', meridian: '脾经', id: 'slot-09-11' },
+        { start: 11, end: 13, label: '11:00–13:00', meridian: '心经', id: 'slot-11-13' },
+        { start: 13, end: 15, label: '13:00–15:00', meridian: '小肠经', id: 'slot-13-15' },
+        { start: 15, end: 17, label: '15:00–17:00', meridian: '膀胱经', id: 'slot-15-17' },
+        { start: 17, end: 19, label: '17:00–19:00', meridian: '肾经', id: 'slot-17-19' },
+        { start: 19, end: 21, label: '19:00–21:00', meridian: '心包经', id: 'slot-19-21' },
+        { start: 21, end: 23, label: '21:00–23:00', meridian: '三焦经', id: 'slot-21-23' }
+    ];
+
+    const getSelectedTimeZone = () => {
+        if (timeZoneSelect.value === 'local') {
+            return Intl.DateTimeFormat().resolvedOptions().timeZone;
+        }
+        return timeZoneSelect.value;
+    };
+
+    const getTimeParts = (date, timeZone) => {
+        const parts = new Intl.DateTimeFormat('zh-CN', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+            timeZone
+        }).formatToParts(date);
+        const hour = Number(parts.find(part => part.type === 'hour')?.value ?? 0);
+        const minute = Number(parts.find(part => part.type === 'minute')?.value ?? 0);
+        return { hour, minute };
+    };
+
+    const formatTime = (date, timeZone, use12Hour) => {
+        return new Intl.DateTimeFormat('zh-CN', {
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: use12Hour,
+            timeZone
+        }).format(date);
+    };
+
+    const formatTimeZoneLabel = (date, timeZone) => {
+        const offsetPart = new Intl.DateTimeFormat('zh-CN', {
+            timeZone,
+            timeZoneName: 'shortOffset'
+        }).formatToParts(date).find(part => part.type === 'timeZoneName');
+        const offset = offsetPart ? offsetPart.value : '';
+        return `${timeZone}${offset ? `（${offset}）` : ''}`;
+    };
+
+    const findSlotForHour = (hour) => {
+        return timeSlots.find(slot => {
+            if (slot.start > slot.end) {
+                return hour >= slot.start || hour < slot.end;
+            }
+            return hour >= slot.start && hour < slot.end;
+        });
+    };
+
+    const highlightSlot = (slotId) => {
+        const target = document.getElementById(slotId);
+        if (!target) return;
+        target.classList.add('is-highlighted');
+        setTimeout(() => target.classList.remove('is-highlighted'), 2000);
+        window.scrollTo({ top: target.offsetTop - 90, behavior: 'smooth' });
+    };
+
+    let manualOverride = false;
+
+    const updateTime = () => {
+        const now = new Date();
+        const timeZone = getSelectedTimeZone();
+        const use12Hour = formatSelect.value === '12';
+        const { hour, minute } = getTimeParts(now, timeZone);
+        const slot = findSlotForHour(hour);
+        const timeText = formatTime(now, timeZone, use12Hour);
+        timeEl.textContent = timeText;
+        if (slot) {
+            slotEl.textContent = `${slot.label}（${slot.meridian}）`;
+            if (manualSelect && !manualOverride) {
+                manualSelect.value = slot.id;
+            }
+        }
+        if (timeZoneNote) {
+            timeZoneNote.textContent = `${formatTimeZoneLabel(now, timeZone)} · ${use12Hour ? '12 小时制' : '24 小时制'}`;
+        }
+        if (minute === 0) {
+            slotEl.setAttribute('aria-live', 'polite');
+        }
+    };
+
+    timeZoneSelect.addEventListener('change', updateTime);
+    formatSelect.addEventListener('change', updateTime);
+
+    if (manualSelect) {
+        manualSelect.addEventListener('change', () => {
+            if (!manualSelect.value) return;
+            manualOverride = true;
+            highlightSlot(manualSelect.value);
+        });
+    }
+
+    updateTime();
+    setInterval(updateTime, 60000);
 }
 
 // Intersection Observer animations (if the classes exist)

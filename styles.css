@@ -8809,6 +8809,74 @@ hr,
     gap: 1.1rem;
 }
 
+.clock-locator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.clock-locator-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.3rem;
+    border: 1px solid rgba(15, 96, 74, 0.12);
+    box-shadow: 0 18px 40px rgba(12, 58, 48, 0.08);
+    display: grid;
+    gap: 0.8rem;
+}
+
+.clock-locator-card h3 {
+    margin: 0;
+    color: #0f4039;
+}
+
+.clock-locator-card p {
+    margin: 0;
+    color: #3a4b46;
+}
+
+.clock-locator-meta {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.clock-locator-meta .meta-label {
+    display: block;
+    font-size: 0.85rem;
+    color: #6a7d77;
+}
+
+.clock-locator-meta .meta-value {
+    font-size: 1.2rem;
+    color: #0f4039;
+}
+
+.clock-locator-controls {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.clock-locator-controls select,
+.clock-locator-manual select {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 96, 74, 0.2);
+    background: #ffffff;
+    color: #1f2d3d;
+    font-size: 0.95rem;
+}
+
+.clock-locator-note {
+    font-size: 0.85rem;
+    color: #6a7d77;
+}
+
+.clock-locator-manual {
+    display: grid;
+    gap: 0.6rem;
+}
+
 .step-card {
     background: #ffffff;
     border-radius: 18px;
@@ -8850,6 +8918,11 @@ hr,
     display: grid;
     gap: 0.7rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clock-card.is-highlighted {
+    outline: 2px solid #0f604a;
+    box-shadow: 0 0 0 4px rgba(15, 96, 74, 0.2);
 }
 
 .clock-card:hover {
