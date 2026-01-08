@@ -3967,6 +3967,12 @@ body {
     color: #bdc3c7;
 }
 
+.footer-disclaimer {
+    margin-top: 8px;
+    font-weight: 600;
+    color: inherit;
+}
+
 /* Recommended reading */
 .books-section {
     padding: 90px 0;
@@ -8784,6 +8790,41 @@ hr,
 
 .clock-main {
     padding: 80px 0 40px;
+}
+
+.tcm-disclaimer {
+    padding: 40px 0;
+}
+
+.tcm-disclaimer--hero {
+    background: #f7fbf9;
+    border-bottom: 1px solid rgba(15, 96, 74, 0.12);
+}
+
+.tcm-disclaimer--bottom {
+    background: #f1f6f3;
+    border-top: 1px solid rgba(15, 96, 74, 0.12);
+}
+
+.tcm-disclaimer__card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px 28px;
+    border: 1px solid rgba(15, 96, 74, 0.12);
+    box-shadow: 0 14px 32px rgba(12, 58, 48, 0.08);
+    display: grid;
+    gap: 10px;
+}
+
+.tcm-disclaimer__card h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #0f4039;
+}
+
+.tcm-disclaimer__card p {
+    margin: 0;
+    color: #3a4b46;
 }
 
 .clock-section {
