@@ -687,6 +687,50 @@ body.home-xhalr .pulse-checkbox {
     gap: 2rem;
 }
 
+.nav-item {
+    position: relative;
+}
+
+.nav-item.has-submenu > .nav-link::after {
+    content: '▾';
+    margin-left: 0.35rem;
+    font-size: 0.75rem;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.6rem);
+    left: 0;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    list-style: none;
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(15, 64, 57, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 18px 40px rgba(15, 64, 57, 0.18);
+    z-index: 1010;
+}
+
+.submenu a {
+    display: block;
+    padding: 0.55rem 1.1rem;
+    color: #111;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.submenu a:hover,
+.submenu a:focus {
+    background: rgba(15, 64, 57, 0.08);
+    color: #0f4039;
+}
+
+.nav-item:hover > .submenu,
+.nav-item:focus-within > .submenu {
+    display: block;
+}
+
 .nav-link {
     color: white;
     text-decoration: none;
@@ -4345,6 +4389,21 @@ body {
 
     .nav-menu.active .nav-link {
         width: 100%;
+    }
+
+    .nav-menu.active .submenu {
+        display: block;
+        position: static;
+        min-width: unset;
+        padding: 0.25rem 0 0.5rem;
+        margin-top: 0.35rem;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .nav-menu.active .submenu a {
+        padding: 0.35rem 0 0.35rem 1rem;
     }
 
     .hamburger {
